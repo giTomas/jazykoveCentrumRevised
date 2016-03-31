@@ -1,16 +1,40 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,300italic,400italic,500,500italic,600,600italic)
+
+//vars
+$basicTextColor: #333
+$secondTextColor: #fff
+$fontStack: 'Raleway', sans-serif
+
+//global styles
+
 :root
   font-size: 16px
-  color: #333
+  // color: $basicTextColor
+  color: $secondTextColor
   background-color: white
   //background-color: #F1F1D4
-  font-family: 'Raleway', sans-serif
+  font-family: $fontStack
 
-a 
-   color: #333
+html, body
+  height: 100%
+
+h1
+  font-family: serif
+  color: black
+  .description
+    font-family: $fontStack
+
+
+
+
+a
+   //color: $basicTextColor
+   color: $secondTextColor
    text-decoration: none
-   font-variant: small-caps
+   //display: block  //??
+   //font-variant: small-caps
    &:hover
-    color: black   
-   &:active, 
+    //color: black
+   &:active,
    &:focus
     outline: none
