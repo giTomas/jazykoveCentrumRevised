@@ -1,0 +1,217 @@
+/*
+   Sass Reset - Converted by Hampton Catlin
+   A modification of the original found at...
+   http://meyerweb.com/eric/tools/css/reset/
+*/
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,300italic,400italic,500,500italic,600,600italic);
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4,
+h5, h6, p, blockquote, pre, a, abbr, acronym, address, big,
+cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small,
+strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd,
+ol, ul, li, fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+details, embed, figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary, time, mark, audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer,
+header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit; }
+
+:root {
+  font-size: 16px;
+  color: #333;
+  background-color: white;
+  font-family: 'Raleway', sans-serif; }
+
+a {
+  color: #333;
+  text-decoration: none;
+  font-variant: small-caps; }
+  a:hover {
+    color: black; }
+  a:active, a:focus {
+    outline: none; }
+
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+
+.flex-centered {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+
+.hero-image {
+  background-image: url("../img/praha_ulice.jpg");
+  background-size: cover;
+  background-attachment: fixed; }
+
+.hero-text {
+  color: white;
+  background-color: rgba(51, 51, 51, 0.9);
+  text-align: center;
+  font-size: 3.375rem;
+  font-style: italic;
+  font-weight: 300;
+  padding: 0.1em 0.25em;
+  letter-spacing: 0.1em;
+  margin: 3em 0; }
+  @media (max-width: 400px) {
+    .hero-text {
+      margin: 2.5em 0;
+      font-size: 2.25rem; } }
+
+.language-center .flex,
+.switch-language .flex {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.banner,
+.switch-language {
+  height: 3.125em;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+              -ms-grid-row-align: center;
+          align-items: center; }
+  @media (max-width: 400px) {
+    .banner,
+    .switch-language {
+      width: 100%; } }
+
+.flag {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+  width: 1.6em;
+  height: 1.2em;
+  margin: 0 0.5em;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+  .flag:hover {
+    opacity: 0.5; }
+
+.cz {
+  background-image: url("../svg/cz.svg"); }
+
+.ru {
+  background-image: url("../svg/ru.svg"); }
+
+.en {
+  background-image: url("../svg/gb.svg"); }
+
+.banner {
+  padding: 0 0.5em;
+  background-color: white;
+  border-right: 2px solid #333; }
+  .banner .flex {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+                -ms-grid-row-align: center;
+            align-items: center; }
+
+.description {
+  margin-left: 0.5em;
+  font-style: italic; }
+
+.logo {
+  color: black;
+  font-family: serif;
+  font-size: 2.25em;
+  font-weight: bold; }
+
+.description {
+  font-size: 1.5em; }
+
+.language-center {
+  background-color: rgba(51, 51, 51, 0.9);
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.navigation {
+  font-size: 1.3rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(51, 51, 51, 0.9); }
+  .navigation a {
+    -webkit-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    color: white;
+    display: block;
+    padding: 0.5em;
+    position: relative; }
+    .navigation a:hover {
+      background-color: #520d14;
+      background-color: black;
+      color: white; }
+  @media (max-width: 400px) {
+    .navigation li {
+      width: 100%; } }
+
+.navigation ul {
+  display: none;
+  position: absolute;
+  background-color: #333; }
+
+.navigation li:hover ul {
+  display: block; }
