@@ -64,10 +64,19 @@ html, body {
   height: 100%; }
 
 h1 {
-  font-family: serif;
-  color: black; }
+  padding: 0.3em; }
+  h1 .logo {
+    font-family: serif;
+    font-size: 3.375rem;
+    font-weight: bold;
+    color: black; }
   h1 .description {
-    font-family: "Raleway", sans-serif; }
+    margin-left: 0.3em;
+    font-family: "Raleway", sans-serif;
+    color: #333;
+    font-weight: normal;
+    font-size: 2.25rem;
+    font-style: italic; }
 
 a {
   color: #fff;
@@ -108,10 +117,15 @@ header.flex {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
-          justify-content: space-between; }
+          justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.3); }
 
-.logo-container, .switch-languages {
-  height: 3.125em; }
+header.flex, h1.flex {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+              -ms-grid-row-align: center;
+          align-items: center; }
 
 .logo-container {
   background-color: white; }
