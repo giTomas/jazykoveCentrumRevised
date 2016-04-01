@@ -3,6 +3,7 @@
 //vars
 $basicTextColor: #333
 $secondTextColor: #fff
+$blue: #00ADEF
 $fontStack: 'Raleway', sans-serif
 
 //global styles
@@ -30,8 +31,9 @@ h1
     font-family: $fontStack
     color: $basicTextColor
     font-weight: normal
+    //font-weight: 100
     font-size: 2.25rem
-    font-style: italic
+    //font-style: italic
 
 a
    //color: $basicTextColor
@@ -44,3 +46,12 @@ a
    &:active,
    &:focus
     outline: none
+
+.btn
+  background-color: $blue
+  transition: all 0.2s ease-in-out
+  border-radius: 0.25em
+  // border: 0.1em solid white
+  &:hover
+    background-color: darken($blue, 15%)
+    // border: 0.1em solid #00ADEF

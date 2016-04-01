@@ -1,0 +1,28 @@
+//navigation
+
+.navigation
+  font-size: 1.3rem
+  justify-content: center
+  background-color: #192936
+  a
+    transition: all 0.1s ease-in-out
+    color: white
+    display: block
+    padding: 0.5em
+    position: relative
+    &:hover
+        background-color: darken(#192936, 10%)
+        color: white
+  @media (max-width: 400px)
+    li
+        width: 100%
+
+.navigation ul
+  display: none
+  position: absolute
+  background-color: #192936
+
+
+.navigation li:hover
+   ul
+    display: block

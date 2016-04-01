@@ -6,25 +6,32 @@
           span.logo KK
           span.description Jazykové centrum
     ul.switch-language.flex
-      li Jazyk stranky:
+      li Jazyk stránky:
+      li      
+        a.flag.cz.underline(href="index.html")        
+        //- a.underline(href="index.html") CZ
       li
-        a.underline(href="index.html") CZ
+        a.flag.ru(href="indexRU.html")
+        //- a(href="indexRU.html") RU
       li
-        a(href="indexRU.html") RU
-      li
-        a(href="indexEN.html") EN
-  .container-text
-    .offer-intro
-      h2.header-text Jazykové kurzy v Praze 
-    .offer-languages
-      .btn.language
-        a(href="cesky_jazyk.htm") Český jazyk 
-      .btn.language 
-        a(href="rusky_jazyk.html") Ruský jazyk
-    .offer-courses
-      h3 Ponoukame jazykove kurzy pro <a href="#beginners">začatečníky</a> i <a href="#advanced">pokročilé</a>, <a href="individual">individualni výuku</a> a <a href="international_exam">připravní kurzy na medzinarodní zkoušku</a>.
-      .btn.cta Podrobni ponuka kurzu
-  .line
+        a.flag.en(href="indexRU.html")
+        //- a(href="indexEN.html") EN
+  .flex-container
+    .container-text
+      //- .offer-intro
+      h2.header-text Jazykové kurzy v Prahe 
+      .offer-languages.flex
+        .btn.language
+          a(href="cesky_jazyk.htm") Český jazyk 
+        .btn.language 
+          a(href="rusky_jazyk.html") Ruský jazyk
+        .btn.language 
+          a(href="latinsky_jazyk.html") Latinský jazyk
+      .offer-courses
+        h3 Ponúkame jazykové kurzy pre <a href="#beginners">začiatočníkov</a> aj <a href="#advanced">pokročilých</a>, <a href="individual">individualnu výuku</a> a <a href="international_exam">prípravné kurzy na medzinarodnú zkúšku</a>.
+        .btn.cta 
+          a(href="#courses_cz") Ponuka kurzov
+  .line.flex
     i.fa.fa-chevron-down
 
             
