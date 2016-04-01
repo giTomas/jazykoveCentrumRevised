@@ -85,13 +85,13 @@ a {
     outline: none; }
 
 .btn {
-  background-color: #00ADEF;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   -webkit-border-radius: 0.25em;
-          border-radius: 0.25em; }
+          border-radius: 0.25em;
+  border: 0.1em solid #00ADEF; }
   .btn:hover {
-    background-color: #0076a3; }
+    background-color: #00ADEF; }
 
 .flex {
   display: -webkit-box;
@@ -118,23 +118,39 @@ a {
 
 .banner {
   min-height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-image: url("../img/praha_ulice_dark70.jpg");
   background-size: cover;
   background-attachment: fixed; }
 
 header.flex {
+  width: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: rgba(255, 255, 255, 0.3); }
-
-header.flex, h1.flex {
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
               -ms-grid-row-align: center;
-          align-items: center; }
+          align-items: center;
+  background-color: rgba(255, 255, 255, 0.3); }
 
 .logo-container {
   background-color: white; }
@@ -169,14 +185,12 @@ header.flex, h1.flex {
 
 .line {
   background: rgba(255, 255, 255, 0.3);
-  position: absolute;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
-  height: 2.9rem;
-  bottom: 0; }
+  height: 2.9rem; }
   .line i {
     color: #fff;
     font-size: 2.9rem;
@@ -184,20 +198,14 @@ header.flex, h1.flex {
 
 .container-text {
   width: 80%;
-  margin: 2em auto;
   text-align: center; }
-  @media (max-width: 900px) {
-    .container-text {
-      width: 90%; } }
   @media (max-width: 600px) {
     .container-text {
-      width: 100%;
       padding: 1em; } }
 
 .header-text {
   font-size: 5rem;
   letter-spacing: 0.1em;
-  margin: 0 auto;
   font-weight: 600; }
   @media (max-width: 700px) {
     .header-text {
