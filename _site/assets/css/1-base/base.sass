@@ -24,20 +24,22 @@ html, body
 
 h1
   padding: 0.3em
-  .logo
-    font-family: serif
-    //font-size: 3.375rem
-    font-size: 2.30rem
-    font-weight: bold
-    color: black
-  .description
-    margin-left: 0.3em
-    font-family: $fontStack
-    color: $basicTextColor
-    font-weight: 200
-    //font-weight: 100
-    font-size: 2.25rem
-    //font-style: italic
+  
+.logo
+  font-family: serif
+  //font-size: 3.375rem
+  font-size: 2.30rem
+  font-weight: bold
+  color: black
+
+.description
+  margin-left: 0.3em
+  font-family: $fontStack
+  color: $basicTextColor
+  font-weight: 200
+  //font-weight: 100
+  font-size: 2.25rem
+  //font-style: italic
 
 a
    //color: $basicTextColor
@@ -52,10 +54,14 @@ a
     outline: none
 
 .btn
-  background-color: $blue
   transition: all 0.2s ease-in-out
   border-radius: 0.25em
-  // border: 0.1em solid white
+  //background-color: $blue
+  // border: 0.1em solid $blue
+  border: 0.05em solid white
   &:hover
-    background-color: darken($blue, 15%)
+    background-color: white
+    a
+      color: $basicTextColor
+    // background-color: $blue
     // border: 0.1em solid #00ADEF

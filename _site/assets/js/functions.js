@@ -1,6 +1,7 @@
 $( document ).ready(function() {
 
-var nav = $('nav')
+var nav = $('nav');
+var logo = $('nav .logo-container');
 
 $(window).scroll(function() {
 
@@ -9,8 +10,10 @@ $(window).scroll(function() {
 
     if (wScroll >= wHeight) {
             nav.addClass('is-fixed');
+            logo.addClass('is-flex');
         } else {
             nav.removeClass('is-fixed');
+            logo.removeClass('is-flex');
     };
 
 }); // end of scroll
