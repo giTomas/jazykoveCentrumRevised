@@ -4,7 +4,9 @@
 //vars
 // $basicTextColor: #333
 $basicTextColor: #222
-$secondTextColor: #fff
+$secondTextColor: #222
+$opaqueWhite: rgba(255,255,255,0.8)
+$sun: #f4e8d1
 $blue: #00ADEF
 $fontStack: 'Raleway', sans-serif
 // $fontStack: 'Source Sans Pro', sans-serif
@@ -59,12 +61,8 @@ a
 .btn
   transition: all 0.2s ease-in-out
   border-radius: 0.25em
-  //background-color: $blue
-  // border: 0.1em solid $blue
-  border: 0.05em solid white
+  // border: 0.1em solid $basicTextColor
   &:hover
-    background-color: white
+    background-color:  $basicTextColor
     a
-      color: $basicTextColor
-    // background-color: $blue
-    // border: 0.1em solid #00ADEF
+      color: white
