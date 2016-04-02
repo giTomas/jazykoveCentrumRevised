@@ -109,19 +109,54 @@ a {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap; }
 
-.flex-centered {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.h-centered {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-      -ms-flex-align: start;
-          align-items: flex-start; }
+          justify-content: center; }
+
+.l-align {
+  margin-right: auto; }
+
+hr {
+  color: #222;
+  background-color: #222;
+  width: 38.2%; }
+
+.content-box {
+  padding: 1em; }
+
+.underline {
+  text-decoration: underline; }
+
+.t-center {
+  text-align: center; }
+
+section, header {
+  width: 100%; }
+
+section {
+  padding-top: 6.053em; }
+
+.container_80 {
+  width: 80%; }
+  @media (max-width: 900px) {
+    .container_80 {
+      width: 90%; } }
+  @media (max-width: 600px) {
+    .container_80 {
+      width: 100%;
+      padding: 1em; } }
+
+.grid-smaller {
+  width: 38.2%; }
+
+.grid-bigger {
+  width: 61.8%; }
+
+.grid-3 {
+  width: -webkit-calc(100%/3);
+  width: calc(100%/3); }
 
 .banner {
   min-height: 100%;
@@ -142,12 +177,11 @@ a {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-image: url("../img/praha_ulice_dark70.jpg");
+  background-image: url("../img/praha_ulice_whiten60.jpg");
   background-size: cover;
   background-attachment: fixed; }
 
 header.flex {
-  width: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
@@ -162,7 +196,7 @@ header.flex {
           box-shadow: 0 0 0.8em #222; }
 
 .logo-container {
-  background-color: white; }
+  background-color: #c2d1e0; }
 
 .flag {
   background-size: contain;
@@ -189,7 +223,7 @@ header.flex {
 .en {
   background-image: url("../svg/gb.svg"); }
 
-.underline {
+.opacity {
   opacity: 1; }
 
 .line {
@@ -206,17 +240,6 @@ header.flex {
     color: #fff;
     font-size: 2.9rem;
     padding: 0 0.5rem; }
-
-.container-text {
-  width: 80%;
-  text-align: center; }
-  @media (max-width: 900px) {
-    .container-text {
-      width: 90%; } }
-  @media (max-width: 600px) {
-    .container-text {
-      width: 100%;
-      padding: 1em; } }
 
 .header-text {
   font-size: 5rem;
@@ -277,7 +300,9 @@ nav {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
 
 .navigation {
   font-size: 1.5rem;
@@ -322,6 +347,32 @@ nav h3 {
 
 nav .logo-container {
   display: none; }
+
+main {
+  color: #222; }
+  main a {
+    color: #222; }
+  main h2 {
+    font-size: 3.322rem;
+    margin-bottom: 3.322rem; }
+  main h3 {
+    font-size: 2.46rem; }
+  main p, main li, main a {
+    font-size: 1.35rem; }
+  main p {
+    line-height: 1.2; }
+  main p + p {
+    padding-top: 1.35em; }
+  main a:hover {
+    color: white;
+    background-color: #222; }
+
+.shadow {
+  -webkit-box-shadow: 0 0 0.2em #222;
+          box-shadow: 0 0 0.2em #222; }
+
+.info-tab p {
+  padding-top: 0; }
 
 .is-fixed {
   position: fixed;

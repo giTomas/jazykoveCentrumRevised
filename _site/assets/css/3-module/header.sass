@@ -6,19 +6,18 @@
   align-items: center
   flex-direction: column
   background:
-    image: url('../img/praha_ulice_dark70.jpg')
+    image: url('../img/praha_ulice_whiten60.jpg')
     size: cover
     attachment: fixed
 
 header.flex
-  width: 100%
   justify-content: space-between
   align-items: center
   background-color: rgba(255,255,255,0.3)
   box-shadow: 0 0 0.8em #222
 
 .logo-container
-  background-color: white
+  background-color: #c2d1e0
   // background-color: rgba(255,255,255,0.8)
 
 //languaes flags
@@ -52,7 +51,7 @@ header.flex
    background:
     image: url('../svg/gb.svg')
 
-.underline                         //bad class name
+.opacity                         //bad class name
   opacity: 1
 
 .line
@@ -66,28 +65,11 @@ header.flex
     font-size: 2.9rem
     padding: 0 0.5rem
 
-.container-text
-  width: 80%
-  //margin: 2em auto
-  //display: flex
-  //flex-direction: column
-  //justify-content: center
-  text-align: center
-  //@media(max-width: 900px)
-    width: 90%
-  @media(max-width: 600px)
-    //width: 100%
-    padding: 1em
-
 .header-text
   font-size: 5rem
   letter-spacing: 0.1em
-  //margin: 0 auto
-  font-weight: 600
-  //width: 70%
-  //text-shadow: 0.1em 0.1em 0.2em #405777
+  font-weight: 300
   text-shadow: 0 0 0.8em #222
-
   @media (max-width: 700px)
     margin-top: 0.5em
     font-size: 3.5em
@@ -96,7 +78,6 @@ header.flex
     font-size: 2.5em
 
 .offer-languages
-  //width: 100%
   justify-content: center
   margin-top: 3rem
 
@@ -122,10 +103,13 @@ header.flex
   line-height: 1.5
   letter-spacing: 0.05em
   text-shadow: 0 0 0.8em #222
-  //font-weight: 300
+  font-weight: 300
   a
     &:hover
-      color: $blue
-      text-decoration: underline
+      //color: $blue
+      //text-decoration: underline
+      background-color: white
+      color: $basicTextColor
+      box-shadow: 0 0 0.8em #222
   @media (max-width: 700px)
     font-size: 1.5rem

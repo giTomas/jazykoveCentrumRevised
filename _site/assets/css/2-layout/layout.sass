@@ -1,8 +1,59 @@
+//flex toolkit
+
 .flex
     display: flex
     flex-wrap: wrap
 
-.flex-centered
-    display: flex
-    justify-content: center
-    align-items: flex-start
+.h-centered
+  justify-content: center
+
+.l-align
+  margin-right: auto
+
+
+
+hr
+  color: $basicTextColor
+  background-color: $basicTextColor
+  //height: 0.15rem
+  width: 38.2%
+  //box-shadow: 0 0 0.1em $basicTextColor
+
+//text modifications
+
+.content-box
+  padding: 1em
+
+.underline
+  text-decoration: underline
+
+.t-center
+  text-align: center
+
+//global
+
+section, header
+  width: 100%
+
+section
+  //padding-top: 4.484em
+  padding-top: 6.053em
+
+.container_80
+  width: 80%
+  @media(max-width: 900px)
+    width: 90%
+  @media(max-width: 600px)
+    width: 100%
+    padding: 1em
+
+// grid
+
+.grid-smaller
+  width: 38.2%
+
+.grid-bigger
+  width: 61.8%
+
+.grid-3
+  width: calc(100%/3)

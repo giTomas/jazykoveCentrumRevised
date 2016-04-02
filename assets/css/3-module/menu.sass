@@ -1,0 +1,54 @@
+//navigation
+
+nav
+  width: 100%
+  background-color: #222
+  justify-content: center
+  transition: all 0.2s ease-in-out
+
+.navigation
+  font-size: 1.5rem
+  justify-content: center
+  background-color: #222
+  margin-left: 1em
+
+  a
+    transition: all 0.1s ease-in-out
+    color: white
+    display: block
+    padding: 1em 0.7em 0.65em
+    position: relative
+    &:hover
+        //background-color: darken(#192936, 10%)
+        //color: white
+        background-color: white
+        color: $basicTextColor
+        box-shadow: 0 0 0.5em #222
+
+  @media (max-width: 400px)
+    li
+      width: 100%
+
+.navigation ul
+  display: none
+  position: absolute
+  background-color: #222
+  font-size: 1.5rem
+  // background-color: #222222
+  a
+    padding: 0.5em 0.5em 0.5em 1.05em
+
+.navigation li:hover
+   ul
+    display: block
+
+nav .logo-container a
+   color: $basicTextColor
+
+nav h3
+   padding: 0.3em
+
+nav .logo-container
+  display: none
+  //transition: all 0.3s ease-in-out
+  //border-bottom: 1px solid #192936
