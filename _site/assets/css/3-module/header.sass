@@ -28,7 +28,7 @@ header.flex
     font-size: 2.9rem
     padding: 0 0.5rem
 
-.logo-container
+//.logo-container
   //background-color: white
   // background-color: rgba(255,255,255,0.8)
 
@@ -64,11 +64,11 @@ header.flex
   opacity: 1
 
 .header-text
-  font-size: 5rem
+  font-size: 5.062rem
   letter-spacing: 0.1em
-  font-weight: 300
-  //background-color: white
-  //box-shadow: 0 0 0.8em #222
+  font-weight: 200
+  padding: 0 0.2em 0.1em
+  border-radius: 0.05em   //paly witth it
   @media (max-width: 700px)
     margin-top: 0.5em
     font-size: 3.5em
@@ -76,8 +76,7 @@ header.flex
     margin-top: 0.5em
     font-size: 2.5em
 
-.offer-languages
-  justify-content: center
+.offer-languages, .offer-courses
   margin-top: 3rem
 
 .language, .cta
@@ -86,27 +85,23 @@ header.flex
   //box-shadow: 0 0 0.8em #222
   //background-color: $opaqueWhite:
   //background-color: white
+  background-color: $opaqueWhite
   @media (max-width: 500px)
     font-size: 1rem
 
 .language
   margin-left: 1em
 
-.offer-courses
-  margin-top: 3rem
-
 .cta
   margin-top: 2.5rem
   display: inline-block
 
-.offer-courses h3
-  font-size: 2rem
+h3.offer-courses
+  font-size: 2.25rem
   line-height: 1.5
   letter-spacing: 0.05em
   font-weight: 300
-  a
-    &:hover
-      background-color: white
-      color: $basicTextColor
+  text-align: center
+  border-radius: 0.1em
   @media (max-width: 700px)
     font-size: 1.5rem
