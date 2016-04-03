@@ -56,7 +56,7 @@ html {
 
 :root {
   font-size: 16px;
-  color: #222;
+  color: #425363;
   background-color: white;
   font-family: "Raleway", sans-serif; }
 
@@ -70,12 +70,12 @@ h1 {
   font-family: serif;
   font-size: 3.375rem;
   font-weight: bold;
-  color: black; }
+  color: #425363; }
 
 .description {
   margin-left: 0.3em;
   font-family: "Raleway", sans-serif;
-  color: #222;
+  color: #425363;
   font-weight: 200;
   font-size: 2.25rem;
   padding-right: 0.3em;
@@ -84,7 +84,7 @@ h1 {
           align-self: center; }
 
 a {
-  color: #222;
+  color: #425363;
   text-decoration: none; }
   a:active, a:focus {
     outline: none; }
@@ -95,7 +95,7 @@ a {
   -webkit-border-radius: 0.25em;
           border-radius: 0.25em; }
   .btn:hover {
-    background-color: #222; }
+    background-color: #425363; }
     .btn:hover a {
       color: white; }
 
@@ -114,12 +114,18 @@ a {
       -ms-flex-pack: center;
           justify-content: center; }
 
+.space {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
 .l-align {
   margin-right: auto; }
 
 hr {
-  color: #222;
-  background-color: #222;
+  color: #425363;
+  background-color: #425363;
   width: 38.2%; }
 
 .content-box {
@@ -158,7 +164,6 @@ section {
   width: calc(100%/3); }
 
 .banner {
-  min-height: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -176,14 +181,11 @@ section {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-image: url("../img/praha_ulice.jpg");
-  background-size: cover;
-  background-attachment: fixed; }
+  background-image: url("../img/praha_ulice_small.jpg");
+  background-size: cover; }
 
-header.flex, .line, .header-text, .offer-courses {
-  background-color: rgba(255, 255, 255, 0.8);
-  -webkit-box-shadow: 0 0 0.8em #222;
-          box-shadow: 0 0 0.8em #222; }
+header.flex, .line {
+  background-color: white; }
 
 header.flex {
   -webkit-box-pack: justify;
@@ -202,9 +204,10 @@ header.flex {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
-  height: 2.9rem; }
+  height: 2.9rem;
+  display: none; }
   .line i {
-    color: #222;
+    color: #425363;
     font-size: 2.9rem;
     padding: 0 0.5rem; }
 
@@ -257,8 +260,8 @@ header.flex {
 
 .language, .cta {
   font-size: 1.5rem;
-  padding: 0.4em 0.8em;
-  background-color: rgba(255, 255, 255, 0.8); }
+  padding: 0.4em 0.4em;
+  border: 1px solid #425363; }
   @media (max-width: 500px) {
     .language, .cta {
       font-size: 1rem; } }
@@ -273,17 +276,17 @@ header.flex {
 h3.offer-courses {
   font-size: 2.25rem;
   line-height: 1.5;
-  letter-spacing: 0.05em;
   font-weight: 300;
   -webkit-border-radius: 0.1em;
-          border-radius: 0.1em; }
+          border-radius: 0.1em;
+  text-align: center; }
   @media (max-width: 700px) {
     h3.offer-courses {
       font-size: 1.5rem; } }
 
 nav {
   width: 100%;
-  background-color: #222;
+  background-color: #425363;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
@@ -297,7 +300,6 @@ nav {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #222;
   margin-left: 1em; }
   .navigation a {
     -webkit-transition: all 0.1s ease-in-out;
@@ -308,7 +310,7 @@ nav {
     position: relative; }
     .navigation a:hover {
       background-color: white;
-      color: #222;
+      color: #425363;
       -webkit-box-shadow: 0 0 0.5em #222;
               box-shadow: 0 0 0.5em #222; }
   @media (max-width: 400px) {
@@ -318,7 +320,7 @@ nav {
 .navigation ul {
   display: none;
   position: absolute;
-  background-color: #222;
+  background-color: #425363;
   font-size: 1.5rem; }
   .navigation ul a {
     padding: 0.5em 0.5em 0.5em 1.05em; }
@@ -327,7 +329,7 @@ nav {
   display: block; }
 
 nav .logo-container a {
-  color: #222; }
+  color: #425363; }
 
 nav h3 {
   padding: 0.3em; }
@@ -336,13 +338,15 @@ nav .logo-container {
   display: none; }
 
 main {
-  color: #222; }
+  color: #425363; }
   main a {
-    color: #222; }
+    color: #425363; }
   main h2 {
     font-size: 3.322rem;
     margin-bottom: 3.322rem; }
   main h3 {
+    font-size: 2.46rem; }
+  main h4 {
     font-size: 2.46rem; }
   main p, main li, main a {
     font-size: 1.35rem; }
@@ -352,14 +356,62 @@ main {
     padding-top: 1.35em; }
   main a:hover {
     color: white;
-    background-color: #222; }
+    background-color: #425363; }
 
 .shadow {
-  -webkit-box-shadow: 0 0 0.2em #222;
-          box-shadow: 0 0 0.2em #222; }
+  -webkit-box-shadow: 0 0 0.2em #425363;
+          box-shadow: 0 0 0.2em #425363; }
 
-.info-tab p {
-  padding-top: 0; }
+.info-tab {
+  margin: 1em 1em;
+  width: 300px;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+
+.info-name {
+  width: 100%;
+  padding: 1em 0.5em;
+  -webkit-border-radius: .5em .5em 0 0;
+          border-radius: .5em .5em 0 0;
+  background: #00c5cc;
+  color: white;
+  letter-spacing: 0.2em;
+  font-weight: bold; }
+
+.info-price, .info-description {
+  padding: 1em; }
+
+.info-price {
+  background: #00c5cc;
+  color: white;
+  width: 100%;
+  letter-spacing: 0.2em; }
+  .info-price p {
+    font-size: 1.35em;
+    font-weight: bold; }
+
+.info-description {
+  width: 100%;
+  line-height: 2;
+  font-family: sans-serif;
+  border: 1px solid #00c5cc;
+  background-color: white; }
+
+.info-cta {
+  margin: 1em auto;
+  font-size: 1.35em;
+  border: 1px solid #00c5cc;
+  padding: 0.35em 0.75em;
+  -webkit-border-radius: 0.5em;
+          border-radius: 0.5em;
+  font-family: sans-serif; }
+
+.info-container {
+  width: 100%;
+  border: 1px solid #00c5cc;
+  -webkit-border-radius: 0 0 .5em .5em;
+          border-radius: 0 0 .5em .5em; }
 
 .is-fixed {
   position: fixed;

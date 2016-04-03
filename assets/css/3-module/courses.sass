@@ -9,7 +9,7 @@ main
   h3
     font-size: 2.46rem
   h4
-    font-size:
+    font-size: 2.46rem //1.823em
   p, li, a
     font-size: 1.35rem
   p
@@ -27,5 +27,65 @@ main
   box-shadow: 0 0 0.2em $basicTextColor
 
 .info-tab
-  p
-    padding-top: 0
+	margin: 1em 1em
+	width: 300px
+	flex-wrap: wrap
+	// background-color: $basicColor
+	//border-radius: 1.5em
+	//padding: 0.5em
+	//border: 1px solid red
+
+// .info-el
+	border-radius: 1.5em 1.5em 0 0
+	border: 1px solid $basicColor
+	height: 2em
+	width: 100%
+
+.info-name
+	width: 100%
+	//border: 1px solid red
+	padding: 1em 0.5em
+	border-radius: .5em .5em 0 0
+	background: $basicColor
+	//background-color: white
+	//opacity: 0.5
+	color: white
+	//border-radius: 1em
+	letter-spacing: 0.2em
+	font-weight: bold
+
+.info-price, .info-description
+	padding: 1em
+	//border: 1px solid red
+
+.info-price
+	//width: 35%
+	background: $basicColor
+
+	color: white
+	width: 100%
+	letter-spacing: 0.2em
+	p
+		font-size: 1.35em
+		font-weight: bold
+
+.info-description
+	//width: 65%
+	width: 100%
+	line-height: 2
+	font-family: sans-serif
+	border: 1px solid $basicColor
+	background-color: white
+
+.info-cta
+	margin: 1em auto
+	font-size: 1.35em
+	border: 1px solid $basicColor
+	padding: 0.35em 0.75em
+	border-radius: 0.5em
+	font-family: sans-serif
+
+.info-container
+	width: 100%
+	border: 1px solid $basicColor
+	border-radius: 0 0 .5em .5em

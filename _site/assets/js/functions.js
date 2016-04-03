@@ -6,7 +6,7 @@ var logo = $('nav .logo-container');
 $(window).scroll(function() {
 
     var wScroll = $(this).scrollTop();
-    var wHeight = $(this).height();
+    var wHeight = $(".banner").height();
 
     if (wScroll >= wHeight) {
             nav.addClass('is-fixed');

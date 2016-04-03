@@ -1,18 +1,26 @@
 .banner
   //height: 100%
-  min-height: 100%
+  //min-height: 30%
   display: flex
   justify-content: space-between
   align-items: center
   flex-direction: column
   background:
-    image: url('../img/praha_ulice.jpg')
+    image: url('../img/praha_ulice_small.jpg')
     size: cover
-    attachment: fixed
+    //attachment: fixed
+  //.container_80
+    background: $opaqueWhite
+    padding: 1em
+    width: 100%
+    align-self: flex-end
 
-header.flex, .line, .header-text, .offer-courses
+header.flex, .line, //.header-text, .offer-courses,
    background-color: $opaqueWhite
-   box-shadow: 0 0 0.8em #222
+
+
+
+   //box-shadow: 0 0 0.8em #222  better without it
 
 header.flex
   justify-content: space-between
@@ -23,6 +31,8 @@ header.flex
   justify-content: center
   width: 100%
   height: 2.9rem
+  //height: 0.5em
+  display: none
   i
     color: $secondTextColor
     font-size: 2.9rem
@@ -68,7 +78,7 @@ header.flex
   letter-spacing: 0.1em
   font-weight: 200
   padding: 0 0.2em 0.1em
-  border-radius: 0.05em   //paly witth it
+  border-radius: 0.05em
   @media (max-width: 700px)
     margin-top: 0.5em
     font-size: 3.5em
@@ -81,11 +91,12 @@ header.flex
 
 .language, .cta
   font-size: 1.5rem
-  padding: 0.4em 0.8em
+  padding: 0.4em 0.4em
+  border: 1px solid $basicTextColor
   //box-shadow: 0 0 0.8em #222
   //background-color: $opaqueWhite:
   //background-color: white
-  background-color: $opaqueWhite
+  //background-color: $opaqueWhite
   @media (max-width: 500px)
     font-size: 1rem
 
@@ -99,9 +110,10 @@ header.flex
 h3.offer-courses
   font-size: 2.25rem
   line-height: 1.5
-  letter-spacing: 0.05em
+  //letter-spacing: 0.07em
   font-weight: 300
   //text-align: center
   border-radius: 0.1em
+  text-align: center
   @media (max-width: 700px)
     font-size: 1.5rem
