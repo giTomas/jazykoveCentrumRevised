@@ -1,0 +1,31 @@
+// news
+
+.news
+  transition: all 0.2s ease-in-out
+  border: 1px solid $basicColor
+  h2
+    font-size: 1.96rem
+    background: $basicColor
+    color: $thirdTextColor
+    padding: 0.5em 0.25em
+  ul
+    margin: 1em 0
+
+  li
+    font-size: 1rem
+    line-height: 1.6
+    padding: 0 0.25em
+
+  a
+    padding: 0 0.25em
+
+    &:hover
+      color: $thirdTextColor
+      background-color: $basicColor
+
+  hr
+    width: 100%
+    color: $basicColor
+
+  &:hover
+    box-shadow: 0 0 0.3em darken($basicColor, 15%)
