@@ -86,10 +86,6 @@ a {
   transition: all 0.2s ease-in-out;
   -webkit-border-radius: 0.25em;
           border-radius: 0.25em; }
-  .btn:hover {
-    background-color: #37474f; }
-    .btn:hover a {
-      color: white; }
 
 .flex {
   display: -webkit-box;
@@ -429,22 +425,23 @@ main {
   main p + p {
     padding-top: 1.35em; }
 
-.shadow {
-  -webkit-box-shadow: 0 0 0.2em #00bcd4;
-          box-shadow: 0 0 0.2em #00bcd4; }
-
 .info-tab {
   margin: 1em 1em;
   width: 300px;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
-          flex-wrap: wrap; }
+          flex-wrap: wrap;
+    flex-wrap-border-radius: 0.25em; }
+
+.info-tab:hover {
+  -webkit-box-shadow: 0 0 0.3em #007888;
+          box-shadow: 0 0 0.3em #007888; }
 
 .info-name {
   width: 100%;
   padding: 1em 0.5em;
-  -webkit-border-radius: .5em .5em 0 0;
-          border-radius: .5em .5em 0 0;
+  -webkit-border-radius: .25em .25em 0 0;
+          border-radius: .25em .25em 0 0;
   background: #00bcd4;
   color: white;
   letter-spacing: 0.2em;
@@ -459,13 +456,12 @@ main {
   width: 100%;
   letter-spacing: 0.2em; }
   .info-price p {
-    font-size: 1.35em;
+    font-size: 1.4em;
     font-weight: bold; }
 
 .info-description {
   width: 100%;
   line-height: 2;
-  font-family: sans-serif;
   border: 1px solid #00bcd4;
   background-color: white; }
 
@@ -474,25 +470,28 @@ main {
   font-size: 1.35em;
   border: 1px solid #00bcd4;
   padding: 0.35em 0.75em;
-  -webkit-border-radius: 0.5em;
-          border-radius: 0.5em;
-  font-family: sans-serif; }
+  -webkit-border-radius: 0.25em;
+          border-radius: 0.25em; }
+
+.info-cta:hover {
+  background-color: #00bcd4;
+  color: white; }
 
 .info-container {
   width: 100%;
   border: 1px solid #00bcd4;
-  -webkit-border-radius: 0 0 .5em .5em;
-          border-radius: 0 0 .5em .5em; }
+  -webkit-border-radius: 0 0 .25em .25em;
+          border-radius: 0 0 .25em .25em; }
 
 .container_100.flex {
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around; }
 
-.languages {
+.languages, .courses {
   width: 100%; }
-  .languages h2 {
-    margin-bottom: 2.744rem; }
+  .languages h2, .courses h2 {
+    margin-bottom: 3.842rem; }
 
 .language-item {
   -webkit-border-radius: 0 0.25rem 0.25rem 0;

@@ -20,17 +20,21 @@ main
 
 //Intro section: introduction & news
 
-.shadow
+//.shadow
   box-shadow: 0 0 0.2em $basicColor
 
 .info-tab
 	margin: 1em 1em
 	width: 300px
 	flex-wrap: wrap
+  border-radius: 0.25em
 	// background-color: $basicColor
 	//border-radius: 1.5em
 	//padding: 0.5em
 	//border: 1px solid red
+
+.info-tab:hover
+  box-shadow: 0 0 0.3em darken($basicColor, 15%)
 
 // .info-el
 	border-radius: 1.5em 1.5em 0 0
@@ -40,37 +44,29 @@ main
 
 .info-name
 	width: 100%
-	//border: 1px solid red
 	padding: 1em 0.5em
-	border-radius: .5em .5em 0 0
+	border-radius: .25em .25em 0 0
 	background: $basicColor
-	//background-color: white
-	//opacity: 0.5
 	color: white
-	//border-radius: 1em
 	letter-spacing: 0.2em
 	font-weight: bold
 
 .info-price, .info-description
 	padding: 1em
-	//border: 1px solid red
 
 .info-price
-	//width: 35%
 	background: $basicColor
 
 	color: white
 	width: 100%
 	letter-spacing: 0.2em
 	p
-		font-size: 1.35em
+		font-size: 1.4em
 		font-weight: bold
 
 .info-description
-	//width: 65%
 	width: 100%
 	line-height: 2
-	font-family: sans-serif
 	border: 1px solid $basicColor
 	background-color: white
 
@@ -79,10 +75,13 @@ main
 	font-size: 1.35em
 	border: 1px solid $basicColor
 	padding: 0.35em 0.75em
-	border-radius: 0.5em
-	font-family: sans-serif
+	border-radius: 0.25em
+
+.info-cta:hover
+  background-color: $basicColor
+  color: white
 
 .info-container
 	width: 100%
 	border: 1px solid $basicColor
-	border-radius: 0 0 .5em .5em
+	border-radius: 0 0 .25em .25em

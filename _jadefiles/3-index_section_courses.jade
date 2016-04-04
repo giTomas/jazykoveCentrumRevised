@@ -11,6 +11,18 @@ mixin news-item(href, news)
       =news
     //- hr
     
+mixin course-item(name, href, price, ...items )
+  .info-tab.flex
+    .info-name.t-center
+      h4= name
+    .info-description.t-center
+      each item in items
+        p= item
+    .info-price.t-center
+      p= price
+    .info-container.flex.h-centered
+      .btn.info-cta 
+        a(href=href) Více
 
 main    
   section
@@ -44,110 +56,17 @@ main
             +language-item('Anglický jazyk', 'anglickyjazyk.html')(class="en")
 
             
-  section.flex.h-centered.red
-    .container_80.flex.space
-      .grid-smaller
-        h3 Kurzy
-      .grid-bigger.flex.content-box
-      .info-tab.flex
-        .info-name.t-center
-          h4 Express I
-        .info-description.t-center
-          p Kurz pre začiatočníkov
-          p 16 vyučovacích hodín
-          p 2 hod/tydne
-        .info-price.t-center
-          p 2900 Kč
-        .info-container.flex.h-centered
-          .btn.info-cta 
-            a(href="") Více
-      .info-tab.flex
-        .info-name.t-center
-          h4 Express I
-        .info-description.t-center
-          p Kurz pre začiatočníkov
-          p 16 vyučovacích hodín
-          p 2 hod/tydne
-        .info-price.t-center
-          p 2900 Kč
-        .info-container.flex.h-centered
-          .btn.info-cta 
-            a(href="") Více
-      .info-tab.flex
-        .info-name.t-center
-          h4 Express I
-        .info-description.t-center
-          p Kurz pre začiatočníkov
-          p 16 vyučovacích hodín
-          p 2 hod/tydne
-        .info-price.t-center
-          p 2900 Kč
-        .info-container.flex.h-centered
-          .btn.info-cta 
-            a(href="") Více
-      .info-tab.flex
-        .info-name.t-center
-          h4 Express I
-        .info-description.t-center
-          p Kurz pre začiatočníkov
-          p 16 vyučovacích hodín
-          p 2 hod/tydne
-        .info-price.t-center
-          p 2900 Kč
-        .info-container.flex.h-centered
-          .btn.info-cta 
-            a(href="") Více
-      .info-tab.flex
-        .info-name.t-center
-          h4 Express I
-        .info-description.t-center
-          p Kurz pre začiatočníkov
-          p 16 vyučovacích hodín
-          p 2 hod/tydne
-        .info-price.t-center
-          p 2900 Kč
-        .info-container.flex.h-centered
-          .btn.info-cta 
-            a(href="") Více
-      .info-tab.flex
-        .info-name.t-center
-          h4 Express I
-        .info-description.t-center
-          p Kurz pre začiatočníkov
-          p 16 vyučovacích hodín
-          p 2 hod/tydne
-        .info-price.t-center
-          p 2900 Kč
-        .info-container.flex.h-centered
-          .btn.info-cta 
-            a(href="") Více
-      .info-tab.flex
-        .info-name.t-center
-          h4 Express I
-        .info-description.t-center
-          p Kurz pre začiatočníkov
-          p 16 vyučovacích hodín
-          p 2 hod/tydne
-        .info-price.t-center
-          p 2900 Kč
-        .info-container.flex.h-centered
-          .btn.info-cta 
-            a(href="") Více
-      
-  section.flex.h-centered
-    .container_80.flex
-      h3 Kurzy pre pokročilých:
-      .grid-bigger
-  
-  section.flex.h-centered
-    .container_80.flex
-      h3 Individualna vyuka:
-      .grid-bigger
-        .hr
-  section.flex.h-centered
-    .container_80.flex
-      h3 Prípravné kurzy na medzinárodnú skúšku:
-      .grid-bigger 
-        .hr
   section
+    .courses.flex.h-centered.red
+      h2 Kurzy
+      .container_100.flex.red   
+        +course-item('Express I', 'expressI.html', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
+        +course-item('Express II', 'expressI.html', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
+        +course-item('Standard I', 'standard.html I', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
+        +course-item('Standard II', 'standard.html I', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
+        +course-item('Standard III', 'standard.html I', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
+        +course-item('Intensive', 'standard.html', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
+  section
+    .testimonies.flex  
+
   
