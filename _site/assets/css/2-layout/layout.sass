@@ -7,6 +7,9 @@
 .h-centered
   justify-content: center
 
+.v-centered
+  align-items: center
+
 .space
   justify-content: space-between
 
@@ -53,7 +56,8 @@ section
 // grid
 
 .grid-smaller
-  width: 23.61%
+  //width: 23.61%
+  width: 318.69px
 
 .grid-1
   width: 61.81%
@@ -63,6 +67,11 @@ section
 
 .grid-3
   width: 23.61%
+  min-width: 318.69px
+  @media (max-width: 800px)
+    width: 38.19%
+
+
 
 .grid-4
   width: 14.59%

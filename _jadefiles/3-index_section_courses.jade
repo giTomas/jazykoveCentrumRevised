@@ -1,7 +1,8 @@
-mixin language-item(language)
-  .language-item.flex
-    .flag.cz
-    h3=language
+mixin language-item(language, href)
+  a(href=href)
+    .language-item.flex.v-centered
+      .flag-big&attributes(attributes)
+      h3.flex.h-centered=language
     
 mixin news-item(href, news)
   li 
@@ -9,11 +10,11 @@ mixin news-item(href, news)
       i.fa.fa-angle-right
       =news
     //- hr
-
+    
 
 main    
   section
-    .container_100.flex.red
+    .container_100.flex
       .grid-3.flex.h-centered.content-box
         .news
           h2 Novinky
@@ -24,7 +25,7 @@ main
             +news-item('','Zápis na kurzy od 10.4.2016')
             +news-item('','Otvorenie Jazykového centra 16.4.2016')
             +news-item('','Začiatok výuky 17.4.2016')
-            +news-item('','Zápis na kurzy od 10.4.2016')
+            +news-item('','Lorem ipsum dolor sit amet, consec adipisicing elit dolor')
             +news-item('','Otvorenie Jazykového centra 16.4.2016')
             li 
               a(href="")
@@ -34,21 +35,15 @@ main
       .grid.flex.h-centered
         .languages.content-box.t-center
           h2 Jazyky, ktoré vyučujeme 
-          .container_100.flex.h-centered.red
-            +language-item('Český jazyk')
-            +language-item('Ruský jazyk')
-            +language-item('Anglický jazyk')
-            +language-item('Český jazyk')
-            +language-item('Anglický jazyk')
-            +language-item('Český jazyk')
-            +language-item('Český jazyk')
-            +language-item('Ruský jazyk')
-            +language-item('Anglický jazyk')
-            +language-item('Český jazyk')
-            +language-item('Anglický jazyk')
-            +language-item('Český jazyk')
+          .container_100.flex.h-centered
+            +language-item('Český jazyk', 'ceskyjazyk.html')(class="cz")
+            +language-item('Ruský jazyk', 'ruskyjazyk.html')(class="ru")
+            +language-item('Anglický jazyk', 'anglickyjazyk.html')(class="en")
+            +language-item('Ruský jazyk', 'anglickyjazyk.html')(class="ru")
+            +language-item('Český jazyk', 'anglickyjazyk.html')(class="cz")
+            +language-item('Anglický jazyk', 'anglickyjazyk.html')(class="en")
 
-
+            
   section.flex.h-centered.red
     .container_80.flex.space
       .grid-smaller

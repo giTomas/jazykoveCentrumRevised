@@ -1,10 +1,33 @@
 //languages
 .container_100.flex
-    justify-content:  space-between
-    align-items: flex-start
-
+    justify-content: space-around
+    S
 
 .languages
   width: 100%
   h2
-    margin-bottom: 1em
+    margin-bottom: 2.744rem
+
+.language-item
+  //border: 2px solid $basicColor
+  //padding-right: 0.5em
+  border-radius: 0 0.25rem 0.25rem 0
+  box-shadow: 0 0 0.3em darken($basicColor, 15%)
+  box-shadow: 0 0 0.3em $basicTextColor
+  margin: 1em 0.5em
+  &:hover
+    background-color: lighten( $basicColor, 50%)
+
+  h3
+    font-size: 1.96rem
+    padding: 0 0.5em
+
+.flag-big
+  background:
+    size: contain
+    position: 50%
+    repeat: no-repeat
+  position: relative
+  display: inline-block
+  width: 5em
+  height: 3.75em
