@@ -32,13 +32,18 @@ section, header
 
 section
   //padding-top: 4.484em
-  padding-top: 6.053em
+  padding-top: 5.378em
 
 .container_100
   width: 100%
 
+.container_90
+  width: 90%
+  margin: 0 auto
+
 .container_80
   width: 80%
+  margin: 0 auto
   @media(max-width: 900px)
     width: 90%
   @media(max-width: 600px)
@@ -48,7 +53,8 @@ section
 // grid
 
 .grid-smaller
-  width: 23.61%
+  //width: 23.61%
+  width: 318.69px
 
 .grid-1
   width: 61.81%
@@ -58,3 +64,14 @@ section
 
 .grid-3
   width: 23.61%
+  min-width: 318.69px
+  @media (max-width: 800px)
+    width: 38.19%
+
+
+
+.grid-4
+  width: 14.59%
+
+.grid
+  flex: 2

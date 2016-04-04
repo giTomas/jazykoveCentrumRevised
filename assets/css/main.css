@@ -54,6 +54,9 @@ html {
   -webkit-box-sizing: inherit;
           box-sizing: inherit; }
 
+.red {
+  border: 1px solid red; }
+
 :root {
   font-size: 16px;
   color: #37474f;
@@ -125,13 +128,18 @@ section, header {
   width: 100%; }
 
 section {
-  padding-top: 6.053em; }
+  padding-top: 5.378em; }
 
 .container_100 {
   width: 100%; }
 
+.container_90 {
+  width: 90%;
+  margin: 0 auto; }
+
 .container_80 {
-  width: 80%; }
+  width: 80%;
+  margin: 0 auto; }
   @media (max-width: 900px) {
     .container_80 {
       width: 90%; } }
@@ -141,7 +149,7 @@ section {
       padding: 1em; } }
 
 .grid-smaller {
-  width: 23.61%; }
+  width: 318.69px; }
 
 .grid-1 {
   width: 61.81%; }
@@ -150,7 +158,20 @@ section {
   width: 38.19%; }
 
 .grid-3 {
-  width: 23.61%; }
+  width: 23.61%;
+  min-width: 318.69px; }
+  @media (max-width: 800px) {
+    .grid-3 {
+      width: 38.19%; } }
+
+.grid-4 {
+  width: 14.59%; }
+
+.grid {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+      -ms-flex: 2;
+          flex: 2; }
 
 .banner {
   min-height: 50%;
@@ -184,9 +205,6 @@ h1.flex {
       -ms-flex-align: center;
               -ms-grid-row-align: center;
           align-items: center; }
-
-.logo-container {
-  width: 23.61%; }
 
 .logo {
   font-family: serif;
@@ -307,7 +325,8 @@ nav {
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out; }
+  transition: all 0.2s ease-in-out;
+  z-index: 1; }
 
 .navigation {
   font-size: 1.4rem;
@@ -321,17 +340,15 @@ nav {
     transition: all 0.1s ease-in-out;
     color: white;
     display: block;
-    padding: 0.8em 0.7em 0.55em;
+    padding: 0.8em 0.25em 0.6em;
     position: relative; }
     .navigation a:hover {
-      background-color: white;
-      color: #37474f;
-      -webkit-box-shadow: 0 0 0.5em #222;
-              box-shadow: 0 0 0.5em #222; }
+      background-color: #008fa1; }
 
 .navigation ul {
   display: none;
   position: absolute;
+  z-index: 1;
   background-color: #00bcd4;
   font-size: 1.5rem; }
   .navigation ul a {
@@ -355,28 +372,36 @@ nav .logo-container {
   display: none; }
 
 .news {
+  width: 100%;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  -webkit-border-radius: 0.25rem;
+          border-radius: 0.25rem;
   border: 1px solid #00bcd4; }
   .news h2 {
     font-size: 1.96rem;
     background: #00bcd4;
     color: white;
-    padding: 0.5em 0.25em; }
+    padding: 0.5em 0.25em;
+    -webkit-border-radius: 0.25rem 0.25rem 0 0;
+            border-radius: 0.25rem 0.25rem 0 0; }
   .news ul {
     margin: 1em 0; }
   .news li {
     font-size: 1rem;
+    font-weight: 500;
     line-height: 1.6;
     padding: 0 0.25em; }
   .news a {
-    padding: 0 0.25em; }
+    display: block;
+    padding: 0 0.25em;
+    margin-bottom: 0.5em; }
     .news a:hover {
-      color: white;
-      background-color: #00bcd4; }
-  .news hr {
-    width: 100%;
+      background-color: #d4faff; }
+  .news hr, .news i {
     color: #00bcd4; }
+  .news i {
+    padding-right: 0.2em; }
   .news:hover {
     -webkit-box-shadow: 0 0 0.3em #007888;
             box-shadow: 0 0 0.3em #007888; }
@@ -452,8 +477,21 @@ main {
   -webkit-border-radius: 0 0 .5em .5em;
           border-radius: 0 0 .5em .5em; }
 
-.red {
-  border: 1px solid red; }
+.container_100.flex {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+              -ms-grid-row-align: flex-start;
+          align-items: flex-start; }
+
+.languages {
+  width: 100%; }
+  .languages h2 {
+    margin-bottom: 1em; }
 
 .is-fixed {
   position: fixed;
@@ -464,9 +502,6 @@ main {
   -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
           justify-content: flex-start; }
-  .is-fixed .navigation li:hover ul {
-    -webkit-box-shadow: 0 0 0.5em #37474f;
-            box-shadow: 0 0 0.5em #37474f; }
 
 nav .is-flex {
   display: -webkit-box;
