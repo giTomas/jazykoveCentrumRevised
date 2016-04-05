@@ -26,7 +26,7 @@ mixin course-item(name, href, price, ...items )
 
 main    
   section
-    .container_100.flex
+    .container_80.flex
       .grid-3.flex.h-centered.content-box
         .news
           h2 Novinky
@@ -58,8 +58,9 @@ main
             
   section
     .courses.flex.h-centered.red
-      h2 Kurzy
-      .container_100.flex.red   
+      .container_80  
+        h2 Kurzy
+      .container_80.flex.red   
         +course-item('Express I', 'expressI.html', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
         +course-item('Express II', 'expressI.html', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
         +course-item('Standard I', 'standard.html I', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')

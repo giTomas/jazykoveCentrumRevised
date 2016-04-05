@@ -59,7 +59,7 @@ html {
 
 :root {
   font-size: 16px;
-  color: #37474f;
+  color: white;
   background-color: white;
   font-family: "Raleway", sans-serif; }
 
@@ -76,7 +76,7 @@ h1 {
   padding: 0.3rem; }
 
 a {
-  color: #37474f;
+  color: white;
   text-decoration: none; }
   a:active, a:focus {
     outline: none; }
@@ -243,7 +243,7 @@ header.flex {
   height: 2.9rem;
   display: none; }
   .line i {
-    color: #37474f;
+    color: white;
     font-size: 2.9rem;
     padding: 0 0.5rem; }
 
@@ -327,8 +327,6 @@ nav {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
   z-index: 1; }
 
 .navigation {
@@ -372,10 +370,15 @@ nav h3 {
           align-items: center; }
 
 nav .logo-container {
-  display: none; }
+  display: none;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
 
 .news {
   width: 100%;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   -webkit-border-radius: 0.25rem;
@@ -494,6 +497,7 @@ main {
     margin-bottom: 3.842rem; }
 
 .language-item {
+  width: 320px;
   -webkit-border-radius: 0 0.25rem 0.25rem 0;
           border-radius: 0 0.25rem 0.25rem 0;
   -webkit-box-shadow: 0 0 0.3em #007888;
