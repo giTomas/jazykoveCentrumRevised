@@ -196,7 +196,8 @@ section {
       -ms-flex-direction: column;
           flex-direction: column;
   background-image: url("../img/praha_ulice_small.jpg");
-  background-size: cover; }
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 header.flex {
   background-color: white;
@@ -372,7 +373,11 @@ nav h3 {
 nav .logo-container {
   display: none;
   -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start; }
 
 .news {
   width: 100%;
