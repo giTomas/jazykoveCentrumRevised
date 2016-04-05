@@ -4,19 +4,23 @@
 
 .languages, .courses
   width: 100%
-  h2
-    margin-bottom: 3.842rem
+  //border: 1px solid $basicColor
+  border-radius: 0.25rem
 
 .language-item
   //border: 2px solid $basicColor
   //padding-right: 0.5em
   width: 320px
   border-radius: 0 0.25rem 0.25rem 0
-  box-shadow: 0 0 0.3em darken($basicColor, 15%)
+  //box-shadow: 0 0 0.3em darken($basicColor, 15%)
   box-shadow: 0 0 0.3em $basicTextColor
+  transition: all 0.2s ease-in-out
   margin: 1em 0.5em
   &:hover
-    background-color: lighten( $basicColor, 50%)
+    background-color: lighten( $basicColor, 30%)
+    // box-shadow: none
+
+
 
   h3
     font-size: 1.96rem
@@ -31,3 +35,4 @@
   display: inline-block
   width: 5em
   height: 3.75em
+  box-shadow: 0 0 0.3em $basicTextColor

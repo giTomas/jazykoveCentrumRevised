@@ -5,12 +5,14 @@ nav
   background-color: $basicColor
   justify-content: center
   //transition: all 0.2s ease-in-out
+  //box-shadow: 0 0 0.5em $basicTextColor
   z-index: 1
 
 .navigation
   font-size: 1.4rem
   justify-content: center
-  margin-left: 1em
+  //margin-left: 1em
+  flex: 2
 
   a
     transition: all 0.1s ease-in-out
@@ -22,8 +24,8 @@ nav
         //background-color: darken(#192936, 10%)
         //color: white
         //background-color: white
-        //color: $basicTextColor
-        background-color: darken($basicColor, 10%)
+        // color: $basicTextColor
+        background-color: darken($basicColor, 15%)
         //box-shadow: 0 0 0.5em #222
 
   //@media (max-width: 400px)
@@ -54,8 +56,11 @@ nav h3
 
 nav .logo-container
   display: none
-  //transform: scaleY(0)
-  transition: all 0.5s ease-in-out
-  transition: all 0.5s ease-in-out
+  padding-right: 0.25em  //not good
+  // transform: scaleY(0)
+  //opacity: 0
+  transform-origin: top
+  transition: all 0.2s ease-in
+  //transition: all 0.5s ease-in-out
   //border-bottom: 1px solid #192936
-  align-self: flex-start
+  // align-self: flex-start

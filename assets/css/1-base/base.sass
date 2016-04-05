@@ -4,26 +4,18 @@
 //vars
 
 $basicTextColor: #37474f
+$basicTextColor: #3B4A4F
 $secondTextColor: white
+$secondTextColor: #F7F8FA
 $thirdTextColor: white
-//$secondTextColor: #425363
 
 
-$basicColor: rgba(241, 81, 82, 0.8)
+//$basicColor: #0081c9
 $basicColor: #00c5cc
-$basicColor: #0081c9
-$basicColor: #00bcd4
-
-//$secondTextColor: white
-//$opaqueWhite: rgba(255,255,255,0.8)
-$opaqueWhite: white
-//$opaqueWhite: rgb(59, 136, 170)
-//$opaqueWhite: rgba(0, 173, 239, 0.5)
-//$opaqueWhite: lignten(#00ADEF, 10%)
-// $opaqueWhite: rgba(241, 81, 82, 0.8)
-$sun: #f4e8d1
-$blue: #00ADEF
+$basicColor: #30C9E8
+$accentColor: ff0700
 $fontStack: 'Raleway', sans-serif
+
 
 //global styles
 
@@ -32,8 +24,8 @@ $fontStack: 'Raleway', sans-serif
 
 :root
   font-size: 16px
-  color: $secondTextColor
-  background-color: white
+  color: $basicTextColor
+  background-color: $secondTextColor
   //background-color: #F1F1D4
   font-family: $fontStack
 
@@ -57,11 +49,10 @@ h1
 
 
 
-
   //align-self: center  //temporary hack
 
 a
-   color: $secondTextColor
+   color: $basicTextColor
    text-decoration: none
    &:hover
    &:active,
@@ -75,3 +66,10 @@ a
     background-color:  $basicTextColor
     a
       color: white
+
+.headline
+    margin-bottom: 3.842rem
+    color: $secondTextColor
+    background-color: $basicColor
+    border-radius: 0.25rem 0.25rem 0 0
+    padding: 0.25em 0.15em

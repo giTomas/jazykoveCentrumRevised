@@ -23,10 +23,25 @@ mixin course-item(name, href, price, ...items )
     .info-container.flex.h-centered
       .btn.info-cta 
         a(href=href) Více
+        
+        
+mixin quote-item(quote, name)
+    
 
 main    
   section
-    .container_80.flex
+    .container_80.flex   
+      .grid.flex.h-centered.content-box
+        .languages
+          h2.headline.t-center Jazyky, ktoré vyučujeme 
+          .container_100.flex.h-centered
+            +language-item('Český jazyk', 'ceskyjazyk.html')(class="cz")
+            +language-item('Ruský jazyk', 'ruskyjazyk.html')(class="ru")
+            +language-item('Anglický jazyk', 'anglickyjazyk.html')(class="en")
+            +language-item('Ruský jazyk', 'anglickyjazyk.html')(class="ru")
+            +language-item('Český jazyk', 'anglickyjazyk.html')(class="cz")
+            +language-item('Anglický jazyk', 'anglickyjazyk.html')(class="en")
+            
       .grid-3.flex.h-centered.content-box
         .news
           h2 Novinky
@@ -43,31 +58,24 @@ main
               a(href="")
                 i.fa.fa-angle-right 
                 | Začiatok výuky 17.4.2016
-         
-      .grid.flex.h-centered
-        .languages.content-box.t-center
-          h2 Jazyky, ktoré vyučujeme 
-          .container_100.flex.h-centered
-            +language-item('Český jazyk', 'ceskyjazyk.html')(class="cz")
-            +language-item('Ruský jazyk', 'ruskyjazyk.html')(class="ru")
-            +language-item('Anglický jazyk', 'anglickyjazyk.html')(class="en")
-            +language-item('Ruský jazyk', 'anglickyjazyk.html')(class="ru")
-            +language-item('Český jazyk', 'anglickyjazyk.html')(class="cz")
-            +language-item('Anglický jazyk', 'anglickyjazyk.html')(class="en")
-  hr
-            
+
+  section.news-template          
   section
-    .courses.flex.h-centered.red
+    .courses.flex
       .container_80  
-        h2 Kurzy
-      .container_80.flex.red   
+        h2.t-center.headline Jazykove kurzy
+      .container_80.flex.h-space
         +course-item('Express I', 'expressI.html', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
         +course-item('Express II', 'expressI.html', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
         +course-item('Standard I', 'standard.html I', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
         +course-item('Standard II', 'standard.html I', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
         +course-item('Standard III', 'standard.html I', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
         +course-item('Intensive', 'standard.html', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
+  
   section
     .testimonies.flex  
+      .container_80
+        h2.headline.t-center Povedali o nas
+    .container-80
 
   
