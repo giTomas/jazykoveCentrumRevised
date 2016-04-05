@@ -8,18 +8,29 @@ $(window).scroll(function() {
     var wScroll = $(this).scrollTop();
     //var wHeight = $(".banner").height();
     var wHeight = $("nav").height();
-    console.log(wScroll + '-' + wHeight);
+    //var wHeight2 = $("nav").height() * 2;
+
 
     if (wScroll >= wHeight) {
             nav.addClass('is-fixed');
             logo.addClass('is-flex');
+
         } else {
             nav.removeClass('is-fixed');
             logo.removeClass('is-flex');
+
     };
+/*
+    if (wScroll >= wHeight * 3) {
+            logo.addClass('is-flex');    //change class name
+        } else {
+            logo.removeClass('is-flex');
+
+    };*/
 
 }); // end of scroll
 
+/*
 $('.menu').on('click', function() {
     $('.navigation').toggleClass('is-showing');
     $('.hamburger').toggleClass('is-hidden');
@@ -29,13 +40,13 @@ $('.menu').on('click', function() {
         nav.addClass('is-fixed');
     };
 
-}); //end of menu function
+}); //end of menu function*/
 
 ///////////////////
 //smooth scrolling:
 ////////////////// //https://css-tricks.com/snippets/jquery/smooth-scrolling/
 
-
+/*
 $(function() {
   $('a[href*="#"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -49,6 +60,6 @@ $(function() {
       }
     }
   });
-});
+});*/
 
 }); //end of dc ready

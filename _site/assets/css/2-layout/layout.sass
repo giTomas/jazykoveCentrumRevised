@@ -21,6 +21,8 @@
 
 .content-box
   padding: 1em
+  @media (max-width: 500px)
+    padding: 1em 0
 
 .underline:hover
   text-decoration: underline
@@ -30,12 +32,19 @@
 
 //global
 
+main
+  //border: 0.5em solid $basicColor
+
 section, header
   width: 100%
 
 section
   //padding-top: 4.484em
-  padding-top: 5.378em
+  //padding-top: 5.378em
+  //border-bottom: 0.5em solid $basicTextColor
+
+section + section
+  margin-top: 5em
 
 .container_100
   width: 100%
@@ -76,3 +85,6 @@ section
 
 .grid
   flex: 2
+
+.languages
+  margin-left: 0.5em solid $basicColor
