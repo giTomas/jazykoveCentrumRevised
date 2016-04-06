@@ -72,9 +72,6 @@ h2 {
   color: #F9FBFB;
   padding: 0.5em 0.25em; }
 
-h4 {
-  font-size: 1.96rem; }
-
 h1 {
   padding: 0.3rem; }
 
@@ -91,7 +88,6 @@ a {
           border-radius: 0.25em; }
 
 .headline {
-  margin-bottom: 3.842rem;
   color: #F9FBFB;
   background-color: #3A4A4D;
   -webkit-border-radius: 0.25rem 0.25rem 0 0;
@@ -432,8 +428,7 @@ main p {
   width: 250px;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-    flex-wrap-border-radius: 0.25em; }
+          flex-wrap: wrap; }
 
 .info-tab:hover .info-name,
 .info-tab:hover .info-price {
@@ -534,7 +529,8 @@ main p {
           box-shadow: 0 0 0.3em #3A4A4D; }
 
 blockquote {
-  width: 300px;
+  width: -webkit-calc(100% / 3 - 2.744rem);
+  width: calc(100% / 3 - 2.744rem);
   line-height: 1.4;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -543,7 +539,18 @@ blockquote {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  margin: 3.842rem 2.744rem 0 0;
+  font-size: 1.4rem; }
+  @media (max-width: 1100px) {
+    blockquote {
+      width: -webkit-calc(100% / 2 - 2.744rem);
+      width: calc(100% / 2 - 2.744rem); } }
+  @media (max-width: 800px) {
+    blockquote {
+      margin: 1.96rem 1.96rem 0;
+      width: -webkit-calc(100% - 3.92rem);
+      width: calc(100% - 3.92rem); } }
   blockquote .i {
     padding-top: 0.25em;
     font-size: 1.96em; }
@@ -551,6 +558,16 @@ blockquote {
 .quote-body {
   padding: 1em 0 0 0.5em; }
   .quote-body p {
+    font-size: 1.4rem;
+    font-style: italic; }
+  .quote-body footer {
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    font-weight: bold;
+    margin-top: 1em; }
+  .quote-body cite {
     font-size: 1.4rem; }
 
 .footer {
