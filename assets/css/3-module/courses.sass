@@ -33,17 +33,23 @@ main
 
 .info-tab:hover
   box-shadow: 0 0 0.3em darken($basicColor, 15%)
+  box-shadow: 0 0 0.3em darken($accentColor, 15%)
+  .info-name,
+  .info-price,
+    background-color: $accentColor
+  .info-container,
+  .info-description,
+  .info-cta
+    border: 1px solid $accentColor
+  a
+    color: $accentColor
+    &:hover
+      color: $secondTextColor
+
 
 // .info-tab:last-child
   margin-right: auto
 
-
-
-// .info-el
-	border-radius: 1.5em 1.5em 0 0
-	border: 1px solid $basicColor
-	height: 2em
-	width: 100%
 
 .info-name
 	width: 100%
@@ -77,14 +83,14 @@ main
 	font-size: 1.35em
 	border: 1px solid $basicColor
 	padding: 0.35em 0.75em
-	border-radius: 0.25em
+	// border-radius: 0.25em
 
 .info-cta a
     color: $basicColor
 
 
 .info-cta:hover
-  background-color: $basicColor
+  background-color: $accentColor
   a
     color: white
 
