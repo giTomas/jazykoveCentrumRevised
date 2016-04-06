@@ -435,22 +435,19 @@ main p {
           flex-wrap: wrap;
     flex-wrap-border-radius: 0.25em; }
 
-.info-tab:hover {
-  -webkit-box-shadow: 0 0 0.3em #192021;
-          box-shadow: 0 0 0.3em #192021;
-  -webkit-box-shadow: 0 0 0.3em #e41500;
-          box-shadow: 0 0 0.3em #e41500; }
-  .info-tab:hover .info-name,
-  .info-tab:hover .info-price {
-    background-color: #FF4431; }
-  .info-tab:hover .info-container,
-  .info-tab:hover .info-description,
-  .info-tab:hover .info-cta {
-    border: 1px solid #FF4431; }
-  .info-tab:hover a {
-    color: #FF4431; }
-    .info-tab:hover a:hover {
-      color: #F9FBFB; }
+.info-tab:hover .info-name,
+.info-tab:hover .info-price {
+  background-color: #FF4431; }
+
+.info-tab:hover .info-container,
+.info-tab:hover .info-description,
+.info-tab:hover .info-cta {
+  border: 1px solid #FF4431; }
+
+.info-tab:hover a {
+  color: #FF4431; }
+  .info-tab:hover a:hover {
+    color: #F9FBFB; }
 
 .info-name {
   width: 100%;
@@ -537,16 +534,24 @@ main p {
           box-shadow: 0 0 0.3em #3A4A4D; }
 
 blockquote {
+  width: 300px;
   line-height: 1.4;
-  font-size: 1.4rem;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 60%;
-  margin: 0 auto; }
-  blockquote span {
-    padding: 0 0.25em; }
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  blockquote .i {
+    padding-top: 0.25em;
+    font-size: 1.96em; }
+
+.quote-body {
+  padding: 1em 0 0 0.5em; }
+  .quote-body p {
+    font-size: 1.4rem; }
 
 .footer {
   background: #3A4A4D;

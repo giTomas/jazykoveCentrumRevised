@@ -26,18 +26,17 @@ mixin course-item(name, href, price, ...items )
         
         
 mixin quote-item(quote, name)
-  blockquote.flex
-    p
-      .i.fa.fa-quote-left
-      span= quote
-      .i.fa.fa-quote-right
-    footer
-      cite= name
+  blockquote
+    .i.fa.fa-quote-left
+    .quote-body
+      p= quote
+      footer
+        cite= name
   
 
 main    
   section
-    .container_80.flex   
+    .container_80.flex.h-centered   
       .grid.flex.h-centered.content-box
         .languages
           h2.headline.t-center Jazyky, ktoré vyučujeme 
@@ -85,11 +84,11 @@ main
     .testimonies.flex  
       .container_80
         h2.headline.t-center Povedali o nas
-    .container_80  
+      .container_80.flex.h-space 
       
-      +quote-item("Lorem ipsum dolor sit amet, consectetur adipisicing elit", "Lorem Ipsum")
-      +quote-item("Lorem ipsum dolor sit amet, consectetur adipisicing elit", "Lorem Ipsum")
-      +quote-item("Lorem ipsum dolor sit amet, consectetur adipisicing elit", "Lorem Ipsum")
+        +quote-item("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Lorem Ipsum")
+        +quote-item("Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "Lorem Ipsum")
+        +quote-item("Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "Lorem Ipsum")
 
 
   
