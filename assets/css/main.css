@@ -90,6 +90,7 @@ a {
 .headline {
   color: #F9FBFB;
   background-color: #3A4A4D;
+  margin: 0 2.8rem;
   -webkit-border-radius: 0.25rem 0.25rem 0 0;
           border-radius: 0.25rem 0.25rem 0 0; }
 
@@ -125,7 +126,7 @@ a {
   margin-right: auto; }
 
 .content-box {
-  padding: 1em; }
+  padding: 1.4rem; }
   @media (max-width: 500px) {
     .content-box {
       padding: 1em 0; } }
@@ -155,7 +156,7 @@ section + section {
   @media (max-width: 900px) {
     .container_80 {
       width: 90%; } }
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     .container_80 {
       width: 100%; } }
 
@@ -529,8 +530,8 @@ main p {
           box-shadow: 0 0 0.3em #3A4A4D; }
 
 blockquote {
-  width: -webkit-calc(100% / 3 - 2.744rem);
-  width: calc(100% / 3 - 2.744rem);
+  width: -webkit-calc(100% / 3 - 2.8rem);
+  width: calc(100% / 3 - 2.8rem);
   line-height: 1.4;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -540,12 +541,12 @@ blockquote {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 3.842rem 2.744rem 0 0;
+  margin: 3.842rem 1.4rem 0;
   font-size: 1.4rem; }
   @media (max-width: 1100px) {
     blockquote {
-      width: -webkit-calc(100% / 2 - 2.744rem);
-      width: calc(100% / 2 - 2.744rem); } }
+      width: -webkit-calc(100% / 2 - 2.8rem);
+      width: calc(100% / 2 - 2.8rem); } }
   @media (max-width: 800px) {
     blockquote {
       margin: 1.96rem 1.96rem 0;
@@ -571,8 +572,50 @@ blockquote {
     font-size: 1.4rem; }
 
 .footer {
+  width: 100%;
+  font-size: 1rem;
   background: #3A4A4D;
-  color: secondTextColor; }
+  color: secondTextColor;
+  padding: 3.583em 0;
+  margin-top: 3.842rem; }
+  @media (max-width: 600px) {
+    .footer .h-space {
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center; } }
+  .footer a, .footer p {
+    color: #F9FBFB;
+    font-size: 1.2em; }
+  .footer a {
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
+    .footer a:hover {
+      color: #FF4431; }
+  .footer h2 {
+    font-size: 1.44em;
+    border-bottom: 1px solid #F9FBFB;
+    padding: 0 0 0.335em;
+    font-weight: bold; }
+
+.address, .phone, .mail {
+  margin: 1.44em; }
+  @media (max-width: 400px) {
+    .address, .phone, .mail {
+      width: 60%; } }
+
+.content {
+  padding-top: 0.335em; }
+
+.container {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
 
 .is-fixed {
   position: fixed;

@@ -1,3 +1,42 @@
 .footer
+  width: 100%
+  font-size: 1rem
   background: $basicTextColor
   color: secondTextColor
+  padding: 3.583em 0
+  margin-top: 3.842rem
+  @media (max-width: 600px)
+    .h-space
+      justify-content: center
+
+  a, p
+    color: $secondTextColor
+    font-size: 1.2em
+
+  a
+    transition: all 0.2s ease-in-out
+    &:hover
+      color: $accentColor
+
+  h2
+    font-size: 1.44em
+    border-bottom: 1px solid $secondTextColor
+    padding: 0 0 0.335em
+    font-weight: bold
+  //.container_80
+
+
+.address, .phone, .mail
+  margin: 1.44em
+  @media (max-width: 400px)
+    width: 60%
+
+.content
+  padding-top: 0.335em
+  //justify-content: flex-end
+
+
+.container
+  width: 100%
+  display: flex
+  flex-wrap: wrap
