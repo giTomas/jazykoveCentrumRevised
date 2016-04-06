@@ -66,12 +66,6 @@ html {
 html, body {
   height: 100%; }
 
-h2 {
-  font-size: 1.96rem;
-  background: #3A4A4D;
-  color: #F9FBFB;
-  padding: 0.5em 0.25em; }
-
 h1 {
   padding: 0.3rem; }
 
@@ -88,11 +82,17 @@ a {
           border-radius: 0.25em; }
 
 .headline {
+  font-size: 1.96rem;
   color: #F9FBFB;
   background-color: #3A4A4D;
   margin: 0 2.8rem;
+  padding: 0.5em 0.25em;
   -webkit-border-radius: 0.25rem 0.25rem 0 0;
           border-radius: 0.25rem 0.25rem 0 0; }
+
+.headline2 {
+  font-size: 3.842rem;
+  text-align: center; }
 
 .flex {
   display: -webkit-box;
@@ -140,8 +140,8 @@ a {
 section, header {
   width: 100%; }
 
-section + section {
-  margin-top: 5em; }
+section {
+  margin-top: 3.842rem; }
 
 .container_100 {
   width: 100%; }
@@ -575,7 +575,7 @@ blockquote {
   width: 100%;
   font-size: 1rem;
   background: #3A4A4D;
-  color: secondTextColor;
+  color: #F9FBFB;
   padding: 3.583em 0;
   margin-top: 3.842rem; }
   @media (max-width: 600px) {
@@ -585,9 +585,10 @@ blockquote {
           -ms-flex-pack: center;
               justify-content: center; } }
   .footer a, .footer p {
-    color: #F9FBFB;
-    font-size: 1.2em; }
+    font-size: 1.44em;
+    line-height: 1.1; }
   .footer a {
+    color: #F9FBFB;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out; }
     .footer a:hover {
@@ -595,6 +596,7 @@ blockquote {
   .footer h2 {
     font-size: 1.44em;
     border-bottom: 1px solid #F9FBFB;
+    letter-spacing: 0.15em;
     padding: 0 0 0.335em;
     font-weight: bold; }
 

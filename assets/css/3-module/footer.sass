@@ -2,7 +2,7 @@
   width: 100%
   font-size: 1rem
   background: $basicTextColor
-  color: secondTextColor
+  color: $secondTextColor
   padding: 3.583em 0
   margin-top: 3.842rem
   @media (max-width: 600px)
@@ -10,17 +10,20 @@
       justify-content: center
 
   a, p
-    color: $secondTextColor
-    font-size: 1.2em
+    font-size: 1.44em
+    line-height: 1.1
 
   a
+    color: $secondTextColor
     transition: all 0.2s ease-in-out
     &:hover
       color: $accentColor
 
   h2
     font-size: 1.44em
+    //color: $secondTextColor      //two times in the module!!!!
     border-bottom: 1px solid $secondTextColor
+    letter-spacing: 0.15em
     padding: 0 0 0.335em
     font-weight: bold
   //.container_80
