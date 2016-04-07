@@ -1,0 +1,57 @@
+.modal-body
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  width: 100%
+  min-height: 100%
+  display: none
+  z-index: 10
+  background-color: rgba(59, 74, 77, 0.9)
+  transition: all 0.5s ease-in-out
+  opacity: 0
+
+  p
+    font-size: 1.4rem
+    line-height: 1.2
+    padding-top: 0.9em
+  h2
+    font-size: 1.96rem
+
+.modal-content
+  width: 850px
+  min-height: 100%
+  position: relative
+  background-color: $secondTextColor
+  padding: 0.9em
+  //transition: all 1s ease-in-out
+  //opacity: 0
+
+
+.modal-item-40
+  width: 40%
+  @media (max-width: 750px)
+    width: 100%
+.modal-item-60
+  width: 60%
+  padding: 1em
+  //overflow: scroll
+  @media (max-width: 750px)
+    width: 100%
+.modal-item-100
+  width: 100%
+
+.close
+  position: absolute
+  top: 0
+  right: 0
+  font-size: 2.744rem
+  padding: 0.1em 0.25em
+  background-color: $basicColor
+  color: $secondTextColor
+  //border: 1px 0 solid $basicColor
+  transition: all 0.3s ease-in-out
+  cursor: pointer
+  &:hover
+    background-color: $secondTextColor
+    color: $basicColor

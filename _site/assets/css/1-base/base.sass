@@ -16,7 +16,7 @@ $secondTextColor: #F9FBFB
 //$basicColor: #00c5cc
 //$basicColor: #30C9E8
 $basicColor: #3A4A4D
-// $basicColor: #3B4A4F
+// $basicColor: rgb(59, 74, 77)
 $accentColor: #FF4431
 //$accentColor: #30C9E8
 $fontStack: 'Raleway', sans-serif
@@ -42,8 +42,8 @@ html, body
 
 h2
   //font-size: 3.842rem
-  font-size: 1.96rem
-  padding: 0.5em 0.25em
+
+
 //h4
   font-size: 1.96rem
 
@@ -63,6 +63,10 @@ a
    &:focus
     outline: none
 
+img
+  display: block
+  width: 100%
+
 .btn
   transition: all 0.2s ease-in-out
   border-radius: 0.25em
@@ -73,10 +77,15 @@ a
 
 .headline
   //margin-bottom: 3.842rem
+  font-size: 1.96rem
   color: $secondTextColor
   background-color: $basicColor
   margin: 0 2.8rem
+  padding: 0.5em 0.25em
   border-radius: 0.25rem 0.25rem 0 0
 
 .headline2
+  font-size: 3.842rem
+  font-weight: bold
+  letter-spacing: 0.1em
   text-align: center

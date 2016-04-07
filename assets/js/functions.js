@@ -62,4 +62,19 @@ $(function() {
   });
 });*/
 
+///////modal///////
+//////////////////
+
+$('.lector').on('click', '.lector-name', function(){
+  $('.modal-body').addClass('is-displaying')
+  .addClass('is-visible');
+  //$('.modal-content').addClass('is-visible');
+
+  $('body').css("overflow", "hidden");
+});
+
+$('.modal-content').on('click', '.close', function(){
+
+  $('.modal-body').removeClass('is-displaying');
+});
 }); //end of dc ready

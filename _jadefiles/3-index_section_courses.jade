@@ -26,7 +26,7 @@ mixin course-item(name, href, price, ...items )
         
         
 mixin quote-item(quote, name)
-  blockquote
+  blockquote.testimony
     .i.fa.fa-quote-left
     .quote-body
       p= quote
@@ -77,11 +77,10 @@ main
         +course-item('Intensive', 'standard.html', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
         +course-item('Intensive', 'standard.html', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
   
-  sectio.testimonies
+  section.testimonies
       .container_80
         h2.headline.t-center Povedali o nas
       .container_80.content-box.flex.h-centered 
-      
         +quote-item("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Lorem Ipsum")
         +quote-item("Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "Lorem Ipsum")
         +quote-item("Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "Lorem Ipsum")
