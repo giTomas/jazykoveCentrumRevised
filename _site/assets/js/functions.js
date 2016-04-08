@@ -1,7 +1,42 @@
 $( document ).ready(function() {
 
-var nav = $('nav');
-var logo = $('nav .logo-container');
+var nav            = $('nav'),
+    logo           = $('nav .logo-container'),
+    modalOverlay   = $('.modal-overlay'),
+    modalContainer = $('.modal-container'),
+    body           = $ ('body');
+
+//functions
+///////////
+
+//get data from html attr
+
+function getData(el, attr) {
+  var data = $(el).data(attr);
+  return data;
+};
+
+
+// show modal
+
+function showModal() {
+  modalOverlay.addClass('is-displaying');
+  setTimeout(function(){
+    modalOverlay.addClass('is-visible');
+  }, 250);
+  setTimeout(function(){
+    modalContainer.addClass('is-visible');
+  }, 600);
+  body.addClass("o-hidden");
+};
+
+function hideModal(){
+  modalOverlay.removeClass('is-displaying')
+  .removeClass('is-visible');
+  modalContainer.removeClass('is-visible');
+  body .removeClass("o-hidden");
+};
+
 
 $(window).scroll(function() {
 
@@ -66,15 +101,15 @@ $(function() {
 //////////////////
 
 $('.lector').on('click', '.lector-name', function(){
-  $('.modal-body').addClass('is-displaying')
-  .addClass('is-visible');
-  //$('.modal-content').addClass('is-visible');
-
-  $('body').css("overflow", "hidden");
+  showModal();
+  var data;
+  var urlJSON;
+  data = $(this).data('name');
+  urlJSON = data + '.json';
 });
 
-$('.modal-content').on('click', '.close', function(){
-
-  $('.modal-body').removeClass('is-displaying');
+$('.modal').on('click', '.close', function(){
+  hideModal();
 });
+
 }); //end of dc ready
