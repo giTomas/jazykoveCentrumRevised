@@ -1,27 +1,19 @@
 .lectors
-  margin-top: 2.744rem
-  margin-bottom: 20.661em
+  margin-top: 2.813rem
+  margin-bottom: 14.238em
 
 
 figure.lector
   width: 300px
-  //padding: 1em
   margin: 1em
   position: relative
   overflow: hidden
   transition: all 0.5s ease-in-out
-  //background-color: $basicTextColor
-  //border: 1px solid $basicColor
+  box-shadow: 0 0 0.25em $basicTextColor
+  cursor: pointer
   &:hover
-    box-shadow: 0 0 0.25em $basicTextColor
-    // border: 1px solid $basicColor
-    //  img
-      transform: scale(1.1)
     .lector-name
-      opacity: 1
-
-    //transform: scale(1)
-    //overflow: hidden
+      opacity: 0.75
 
   figcaption
     width: 100%
@@ -32,14 +24,12 @@ figure.lector
 
   .lector-name
     width: 100%
-    padding: 1em
+    padding: 0.5em
     opacity: 0
-    font-size: 1.4rem
-    letter-spacing: 0.1em
+    font-size: 1.875rem
     text-align: center
     background-color: $secondTextColor
     transition: all 0.5s ease-in-out
-    //margin-top: 9em
-    cursor: pointer
     &:hover
-      color: $accentColor
+      background-color: $basicTextColor
+      color: $secondTextColor

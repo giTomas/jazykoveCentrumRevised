@@ -3,7 +3,7 @@
    A modification of the original found at...
    http://meyerweb.com/eric/tools/css/reset/
 */
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,400italic,500,600,700,800);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4,
 h5, h6, p, blockquote, pre, a, abbr, acronym, address, big,
 cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small,
@@ -61,7 +61,7 @@ html {
   font-size: 16px;
   color: #3A4A4D;
   background-color: #F9FBFB;
-  font-family: "Raleway", sans-serif; }
+  font-family: "Roboto", sans-serif; }
 
 html, body {
   height: 100%; }
@@ -95,7 +95,8 @@ img {
           border-radius: 0.25rem 0.25rem 0 0; }
 
 .headline2 {
-  font-size: 3.842rem;
+  font-size: 4.219rem;
+  margin-top: 1em;
   font-weight: bold;
   letter-spacing: 0.1em;
   text-align: center; }
@@ -145,9 +146,6 @@ img {
 
 section, header {
   width: 100%; }
-
-section {
-  margin-top: 3.842rem; }
 
 .container_100 {
   width: 100%; }
@@ -237,7 +235,7 @@ h1.flex {
 
 .description {
   margin-left: 0.3em;
-  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #3A4A4D;
   font-weight: 200;
   font-size: 1.96rem;
@@ -433,6 +431,7 @@ main p {
 .info-tab {
   margin: 1em 1em;
   width: 250px;
+    width-box-shadow: 0 0 0.5em black;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap; }
@@ -583,7 +582,9 @@ main p {
   background: #3A4A4D;
   color: #F9FBFB;
   padding: 3.583em 0;
-  margin-top: 3.842rem; }
+  margin-top: 3.842rem;
+  -webkit-box-shadow: 0 0 0.5em black;
+          box-shadow: 0 0 0.5em black; }
   @media (max-width: 600px) {
     .footer .h-space {
       -webkit-box-pack: center;
@@ -626,8 +627,8 @@ main p {
           flex-wrap: wrap; }
 
 .lectors {
-  margin-top: 2.744rem;
-  margin-bottom: 20.661em; }
+  margin-top: 2.813rem;
+  margin-bottom: 14.238em; }
 
 figure.lector {
   width: 300px;
@@ -635,12 +636,12 @@ figure.lector {
   position: relative;
   overflow: hidden;
   -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out; }
-  figure.lector:hover {
-    -webkit-box-shadow: 0 0 0.25em #3A4A4D;
-            box-shadow: 0 0 0.25em #3A4A4D; }
-    figure.lector:hover .lector-name {
-      opacity: 1; }
+  transition: all 0.5s ease-in-out;
+  -webkit-box-shadow: 0 0 0.25em #3A4A4D;
+          box-shadow: 0 0 0.25em #3A4A4D;
+  cursor: pointer; }
+  figure.lector:hover .lector-name {
+    opacity: 0.75; }
   figure.lector figcaption {
     width: 100%;
     -webkit-box-align: center;
@@ -653,17 +654,16 @@ figure.lector {
     right: 0; }
   figure.lector .lector-name {
     width: 100%;
-    padding: 1em;
+    padding: 0.5em;
     opacity: 0;
-    font-size: 1.4rem;
-    letter-spacing: 0.1em;
+    font-size: 1.875rem;
     text-align: center;
     background-color: #F9FBFB;
     -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    cursor: pointer; }
+    transition: all 0.5s ease-in-out; }
     figure.lector .lector-name:hover {
-      color: #FF4431; }
+      background-color: #3A4A4D;
+      color: #F9FBFB; }
 
 .modal-overlay {
   position: fixed;
@@ -675,17 +675,17 @@ figure.lector {
   min-height: 100%;
   display: none;
   z-index: 10;
-  background-color: rgba(59, 74, 77, 0.9);
+  background-color: rgba(59, 74, 77, 0.95);
   -webkit-transition: opacity 0.25s ease-in;
   transition: opacity 0.25s ease-in;
   opacity: 0;
   overflow: auto; }
   .modal-overlay p {
-    font-size: 1.4rem;
+    font-size: 1.389rem;
     line-height: 1.2;
-    padding-top: 0.9em; }
+    padding-top: 0.926rem; }
   .modal-overlay h2 {
-    font-size: 1.96rem; }
+    font-size: 3.125rem; }
 
 .modal {
   width: 850px;
@@ -710,22 +710,28 @@ figure.lector {
 .modal-container {
   background-color: #F9FBFB;
   position: relative;
-  padding: 1em;
+  padding: 1.5625rem;
+  margin: 1.5625rem;
   opacity: 0;
+  -webkit-box-shadow: 0 0 0.5em black;
+          box-shadow: 0 0 0.5em black;
   overflow-y: auto; }
 
 .modal-item-40 {
-  width: 40%; }
+  width: 40%;
+  padding-right: 1.5625rem; }
   @media (max-width: 500px) {
     .modal-item-40 {
-      width: 100%; } }
+      width: 100%;
+      padding-right: 0; } }
 
 .modal-item-60 {
   width: 60%;
-  padding: 1em; }
+  padding: 0; }
   @media (max-width: 500px) {
     .modal-item-60 {
-      width: 100%; } }
+      width: 100%;
+      padding: 1em; } }
 
 .modal-item-100 {
   width: 100%; }
@@ -734,8 +740,8 @@ figure.lector {
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 2.744rem;
-  padding: 0.1em 0.25em;
+  font-size: 3.125rem;
+  padding: 0 0.682rem;
   background-color: #3A4A4D;
   color: #F9FBFB;
   -webkit-transition: all 0.3s ease-in-out;

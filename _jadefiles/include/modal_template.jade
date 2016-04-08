@@ -1,0 +1,13 @@
+.modal-overlay.h-centered
+  .modal.flex.h-centered.v-centered
+    .modal-container.flex#modal-lector 
+    script#lector-template(type="text/x-handlebars-template")  
+      .modal-item-40
+        figure
+          img(src="{%raw%}{{image}}{%endraw%}")
+      .modal-item-60
+        h2 {%raw %}{{nomen}}{%endraw%}
+        p {%raw%}{{about}}{%endraw%}
+      .close
+        <i class="fa fa-times"></i>
+      

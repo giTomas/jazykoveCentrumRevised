@@ -4,17 +4,26 @@ var nav            = $('nav'),
     logo           = $('nav .logo-container'),
     modalOverlay   = $('.modal-overlay'),
     modalContainer = $('.modal-container'),
-    body           = $ ('body');
+    body           = $('body');
 
 //functions
 ///////////
 
 //get data from html attr
-
+/*
 function getData(el, attr) {
   var data = $(el).data(attr);
   return data;
 };
+
+function getUrl(el, data) {
+  var urlJSON;
+  data = $(el).data(data);
+  urlJSON = data + '.json';
+  return urlJASON;
+};*/
+
+
 
 
 // show modal
@@ -100,16 +109,30 @@ $(function() {
 ///////modal///////
 //////////////////
 
-$('.lector').on('click', '.lector-name', function(){
-  showModal();
+
+
+$('.lectors').on('click', '.lector', function(){
   var data;
   var urlJSON;
-  data = $(this).data('name');
-  urlJSON = data + '.json';
+  data = $(this).find('.lector-name').data('name');
+  urlJSON = "/assets/json/lectors/" + data + ".json";
+  $.getJSON(
+    urlJSON,
+    function(data){
+      var lector = data[0];
+      var source = $("#lector-template").html()
+      var template = Handlebars.compile(source);
+      var html = template(lector);
+      $("#modal-lector").html(html);
+      showModal();
+    });
+
+
 });
 
 $('.modal').on('click', '.close', function(){
   hideModal();
 });
+
 
 }); //end of dc ready

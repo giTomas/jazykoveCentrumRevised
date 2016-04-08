@@ -8,18 +8,18 @@
   min-height: 100%
   display: none
   z-index: 10
-  background-color: rgba(59, 74, 77, 0.9)
+  background-color: rgba(59, 74, 77, 0.95)
   transition: opacity 0.25s ease-in
   opacity: 0
   overflow: auto
 
 
   p
-    font-size: 1.4rem
+    font-size: 1.389rem
     line-height: 1.2
-    padding-top: 0.9em
+    padding-top: 0.926rem
   h2
-    font-size: 1.96rem
+    font-size: 3.125rem
 
 .modal
   width: 850px
@@ -30,6 +30,7 @@
   // transform: scale(0)
   background: rgba(0,0,0,0)
   transition: opacity 0.5s ease-in
+
   overflow: auto
 
   //transition: all 1s ease-in-out
@@ -45,20 +46,25 @@
 .modal-container
   background-color: $secondTextColor
   position: relative
-  padding: 1em
+  padding: 1.5625rem
+  margin: 1.5625rem
   opacity: 0
+  box-shadow: 0 0 0.5em $shadow
   overflow-y: auto
 
 .modal-item-40
   width: 40%
+  padding-right: 1.5625rem
   @media (max-width: 500px)
     width: 100%
+    padding-right: 0
 .modal-item-60
   width: 60%
-  padding: 1em
+  padding: 0
   //overflow: scroll
   @media (max-width: 500px)
     width: 100%
+    padding: 1em
 .modal-item-100
   width: 100%
 
@@ -66,10 +72,11 @@
   position: absolute
   top: 0
   right: 0
-  font-size: 2.744rem
-  padding: 0.1em 0.25em
+  font-size: 3.125rem
+  padding: 0 0.682rem
   background-color: $basicColor
   color: $secondTextColor
+  //border-radius: 100%
   //border: 1px 0 solid $basicColor
   transition: all 0.3s ease-in-out
   cursor: pointer
