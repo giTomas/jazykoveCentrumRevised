@@ -23,9 +23,6 @@ function getUrl(el, data) {
   return urlJASON;
 };*/
 
-
-
-
 // show modal
 
 function showModal() {
@@ -38,6 +35,9 @@ function showModal() {
   }, 600);
   body.addClass("o-hidden");
 };
+
+
+//hide modal
 
 function hideModal(){
   modalOverlay.removeClass('is-displaying')
