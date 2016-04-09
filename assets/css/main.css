@@ -97,8 +97,12 @@ img {
 .headline2 {
   font-size: 4.219rem;
   margin-top: 1em;
-  font-weight: bold;
-  letter-spacing: 0.1em;
+  font-weight: 300;
+  text-align: center; }
+
+.headline-first {
+  font-size: 4.219rem;
+  font-weight: 300;
   text-align: center; }
 
 .flex {
@@ -164,6 +168,16 @@ section, header {
     .container_80 {
       width: 100%; } }
 
+.container_60 {
+  width: 60%;
+  margin: 0 auto; }
+  @media (max-width: 900px) {
+    .container_60 {
+      width: 80%; } }
+  @media (max-width: 600px) {
+    .container_60 {
+      width: 95%; } }
+
 .grid-smaller {
   width: 318.69px; }
 
@@ -211,9 +225,10 @@ section, header {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-image: url("../img/praha_ulice_small.jpg");
+  background-image: url("../img/praha4_crop.jpg");
   background-size: cover;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
 
 header.flex {
   background-color: #F9FBFB;

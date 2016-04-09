@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="cs">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <!-- google material icons -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/assets/css/main.css">
-    </head>
-    <body>
-    {{ content }}
-     <script src="/assets/js/jquery-2.2.2.min.js"></script>
-     <script src="/assets/js/functions.js"></script>
-    </body>
-</html>
+---
+layout: default_subsite
+title: course
+---
+
+{% include menuactive.html %}
+
+<section class="course-overview">
+  <h2 class="headline2">{{page.title}}<h2>
+  <div class="container_60 content-box t-center">
+    <p>{{page.content}}</p>
+</section>
+
+{% include 4-index-footer.html %}

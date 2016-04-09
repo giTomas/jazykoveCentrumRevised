@@ -4,6 +4,5 @@ highlighter: pygments # or rouge or null
 exclude: ["node_modules", "gulpfile.js", "package.json"]
 permalink: pretty
 collections:
-  - news
-  - languages
-  - courses
+  courses:
+    output: true
