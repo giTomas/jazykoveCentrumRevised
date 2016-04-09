@@ -11,8 +11,9 @@
       justify-content: center
 
   a, p
-    font-size: 1rem
+    font-size: 1.33em
     line-height: 1.1
+    font-weight: 300
 
   a
     color: $secondTextColor
@@ -21,22 +22,40 @@
       color: $accentColor
 
   h2
-    font-size: 1.4rem
+    font-size: 1.33em
     //color: $secondTextColor      //two times in the module!!!!
-    border-bottom: 1px solid $secondTextColor
+    // border-bottom: 1px solid $secondTextColor
     letter-spacing: 0.15em
-    padding: 0 0 0.335em
+    padding-bottom: 0.1em
     font-weight: bold
   //.container_80
+
+  hr
+    margin-top: 0
+    background-color: $secondTextColor
+
 
 
 .address, .phone, .mail
   margin: 1.8em
+  border: 1px solid $secondTextColor
+  //padding: 1.2em
+  border-radius: 0.25em
   //@media (max-width: 450px)
     width: 60%
 
+.address
+  //width: 230px
+  padding: 1em
+
+.phone, .mail
+  //width: 200px
+  padding: 1em
+
+
 .content
   padding-top: 0.335em
+  padding-top: 0.5em
   //justify-content: flex-end
 
 
@@ -44,4 +63,5 @@
   width: 100%
   display: flex
   justify-content: space-around
+  align-items:  center
   flex-wrap: wrap

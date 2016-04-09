@@ -1,6 +1,6 @@
 .lectors
   margin-top: 2.813rem
-  margin-bottom: 14.238em
+
 
 
 figure.lector
@@ -9,7 +9,7 @@ figure.lector
   position: relative
   overflow: hidden
   transition: all 0.5s ease-in-out
-  box-shadow: 0 0 0.5em $shadow
+  box-shadow: 0 0 0.25em $shadow
   cursor: pointer
   &:hover
     .lector-name
@@ -23,7 +23,9 @@ figure.lector
     right: 0
 
   .lector-name
-    width: 100%
+    width: calc(100% - 0.5em)
+    //border-radius: 0.25em
+    margin: 0.25em
     padding: 0.5em
     opacity: 0
     font-size: 1.875rem

@@ -26,35 +26,36 @@ h1.flex
 .logo-container
   //width: 23.61%
   //width: 318.69px
-
+  @media (max-width: 400px)
+    border-bottom: 1px solid $basicColor
 
 .logo
   font-family: serif
-  font-size: 2.744rem
+  //padding: 0.1rem
+  font-size: 3.157rem
   font-weight: bold
   color: $basicTextColor
   background-color: $secondTextColor
-  //z-index: 5
-  //position: fixed
-  //top: 0
+  @media (max-width: 400px)
+    font-size: 2.369rem
 
 .description
   margin-left: 0.3em
   font-family: $fontStack
   color: $basicTextColor
   font-weight: 200
-  font-size: 1.96rem
+  font-size: 2.369rem
   padding-right: 0.3em
-
-   //box-shadow: 0 0 0.8em #222  better without it
+  @media (max-width: 400px)
+    font-size: 1.777rem
+    //argin-left: 0
+    margin-right: 0
 
 header.flex
   justify-content: space-between
   align-items: center
-  //background: lighten($basicColor, 55%)
-  // background-color: rgba(255,255,255,0.3)
-  //box-shadow: 0 0 0.5em $basicTextColor
-  //z-index: 100
+  @media (max-width: 600px)
+    justify-content: center
 
 //.line
   justify-content: center
@@ -72,6 +73,12 @@ header.flex
   // background-color: rgba(255,255,255,0.8)
 
 //languaes flags
+.switch-language
+  font-weight: 300
+  @media (max-width: 600px)
+    padding-top: 0.4em
+    li:first-child
+      display: none
 
 .flag
   background:

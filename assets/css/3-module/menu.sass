@@ -10,37 +10,28 @@ nav
   z-index: 1
 
 .navigation
-  font-size: 1.4rem
+  font-size: 1.33rem
   justify-content: center
-  //margin-left: 1em
+  font-weight: 300
   flex: 2
 
   a
     transition: all 0.1s ease-in-out
-    color: white
+    color: $secondTextColor
     display: block
-    padding: 0.8em 0.25em 0.6em
-    // border-right: 1px solid $secondTextColor
+    padding: 0.81em 0.25em 0.81em
     position: relative
     &:hover
-        //background-color: darken(#192936, 10%)
-        //color: white
-        //background-color: white
-        // color: $basicTextColor
-        background-color: darken($basicColor, 15%)
-        //box-shadow: 0 0 0.5em #222
+      background-color: darken($basicColor, 15%)
 
-  //@media (max-width: 400px)
-    li
-      width: 100%
 
 .navigation ul
   display: none
   position: absolute
+
   z-index: 1
   background-color: $basicColor
-  font-size: 1.5rem
-  // background-color: #222222
+  font-size: 1.33rem
   a
     padding: 0.5em 0.5em 0.5em 1.05em
 
@@ -51,6 +42,7 @@ nav
 
 nav .logo-container a
    color: $basicTextColor
+   //align-items: center
 
 
 nav h3
@@ -59,7 +51,7 @@ nav h3
 
 nav .logo-container
   display: none
-  padding-right: 0.25em  //not good
+  padding-right: 0.25em
   //transform: scaleY(0)
   //opacity: 0
   //transform-origin: top
