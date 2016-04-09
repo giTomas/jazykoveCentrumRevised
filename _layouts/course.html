@@ -5,10 +5,13 @@ title: course
 
 {% include menuactive.html %}
 
+<main class="course-content">
 <section class="course-overview">
-  <h2 class="headline2">{{page.title}}<h2>
+  <h2 class="headline2">{{page.title}}</h2>
   <div class="container_60 content-box t-center">
-    <p>{{page.content}}</p>
+    {{page.content}}
+  </div>
 </section>
+</main>
 
 {% include 4-index-footer.html %}
