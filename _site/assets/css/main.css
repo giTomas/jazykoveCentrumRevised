@@ -124,6 +124,12 @@ hr {
               -ms-grid-row-align: center;
           align-items: center; }
 
+.v-start {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
+
 .h-space {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -331,51 +337,6 @@ header.flex {
 .opacity {
   opacity: 1; }
 
-.header-text {
-  font-size: 5.062rem;
-  letter-spacing: 0.1em;
-  font-weight: 200;
-  padding: 0 0.2em 0.1em;
-  -webkit-border-radius: 0.05em;
-          border-radius: 0.05em; }
-  @media (max-width: 700px) {
-    .header-text {
-      margin-top: 0.5em;
-      font-size: 3.5em; } }
-  @media (max-width: 400px) {
-    .header-text {
-      margin-top: 0.5em;
-      font-size: 2.5em; } }
-
-.offer-languages, .offer-courses {
-  margin-top: 3rem; }
-
-.language, .cta {
-  font-size: 1.5rem;
-  padding: 0.4em 0.4em;
-  border: 1px solid #3A4A4D; }
-  @media (max-width: 500px) {
-    .language, .cta {
-      font-size: 1rem; } }
-
-.language {
-  margin-left: 1em; }
-
-.cta {
-  margin-top: 2.5rem;
-  display: inline-block; }
-
-h3.offer-courses {
-  font-size: 2.25rem;
-  line-height: 1.5;
-  font-weight: 300;
-  -webkit-border-radius: 0.1em;
-          border-radius: 0.1em;
-  text-align: center; }
-  @media (max-width: 700px) {
-    h3.offer-courses {
-      font-size: 1.5rem; } }
-
 nav {
   width: 100%;
   background-color: #3A4A4D;
@@ -473,13 +434,10 @@ nav .logo-container {
             box-shadow: 0 0 0.3em #192021; }
 
 .info-tab {
-  margin: 1em 1em 1.77em;
+  margin: 1em 1.5em 1.77em;
   width: 250px;
     width-font-size: 1rem;
-    width-box-shadow: 0 0 0.5em black;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap; }
+    width-box-shadow: 0 0 0.5em black; }
 
 .info-tab:hover .info-name,
 .info-tab:hover .info-price {
@@ -562,8 +520,11 @@ nav .logo-container {
   .language-item:hover {
     background-color: #809ba0; }
   .language-item h3 {
-    font-size: 1.77rem;
-    padding: 0 0.5em; }
+    -webkit-box-flex: 2;
+    -webkit-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
+    font-size: 1.77rem; }
 
 .flag-big {
   background-size: contain;
@@ -823,6 +784,32 @@ figure.lector {
   font-size: 1.4rem;
   line-height: 1.2;
   padding-top: 1em; }
+
+.table-cell {
+  font-size: 1.33em;
+  width: -webkit-calc(25% - 0.4rem);
+  width: calc(25% - 0.4rem);
+  margin: 0.2rem;
+  background-color: #e6ebec;
+  font-weight: 300;
+  padding: 0.5em 0.8em;
+  overflow: hidden; }
+
+.cell-product {
+  font-weight: 500;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
+  .cell-product:hover {
+    background-color: #3A4A4D; }
+    .cell-product:hover a {
+      color: #F9FBFB; }
+
+.cell-top {
+  color: #F9FBFB;
+  background-color: #3A4A4D; }
+
+.showable {
+  display: none; }
 
 .is-fixed {
   position: fixed;
