@@ -95,6 +95,9 @@ hr {
   font-size: 3.157rem;
   font-weight: 300;
   text-align: center; }
+  @media all and (max-width: 500px) {
+    .headline2, .headline-first {
+      font-size: 1.777rem; } }
 
 .headline-first {
   margin-bottom: 1em; }
@@ -794,6 +797,10 @@ figure.lector {
   font-weight: 300;
   padding: 0.5em 0.8em;
   overflow: hidden; }
+  @media all and (max-width: 500px) {
+    .table-cell {
+      width: 100%;
+      display: block; } }
 
 .cell-product {
   font-weight: 500;
@@ -803,13 +810,25 @@ figure.lector {
     background-color: #3A4A4D; }
     .cell-product:hover a {
       color: #F9FBFB; }
+  @media all and (max-width: 500px) {
+    .cell-product {
+      background-color: #3A4A4D; }
+      .cell-product a {
+        color: #F9FBFB; } }
 
 .cell-top {
   color: #F9FBFB;
   background-color: #3A4A4D; }
 
+@media all and (max-width: 500px) {
+  .hidable {
+    display: none; } }
+
 .showable {
   display: none; }
+  @media all and (max-width: 500px) {
+    .showable {
+      display: inline; } }
 
 .is-fixed {
   position: fixed;
