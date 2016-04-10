@@ -80,15 +80,28 @@ hr
   padding: 0.5em 0.25em
   border-radius: 0.25rem 0.25rem 0 0
 
-.headline2, .headline-first
+.headline2, .headline-first, .title
   font-size: 3.157rem
-  font-weight: 300
-  text-align: center
+  color: $shadow
   @media all and(max-width: 500px)
-    font-size: 1.777rem
+    font-size: 2.369rem
+
+.headline2, .headline-first
+  text-align: center
+  font-weight: 300
 
 .headline-first
   margin-bottom: 1em
 
 .headline2
-  margin: 1em
+  margin: 1em 0
+
+.title
+  margin: 1em 0 0.5em
+  font-weight: 400
+
+.subtitle
+  font-weight: 400
+  font-size: 1.777rem
+  color: $shadow
+  margin: 0.5em 0 0.25em
