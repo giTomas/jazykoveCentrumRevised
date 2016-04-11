@@ -59,7 +59,7 @@ html {
 
 :root {
   font-size: 16px;
-  color: #3A4A4D;
+  color: #2f3c3e;
   background-color: #F9FBFB;
   font-family: "Roboto", sans-serif; }
 
@@ -67,7 +67,7 @@ html, body {
   height: 100%; }
 
 a {
-  color: #3A4A4D;
+  color: #2f3c3e;
   text-decoration: none; }
   a:active, a:focus {
     outline: none; }
@@ -109,7 +109,7 @@ hr {
   margin: 1em 0; }
 
 .title {
-  margin: 1em 0 0.5em;
+  margin: 1em 0;
   font-weight: 400; }
 
 .subtitle {
@@ -305,7 +305,7 @@ h1.flex {
   font-family: serif;
   font-size: 3.157rem;
   font-weight: bold;
-  color: #3A4A4D;
+  color: #2f3c3e;
   background-color: #F9FBFB; }
   @media (max-width: 400px) {
     .logo {
@@ -314,7 +314,7 @@ h1.flex {
 .description {
   margin-left: 0.3em;
   font-family: "Roboto", sans-serif;
-  color: #3A4A4D;
+  color: #2f3c3e;
   font-weight: 200;
   font-size: 2.369rem;
   padding-right: 0.3em; }
@@ -419,7 +419,7 @@ nav {
   display: block; }
 
 nav .logo-container a {
-  color: #3A4A4D; }
+  color: #2f3c3e; }
 
 nav h3 {
   padding: 0.3em;
@@ -573,8 +573,8 @@ nav .logo-container {
   display: inline-block;
   width: 4rem;
   height: 3rem;
-  -webkit-box-shadow: 0 0 0.2em #3A4A4D;
-          box-shadow: 0 0 0.2em #3A4A4D; }
+  -webkit-box-shadow: 0 0 0.2em #2f3c3e;
+          box-shadow: 0 0 0.2em #2f3c3e; }
 
 .testimony, .quote {
   width: -webkit-calc(100% / 3 - 2.8rem);
@@ -621,7 +621,7 @@ nav .logo-container {
 .footer {
   width: 100%;
   font-size: 1rem;
-  background: #3A4A4D;
+  background: #2f3c3e;
   color: #F9FBFB;
   padding: 1.96em 0; }
   .footer a, .footer p {
@@ -636,6 +636,7 @@ nav .logo-container {
       color: #FF4431; }
   .footer h2 {
     font-size: 1.33em;
+    color: #728f95;
     letter-spacing: 0.15em;
     padding-bottom: 0.1em;
     font-weight: bold; }
@@ -645,7 +646,7 @@ nav .logo-container {
 
 .address, .phone, .mail {
   margin: 1.8em;
-  border: 1px solid #F9FBFB;
+  border: 1px solid #3a4a4d;
   -webkit-border-radius: 0.25em;
           border-radius: 0.25em; }
 
@@ -714,7 +715,7 @@ nav .logo-container {
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out; }
     .lector .lector-name:hover {
-      background-color: #3A4A4D;
+      background-color: #2f3c3e;
       color: #F9FBFB; }
 
 .modal-overlay {
@@ -895,8 +896,36 @@ nav .logo-container {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out; }
 
+.contact-content {
+  margin-bottom: 10em; }
+
+.contact-container {
+  width: 100%;
+  margin: 0em 0 0.3em;
+  padding: 0.5em;
+  font-size: 1.333rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #e6ebec; }
+  .contact-container h3 {
+    color: black;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+
+.contact-data {
+  margin-left: 1em;
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+      -ms-flex: 2;
+          flex: 2; }
+
 iframe {
-  margin: 0 auto; }
+  width: 100%;
+  height: 450px; }
 
 .is-fixed {
   position: fixed;
