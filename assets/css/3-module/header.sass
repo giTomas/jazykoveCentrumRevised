@@ -18,10 +18,14 @@
 h1.flex
   align-items: center     // refactor !
 
-.logo-container
+header .logo-container
   @media (max-width: 400px)
     padding: 0.5em 0
     border-bottom: 1px solid $basicColor
+
+h1 .logo
+  @media (max-width: 400px)
+    font-size: 2.369rem
 
 .logo
   font-family: serif
@@ -30,8 +34,6 @@ h1.flex
   font-weight: bold
   color: $basicTextColor
   background-color: $secondTextColor
-  @media (max-width: 400px)
-    font-size: 2.369rem
 
 .description
   margin-left: 0.3em

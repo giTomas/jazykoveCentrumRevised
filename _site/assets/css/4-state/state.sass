@@ -5,9 +5,9 @@
   justify-content: flex-start
   .navigation li:hover
      ul
-      box-shadow: 0 0.25em 0.25em black
+      box-shadow: 0 0.22em 0.25em black
 
-nav .is-flex
+nav .is-flex     //refactor!
   display: flex
   background-color: white
   //transform: scaleY(1)
@@ -20,8 +20,14 @@ nav .is-flex
 .is-visible
   opacity: 1
 
-.is-scaled
+//.is-scaled
   transform: scale(1)
 
 .o-hidden
   overflow: hidden
+
+.is-hidden
+  display: none
+
+.is-open
+  display: flex

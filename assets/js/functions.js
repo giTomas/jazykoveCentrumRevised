@@ -109,8 +109,6 @@ $(function() {
 ///////modal///////
 //////////////////
 
-
-
 $('.lectors').on('click', '.lector', function(){
   var data;
   var urlJSON;
@@ -134,5 +132,14 @@ $('.modal').on('click', '.close', function(){
   hideModal();
 });
 
+//responsive menu
+/////////////////
+
+nav.on('click', '.toggle-menu', function(){
+  $(this).find('i.fa-bars').toggleClass('is-hidden');
+  $(this).find('i.fa-times').toggleClass('is-hidden');
+  $('.navigation').toggleClass('is-open'); 
+  console.log('hi!');
+});
 
 }); //end of dc ready

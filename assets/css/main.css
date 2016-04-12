@@ -283,9 +283,13 @@ h1.flex {
           align-items: center; }
 
 @media (max-width: 400px) {
-  .logo-container {
+  header .logo-container {
     padding: 0.5em 0;
     border-bottom: 1px solid #3A4A4D; } }
+
+@media (max-width: 400px) {
+  h1 .logo {
+    font-size: 2.369rem; } }
 
 .logo {
   font-family: serif;
@@ -293,9 +297,6 @@ h1.flex {
   font-weight: bold;
   color: #3A4A4D;
   background-color: #F9FBFB; }
-  @media (max-width: 400px) {
-    .logo {
-      font-size: 2.369rem; } }
 
 .description {
   margin-left: 0.3em;
@@ -377,20 +378,42 @@ nav {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
   font-weight: 300;
   -webkit-box-flex: 2;
   -webkit-flex: 2;
       -ms-flex: 2;
-          flex: 2; }
+          flex: 2;
+  -webkit-box-ordinal-group: 3;
+  -webkit-order: 2;
+      -ms-flex-order: 2;
+          order: 2; }
   .navigation a {
     -webkit-transition: all 0.1s ease-in-out;
     transition: all 0.1s ease-in-out;
     color: #F9FBFB;
     display: block;
-    padding: 0.81em 0.25em 0.81em;
-    position: relative; }
+    padding: 0.81em 0.25em 0.81em; }
     .navigation a:hover {
       background-color: #192021; }
+  @media (max-width: 700px) {
+    .navigation {
+      display: none;
+      -webkit-flex-basis: 100%;
+          -ms-flex-preferred-size: 100%;
+              flex-basis: 100%;
+      -webkit-box-ordinal-group: 2;
+      -webkit-order: 1;
+          -ms-flex-order: 1;
+              order: 1;
+      border-top: 2px solid #F9FBFB;
+      border-bottom: 2px solid #F9FBFB; }
+      .navigation li {
+        -webkit-flex-basis: 100%;
+            -ms-flex-preferred-size: 100%;
+                flex-basis: 100%; }
+      .navigation a {
+        text-align: center; } }
 
 .navigation ul {
   display: none;
@@ -400,6 +423,11 @@ nav {
   font-size: 1.33rem; }
   .navigation ul a {
     padding: 0.5em 0.5em 0.5em 1.05em; }
+  @media (max-width: 700px) {
+    .navigation ul {
+      position: relative; }
+      .navigation ul li {
+        width: 100%; } }
 
 .navigation li:hover ul {
   display: block; }
@@ -418,6 +446,21 @@ nav h3 {
 nav .logo-container {
   display: none;
   padding-right: 0.25em; }
+
+.toggle-menu {
+  color: #F9FBFB;
+  font-size: 2.369rem;
+  padding: 0.22em 0.22em 0;
+  margin-left: auto;
+  display: none;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+  .toggle-menu:hover {
+    color: black; }
+  @media (max-width: 700px) {
+    .toggle-menu {
+      display: inline-block; } }
 
 .news {
   width: 100%;
@@ -945,8 +988,8 @@ iframe {
       -ms-flex-pack: start;
           justify-content: flex-start; }
   .is-fixed .navigation li:hover ul {
-    -webkit-box-shadow: 0 0.25em 0.25em black;
-            box-shadow: 0 0.25em 0.25em black; }
+    -webkit-box-shadow: 0 0.22em 0.25em black;
+            box-shadow: 0 0.22em 0.25em black; }
 
 nav .is-flex {
   display: -webkit-box;
@@ -964,10 +1007,14 @@ nav .is-flex {
 .is-visible {
   opacity: 1; }
 
-.is-scaled {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1); }
-
 .o-hidden {
   overflow: hidden; }
+
+.is-hidden {
+  display: none; }
+
+.is-open {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
