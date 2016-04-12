@@ -1,30 +1,29 @@
 //@import url(https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,400italic,500,600,700,800)
 //@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900,900italic)
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
+
 //vars
 
 // $basicTextColor: #37474f
 //$basicTextColor: #3B4A4F
 $basicTextColor: #3A4A4D
-$basicTextColor: darken(#3A4A4D, 5%)
-
+//$basicTextColor: #6785A9
 //$secondTextColor: #F7F8FA
 $secondTextColor: #F9FBFB
-
-
-
 //$basicColor: #0081c9
 //$basicColor: #00c5cc
 //$basicColor: #30C9E8
 $basicColor: #3A4A4D
+//$basicColor: #6785A9
 // $basicColor: rgb(59, 74, 77)
 $accentColor: #FF4431
 //$accentColor: #30C9E8
 //$fontStack: 'Raleway', sans-serif
 $shadow: black
 $background: lighten($basicColor, 65%)
+//$background: lighten($basicColor, 45%)
 $fontStack: 'Roboto', sans-serif
-// $fontStack:  'Helvetica Neue' , Helvetica, Arial, sans-serif
+
 
 
 //global styles
@@ -39,19 +38,15 @@ $fontStack: 'Roboto', sans-serif
   //background-color: #F1F1D4
   font-family: $fontStack
 
-html, body
-  height: 100%
-
-
-
-
+//html, body
+  min-height: 100%
 
 // take out !!!
 
 a
    color: $basicTextColor
    text-decoration: none
-   &:hover
+   &:hover,
    &:active,
    &:focus
     outline: none
@@ -85,37 +80,48 @@ hr
   padding: 0.5em 0.25em
   border-radius: 0.25rem 0.25rem 0 0
 
-.headline2, .headline-first, .title
+.headline2, .headline-first, .title, .m-top-title
   font-size: 3.157rem
   color: $shadow
+  letter-spacing: 0.05em
   @media all and(max-width: 500px)
     font-size: 2.369rem
 
-.headline2, .headline-first
-  text-align: center
-  font-weight: 300
+.headline2, .headline-first, .title, .subtitle, .m-top-title, .m-top-subtitle   //???
+  font-weight: 400
+
+.m-top-title
+  margin-top: 1em
 
 .headline-first
   margin-bottom: 1em
 
-.headline2
+.headline2, .title
   margin: 1em 0
 
-.title
-  margin: 1em 0
-  font-weight: 400
+
+.subtitle, .m-top-subtitle
+  font-size: 1.777rem
 
 .subtitle
-  font-weight: 400
-  font-size: 1.777rem
+  margin-top: 1.777em
   color: $shadow
-  margin: 1em 0 0.25em
+
+.m-top-subtitle
+  margin-top: 0.422em
+
 
 .text
   font-size: 1.333rem
   line-height: 1.4
 
+* + .text
+  margin-top: 0.422em
+
+//.subtitle + .text
+  margin-top: 0.422em
+
 .text-padding
-  padding: 0 1rem 4em
+  padding: 0 1rem 4rem
   @media(max-width: 400px)
     padding: 0
