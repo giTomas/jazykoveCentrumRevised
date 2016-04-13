@@ -425,7 +425,9 @@ nav {
     padding: 0.5em 0.5em 0.5em 1.05em; }
   @media (max-width: 700px) {
     .navigation ul {
-      position: relative; }
+      position: relative;
+      border-top: 1px solid #F9FBFB;
+      border-bottom: 1px solid #F9FBFB; }
       .navigation ul li {
         width: 100%; } }
 
@@ -849,11 +851,6 @@ nav .logo-container {
       -ms-flex-direction: column;
           flex-direction: column; }
 
-.course-para {
-  font-size: 1.333rem;
-  margin-bottom: 2.369em;
-  line-height: 1.4; }
-
 .table-cell {
   font-size: 1.33em;
   width: -webkit-calc(25% - 0.4rem);
@@ -990,6 +987,9 @@ iframe {
   .is-fixed .navigation li:hover ul {
     -webkit-box-shadow: 0 0.22em 0.25em black;
             box-shadow: 0 0.22em 0.25em black; }
+
+.logo-is-static {
+  position: fixed; }
 
 nav .is-flex {
   display: -webkit-box;
