@@ -4,9 +4,6 @@ nav
   width: 100%
   background-color: $basicColor
   justify-content: center
-  //transition: all 0.2s ease-in-out
-  //box-shadow: 0 0 0.5em $basicTextColor
-  //box-shadow: 0 0 0.5em black
   z-index: 1
 
 .navigation
@@ -35,7 +32,8 @@ nav
     a
       text-align: center
 
-.navigation ul
+//.navigation ul
+.submenu
   display: none
   position: absolute
   z-index: 1
@@ -43,7 +41,7 @@ nav
   font-size: 1.33rem
   a
     padding: 0.5em 0.5em 0.5em 1.05em
-  @media (max-width: 700px)
+  @media (max-width: $mobile-menu)
     position: relative
     border-top: 1px solid $secondTextColor
     border-bottom: 1px solid $secondTextColor
@@ -52,9 +50,11 @@ nav
 
 
 
-.navigation li:hover
-   ul
-    display: block
+li:hover
+  @media (min-width: $mobile-menu)
+    .submenu
+      display: block
+
 
 nav .logo-container a
    color: $basicTextColor
@@ -68,13 +68,7 @@ nav h3
 nav .logo-container
   display: none
   padding-right: 0.25em
-  //transform: scaleY(0)
-  //opacity: 0
-  //transform-origin: top
-  //transform: translateY(-100%)
-  //transition: all 0.05s ease-in-out
-  //border-bottom: 1px solid #192936
-  // align-self: flex-start
+
 
 .toggle-menu
   color: $secondTextColor
@@ -88,3 +82,8 @@ nav .logo-container
     color: $shadow
   @media (max-width: $mobile-menu)
     display: inline-block
+
+.ch-down, .ch-up
+  display: none
+  @media (max-width: $mobile-menu)
+    display: inline

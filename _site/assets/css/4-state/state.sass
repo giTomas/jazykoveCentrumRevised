@@ -6,6 +6,8 @@
   .navigation li:hover
      ul
       box-shadow: 0 0.22em 0.25em black
+      @media (max-width: $mobile-menu)
+        box-shadow: none
 
 .logo-is-static
   position: fixed
@@ -34,3 +36,9 @@ nav .is-flex     //refactor!
 
 .is-open
   display: flex
+
+.social
+  //margin-right: auto
+
+.submenu-is-open
+  display: block

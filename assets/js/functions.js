@@ -1,4 +1,7 @@
 $( document ).ready(function() {
+/////////
+//vars//
+////////
 
 var nav            = $('nav'),
     logo           = $('nav .logo-container'),
@@ -6,22 +9,34 @@ var nav            = $('nav'),
     modalContainer = $('.modal-container'),
     body           = $('body');
 
-//functions
-///////////
+/////////////
+//functions/
+////////////
 
-//get data from html attr
-/*
-function getData(el, attr) {
-  var data = $(el).data(attr);
-  return data;
+//get JSON Url
+
+function getUrlJson(el, dataName, target, partUrl ) {
+  var data;
+  var urlJSON;
+  data = target.find(el).data(dataName);
+  urlJSON = partUrl + data + ".json";
+  return urlJSON;
 };
 
-function getUrl(el, data) {
-  var urlJSON;
-  data = $(el).data(data);
-  urlJSON = data + '.json';
-  return urlJASON;
-};*/
+//AJAX json + template
+
+function httpTemplating(urlJSON, el, id ){
+  $.getJSON(
+    urlJSON)
+    .done(function(data) {
+      var context = data[0];    ///!!!
+      var source = $(el).html()
+      var template = Handlebars.compile(source);
+      var html = template(context);
+      $(id).html(html);
+      showModal();
+    });
+};
 
 // show modal
 
@@ -29,10 +44,10 @@ function showModal() {
   modalOverlay.addClass('is-displaying');
   setTimeout(function(){
     modalOverlay.addClass('is-visible');
-  }, 250);
+  }, 50);
   setTimeout(function(){
     modalContainer.addClass('is-visible');
-  }, 600);
+  }, 400);
   body.addClass("o-hidden");
 };
 
@@ -58,33 +73,14 @@ $(window).scroll(function() {
     if (wScroll >= wHeight) {
             nav.addClass('is-fixed');
             logo.addClass('is-flex');
-
         } else {
             nav.removeClass('is-fixed');
             logo.removeClass('is-flex');
 
     };
-/*
-    if (wScroll >= wHeight * 3) {
-            logo.addClass('is-flex');    //change class name
-        } else {
-            logo.removeClass('is-flex');
-
-    };*/
 
 }); // end of scroll
 
-/*
-$('.menu').on('click', function() {
-    $('.navigation').toggleClass('is-showing');
-    $('.hamburger').toggleClass('is-hidden');
-    $('.cross').toggleClass('is-hidden');
-
-    if (!nav.hasClass('is-fixed')){
-        nav.addClass('is-fixed');
-    };
-
-}); //end of menu function*/
 
 ///////////////////
 //smooth scrolling:
@@ -108,7 +104,7 @@ $(function() {
 
 ///////modal///////
 //////////////////
-
+/*
 $('.lectors').on('click', '.lector', function(){
   var data;
   var urlJSON;
@@ -123,10 +119,18 @@ $('.lectors').on('click', '.lector', function(){
       var html = template(lector);
       $("#modal-lector").html(html);
       showModal();
-    });
+    });*/
+
+//click events
 
 
+$('.lectors').on('click', '.lector', function(){
+  var target = $(this);
+  urlJSON =  getUrlJson('.lector-name', 'name', target, '/assets/json/lectors/');
+  httpTemplating(urlJSON, "#lector-template", "#modal-lector");
 });
+
+
 
 $('.modal').on('click', '.close', function(){
   hideModal();
@@ -136,10 +140,22 @@ $('.modal').on('click', '.close', function(){
 /////////////////
 
 nav.on('click', '.toggle-menu', function(){
-  $(this).find('i.fa-bars').toggleClass('is-hidden');
-  $(this).find('i.fa-times').toggleClass('is-hidden');
-  $('.navigation').toggleClass('is-open'); 
-  console.log('hi!');
+  var target = $(this);
+  target.find('i.fa-bars').toggleClass('is-hidden');
+  target.find('i.fa-times').toggleClass('is-hidden');
+  $('.navigation').toggleClass('is-open');
+  //$('.navigation').slideToggle();
+});
+
+nav.on('click', '.dropdown', function(event) {
+    var wWidth = $(window).width();
+    var target = $(this);
+    if  ( wWidth <  700) {
+    target.find('.ch-down').toggleClass('is-hidden');
+    target.find('.ch-up').toggleClass('is-hidden');
+    target.find('.submenu').toggleClass('submenu-is-open');
+  event.preventDefault();
+}
 });
 
 }); //end of dc ready

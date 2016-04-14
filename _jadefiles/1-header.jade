@@ -1,66 +1,63 @@
-header.flex
-  .logo-container.flex
-    a(href="/")
-      h1.flex  
-        span.logo KK
-        span.description jazykové centrum
-  ul.switch-language.flex
-    li Jazyk stránky:
-    li      
-      a.flag.cz.opacity(href="/")          
-    li
-      a.flag.ru(href="/ru/index.html")
-    li
-      a.flag.en(href="/en/index.html")
-nav.flex
-  .logo-container
-    a(href="/")
-      .flex  
-        span.logo KK
-        //- span.description jazykové centrum
-  ul.navigation.flex
-    li
-        a(href="/") Úvod
-    li
-      a(href="") Jazyky
-      ul
-        li 
-            a(href="/cesky-jazyk") Český jazyk                     
-        li 
-            a(href="/") Ruský jazyk                     
-        li 
-            a(href="/") Anglicky jazyk                                         
-    li
-      a(href="") Jazykové kurzy
-      ul
-        li 
-            a(href="/courses/express-1-cz/") Express I                      
-        li 
-            a(href="/courses/express-2-cz/") Express II                      
-        li 
-            a(href="/courses/standard-1-cz") Standard I                   
-        li 
-            a(href="/courses/standard-2-cz") Standard II  
-        li 
-            a(href="/courses/standard-3-cz") Standard III 
-        li 
-            a(href="/courses/intensive-cz") Intensive
-        li 
-            a(href="/courses/pripravny-cz") Připravný kurzy na medzinarodní zkoušku                                                                                                                                                                                         
-        li 
-            a(href="/courses/individual-cz") Individuálni vyúka
-    li
-        a(href="/cennik") Ceník
-    li
-        a(href="/lektori") Lektoři
-    li
-        a(href="/kariera") Kariéra
-    li
-        a(href="/kontakt") Kontakt
-  .toggle-menu
-    i.fa.fa-bars
-    i.fa.fa-times.is-hidden
+header
+  .flex-header
+    .logo-container.flex
+      a(href="/")
+        h1.flex  
+          .logo KK
+          .description jazykové centrum
+    ul.switch-language.flex
+      li Jazyk stránky:
+      li      
+        a.flag.cz.opacity(href="/")          
+      li
+        a.flag.ru(href="/ru/index.html")
+      li
+        a.flag.en(href="/en/index.html")
+  nav.flex
+    .logo-container
+      a(href="/")
+        .flex  
+          .logo KK
+    ul.navigation.flex
+      li
+          a(href="/") Úvod
+      li
+        a(href="/onas") O nás
+                                      
+      li.dropdown
+        a(href="#") Jazykové kurzy <span class="ch-down"><i class="fa fa-chevron-down"></i></span><span class="ch-up is-hidden"><i class="fa fa-chevron-up"></i></span>
+        ul.submenu
+          li 
+              a(href="/courses/express-1-cz/") Express I                      
+          li 
+              a(href="/courses/express-2-cz/") Express II                      
+          li 
+              a(href="/courses/standard-1-cz") Standard I                   
+          li 
+              a(href="/courses/standard-2-cz") Standard II  
+          li 
+              a(href="/courses/standard-3-cz") Standard III 
+          li 
+              a(href="/courses/intensive-cz") Intensive
+          li 
+              a(href="/courses/pripravny-cz") Připravný kurzy na medzinarodní zkoušku                                                                                                                                                                                         
+          li 
+              a(href="/courses/individual-cz") Individuálni vyúka      
+      li
+          a(href="/cennik") Ceník
+      li
+          a(href="/lektori") Lektoři
+      li
+          a(href="/kariera") Kariéra
+      li
+          a(href="/kontakt") Kontakt
+      li.social
+          a(href="http://facebook.com")
+            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+    .toggle-menu
+      i.fa.fa-bars
+      i.fa.fa-times.is-hidden
 
 
-            
- 
+              
+   
