@@ -3,7 +3,7 @@ $( document ).ready(function() {
 //vars//
 ////////
 
-var nav            = $('nav'),
+var nav            = $('nav'),                        //object? dom.nav ...
     logo           = $('nav .logo-container'),
     modalOverlay   = $('.modal-overlay'),
     modalContainer = $('.modal-container'),
@@ -23,7 +23,7 @@ function getUrlJson(el, dataName, target, partUrl ) {
   return urlJSON;
 };
 
-//AJAX json + template
+//AJAX json + modal template
 
 function httpTemplating(urlJSON, el, id ){
   $.getJSON(
@@ -41,24 +41,31 @@ function httpTemplating(urlJSON, el, id ){
 // show modal
 
 function showModal() {
+  body.addClass("o-hidden");
   modalOverlay.addClass('is-displaying');
   setTimeout(function(){
     modalOverlay.addClass('is-visible');
-  }, 50);
+  }, 150);
   setTimeout(function(){
-    modalContainer.addClass('is-visible');
-  }, 400);
-  body.addClass("o-hidden");
+    modalContainer.addClass('is-in-position');
+  }, 550);
+
 };
 
 
 //hide modal
 
 function hideModal(){
-  modalOverlay.removeClass('is-displaying')
-  .removeClass('is-visible');
-  modalContainer.removeClass('is-visible');
-  body .removeClass("o-hidden");
+  modalContainer.removeClass('is-in-position');
+  setTimeout(function(){
+    modalOverlay.removeClass('is-visible')
+  }, 450 );
+  setTimeout(function(){
+    modalOverlay.removeClass('is-displaying');
+  }, 800 );
+  setTimeout(function(){
+    body.removeClass("o-hidden");
+  }, 1000 );
 };
 
 
@@ -126,7 +133,7 @@ $('.lectors').on('click', '.lector', function(){
 
 $('.lectors').on('click', '.lector', function(){
   var target = $(this);
-  urlJSON =  getUrlJson('.lector-name', 'name', target, '/assets/json/lectors/');
+  urlJSON =  getUrlJson('.lector-caption', 'name', target, '/assets/json/lectors/');
   httpTemplating(urlJSON, "#lector-template", "#modal-lector");
 });
 

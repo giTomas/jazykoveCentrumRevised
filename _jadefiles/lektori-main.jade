@@ -1,8 +1,13 @@
+//- mixin lector-item(name, src, data)
+    //- figure.lector
+      //- img(src=src)
+      //- figcaption.lector-caption
+        //- .lector-name(data-name= data)=name
+        
 mixin lector-item(name, src, data)
     figure.lector
       img(src=src)
-      figcaption
-        .lector-name(data-name= data)=name
+      figcaption.lector-caption(data-name= data)= name
 
 
 section
