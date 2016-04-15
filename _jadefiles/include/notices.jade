@@ -1,0 +1,9 @@
+
+script#noticesTemplate(type="text/x-handlebars-template")
+  {%raw%}{{#each shortNotices}}{%endraw%} 
+  li.notice
+    p.notice-content(data-date="{%raw%}{{date}}{%endraw%}")
+      i.fa.fa-angle-right
+      {%raw%}{{notice}}{%endraw%}
+  {%raw%}{{/each}}{%endraw%}
+      

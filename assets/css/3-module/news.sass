@@ -6,9 +6,6 @@
   transition: all 0.2s ease-in-out
   border-radius: 0.25em
   border: 1px solid $basicColor
-  //@media(max-width: 400px)
-    margin-left: auto
-
   h2
     font-size: 1.777rem
     font-weight: 300
@@ -19,30 +16,24 @@
   ul
     margin: 1em 0
 
-  li
-    font-size: 1rem
-    //font-size: 1rem
-    font-weight: 400
-    line-height: 1.6
-    padding: 0 0.25em
-    // border-bottom: 1px solid lighten( $basicColor, 50%)
-
-  a
-    display: block
-    padding: 0 0.25em
-    margin-bottom: 0.5em
-    transition: all 0.2s ease-in-out
-
-    &:hover
-      //color: $thirdTextColor
-      background-color: lighten( $basicColor, 30%)
-
-  hr, i
-    color: $basicColor
-
   i
+    color: $basicColor
     padding-right: 0.2em
     //font-weight: bold
 
   &:hover
     box-shadow: 0 0 0.3em darken($basicColor, 15%)
+
+.notice
+  font-size: 1rem
+  font-weight: 400
+  line-height: 1.6
+  padding: 0 0.25em
+  transition: all 0.2s ease-in-out
+  cursor: pointer
+  &:hover
+    background-color: lighten( $basicColor, 30%)
+
+.notice-content
+    padding: 0 0.25em
+    margin-bottom: 0.5em

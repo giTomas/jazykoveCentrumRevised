@@ -54,15 +54,22 @@ nav
       width: 100%
 
 .nav-logo-container
-  display: none
-  position: relative
-  a
-    color: $basicTextColor
-  .logo
-    padding: 0.05em 0.1em 0.05em 0
+  //display: none
+
+  //position: relative
+
+.nav-logo
+  padding: 0.05em 0.1em 0.05em 0
+  background:
+    image: linear-gradient(to right, $basicColor 50%, $secondTextColor 50%)
+    size: 200%
+  transition: all 0.2s 
   @media (max-width: 400px)
-    .logo
-      padding: 0.14em 0.2em 0.14em 0
+    padding: 0.14em 0.2em 0.14em 0
+// .is-fixed .nav-logo
+      background-position: -100%
+      text-shadow: 0px 1px 1px lighten($basicColor, 10% )
+
 
 li:hover
   @media (min-width: $mobile-menu)

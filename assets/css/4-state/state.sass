@@ -1,7 +1,7 @@
 .is-fixed
   position: fixed
   top: 0
-  box-shadow: 0 0em 0.5em black
+  box-shadow: 0 0.2em 0.5em black
   justify-content: flex-start
   .navigation li:hover
      ul
@@ -13,7 +13,10 @@
   position: fixed
 
 .logo-is-in-position
-  display: block
+  background-position: -100%
+  //text-shadow:  0px 1px 0px darken($basicColor, 10% )
+  //&:hover
+    text-shadow:  0px 0px 0px lighten($basicColor, 10% )
 
 .is-displaying
   display: flex

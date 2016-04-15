@@ -8,7 +8,7 @@
         <!-- font awesone -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <!-- Custom CSS -->
-        <link rel="stylesheet" href="/assets/css/main.css">
+        <link rel="stylesheet" href="../assets/css/main.css">
     </head>
     <body>
     
@@ -27,29 +27,27 @@
     </ul>
   </div>
   <nav class="flex">
-    <div class="nav-logo-container"><a href="/">
-        <div class="flex"> 
-          <div class="logo">KK</div>
-        </div></a></div>
+    <div class="nav-logo-container"><a href="/"> 
+        <div class="nav-logo">KK</div></a></div>
     <ul class="navigation flex">
       <li><a href="/">Úvod</a></li>
       <li><a href="/onas">O nás</a></li>
       <li class="dropdown"><a href="#">Jazykové kurzy <span class="ch-down"><i class="fa fa-chevron-down"></i></span><span class="ch-up is-hidden"><i class="fa fa-chevron-up"></i></span></a>
         <ul class="submenu">
-          <li> <a href="/courses/express-1-cz/">Express I                      </a></li>
-          <li> <a href="/courses/express-2-cz/">Express II                      </a></li>
-          <li> <a href="/courses/standard-1-cz">Standard I                   </a></li>
-          <li> <a href="/courses/standard-2-cz">Standard II  </a></li>
-          <li> <a href="/courses/standard-3-cz">Standard III </a></li>
-          <li> <a href="/courses/intensive-cz">Intensive</a></li>
-          <li> <a href="/courses/pripravny-cz">Připravný kurzy na medzinarodní zkoušku                                                                                                                                                                                         </a></li>
-          <li> <a href="/courses/individual-cz">Individuálni vyúka      </a></li>
+          <li> <a href="../courses/express-1-cz">Express I                      </a></li>
+          <li> <a href="../courses/express-2-cz">Express II                      </a></li>
+          <li> <a href="../courses/standard-1-cz">Standard I                   </a></li>
+          <li> <a href="../courses/standard-2-cz">Standard II  </a></li>
+          <li> <a href="../courses/standard-3-cz">Standard III </a></li>
+          <li> <a href="../courses/intensive-cz">Intensive</a></li>
+          <li> <a href="../courses/pripravny-cz">Připravný kurzy na medzinarodní zkoušku                                                                                                                                                                                         </a></li>
+          <li> <a href="../courses/individual-cz">Individuálni vyúka      </a></li>
         </ul>
       </li>
-      <li><a href="/cennik">Ceník</a></li>
-      <li><a href="/lektori">Lektoři</a></li>
-      <li><a href="/kariera">Kariéra</a></li>
-      <li><a href="/kontakt/">Kontakt</a></li>
+      <li><a href="../cennik">Ceník</a></li>
+      <li><a href="../lektori">Lektoři</a></li>
+      <li><a href="../kariera">Kariéra</a></li>
+      <li><a href="../kontakt/">Kontakt</a></li>
     </ul>
     <div class="toggle-menu">
       <svg fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
@@ -104,31 +102,42 @@
     <div class="grid-3 flex h-centered content-box">
       <div class="news">
         <h2>Novinky</h2>
-        <ul>
-          <li> <a href=""><i class="fa fa-angle-right"></i>Zápis na kurzy od 10.4.2016</a>
-          </li>
-          <li> <a href=""><i class="fa fa-angle-right"></i>Otvorenie Jazykového centra 16.4.2016</a>
-          </li>
-          <li> <a href=""><i class="fa fa-angle-right"></i>Začiatok výuky 17.4.2016</a>
-          </li>
-          <li> <a href=""><i class="fa fa-angle-right"></i>Zápis na kurzy od 10.4.2016</a>
-          </li>
-          <li> <a href=""><i class="fa fa-angle-right"></i>Otvorenie Jazykového centra 16.4.2016</a>
-          </li>
-          <li> <a href=""><i class="fa fa-angle-right"></i>Začiatok výuky 17.4.2016</a>
-          </li>
-          <li> <a href=""><i class="fa fa-angle-right"></i>Lorem ipsum dolor sit amet, consec adipisicing elit dolor</a>
-          </li>
-          <li> <a href=""><i class="fa fa-angle-right"></i>Otvorenie Jazykového centra 16.4.2016</a>
-          </li>
-          <li> <a href=""><i class="fa fa-angle-right"></i>Začiatok výuky 17.4.2016</a>
-          </li>
-        </ul>
+        <ul id="news"></ul>
       </div>
     </div>
   </div>
 </section>
-<section class="news-template">         </section>
+<section class="news-template">  
+  <div class="modal-overlay h-centered">
+    <div class="modal modal-650 flex h-centered v-centered">
+      <div id="modal-new" class="modal-container flex"> </div>
+      <script id="newTemplate" type="text/x-handlebars-template"> 
+        <div class="modal-item-100 flex">
+          <h2>{{headline}}</h2>
+          <h3>{{date}}</h3>
+          <p>{{content}}</p><a href="{{link}}" class="modal-btn">Více <i class="fa fa-angle-right"></i></a>
+        </div>
+        <div class="close">
+          <svg fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+            <path d="M0 0h24v24H0z" fill="none"></path>
+          </svg>
+        </div>
+      </script>
+    </div>
+  </div>
+  <script id="noticesTemplate" type="text/x-handlebars-template">{{#each shortNotices}} 
+    <li class="notice">
+      <p data-date="{{date}}" class="notice-content"><i class="fa fa-angle-right"></i>{{notice}}</p>
+    </li>{{/each}}
+  </script>
+</section>
+<section class="courses">
+  <div class="container_80"> 
+    <h2 class="headline2 t-center">Jazyky</h2>
+  </div>
+  <div class="container_80 flex h-centered"></div>
+</section>
 <section class="courses">
   <div class="container_80"> 
     <h2 class="headline2 t-center">Jazykove kurzy</h2>
@@ -147,7 +156,7 @@
         <p>2900 kč</p>
       </div>
       <div class="info-container flex h-centered">
-        <div class="btn info-cta"> <a href="expressI.html">Více</a></div>
+        <div class="btn info-cta"> <a href="../courses/express-1-cz/">Více</a></div>
       </div>
     </div>
     <div class="info-tab flex">
@@ -163,7 +172,7 @@
         <p>2900 kč</p>
       </div>
       <div class="info-container flex h-centered">
-        <div class="btn info-cta"> <a href="expressI.html">Více</a></div>
+        <div class="btn info-cta"> <a href="../courses/express-2-cz/">Více</a></div>
       </div>
     </div>
     <div class="info-tab flex">
@@ -179,7 +188,7 @@
         <p>2900 kč</p>
       </div>
       <div class="info-container flex h-centered">
-        <div class="btn info-cta"> <a href="standard.html I">Více</a></div>
+        <div class="btn info-cta"> <a href="../courses/standard-1-cz">Více</a></div>
       </div>
     </div>
     <div class="info-tab flex">
@@ -195,7 +204,7 @@
         <p>2900 kč</p>
       </div>
       <div class="info-container flex h-centered">
-        <div class="btn info-cta"> <a href="standard.html I">Více</a></div>
+        <div class="btn info-cta"> <a href="../courses/standard-2-cz">Více</a></div>
       </div>
     </div>
     <div class="info-tab flex">
@@ -211,7 +220,23 @@
         <p>2900 kč</p>
       </div>
       <div class="info-container flex h-centered">
-        <div class="btn info-cta"> <a href="standard.html I">Více</a></div>
+        <div class="btn info-cta"> <a href="../courses/standard-3-cz">Více</a></div>
+      </div>
+    </div>
+    <div class="info-tab flex">
+      <div class="info-name t-center">
+        <h4>Intensive</h4>
+      </div>
+      <div class="info-description t-center">
+        <p>Kurz pre začiatočníkov</p>
+        <p>16 vyučovacích hodín</p>
+        <p>2hod/týždenne</p>
+      </div>
+      <div class="info-price t-center">
+        <p>2900 kč</p>
+      </div>
+      <div class="info-container flex h-centered">
+        <div class="btn info-cta"> <a href="../courses/intensive-cz">Více</a></div>
       </div>
     </div>
     <div class="info-tab flex">
@@ -246,83 +271,6 @@
         <div class="btn info-cta"> <a href="standard.html">Více</a></div>
       </div>
     </div>
-    <div class="info-tab flex">
-      <div class="info-name t-center">
-        <h4>Intensive</h4>
-      </div>
-      <div class="info-description t-center">
-        <p>Kurz pre začiatočníkov</p>
-        <p>16 vyučovacích hodín</p>
-        <p>2hod/týždenne</p>
-      </div>
-      <div class="info-price t-center">
-        <p>2900 kč</p>
-      </div>
-      <div class="info-container flex h-centered">
-        <div class="btn info-cta"> <a href="standard.html">Více</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="testimonies">
-  <div class="container_80">
-    <h2 class="headline2 t-center">Povedali o nas</h2>
-  </div>
-  <div class="container_80 flex h-centered"> 
-    <blockquote class="testimony">
-      <div class="i fa fa-quote-left"></div>
-      <div class="quote-body">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <footer class="flex">
-          <cite>Lorem Ipsum</cite>
-        </footer>
-      </div>
-    </blockquote>
-    <blockquote class="testimony">
-      <div class="i fa fa-quote-left"></div>
-      <div class="quote-body">
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <footer class="flex">
-          <cite>Lorem Ipsum</cite>
-        </footer>
-      </div>
-    </blockquote>
-    <blockquote class="testimony">
-      <div class="i fa fa-quote-left"></div>
-      <div class="quote-body">
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <footer class="flex">
-          <cite>Lorem Ipsum</cite>
-        </footer>
-      </div>
-    </blockquote>
-    <blockquote class="testimony">
-      <div class="i fa fa-quote-left"></div>
-      <div class="quote-body">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <footer class="flex">
-          <cite>Lorem Ipsum</cite>
-        </footer>
-      </div>
-    </blockquote>
-    <blockquote class="testimony">
-      <div class="i fa fa-quote-left"></div>
-      <div class="quote-body">
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <footer class="flex">
-          <cite>Lorem Ipsum</cite>
-        </footer>
-      </div>
-    </blockquote>
-    <blockquote class="testimony">
-      <div class="i fa fa-quote-left"></div>
-      <div class="quote-body">
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <footer class="flex">
-          <cite>Lorem Ipsum</cite>
-        </footer>
-      </div>
-    </blockquote>
   </div>
 </section>
 </main>
@@ -350,8 +298,9 @@
   </div>
 </footer>
 
-     <script src="/assets/js/jquery-2.2.2.min.js"></script>
-     <script src="/assets/js/handlebars-v4.0.5.js"></script>
-     <script src="/assets/js/functions.js"></script>
+     <script src="../assets/js/jquery-2.2.2.min.js"></script>
+     <script src="../assets/js/handlebars-v4.0.5.js"></script>
+     <script src="../assets/js/functions.js"></script>
+     <script src="../assets/js/uvod.js"></script>
     </body>
 </html>

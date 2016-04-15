@@ -1,9 +1,3 @@
-//- mixin lector-item(name, src, data)
-    //- figure.lector
-      //- img(src=src)
-      //- figcaption.lector-caption
-        //- .lector-name(data-name= data)=name
-        
 mixin lector-item(name, src, data)
   figure.lector
     img(src=src)
@@ -18,4 +12,4 @@ section
      +lector-item('Lorem Ipsum','http://lorempixel.com/300/300/people/9', 'hipsum')
      +lector-item('Lorem Ipsum','http://lorempixel.com/300/300/people/3', 'beefsum') 
 
-include include/modal_template.jade
+include include/modal_profile.jade

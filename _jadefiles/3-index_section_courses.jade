@@ -3,14 +3,7 @@ mixin language-item(language, href)
     .language-item.flex.v-centered.v-start
       .flag-big&attributes(attributes)
       h3.t-center= language
-    
-mixin news-item(href, news)
-  li 
-    a(href=href)
-      i.fa.fa-angle-right
-      =news
-    //- hr
-    
+        
 mixin course-item(name, href, price, ...items )
   .info-tab.flex
     .info-name.t-center
@@ -25,16 +18,6 @@ mixin course-item(name, href, price, ...items )
         a(href=href) Více
         
         
-mixin quote-item(quote, name)
-  blockquote.testimony
-    .i.fa.fa-quote-left
-    .quote-body
-      p= quote
-      footer.flex
-        cite= name
-  
-
-  
 section
   .container_80.flex.h-centered   
     .grid.flex.h-centered.content-box
@@ -51,42 +34,25 @@ section
     .grid-3.flex.h-centered.content-box
       .news
         h2 Novinky
-        ul
-          +news-item('','Zápis na kurzy od 10.4.2016')
-          +news-item('','Otvorenie Jazykového centra 16.4.2016')
-          +news-item('','Začiatok výuky 17.4.2016')
-          +news-item('','Zápis na kurzy od 10.4.2016')
-          +news-item('','Otvorenie Jazykového centra 16.4.2016')
-          +news-item('','Začiatok výuky 17.4.2016')
-          +news-item('','Lorem ipsum dolor sit amet, consec adipisicing elit dolor')
-          +news-item('','Otvorenie Jazykového centra 16.4.2016')
-          +news-item('','Začiatok výuky 17.4.2016')
-
+        ul#news
+ 
+section.news-template   
+  include include/modal_news.jade
+  include include/notices.jade
   
-section.news-template          
+section.courses
+  .container_80  
+    h2.headline2.t-center Jazyky
+  .container_80.flex.h-centered
 section.courses
   .container_80  
     h2.headline2.t-center Jazykove kurzy
   .container_80.flex.h-centered
-    +course-item('Express I', 'expressI.html', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
-    +course-item('Express II', 'expressI.html', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
-    +course-item('Standard I', 'standard.html I', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
-    +course-item('Standard II', 'standard.html I', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
-    +course-item('Standard III', 'standard.html I', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
+    +course-item('Express I', '../courses/express-1-cz/', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
+    +course-item('Express II', '../courses/express-2-cz/', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
+    +course-item('Standard I', '../courses/standard-1-cz', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
+    +course-item('Standard II', '../courses/standard-2-cz', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
+    +course-item('Standard III', '../courses/standard-3-cz', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
+    +course-item('Intensive', '../courses/intensive-cz', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
     +course-item('Intensive', 'standard.html', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
     +course-item('Intensive', 'standard.html', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
-    +course-item('Intensive', 'standard.html', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
-
-section.testimonies
-  .container_80
-    h2.headline2.t-center Povedali o nas
-  .container_80.flex.h-centered 
-    +quote-item("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Lorem Ipsum")
-    +quote-item("Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "Lorem Ipsum")
-    +quote-item("Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "Lorem Ipsum")
-    +quote-item("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Lorem Ipsum")
-    +quote-item("Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "Lorem Ipsum")
-    +quote-item("Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "Lorem Ipsum")
-
-
-  
