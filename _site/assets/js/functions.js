@@ -4,7 +4,7 @@ $( document ).ready(function() {
 ////////
 
 var nav            = $('nav'),                        //object? dom.nav ...
-    logo           = $('nav .logo-container'),
+    logo           = $('.nav-logo-container'),
     modalOverlay   = $('.modal-overlay'),
     modalContainer = $('.modal-container'),
     body           = $('body');
@@ -16,8 +16,9 @@ var nav            = $('nav'),                        //object? dom.nav ...
 //get JSON Url
 
 function getUrlJson(el, dataName, target, partUrl ) {
-  var data;
-  var urlJSON;
+  var data,
+      urlJSON;
+
   data = target.find(el).data(dataName);
   urlJSON = partUrl + data + ".json";
   return urlJSON;
@@ -28,15 +29,27 @@ function getUrlJson(el, dataName, target, partUrl ) {
 function httpTemplating(urlJSON, el, id ){
   $.getJSON(
     urlJSON)
+    var info = data;
+    //.done(template(data));
     .done(function(data) {
-      var context = data[0];    ///!!!
-      var source = $(el).html()
-      var template = Handlebars.compile(source);
-      var html = template(context);
+      var context = data[0],    ///!!!
+          source = $(el).html(),
+          template = Handlebars.compile(source),
+          html = template(context);
       $(id).html(html);
       showModal();
     });
 };
+
+/*
+function template(data) {
+  var context = data[0],    ///!!!
+      source = $(el).html(),
+      template = Handlebars.compile(source),
+      html = template(context);
+  $(id).html(html);
+  showModal();
+}*/
 
 // show modal
 
@@ -71,19 +84,15 @@ function hideModal(){
 
 $(window).scroll(function() {
 
-    var wScroll = $(this).scrollTop();
-    //var wHeight = $(".banner").height();
-    var wHeight = $("nav").height();
-    //var wHeight2 = $("nav").height() * 2;
-
+  var wScroll = $(this).scrollTop(),
+      wHeight = $("nav").height();
 
     if (wScroll >= wHeight) {
-            nav.addClass('is-fixed');
-            logo.addClass('is-flex');
-        } else {
-            nav.removeClass('is-fixed');
-            logo.removeClass('is-flex');
-
+      nav.addClass('is-fixed');
+      logo.addClass('logo-is-in-position');
+    } else {
+      nav.removeClass('is-fixed');
+      logo.removeClass('logo-is-in-position');
     };
 
 }); // end of scroll
@@ -148,21 +157,21 @@ $('.modal').on('click', '.close', function(){
 
 nav.on('click', '.toggle-menu', function(){
   var target = $(this);
-  target.find('i.fa-bars').toggleClass('is-hidden');
-  target.find('i.fa-times').toggleClass('is-hidden');
+  target.find('svg').toggleClass('is-hidden');
+  // target.find('i.fa-times').toggleClass('is-hidden');
   $('.navigation').toggleClass('is-open');
   //$('.navigation').slideToggle();
 });
 
 nav.on('click', '.dropdown', function(event) {
-    var wWidth = $(window).width();
-    var target = $(this);
+  var wWidth = $(window).width(),
+      target = $(this);
     if  ( wWidth <  700) {
-    target.find('.ch-down').toggleClass('is-hidden');
-    target.find('.ch-up').toggleClass('is-hidden');
-    target.find('.submenu').toggleClass('submenu-is-open');
-  event.preventDefault();
-}
+      target.find('.ch-down').toggleClass('is-hidden');
+      target.find('.ch-up').toggleClass('is-hidden');
+      target.find('.submenu').toggleClass('submenu-is-open');
+    };
+    event.preventDefault();
 });
 
 }); //end of dc ready
