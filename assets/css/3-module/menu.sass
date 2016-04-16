@@ -17,7 +17,7 @@ nav
   font-weight: 300
   z-index: 10
   flex: 2
-  order: 2
+  //order: 0
   a
     transition: all 0.1s ease-in-out
     color: $secondTextColor
@@ -63,7 +63,7 @@ nav
   background:
     image: linear-gradient(to right, $basicColor 50%, $secondTextColor 50%)
     size: 200%
-  transition: all 0.2s 
+  transition: all 0.2s
   @media (max-width: 400px)
     padding: 0.14em 0.2em 0.14em 0
 // .is-fixed .nav-logo
@@ -93,3 +93,7 @@ li:hover
   display: none
   @media (max-width: $mobile-menu)
     display: inline
+
+.c-container
+  width: 92px
+  margin-left: auto

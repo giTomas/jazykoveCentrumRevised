@@ -19,12 +19,13 @@ function jsonLoadOnPage(dir, tempEl, idToAppend) {
   dir)
   .done(function(data) {
     var context  = data,
-        source   = $(tempEl).html(),              //better????
+        source   = $(tempEl).html(),              //better???? Precompilation!!!!!!
         template = Handlebars.compile(source),
         html     = template(context);
       $(idToAppend).append(html);
     });
 };
+
 
 function getDir(el, dataName, target, partDir ) {
   var data,
@@ -100,7 +101,7 @@ $(window).scroll(function() {
 nav.on('click', '.toggle-menu', function(){
 
   var target     = $(this),
-      navigation = target.parent().find('.navigation'),
+      navigation = target.parent().parent().find('.navigation'),
       submenu    = navigation.find('.submenu'),
       statusNav  = navigation.hasClass('is-open'),
       statusSub  = submenu.hasClass('submenu-is-open');
@@ -110,6 +111,7 @@ nav.on('click', '.toggle-menu', function(){
     if ( statusNav && statusSub ) {
       submenu.removeClass('submenu-is-open');
     };
+
     statusNav ? navigation.removeClass('is-open') : navigation.addClass('is-open');
 
 });
@@ -206,9 +208,5 @@ $('.lectors').on('click', '.lector', function(){
 //click events
 
 //load lectors  ///some problem with loading and compilation. solved!
-
-
-
-
 
 }); //end of dcmt ready
