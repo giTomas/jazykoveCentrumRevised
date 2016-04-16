@@ -1,31 +1,76 @@
-main
-  color: $basicTextColor
-  a
-    color: $basicTextColor
-
-  h2
-    font-size: 3.322rem
-    margin-bottom: 3.322rem
-  h3
-    font-size: 2.46rem
-  h4
-    font-size:
-  p, li, a
-    font-size: 1.35rem
-  p
-    line-height: 1.2
-  p + p
-    padding-top: 1.35em
-
-  a:hover
-    color: white
-    background-color: $basicTextColor
-
-//Intro section: introduction & news
-
-.shadow
-  box-shadow: 0 0 0.2em $basicTextColor
+.index-content
 
 .info-tab
-  p
-    padding-top: 0
+	margin: 1em 1.5em 1.77em
+	width: 250px
+  font-size: 1rem
+  box-shadow: 0 0 0.5em black
+	//flex-wrap: wrap
+
+.info-tab:hover
+  .info-name,
+  .info-price,
+    background-color: $accentColor
+  .info-container,
+  .info-description,
+  .info-cta
+    border: 1px solid $accentColor
+  a
+    color: $accentColor
+    &:hover
+      color: $secondTextColor
+
+
+// .info-tab:last-child
+  margin-right: auto
+
+
+.info-name
+  font-size: 1.77em
+  width: 100%
+  padding: 0.62em 0.381em
+  border-radius: .25em .25em 0 0
+  background: $basicColor
+  color: white
+  letter-spacing: 0.2em
+  font-weight: bold
+
+.info-price, .info-description
+	padding: 1em
+
+.info-price
+	background: $basicColor
+	color: white
+	width: 100%
+	letter-spacing: 0.2em
+	p
+		font-size: 1.33em
+		font-weight: bold
+
+.info-description
+  font-size: 1.2em
+  width: 100%
+  line-height: 1.5
+  border: 1px solid $basicColor
+  background-color: white
+
+.info-cta
+	margin: 0.9em auto
+	font-size: 1.33em
+	border: 1px solid $basicColor
+	padding: 0.3em 0.75em
+	// border-radius: 0.25em
+
+.info-cta a
+    color: $basicColor
+
+
+.info-cta:hover
+  background-color: $accentColor
+  a
+    color: white
+
+.info-container
+	width: 100%
+	border: 1px solid $basicColor
+	border-radius: 0 0 .25em .25em

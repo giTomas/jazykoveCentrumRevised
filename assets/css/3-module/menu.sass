@@ -1,54 +1,99 @@
 //navigation
 
+//svg
+  fill: white
+
 nav
   width: 100%
-  background-color: #222
+  position: relative
+  background-color: $basicColor
   justify-content: center
-  transition: all 0.2s ease-in-out
+  z-index: 10
 
 .navigation
-  font-size: 1.5rem
+  font-size: 1.33rem
   justify-content: center
-  background-color: #222
-  margin-left: 1em
-
+  position: relative      //new
+  font-weight: 300
+  z-index: 10
+  flex: 2
+  //order: 0
   a
     transition: all 0.1s ease-in-out
-    color: white
+    color: $secondTextColor
     display: block
-    padding: 1em 0.7em 0.65em
-    position: relative
+    padding: 0.81em 0.25em 0.81em
+    //position: relative
     &:hover
-        //background-color: darken(#192936, 10%)
-        //color: white
-        background-color: white
-        color: $basicTextColor
-        box-shadow: 0 0 0.5em #222
+      background-color: darken($basicColor, 15%)
+  @media (max-width: $mobile-menu)
+    display: none
+    flex-basis: 100%
+    order: 1
+    border-top: 2px solid $secondTextColor
+    border-bottom: 2px solid $secondTextColor
+    li
+      flex-basis: 100%
+    a
+      text-align: center
 
-  @media (max-width: 400px)
+.submenu
+  display: none
+  position: absolute
+  z-index: 1
+  background-color: $basicColor
+  font-size: 1.33rem
+  transition: all 0.2s ease-in-out
+  a
+    padding: 0.5em 0.5em 0.5em 1.05em
+  @media (max-width: $mobile-menu)
+    position: relative
+    border-top: 1px solid $secondTextColor
+    border-bottom: 1px solid $secondTextColor
     li
       width: 100%
 
-.navigation ul
+.nav-logo-container
+  //display: none
+
+  //position: relative
+
+.nav-logo
+  padding: 0.05em 0.1em 0.05em 0
+  background:
+    image: linear-gradient(to right, $basicColor 50%, $secondTextColor 50%)
+    size: 200%
+  transition: all 0.2s
+  @media (max-width: 400px)
+    padding: 0.14em 0.2em 0.14em 0
+// .is-fixed .nav-logo
+      background-position: -100%
+      text-shadow: 0px 1px 1px lighten($basicColor, 10% )
+
+
+li:hover
+  @media (min-width: $mobile-menu)
+    .submenu
+      display: block
+
+
+.toggle-menu
+  color: $secondTextColor
+  margin-left: auto
   display: none
-  position: absolute
-  background-color: #222
-  font-size: 1.5rem
-  // background-color: #222222
-  a
-    padding: 0.5em 0.5em 0.5em 1.05em
+  cursor: pointer
+  transition: all 0.2s ease-in-out
+  &:hover
+    color: $shadow
+  @media (max-width: $mobile-menu)
+    display: flex
+    align-items: center
 
-.navigation li:hover
-   ul
-    display: block
-
-nav .logo-container a
-   color: $basicTextColor
-
-nav h3
-   padding: 0.3em
-
-nav .logo-container
+.ch-down, .ch-up  //display chevrons in mobile menu
   display: none
-  //transition: all 0.3s ease-in-out
-  //border-bottom: 1px solid #192936
+  @media (max-width: $mobile-menu)
+    display: inline
+
+.c-container
+  width: 92px
+  margin-left: auto

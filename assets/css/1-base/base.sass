@@ -1,71 +1,123 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,400italic,500,600,700,800)
+//@import url(https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,400italic,500,600,700,800)
 //@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900,900italic)
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
 
 //vars
-// $basicTextColor: #333
-$basicTextColor: #222
-$secondTextColor: #222
-$opaqueWhite: rgba(255,255,255,0.8)
-$sun: #f4e8d1
-$blue: #00ADEF
-$fontStack: 'Raleway', sans-serif
-// $fontStack: 'Source Sans Pro', sans-serif
-$expColor: #AB1A29
+
+
+$basicTextColor: #3A4A4D
+//$basicTextColor: #262434
+//$basicTextColor: #253743
+//$basicTextColor: #6785A9
+
+$secondTextColor: #F9FBFB
+$basicColor: #3A4A4D
+//$basicColor: #262434
+//$basicColor: #253743
+// $basicColor: rgb(59, 74, 77)
+$accentColor: #FF4431
+$shadow: black
+$background: lighten($basicColor, 65%)
+$gold: #daa520
+$mobile-menu: 700px
+$headerBreak: 400px
+$fontStack: 'Roboto', sans-serif
+
+
 
 //global styles
 
+.red
+  border: 1px solid red
+
 :root
   font-size: 16px
-  // color: $basicTextColor
-  color: $secondTextColor
-  background-color: white
-  //background-color: #F1F1D4
-  font-family: $fontStack
-
-html, body
-  height: 100%
-
-
-// take out !!!
-
-h1
-  padding: 0.3rem
-
-.logo
-  font-family: serif
-  font-size: 3.375rem
-  // font-size: 2.30rem
-  font-weight: bold
-  color: black
-
-.description
-  margin-left: 0.3em
-  font-family: $fontStack
   color: $basicTextColor
-  font-weight: 200
-  //font-weight: 100
-  font-size: 2.25rem
-  padding-right: 0.3em
-  align-self: center  //temporary hack
-  //font-style: italic
+  background-color: $secondTextColor
+  font-family: $fontStack
+
+//html, body
+  min-height: 100%
 
 a
-   //color: $basicTextColor
-   color: $secondTextColor
+   color: $basicTextColor
    text-decoration: none
-   //display: block  //??
-   //font-variant: small-caps
-   &:hover
-    //color: black
+   &:hover,
    &:active,
    &:focus
     outline: none
 
+img
+  display: block
+  width: 100%
+
 .btn
   transition: all 0.2s ease-in-out
   border-radius: 0.25em
-  // border: 0.1em solid $basicTextColor
-  &:hover
+  //&:hover
     background-color:  $basicTextColor
     a
       color: white
+
+hr
+  width: 61.8%
+  margin-top: 1.77em
+  border: 0
+  height: 1px
+  background-image: linear-gradient( to right, rgba(58, 74, 77, 0), rgba(58, 74, 77, 0.75), rgba(58, 74, 77, 0) )
+
+
+//.headline
+  //margin-bottom: 3.842rem
+  font-size: 1.96rem
+  color: $secondTextColor
+  background-color: $basicColor
+  margin: 0 2.8rem
+  padding: 0.5em 0.25em
+  border-radius: 0.25rem 0.25rem 0 0
+
+.headline2, .headline-first, .title, .m-top-title
+  font-size: 3.157rem
+  color: $shadow
+  letter-spacing: 0.05em
+  @media all and(max-width: 500px)
+    font-size: 2.369rem
+
+.headline2, .headline-first, .title, .subtitle, .m-top-title, .m-top-subtitle   //???
+  font-weight: 400
+
+.m-top-title
+  margin-top: 1em
+
+.headline-first
+  margin-bottom: 1em
+
+.headline2, .title
+  margin: 1em 0
+
+
+.subtitle, .m-top-subtitle
+  font-size: 1.777rem
+
+.subtitle
+  margin-top: 1.777em
+  color: $shadow
+
+.m-top-subtitle
+  margin-top: 0.422em
+
+
+.text
+  font-size: 1.333rem
+  line-height: 1.4
+
+* + .text
+  margin-top: 0.422em
+
+//.subtitle + .text
+  margin-top: 0.422em
+
+.text-padding
+  padding: 0 1rem 4rem
+  @media(max-width: 400px)
+    padding: 0

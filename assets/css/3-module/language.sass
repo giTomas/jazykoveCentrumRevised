@@ -1,0 +1,27 @@
+// language module
+
+.language-images
+  display: flex
+  //overflow-y: hidden
+
+.language-image
+  position: relative
+  overflow: hidden
+  width: 20%
+  @media(max-width: 500px)
+    display: none
+  &:hover
+    .language-caption
+      left: 0
+
+.language-caption
+  width: calc(100% - 0.2em)
+  margin: 0 0.1em 0.1em
+  position: absolute
+  bottom: 0
+  left: -100%
+  background-color: $secondTextColor
+  font-size: 1.777rem
+  font-weight: 200
+  padding: 0.2em
+  transition: all 0.3s ease-in-out

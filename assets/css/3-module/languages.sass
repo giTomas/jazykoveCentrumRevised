@@ -1,0 +1,33 @@
+//languages
+.container_100.flex
+    justify-content: space-around
+
+.languages, .courses
+
+  //border-radius: 0.25rem
+  //box-shadow: 0 0 0.25em $shadow
+
+.language-item
+  min-width: 300px
+  //border-radius: 0 0.25rem 0.25rem 0
+  box-shadow: 0 0 0.2em $shadow
+  transition: all 0.2s ease-in-out
+  margin: 1em 0.5em
+  &:hover
+    background-color: lighten( $basicColor, 30%)
+    // box-shadow: none
+  h3
+    flex: 2
+    font-size: 1.77rem
+    //padding: 0 0.5em
+
+.flag-big
+  background:
+    size: contain
+    position: 50%
+    repeat: no-repeat
+  position: relative
+  display: inline-block
+  width: 4rem
+  height: 3rem
+  box-shadow: 0 0 0.2em $basicTextColor

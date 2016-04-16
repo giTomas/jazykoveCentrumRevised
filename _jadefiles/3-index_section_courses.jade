@@ -1,55 +1,58 @@
-main    
-  section#courses_cz.flex.h-centered
-    .container_80.flex
-      .grid-bigger.flex.h-centered
-        .content-box
-          h2 Naša ponuka kurzov 
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-      .grid-smaller.flex.h-centered
-        .content-box.shadow
-          h2 Novinky
-          ul
-            li 
-              a(href="") Zápis na kurzy od 10.4.2016
-            li 
-              a(href="") Otvorenie Jazykového centra 16.4.2016
-            li 
-              a(href="") Začiatok výuky 17.4.2016
-            li 
-              a(href="") . . .
-  section.flex.h-centered
-    .container_80.flex
-      .grid-smaller
-        h3 Kurzy
-      .grid-bigger.flex.content-box
-        .info-tab
-            h4 Express I
-            p 2900 kč
-            p Kurz pre začiatočníkov
-            p 16 vyučovacích hodín
-            p 2 hod/tydne
-
+mixin language-item(language, href)
+  a(href=href)
+    .language-item.flex.v-centered.v-start
+      .flag-big&attributes(attributes)
+      h3.t-center= language
+        
+mixin course-item(name, href, price, ...items )
+  .info-tab.flex
+    .info-name.t-center
+      h4= name
+    .info-description.t-center
+      each item in items
+        p= item
+    .info-price.t-center
+      p= price
+    .info-container.flex.h-centered
+      .btn.info-cta 
+        a(href=href) Více
+        
+        
+section
+  .container_80.flex.h-centered   
+    .grid.flex.h-centered.content-box
+      .languages
+        h2.headline-first.t-center Jazyky, ktoré vyučujeme 
+        .container_100.flex.h-centered
+          +language-item('Český jazyk', 'ceskyjazyk.html')(class="cz")
+          +language-item('Ruský jazyk', 'ruskyjazyk.html')(class="ru")
+          +language-item('Anglický jazyk', 'anglickyjazyk.html')(class="en")
+          +language-item('Ruský jazyk', 'anglickyjazyk.html')(class="ru")
+          +language-item('Český jazyk', 'anglickyjazyk.html')(class="cz")
+          +language-item('Anglický jazyk', 'anglickyjazyk.html')(class="en")
           
-              
-          
-        .tab
-          h4 Standard I
-      
-  section.flex.h-centered
-    .container_80.flex
-      h3 Kurzy pre pokročilých:
-      .grid-bigger
+    .grid-3.flex.h-centered.content-box
+      .news
+        h2 Novinky
+        ul#news
+ 
+section.news-template   
+  include include/modal_news.jade
+  include include/notices.jade
   
-  section.flex.h-centered
-    .container_80.flex
-      h3 Individualna vyuka:
-      .grid-bigger
-        .hr
-  section.flex.h-centered
-    .container_80.flex
-      h3 Prípravné kurzy na medzinárodnú skúšku:
-      .grid-bigger 
-        .hr
-  section
-  
+section.courses
+  .container_80  
+    h2.headline2.t-center Jazyky
+  .container_80.flex.h-centered
+section.courses
+  .container_80  
+    h2.headline2.t-center Jazykove kurzy
+  .container_80.flex.h-centered
+    +course-item('Express I', '../courses/express-1-cz/', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
+    +course-item('Express II', '../courses/express-2-cz/', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
+    +course-item('Standard I', '../courses/standard-1-cz', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
+    +course-item('Standard II', '../courses/standard-2-cz', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
+    +course-item('Standard III', '../courses/standard-3-cz', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
+    +course-item('Intensive', '../courses/intensive-cz', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
+    +course-item('Intensive', 'standard.html', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
+    +course-item('Intensive', 'standard.html', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')

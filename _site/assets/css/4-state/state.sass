@@ -1,13 +1,44 @@
 .is-fixed
   position: fixed
   top: 0
-  box-shadow: 0 0 0.8em #222
+  box-shadow: 0 0.2em 0.5em black
   justify-content: flex-start
   .navigation li:hover
      ul
-      box-shadow: 0 0 0.8em #222
+      box-shadow: 0 0.45em 0.5em black
+      @media (max-width: $mobile-menu)
+        box-shadow: none
 
-nav .is-flex
+//.logo-is-static
+  position: fixed
+
+.logo-is-in-position
+  background-position: -100%
+  //text-shadow:  0px 1px 0px darken($basicColor, 10% )
+  //&:hover
+    text-shadow:  0px 0px 0px lighten($basicColor, 10% )
+
+.is-displaying
   display: flex
-  background-color: white
-  //opacity: 1
+
+.is-visible
+  opacity: 1
+
+.is-in-position
+  opacity: 1
+  left: 0
+
+.o-hidden
+  overflow: hidden
+
+.is-hidden
+  display: none
+
+.is-open
+  display: flex
+
+.social
+  //margin-right: auto
+
+.submenu-is-open
+  display: block

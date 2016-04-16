@@ -1,0 +1,105 @@
+.modal-overlay
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  bottom: 0
+  width: 100%
+  min-height: 100%
+  display: none
+  z-index: 10
+  background-color: rgba(59, 74, 77, 0.95)
+  //background-color: rgba(38, 36, 52, 0.85)
+  //background-color: rgba(37, 55, 67, 0.85)
+  opacity: 0
+  transition: opacity 0.3s ease-in-out
+  font-size: 1rem
+  overflow: auto
+  p
+    font-size: 1.333em
+    line-height: 1.2
+    padding-top: 1em
+  h3
+    font-size: 1em
+    margin-top: 0.317em
+    line-height: 1.5
+
+.m-title
+  font-size: 3.157em
+  color: $shadow
+  @media (max-width: $mobile-menu)
+    font-size: 2.369em
+
+.m-title-small
+  font-size: 2.369em
+  width: 100%
+
+.modal
+  height: 100%
+  background: rgba(0,0,0,0)
+  @media (max-width: 600px)
+      //justify-content: flex-start
+      align-items: flex-start
+
+.modal-850
+  width: 850px
+
+.modal-650
+  width: 650px
+
+.modal-container
+  background-color: $secondTextColor
+  position: relative
+  left: -150%
+  padding: 1.5625rem
+  margin: 1.5625rem
+  box-shadow: -0.4em 0.2em 1.5em $shadow
+  opacity: 0
+  transition: all 0.5s ease-in-out
+  @media(max-width: $headerBreak)
+    margin: 0.5em
+    padding: 0
+
+.modal-item-40
+  width: calc(40% - 1.5625rem)
+  padding-right: 1.5625rem
+  @media (max-width: 500px)
+    width: 100%
+    padding-right: 0
+.modal-item-60
+  width: calc(60% - 0.3em)
+  margin-left: 0.15em
+  padding: 0
+  @media (max-width: 500px)
+    width: 100%
+    padding: 1em
+.modal-item-100
+  width: calc(100% - 2em)
+  padding: 1em 1em 0
+
+.close
+  position: absolute
+  top: 0
+  right: 0
+  //padding: 0 0.2em 0.1em 0.25em
+  background-color: $basicColor
+  color: $secondTextColor
+  transition: all 0.3s ease-in-out
+  cursor: pointer
+  &:hover
+    background-color: $secondTextColor
+    svg
+      fill: $basicColor
+
+.modal-btn
+  margin: 0.5em auto 0
+  padding: 0.5em 1em
+  font-size: 1.333em
+  //background:
+    image: linear-gradient(to left, $gold 50%, $secondTextColor 50%)
+    size: 200%
+  transition: all 0.3s linear
+  &:hover
+    //background-position: -100%
+    background-color: $basicColor
+    color: $secondTextColor

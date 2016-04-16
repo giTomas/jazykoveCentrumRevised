@@ -1,0 +1,15 @@
+mixin lector-item(name, src, data)
+  figure.lector
+    img(src=src)
+    figcaption.lector-caption(data-name= data)= name
+
+
+section
+  .container_80
+    h2.headline2.t-center Lektoři
+  .container_80.flex.h-centered.lectors
+     +lector-item('Lorem Ipsum','http://lorempixel.com/300/300/people/1' , 'dulcinea')
+     +lector-item('Lorem Ipsum','http://lorempixel.com/300/300/people/9', 'hipsum')
+     +lector-item('Lorem Ipsum','http://lorempixel.com/300/300/people/3', 'beefsum') 
+
+include include/modal_profile.jade

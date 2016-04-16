@@ -1,38 +1,75 @@
 .banner
-  //height: 100%
-  min-height: 100%
+  //height: 300px
+  height: 50vh
   display: flex
-  justify-content: space-between
-  align-items: center
-  flex-direction: column
+  //justify-content: space-between
+  //align-items: center
+  //flex-direction: column
   background:
-    image: url('../img/praha_ulice.jpg')
+    image: url('../img/praha4_crop.jpg')
     size: cover
+    repeat: no-repeat
     attachment: fixed
 
-header.flex, .line, .header-text, .offer-courses
-   background-color: $opaqueWhite
-   box-shadow: 0 0 0.8em #222
+h1.flex
+  align-items: center     // refactor !
 
-header.flex
+.logo-container
+  @media (max-width: 630px)
+    border-bottom: 1px solid $basicColor
+    // width: 100%
+  @media (max-width: 400px)
+    padding: 0.5em 0
+
+
+.flex-header
+  @media (max-width: $headerBreak)
+    border-bottom: 1px solid $basicColor
+
+.logo, .nav-logo
+  font-family: serif   //!!!!
+  font-size: 3.157rem
+  font-weight: bold
+  color: $basicTextColor
+  // padding: 0.15em 0.4em 0.15em 0
+  background-color: $secondTextColor
+  @media (max-width: $headerBreak)
+    font-size: 2.369rem
+
+.description
+  margin-left: 0.3em
+  font-family: $fontStack
+  color: $basicTextColor
+  font-weight: 200
+  font-size: 2.369rem
+  padding-right: 0.3em
+  @media (max-width: $headerBreak)
+    font-size: 1.777rem
+    //argin-left: 0
+    margin-right: 0
+
+.flex-header
+  display: flex
+  //overflow: hidden
+  flex-wrap: wrap
   justify-content: space-between
   align-items: center
-  // background-color: rgba(255,255,255,0.3)
+  @media (max-width: 620px)
+    justify-content: center
 
-.line
-  justify-content: center
-  width: 100%
-  height: 2.9rem
-  i
-    color: $secondTextColor
-    font-size: 2.9rem
-    padding: 0 0.5rem
 
-//.logo-container
-  //background-color: white
-  // background-color: rgba(255,255,255,0.8)
 
 //languaes flags
+.switch-language
+  font-weight: 300
+  @media (max-width: 650px)
+    display: flex
+    justify-content: center
+    padding: 0.5em
+    width: 100%
+    li:first-child
+      display: none
+
 
 .flag
   background:
@@ -60,8 +97,9 @@ header.flex
    background:
     image: url('../svg/gb.svg')
 
-.opacity                         //bad class name
+.opacity
   opacity: 1
+<<<<<<< HEAD
 
 .header-text
   font-size: 5.062rem
@@ -105,3 +143,5 @@ h3.offer-courses
   border-radius: 0.1em
   @media (max-width: 700px)
     font-size: 1.5rem
+=======
+>>>>>>> menu-up

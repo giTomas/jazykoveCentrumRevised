@@ -1,29 +1,42 @@
-//flex toolkit
+//flex toolkit & flex utility classes
 
 .flex
+<<<<<<< HEAD
     display: flex
     flex-wrap: wrap
+=======
+  display: flex
+  flex-wrap: wrap
+>>>>>>> menu-up
 //horizontal centering
 .h-centered
   justify-content: center
+
+<<<<<<< HEAD
+// change to .a-left
+.l-align
+  margin-right: auto
+=======
+.v-centered
+  align-items: center
+>>>>>>> menu-up
+
+.v-start
+  justify-content: flex-start
+
+.h-space
+  justify-content: space-between
 
 // change to .a-left
 .l-align
   margin-right: auto
 
-
-
-hr
-  color: $basicTextColor
-  background-color: $basicTextColor
-  //height: 0.15rem
-  width: 38.2%
-  //box-shadow: 0 0 0.1em $basicTextColor
-
 //text modifications
 
 .content-box
-  padding: 1em
+  padding: 1.4rem
+  @media (max-width: 500px)
+    padding: 1em 0
 
 .underline:hover
   text-decoration: underline
@@ -33,28 +46,89 @@ hr
 
 //global
 
+main
+  //border: 0.5em solid $basicColor
+
+
 section, header
   width: 100%
 
 section
   //padding-top: 4.484em
-  padding-top: 6.053em
+  //padding-top: 5.378em
+  //border-bottom: 0.5em solid $basicTextColor
+  //margin-top: 3.842rem
+  //background-color: $background
+//section + section
+  margin-top: 5em
+
+.container_100
+  width: 100%
+
+.container_90
+  width: 90%
+  margin: 0 auto
 
 .container_80
   width: 80%
-  @media(max-width: 900px)
+  margin: 0 auto
+  @media(max-width: 1000px)
     width: 90%
-  @media(max-width: 600px)
+  @media(max-width: 800px)
     width: 100%
-    padding: 1em
+    //padding: 1em
+
+.container_60
+  width: 60%
+  margin: 0 auto
+  @media(max-width: 900px)
+    width: 80%
+  @media(max-width: 600px)
+    width: 95%
+
+.container_50
+  width: 50%
+  margin: 0 auto
+  @media(max-width: 1100px)
+    width: 75%
+  @media(max-width: 800px)
+    width: 85%
+  @media(max-width: 400px)
+    width: 95%
 
 // grid
 
 .grid-smaller
-  width: 38.2%
+  //width: 23.61%
+  width: 318.69px
 
-.grid-bigger
-  width: 61.8%
+.grid-1
+  width: 61.81%
+
+.grid-2
+  width: 38.19%
 
 .grid-3
-  width: calc(100%/3)
+  width: 23.61%
+  min-width: 318.69px
+  @media (max-width: 800px)
+    width: 38.19%
+
+.grid-4
+  width: 14.59%
+
+.grid
+  flex: 2
+
+.languages
+  margin-left: 0.5em solid $basicColor
+
+.index-content,
+.prices-content,
+.course-content,
+.lectors-content,
+  margin-bottom: 7.53em
+
+.prices-content,
+.sourse-content
+  flex: 1

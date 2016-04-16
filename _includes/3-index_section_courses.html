@@ -1,67 +1,208 @@
 
-<main>   
-  <section id="courses_cz" class="flex h-centered">
-    <div class="container_80 flex">
-      <div class="grid-bigger flex h-centered">
-        <div class="content-box">
-          <h2>Naša ponuka kurzov </h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-        </div>
-      </div>
-      <div class="grid-smaller flex h-centered">
-        <div class="content-box shadow">
-          <h2>Novinky</h2>
-          <ul>
-            <li> <a href="">Zápis na kurzy od 10.4.2016</a></li>
-            <li> <a href="">Otvorenie Jazykového centra 16.4.2016</a></li>
-            <li> <a href="">Začiatok výuky 17.4.2016</a></li>
-            <li> <a href="">. . .</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="flex h-centered">
-    <div class="container_80 flex">
-      <div class="grid-smaller">
-        <h3>Kurzy</h3>
-      </div>
-      <div class="grid-bigger flex content-box">
-        <div class="info-tab">
-          <h4>Express I</h4>
-          <p>2900 kč</p>
-          <p>Kurz pre začiatočníkov</p>
-          <p>16 vyučovacích hodín</p>
-          <p>2 hod/tydne</p>
-        </div>
-        <div class="tab">
-          <h4>Standard I</h4>
+<section>
+  <div class="container_80 flex h-centered">  
+    <div class="grid flex h-centered content-box">
+      <div class="languages">
+        <h2 class="headline-first t-center">Jazyky, ktoré vyučujeme </h2>
+        <div class="container_100 flex h-centered"><a href="ceskyjazyk.html">
+            <div class="language-item flex v-centered v-start">
+              <div class="flag-big cz"></div>
+              <h3 class="t-center">Český jazyk</h3>
+            </div></a><a href="ruskyjazyk.html">
+            <div class="language-item flex v-centered v-start">
+              <div class="flag-big ru"></div>
+              <h3 class="t-center">Ruský jazyk</h3>
+            </div></a><a href="anglickyjazyk.html">
+            <div class="language-item flex v-centered v-start">
+              <div class="flag-big en"></div>
+              <h3 class="t-center">Anglický jazyk</h3>
+            </div></a><a href="anglickyjazyk.html">
+            <div class="language-item flex v-centered v-start">
+              <div class="flag-big ru"></div>
+              <h3 class="t-center">Ruský jazyk</h3>
+            </div></a><a href="anglickyjazyk.html">
+            <div class="language-item flex v-centered v-start">
+              <div class="flag-big cz"></div>
+              <h3 class="t-center">Český jazyk</h3>
+            </div></a><a href="anglickyjazyk.html">
+            <div class="language-item flex v-centered v-start">
+              <div class="flag-big en"></div>
+              <h3 class="t-center">Anglický jazyk</h3>
+            </div></a>
         </div>
       </div>
     </div>
-  </section>
-  <section class="flex h-centered">
-    <div class="container_80 flex">
-      <h3>Kurzy pre pokročilých:</h3>
-      <div class="grid-bigger"></div>
-    </div>
-  </section>
-  <section class="flex h-centered">
-    <div class="container_80 flex">
-      <h3>Individualna vyuka:</h3>
-      <div class="grid-bigger">
-        <div class="hr"></div>
+    <div class="grid-3 flex h-centered content-box">
+      <div class="news">
+        <h2>Novinky</h2>
+        <ul id="news"></ul>
       </div>
     </div>
-  </section>
-  <section class="flex h-centered">
-    <div class="container_80 flex">
-      <h3>Prípravné kurzy na medzinárodnú skúšku:</h3>
-      <div class="grid-bigger"> 
-        <div class="hr"></div>
+  </div>
+</section>
+<section class="news-template">  
+  <div class="modal-overlay h-centered">
+    <div class="modal modal-650 flex h-centered v-centered">
+      <div id="modal-new" class="modal-container flex"> </div>
+      <script id="newTemplate" type="text/x-handlebars-template"> 
+        <div class="modal-item-100 flex">
+          <h2 class="m-title-small">{%raw %}{{headline}}{%endraw%}</h2>
+          <h3>{%raw %}{{date}}{%endraw%}</h3>
+          <p>{%raw%}{{content}}{%endraw%}</p><a href="{%raw %}{{link}}{%endraw%}" class="modal-btn">{%raw%}{{linkInfo}}{%endraw%} <i class="fa fa-angle-right"></i></a>
+        </div>
+        <div class="close">
+          <svg fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+            <path d="M0 0h24v24H0z" fill="none"></path>
+          </svg>
+        </div>
+      </script>
+    </div>
+  </div>
+  <script id="noticesTemplate" type="text/x-handlebars-template">{%raw%}{{#each shortNotices}}{%endraw%} 
+    <li class="notice">
+      <p data-date="{%raw%}{{date}}{%endraw%}" class="notice-content"><i class="fa fa-angle-right"></i>{%raw%}{{notice}}{%endraw%}</p>
+    </li>{%raw%}{{/each}}{%endraw%}  
+  </script>
+</section>
+<section class="courses">
+  <div class="container_80"> 
+    <h2 class="headline2 t-center">Jazyky</h2>
+  </div>
+  <div class="container_80 flex h-centered"></div>
+</section>
+<section class="courses">
+  <div class="container_80"> 
+    <h2 class="headline2 t-center">Jazykove kurzy</h2>
+  </div>
+  <div class="container_80 flex h-centered">
+    <div class="info-tab flex">
+      <div class="info-name t-center">
+        <h4>Express I</h4>
+      </div>
+      <div class="info-description t-center">
+        <p>Kurz pre začiatočníkov</p>
+        <p>16 vyučovacích hodín</p>
+        <p>2hod/týždenne</p>
+      </div>
+      <div class="info-price t-center">
+        <p>2900 kč</p>
+      </div>
+      <div class="info-container flex h-centered">
+        <div class="btn info-cta"> <a href="../courses/express-1-cz/">Více</a></div>
       </div>
     </div>
-  </section>
-  <section></section>
-</main>
+    <div class="info-tab flex">
+      <div class="info-name t-center">
+        <h4>Express II</h4>
+      </div>
+      <div class="info-description t-center">
+        <p>Kurz pre začiatočníkov</p>
+        <p>16 vyučovacích hodín</p>
+        <p>2hod/týždenne</p>
+      </div>
+      <div class="info-price t-center">
+        <p>2900 kč</p>
+      </div>
+      <div class="info-container flex h-centered">
+        <div class="btn info-cta"> <a href="../courses/express-2-cz/">Více</a></div>
+      </div>
+    </div>
+    <div class="info-tab flex">
+      <div class="info-name t-center">
+        <h4>Standard I</h4>
+      </div>
+      <div class="info-description t-center">
+        <p>Kurz pre začiatočníkov</p>
+        <p>16 vyučovacích hodín</p>
+        <p>2hod/týždenne</p>
+      </div>
+      <div class="info-price t-center">
+        <p>2900 kč</p>
+      </div>
+      <div class="info-container flex h-centered">
+        <div class="btn info-cta"> <a href="../courses/standard-1-cz">Více</a></div>
+      </div>
+    </div>
+    <div class="info-tab flex">
+      <div class="info-name t-center">
+        <h4>Standard II</h4>
+      </div>
+      <div class="info-description t-center">
+        <p>Kurz pre začiatočníkov</p>
+        <p>16 vyučovacích hodín</p>
+        <p>2hod/týždenne</p>
+      </div>
+      <div class="info-price t-center">
+        <p>2900 kč</p>
+      </div>
+      <div class="info-container flex h-centered">
+        <div class="btn info-cta"> <a href="../courses/standard-2-cz">Více</a></div>
+      </div>
+    </div>
+    <div class="info-tab flex">
+      <div class="info-name t-center">
+        <h4>Standard III</h4>
+      </div>
+      <div class="info-description t-center">
+        <p>Kurz pre začiatočníkov</p>
+        <p>16 vyučovacích hodín</p>
+        <p>2hod/týždenne</p>
+      </div>
+      <div class="info-price t-center">
+        <p>2900 kč</p>
+      </div>
+      <div class="info-container flex h-centered">
+        <div class="btn info-cta"> <a href="../courses/standard-3-cz">Více</a></div>
+      </div>
+    </div>
+    <div class="info-tab flex">
+      <div class="info-name t-center">
+        <h4>Intensive</h4>
+      </div>
+      <div class="info-description t-center">
+        <p>Kurz pre začiatočníkov</p>
+        <p>16 vyučovacích hodín</p>
+        <p>2hod/týždenne</p>
+      </div>
+      <div class="info-price t-center">
+        <p>2900 kč</p>
+      </div>
+      <div class="info-container flex h-centered">
+        <div class="btn info-cta"> <a href="../courses/intensive-cz">Více</a></div>
+      </div>
+    </div>
+    <div class="info-tab flex">
+      <div class="info-name t-center">
+        <h4>Intensive</h4>
+      </div>
+      <div class="info-description t-center">
+        <p>Kurz pre začiatočníkov</p>
+        <p>16 vyučovacích hodín</p>
+        <p>2hod/týždenne</p>
+      </div>
+      <div class="info-price t-center">
+        <p>2900 kč</p>
+      </div>
+      <div class="info-container flex h-centered">
+        <div class="btn info-cta"> <a href="standard.html">Více</a></div>
+      </div>
+    </div>
+    <div class="info-tab flex">
+      <div class="info-name t-center">
+        <h4>Intensive</h4>
+      </div>
+      <div class="info-description t-center">
+        <p>Kurz pre začiatočníkov</p>
+        <p>16 vyučovacích hodín</p>
+        <p>2hod/týždenne</p>
+      </div>
+      <div class="info-price t-center">
+        <p>2900 kč</p>
+      </div>
+      <div class="info-container flex h-centered">
+        <div class="btn info-cta"> <a href="standard.html">Více</a></div>
+      </div>
+    </div>
+  </div>
+</section>
