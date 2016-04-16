@@ -14,17 +14,30 @@ var nav            = $('nav'),                        //object? dom.nav ...
 ///functions///
 //////////////
 
-function jsonLoadOnPage(dir, tempEl, idToAppend) {
+function jsonLoadOnPage(dir, tmp, idToAdd) {
   $.getJSON(
   dir)
   .done(function(data) {
-    var context  = data,
-        source   = $(tempEl).html(),              //better???? Precompilation!!!!!!
-        template = Handlebars.compile(source),
-        html     = template(context);
-      $(idToAppend).append(html);
+    handlebarsTemplating(data, tmp, idToAdd);
     });
 };
+
+function modalTemplating(urlJSON, tmp, idToAdd){
+  $.getJSON(
+    urlJSON)
+    .done(function(data) {
+      handlebarsTemplating(data[0], tmp, idToAdd);
+      showModal();
+    });
+};
+
+
+function handlebarsTemplating(data, tmp, idToAdd) {
+  var context  = data,
+      template = Handlebars.templates[tmp],
+      html     = template(context);
+    $(idToAdd).html(html);
+}
 
 function getDir(el, dataName, target, partDir ) {
   var data,
@@ -32,19 +45,6 @@ function getDir(el, dataName, target, partDir ) {
     data = target.find(el).data(dataName);
     dir  = partDir + data + ".json";
     return dir;
-};
-
-function modalTemplating(urlJSON, idTemplate, idToAdd){
-  $.getJSON(
-    urlJSON)
-    .done(function(data) {
-      var context  = data[0],
-          source   = $(idTemplate).html(),
-          template = Handlebars.compile(source),
-          html     = template(context);
-        $(idToAdd).html(html);
-        showModal();
-    });
 };
 
 ////////////////
@@ -124,7 +124,7 @@ nav.on('click', '.dropdown', function() {
       target.find('.ch-up').toggleClass('is-hidden');
       target.find('.submenu').toggleClass('submenu-is-open');
     };
-    //event.preventDefault();
+    event.preventDefault();
 });
 
 ///templating - modals
@@ -132,7 +132,7 @@ nav.on('click', '.dropdown', function() {
 $('.lectors').on('click', '.lector', function(){
   var target = $(this);
   var dir    =  getDir('.lector-caption', 'name', target, dirLectors);
-    modalTemplating(dir, "#lector-template", "#modal-lector");
+    modalTemplating(dir, "lectorTemplate", "#modal-lector");
 });
 
 //uni for all modals

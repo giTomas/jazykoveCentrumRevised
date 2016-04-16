@@ -84,6 +84,7 @@ gulp.task('jade', function () {
     .pipe(gulp.dest('_includes'))
 });
 
+
 /**
  * Watch scss files for changes & recompile
  * Watch html/md files, run jekyll & reload BrowserSync
