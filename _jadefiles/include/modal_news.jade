@@ -3,10 +3,10 @@
     .modal-container.flex#modal-new 
     script#newTemplate(type="text/x-handlebars-template")  
       .modal-item-100.flex
-        h2 {%raw %}{{headline}}{%endraw%}
+        h2.m-title-small{%raw %}{{headline}}{%endraw%}
         h3 {%raw %}{{date}}{%endraw%}
         p {%raw%}{{content}}{%endraw%}
-        a.modal-btn(href="{%raw %}{{link}}{%endraw%}") Více <i class="fa fa-angle-right"></i>
+        a.modal-btn(href="{%raw %}{{link}}{%endraw%}") {%raw%}{{linkInfo}}{%endraw%} <i class="fa fa-angle-right"></i>
         
       .close
         svg(fill="#FFFFFF", height="48", viewBox="0 0 24 24", width="48", xmlns="http://www.w3.org/2000/svg")

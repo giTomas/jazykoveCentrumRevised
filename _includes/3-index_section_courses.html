@@ -46,9 +46,9 @@
       <div id="modal-new" class="modal-container flex"> </div>
       <script id="newTemplate" type="text/x-handlebars-template"> 
         <div class="modal-item-100 flex">
-          <h2>{%raw %}{{headline}}{%endraw%}</h2>
+          <h2 class="m-title-small">{%raw %}{{headline}}{%endraw%}</h2>
           <h3>{%raw %}{{date}}{%endraw%}</h3>
-          <p>{%raw%}{{content}}{%endraw%}</p><a href="{%raw %}{{link}}{%endraw%}" class="modal-btn">Více <i class="fa fa-angle-right"></i></a>
+          <p>{%raw%}{{content}}{%endraw%}</p><a href="{%raw %}{{link}}{%endraw%}" class="modal-btn">{%raw%}{{linkInfo}}{%endraw%} <i class="fa fa-angle-right"></i></a>
         </div>
         <div class="close">
           <svg fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
@@ -62,7 +62,7 @@
   <script id="noticesTemplate" type="text/x-handlebars-template">{%raw%}{{#each shortNotices}}{%endraw%} 
     <li class="notice">
       <p data-date="{%raw%}{{date}}{%endraw%}" class="notice-content"><i class="fa fa-angle-right"></i>{%raw%}{{notice}}{%endraw%}</p>
-    </li>{%raw%}{{/each}}{%endraw%}
+    </li>{%raw%}{{/each}}{%endraw%}  
   </script>
 </section>
 <section class="courses">

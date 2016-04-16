@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).ready(function() {
 
 //load news
 
@@ -8,8 +8,8 @@ jsonLoadOnPage("../assets/json/news/notices.json", "#noticesTemplate", "#news");
 
 $("#news").on("click", ".notice", function(){
   var target = $(this);
-  var urlJSON = getUrlJson(".notice-content", "date", target, "../assets/json/news/" );
-  modalTemplating(urlJSON, "#newTemplate", "#modal-new");
+  var dir = getDir(".notice-content", "date", target, dirNews);
+  modalTemplating(dir, "#newTemplate", "#modal-new");
 });
 
 });

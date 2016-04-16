@@ -113,9 +113,9 @@
       <div id="modal-new" class="modal-container flex"> </div>
       <script id="newTemplate" type="text/x-handlebars-template"> 
         <div class="modal-item-100 flex">
-          <h2>{{headline}}</h2>
+          <h2 class="m-title-small">{{headline}}</h2>
           <h3>{{date}}</h3>
-          <p>{{content}}</p><a href="{{link}}" class="modal-btn">Více <i class="fa fa-angle-right"></i></a>
+          <p>{{content}}</p><a href="{{link}}" class="modal-btn">{{linkInfo}} <i class="fa fa-angle-right"></i></a>
         </div>
         <div class="close">
           <svg fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
@@ -129,7 +129,7 @@
   <script id="noticesTemplate" type="text/x-handlebars-template">{{#each shortNotices}} 
     <li class="notice">
       <p data-date="{{date}}" class="notice-content"><i class="fa fa-angle-right"></i>{{notice}}</p>
-    </li>{{/each}}
+    </li>{{/each}}  
   </script>
 </section>
 <section class="courses">

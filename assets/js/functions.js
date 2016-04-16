@@ -1,114 +1,148 @@
-/////////
-//vars//
-////////
+////////////////
+//global vars//
+//////////////
 
 var nav            = $('nav'),                        //object? dom.nav ...
     logo           = $('.nav-logo'),
     modalOverlay   = $('.modal-overlay'),
     modalContainer = $('.modal-container'),
-    body           = $('body');
+    body           = $('body'),
+    dirLectors     = "../assets/json/lectors/",
+    dirNews        = "../assets/json/news/";
 
+////////////////
+///functions///
+//////////////
 
-function jsonLoadOnPage(urlJSON, tempEl, idToAppend) {
+function jsonLoadOnPage(dir, tempEl, idToAppend) {
   $.getJSON(
-  urlJSON)
+  dir)
   .done(function(data) {
-    var context = data,
-        source = $(tempEl).html(),
+    var context  = data,
+        source   = $(tempEl).html(),              //better????
         template = Handlebars.compile(source),
-        html = template(context);
-    $(idToAppend).append(html);
+        html     = template(context);
+      $(idToAppend).append(html);
     });
 };
 
-function getUrlJson(el, dataName, target, partUrl ) {
+function getDir(el, dataName, target, partDir ) {
   var data,
-      urlJSON;
-
-  data = target.find(el).data(dataName);
-  urlJSON = partUrl + data + ".json";
-  return urlJSON;
+      dir;
+    data = target.find(el).data(dataName);
+    dir  = partDir + data + ".json";
+    return dir;
 };
 
 function modalTemplating(urlJSON, idTemplate, idToAdd){
   $.getJSON(
     urlJSON)
     .done(function(data) {
-      var context = data[0],
-          source = $(idTemplate).html(),
+      var context  = data[0],
+          source   = $(idTemplate).html(),
           template = Handlebars.compile(source),
-          html = template(context);
-      $(idToAdd).html(html);
-      showModal();
+          html     = template(context);
+        $(idToAdd).html(html);
+        showModal();
     });
 };
 
-
-  // show modal
+////////////////
+//modal////////
+//////////////
 
 function showModal() {
-  body.addClass("o-hidden");
+  //body.addClass("o-hidden");
   modalOverlay.addClass('is-displaying');
-  setTimeout(function(){
-    modalOverlay.addClass('is-visible');
-  }, 150);
-  setTimeout(function(){
-    modalContainer.addClass('is-in-position');
-  }, 550);
-
+    setTimeout(function(){
+      modalOverlay.addClass('is-visible');
+    }, 150);
+    setTimeout(function(){
+      modalContainer.addClass('is-in-position');
+    }, 550);
 };
-
-
-  //hide modal
 
 function hideModal(){
   modalContainer.removeClass('is-in-position');
-  setTimeout(function(){
-    modalOverlay.removeClass('is-visible')
-  }, 450 );
-  setTimeout(function(){
-    modalOverlay.removeClass('is-displaying');
-  }, 800 );
-  setTimeout(function(){
+    setTimeout(function(){
+      modalOverlay.removeClass('is-visible')
+    }, 450 );
+    setTimeout(function(){
+      modalOverlay.removeClass('is-displaying');
+    }, 800 );
+  /*setTimeout(function(){
     body.removeClass("o-hidden");
-  }, 1000 );
+  }, 1000 );*/
 };
 
-
+////////////
+///menu////
+//////////
 
 $( document ).ready(function() {
-
-
-/////////////
-//functions/
-////////////
-
-//get JSON Url
-
-
-//AJAX json + modal template
-
-
-
 
 $(window).scroll(function() {
 
   var wScroll = $(this).scrollTop(),
-      wHeight = $("nav").height();
+      wHeight = nav.height();
 
-    if (wScroll >= wHeight) {
-      nav.addClass('is-fixed');
-    } else {
-      nav.removeClass('is-fixed');
-    };
+    wScroll >= wHeight ? nav.addClass('is-fixed') : nav.removeClass('is-fixed');
 
-    if (wScroll >= wHeight + 200) {
-      logo.addClass('logo-is-in-position');
-    } else {
-      logo.removeClass('logo-is-in-position');
-    };
+    wScroll >= wHeight + 200 ? logo.addClass('logo-is-in-position') : logo.removeClass('logo-is-in-position')
+
 
 }); // end of scroll
+
+////////////////////
+//responsive menu//
+//////////////////
+
+nav.on('click', '.toggle-menu', function(){
+
+  var target     = $(this),
+      navigation = target.parent().find('.navigation'),
+      submenu    = navigation.find('.submenu'),
+      statusNav  = navigation.hasClass('is-open'),
+      statusSub  = submenu.hasClass('submenu-is-open');
+
+    target.find('svg').toggleClass('is-hidden');
+
+    if ( statusNav && statusSub ) {
+      submenu.removeClass('submenu-is-open');
+    };
+    statusNav ? navigation.removeClass('is-open') : navigation.addClass('is-open');
+
+});
+
+nav.on('click', '.dropdown', function() {
+
+  var wWidth = $(window).width() < 700;
+      target = $(this);
+
+    if (wWidth) {
+      target.find('.ch-down').toggleClass('is-hidden');
+      target.find('.ch-up').toggleClass('is-hidden');
+      target.find('.submenu').toggleClass('submenu-is-open');
+    };
+    //event.preventDefault();
+});
+
+///templating - modals
+
+$('.lectors').on('click', '.lector', function(){
+  var target = $(this);
+  var dir    =  getDir('.lector-caption', 'name', target, dirLectors);
+    modalTemplating(dir, "#lector-template", "#modal-lector");
+});
+
+//uni for all modals
+
+$('.modal').on('click', '.close', function(){
+  hideModal();
+});
+
+
+
 
 
 ///////////////////
@@ -129,7 +163,25 @@ $(function() {
       }
     }
   });
-});*/
+});
+
+//travis
+
+function smoothScroll (duration) {
+	$('a[href^="#"]').on('click', function(event) {
+
+	    var target = $( $(this).attr('href') );
+
+	    if( target.length ) {
+	        event.preventDefault();
+	        $('html, body').animate({
+	            scrollTop: target.offset().top
+	        }, duration);
+	    }
+	});
+}
+
+*/
 
 ///////modal///////
 //////////////////
@@ -153,39 +205,10 @@ $('.lectors').on('click', '.lector', function(){
 
 //click events
 
-//load lectors  ///some problem with loading and compilation!!!
-
-$('.lectors').on('click', '.lector', function(){
-  var target = $(this);
-  var urlJSON =  getUrlJson('.lector-caption', 'name', target, '../assets/json/lectors/');
-  modalTemplating(urlJSON, "#lector-template", "#modal-lector");
-});
-
-$('.modal').on('click', '.close', function(){
-  hideModal();
-});
+//load lectors  ///some problem with loading and compilation. solved!
 
 
-//responsive menu
-/////////////////
 
-nav.on('click', '.toggle-menu', function(){
-  var target = $(this);
-  target.find('svg').toggleClass('is-hidden');
-  // target.find('i.fa-times').toggleClass('is-hidden');
-  $('.navigation').toggleClass('is-open');
-  //$('.navigation').slideToggle();
-});
 
-nav.on('click', '.dropdown', function() {
-  var wWidth = $(window).width(),
-      target = $(this);
-    if  ( wWidth <  700) {
-      target.find('.ch-down').toggleClass('is-hidden');
-      target.find('.ch-up').toggleClass('is-hidden');
-      target.find('.submenu').toggleClass('submenu-is-open');
-    };
-    //event.preventDefault();
-});
 
-}); //end of dc ready
+}); //end of dcmt ready
