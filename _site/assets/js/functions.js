@@ -26,7 +26,6 @@ function jsonLoadOnPage(dir, tempEl, idToAppend) {
     });
 };
 
-
 function getDir(el, dataName, target, partDir ) {
   var data,
       dir;
@@ -91,7 +90,6 @@ $(window).scroll(function() {
 
     wScroll >= wHeight + 200 ? logo.addClass('logo-is-in-position') : logo.removeClass('logo-is-in-position')
 
-
 }); // end of scroll
 
 ////////////////////
@@ -142,10 +140,6 @@ $('.lectors').on('click', '.lector', function(){
 $('.modal').on('click', '.close', function(){
   hideModal();
 });
-
-
-
-
 
 ///////////////////
 //smooth scrolling:
