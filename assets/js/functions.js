@@ -7,12 +7,25 @@ var nav            = $('nav'),                        //object? dom.nav ...
     modalOverlay   = $('.modal-overlay'),
     modalContainer = $('.modal-container'),
     body           = $('body'),
-    dirLectors     = "../assets/json/lectors/",
-    dirNews        = "../assets/json/news/";
+    dirLectors     = "/assets/json/lectors/",
+    dirNews        = "/assets/json/news/";
 
 ////////////////
 ///functions///
 //////////////
+
+function handlebarsTemplating(data, tmp, idToAdd) {
+  var context  = data,
+      template = Handlebars.templates[tmp],
+      html     = template(context);
+    $(idToAdd).html(html);
+}
+
+function getDir(el, dataName, target, partDir ) {
+  var data = target.find(el).data(dataName),
+      dir  = partDir + data + ".json";
+    return dir;
+};
 
 function jsonLoadOnPage(dir, tmp, idToAdd) {
   $.getJSON(
@@ -29,22 +42,6 @@ function modalTemplating(urlJSON, tmp, idToAdd){
       handlebarsTemplating(data[0], tmp, idToAdd);
       showModal();
     });
-};
-
-
-function handlebarsTemplating(data, tmp, idToAdd) {
-  var context  = data,
-      template = Handlebars.templates[tmp],
-      html     = template(context);
-    $(idToAdd).html(html);
-}
-
-function getDir(el, dataName, target, partDir ) {
-  var data,
-      dir;
-    data = target.find(el).data(dataName);
-    dir  = partDir + data + ".json";
-    return dir;
 };
 
 ////////////////
@@ -106,9 +103,11 @@ nav.on('click', '.toggle-menu', function(){
 
     target.find('svg').toggleClass('is-hidden');
 
-    if ( statusNav && statusSub ) {
+    /*if ( statusNav && statusSub ) {
       submenu.removeClass('submenu-is-open');
-    };
+    };*/
+
+    statusNav && statusSub ? submenu.removeClass('submenu-is-open') : null;
 
     statusNav ? navigation.removeClass('is-open') : navigation.addClass('is-open');
 
@@ -120,11 +119,10 @@ nav.on('click', '.dropdown', function() {
       target = $(this);
 
     if (wWidth) {
-      target.find('.ch-down').toggleClass('is-hidden');
-      target.find('.ch-up').toggleClass('is-hidden');
-      target.find('.submenu').toggleClass('submenu-is-open');
+      target.find('.ch-down').toggleClass('is-hidden')
+      .end().find('.ch-up').toggleClass('is-hidden')
+      .end().find('.submenu').toggleClass('submenu-is-open');
     };
-    event.preventDefault();
 });
 
 ///templating - modals
@@ -161,46 +159,6 @@ $(function() {
   });
 });
 
-//travis
-
-function smoothScroll (duration) {
-	$('a[href^="#"]').on('click', function(event) {
-
-	    var target = $( $(this).attr('href') );
-
-	    if( target.length ) {
-	        event.preventDefault();
-	        $('html, body').animate({
-	            scrollTop: target.offset().top
-	        }, duration);
-	    }
-	});
-}
-
 */
-
-///////modal///////
-//////////////////
-/*
-$('.lectors').on('click', '.lector', function(){
-  var data;
-  var urlJSON;
-  data = $(this).find('.lector-name').data('name');
-  urlJSON = "/assets/json/lectors/" + data + ".json";
-  $.getJSON(
-    urlJSON,
-    function(data){
-      var lector = data[0];
-      var source = $("#lector-template").html()
-      var template = Handlebars.compile(source);
-      var html = template(lector);
-      $("#modal-lector").html(html);
-      showModal();
-    });*/
-
-
-//click events
-
-//load lectors  ///some problem with loading and compilation. solved!
 
 }); //end of dcmt ready
