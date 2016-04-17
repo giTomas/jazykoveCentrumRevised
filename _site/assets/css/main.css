@@ -210,8 +210,14 @@ img {
   margin: 0 auto; }
 
 .container_80 {
-  width: 95%;
+  width: 80%;
   margin: 0 auto; }
+  @media (max-width: 1000px) {
+    .container_80 {
+      width: 90%; } }
+  @media (max-width: 800px) {
+    .container_80 {
+      width: 100%; } }
 
 .container_60 {
   width: 60%;
