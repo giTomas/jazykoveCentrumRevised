@@ -1,15 +1,1 @@
-$(document).ready(function() {
-
-//load news
-
-jsonLoadOnPage("../assets/json/news/notices.json", "noticesTemplate", "#news");
-
-//2.load details after click on notice
-
-$("#news").on("click", ".notice", function(){
-  var target = $(this);
-  var dir = getDir(".notice-content", "date", target, dirNews);
-  modalTemplating(dir, "newTemplate", "#modal-new");
-});
-
-});
+$(document).ready(function(){jsonLoadOnPage("../assets/json/news/notices.json","noticesTemplate","#news"),$("#news").on("click",".notice",function(){var e=$(this),n=getDir(".notice-content","date",e,dirNews);console.log(n),modalTemplating(n,"newTemplate","#modal-new")})});

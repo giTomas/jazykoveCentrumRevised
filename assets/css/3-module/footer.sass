@@ -3,12 +3,7 @@
   font-size: 1rem
   background: $basicTextColor
   color: $secondTextColor
-  padding: 1.96em 0
-  //margin-top: 3.842rem
-  //box-shadow: 0 0 0.5em $shadow
-  @media (max-width: 600px)
-    //.h-space
-      justify-content: center
+  padding: 1.777em 0 0.563em
 
   a, p
     font-size: 1.33em
@@ -18,47 +13,39 @@
   a
     color: $secondTextColor
     transition: all 0.2s ease-in-out
-    &:hover
+    &:hover                              ///?????
       color: $accentColor
 
   h2
     font-size: 1.33em
-    //color: $secondTextColor      //two times in the module!!!!
-    // border-bottom: 1px solid $secondTextColor
     color: lighten($basicTextColor, 60%)
     letter-spacing: 0.15em
     padding-bottom: 0.1em
     font-weight: bold
-  //.container_80
 
-  hr
+  //hr
     margin-top: 0
     background-color: $secondTextColor
 
-
-
-.address, .phone, .mail
-  margin: 1.8em
+.address, .phone, .mail, .copyright
   border: 1px solid lighten($basicTextColor,5%)
-  //padding: 1.2em
   border-radius: 0.25em
-  //@media (max-width: 450px)
-    width: 60%
+
+.address, .phone, .mail,
+  margin: 1.8em
+
+.copyright
+  padding: 0.317em 0.563em
 
 .address
-  //width: 230px
   padding: 1em
 
 .phone, .mail
-  //width: 200px
   padding: 1em
-
 
 .content
   padding-top: 0.335em
   padding-top: 0.5em
-  //justify-content: flex-end
-
 
 .container
   width: 100%

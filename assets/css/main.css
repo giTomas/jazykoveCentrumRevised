@@ -3,7 +3,6 @@
    A modification of the original found at...
    http://meyerweb.com/eric/tools/css/reset/
 */
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4,
 h5, h6, p, blockquote, pre, a, abbr, acronym, address, big,
 cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small,
@@ -46,6 +45,41 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: local("Roboto Thin"), local("Roboto-Thin"), url(https://fonts.gstatic.com/s/roboto/v15/2tsd397wLxj96qwHyNIkxPesZW2xOQ-xsNqO47m55DA.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local("Roboto Light"), local("Roboto-Light"), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto"), local("Roboto-Regular"), url(https://fonts.gstatic.com/s/roboto/v15/CWB0XYA8bzo0kSThX0UTuA.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local("Roboto Medium"), local("Roboto-Medium"), url(https://fonts.gstatic.com/s/roboto/v15/RxZJdnzeo3R5zSexge8UUVtXRa8TVwTICgirnJhmVJw.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Roboto Bold"), local("Roboto-Bold"), url(https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
@@ -53,9 +87,6 @@ html {
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit; }
-
-.red {
-  border: 1px solid red; }
 
 :root {
   font-size: 16px;
@@ -79,15 +110,6 @@ img {
   -webkit-border-radius: 0.25em;
           border-radius: 0.25em; }
 
-hr {
-  width: 61.8%;
-  margin-top: 1.77em;
-  border: 0;
-  height: 1px;
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(58, 74, 77, 0)), color-stop(rgba(58, 74, 77, 0.75)), to(rgba(58, 74, 77, 0)));
-  background-image: -webkit-linear-gradient(left, rgba(58, 74, 77, 0), rgba(58, 74, 77, 0.75), rgba(58, 74, 77, 0));
-  background-image: linear-gradient(to right, rgba(58, 74, 77, 0), rgba(58, 74, 77, 0.75), rgba(58, 74, 77, 0)); }
-
 .headline2, .headline-first, .title, .m-top-title {
   font-size: 3.157rem;
   color: #242e30;
@@ -96,23 +118,23 @@ hr {
     .headline2, .headline-first, .title, .m-top-title {
       font-size: 2.369rem; } }
 
-.headline2, .headline-first, .title, .subtitle, .m-top-title, .m-top-subtitle {
-  font-weight: 400; }
-
 .m-top-title {
   margin-top: 1em; }
 
 .headline-first {
   margin-bottom: 1em; }
 
-.headline2, .title {
+.headline2 {
   margin: 1em 0; }
+
+.title {
+  margin: 1.777em 0 1.333em; }
 
 .subtitle, .m-top-subtitle {
   font-size: 1.777rem; }
 
-.subtitle {
-  margin-top: 1.777em;
+.text + .subtitle {
+  margin-top: 1.333em;
   color: #242e30; }
 
 .m-top-subtitle {
@@ -126,7 +148,7 @@ hr {
   margin-top: 0.422em; }
 
 .text-padding {
-  padding: 0 1rem 4rem; }
+  padding: 0 1em 4em; }
   @media (max-width: 400px) {
     .text-padding {
       padding: 0; } }
@@ -180,9 +202,6 @@ hr {
 .t-center {
   text-align: center; }
 
-section, header {
-  width: 100%; }
-
 .container_100 {
   width: 100%; }
 
@@ -191,14 +210,8 @@ section, header {
   margin: 0 auto; }
 
 .container_80 {
-  width: 80%;
+  width: 95%;
   margin: 0 auto; }
-  @media (max-width: 1000px) {
-    .container_80 {
-      width: 90%; } }
-  @media (max-width: 800px) {
-    .container_80 {
-      width: 100%; } }
 
 .container_60 {
   width: 60%;
@@ -270,7 +283,7 @@ section, header {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background-image: url("/assets/img/praha4_crop.jpg");
+  background-image: url("../img/praha4_crop.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed; }
@@ -308,7 +321,7 @@ h1.flex {
   margin-left: 0.3em;
   font-family: "Roboto", sans-serif;
   color: #3A4A4D;
-  font-weight: 200;
+  font-weight: 100;
   font-size: 2.369rem;
   padding-right: 0.3em; }
   @media (max-width: 400px) {
@@ -525,7 +538,6 @@ nav {
                 -ms-grid-row-align: flex-start;
             align-items: flex-start; }
   .news i {
-    color: #3A4A4D;
     padding-right: 0.2em; }
   .news:hover {
     -webkit-box-shadow: 0 0 0.3em #192021;
@@ -534,11 +546,10 @@ nav {
 .notice {
   width: 100%;
   font-size: 1rem;
-  font-weight: 400;
   line-height: 1.6;
-  padding: 0 0.25em;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  padding: 0 0.238em;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
   cursor: pointer; }
   .notice:hover {
     background-color: #809ba0; }
@@ -550,8 +561,7 @@ nav {
       width: 100%; } }
 
 .notice-content {
-  padding: 0 0.25em;
-  margin-bottom: 0.5em; }
+  padding: 0.238em; }
 
 .info-tab {
   margin: 1em 1.5em 1.77em;
@@ -660,7 +670,7 @@ nav {
   font-size: 1rem;
   background: #3A4A4D;
   color: #F9FBFB;
-  padding: 1.96em 0; }
+  padding: 1.777em 0 0.563em; }
   .footer a, .footer p {
     font-size: 1.33em;
     line-height: 1.1;
@@ -677,15 +687,17 @@ nav {
     letter-spacing: 0.15em;
     padding-bottom: 0.1em;
     font-weight: bold; }
-  .footer hr {
-    margin-top: 0;
-    background-color: #F9FBFB; }
 
-.address, .phone, .mail {
-  margin: 1.8em;
+.address, .phone, .mail, .copyright {
   border: 1px solid #45585c;
   -webkit-border-radius: 0.25em;
           border-radius: 0.25em; }
+
+.address, .phone, .mail {
+  margin: 1.8em; }
+
+.copyright {
+  padding: 0.317em 0.563em; }
 
 .address {
   padding: 1em; }

@@ -5,13 +5,11 @@ var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
 var jade        = require('jade');
 var gulpJade    = require('gulp-jade');
+var uglify      = require('gulp-uglify');
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
 };
-
-
-
 
 /**
  * Build the Jekyll Site
@@ -34,11 +32,16 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 });
 
 
-
+gulp.task('compress', function() {
+  return gulp.src('assets/js/dev/*.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('assets/js/'));
+});
 
 /**
  * Wait for jekyll-build, then launch the Server
  */
+
 gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
     browserSync({
         server: {
@@ -91,8 +94,10 @@ gulp.task('jade', function () {
  */
 gulp.task('watch', function () {
     gulp.watch('assets/css/**', ['sass']);
-    gulp.watch('assets/js/**', ['jekyll-rebuild']);
-    gulp.watch(['index.html', '_layouts/*.html', '_includes/*'], ['jekyll-rebuild']);
+    gulp.watch('assets/js/*.js', ['compress']);
+    gulp.watch('assets/js/*.js', ['jekyll-rebuild']);
+    gulp.watch('assets/js/templates/*.handlebars', ['jekyll-rebuild']);
+    gulp.watch(['index.html', '_layouts/*.html', '_includes/*', 'en/*', 'ru/*'], ['jekyll-rebuild']);
     gulp.watch(['assets/json/**'], ['jekyll-rebuild']);
     gulp.watch('_jadefiles/*.jade', ['jade']);
 });
