@@ -2,24 +2,27 @@
 //global vars//
 //////////////
 
-var nav            = $('nav'),                        //object? dom.nav ...
+var nav            = $('nav'),
     logo           = $('.nav-logo'),
     modalOverlay   = $('.modal-overlay'),
     modalContainer = $('.modal-container'),
     body           = $('body'),
     dirLectors     = "../assets/json/lectors/",
-    dirNews        = "../assets/json/news/";
+    dirNews        = "../assets/json/news/cz/";
+    dirNewsNotices = "../assets/json/news/notices.json";
 
-////////////////
-///functions///
-//////////////
+///////////////////////*
+///custom functions///*
+/////////////////////*
+
+//templating////
 
 function handlebarsTemplating(data, tmp, idToAdd) {
   var context  = data,
       template = Handlebars.templates[tmp],
       html     = template(context);
     $(idToAdd).html(html);
-}
+};
 
 function getDir(el, dataName, target, partDir ) {
   var data = target.find(el).data(dataName),
@@ -49,7 +52,7 @@ function modalTemplating(urlJSON, tmp, idToAdd){
 //////////////
 
 function showModal() {
-  //body.addClass("o-hidden");
+  /*body.addClass("o-hidden");*/
   modalOverlay.addClass('is-displaying');
     setTimeout(function(){
       modalOverlay.addClass('is-visible');
