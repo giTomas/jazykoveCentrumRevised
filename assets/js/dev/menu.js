@@ -15,7 +15,7 @@ var nav            = $('nav'),
 ///custom functions///*
 /////////////////////*
 
-//templating////
+//AJAX, templating////
 
 function handlebarsTemplating(data, tmp, idToAdd) {
   var context  = data,

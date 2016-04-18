@@ -2,28 +2,37 @@
 //@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900,900italic)
 //@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
 // @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700)
+
 //vars
 
-
 $basicTextColor: #3A4A4D
-// $basicTextColor: #262434
-//$basicTextColor: #253743
+// $basicTextColor: #36454F
+// $basicTextColor: #353839
+//$basicTextColor: #333
 $secondTextColor: #F9FBFB
-$basicColor: #3A4A4D
-//$basicColor: #262434
-//$basicColor: #253743
+// $basicColor: #3A4A4D
+// $basicColor: #708090
+$basicColor: $basicTextColor
+//$basicColor: darkgrey
+$background: #DFDBCF
+$background: lightgrey
+//$background: #F9FBFB
+
 $accentColor: #FF4431
-$shadow: darken($basicColor, 10%)
-$background: lighten($basicColor, 65%)
+$shadow: darken($basicColor, 12.5%)
+$elBackground: lighten($basicColor, 65%)
 $gold: #daa520
+
 $mobile-menu: 750px
 $headerBreak: 400px
+
 $fontStack: 'Roboto', sans-serif
 
 :root
   font-size: 16px
   color: $basicTextColor
   background-color: $secondTextColor
+  background-color: $background
   font-family: $fontStack
 
 
@@ -85,7 +94,7 @@ img
 
 .text
   font-size: 1.333rem
-  line-height: 1.4
+  line-height: 1.333
 
 * + .text
   margin-top: 0.422em

@@ -1,0 +1,33 @@
+{
+	"items": [{
+		"language": "Ázerbájdžánština",
+		"data": "azerbajdzanstina"
+	}, {
+		"language": "Baškirština",
+		"data": "baskirstina"
+	}, {
+		"language": "Kazaština",
+		"data": "kazastina"
+	}, {
+		"language": "Kyrgyzština",
+		"data": "kyrgiztina"
+	}, {
+		"language": "Turečtina",
+		"data": "turectina"
+	}, {
+		"language": "Tatarština",
+		"data": "tatarstina"
+	}, {
+		"language": "Turkmenština",
+		"data": "turkenstina"
+	}, {
+		"language": "Uzbečtina",
+		"data": "uzbectina"
+	}, {
+		"language": "Korejština",
+		"data": "korejstina"
+	}, {
+		"language": "Mongolština",
+		"data": "mongolstina"
+	}]
+}

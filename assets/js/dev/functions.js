@@ -13,9 +13,9 @@ var nav            = jQuery('nav'),
     dirNews        = "../assets/json/news/cz/",
     dirNewsNotices = "../assets/json/news/notices.json";
 
-///////////////////////*
-///custom functions///*
-/////////////////////*
+///////////////////////******///
+///custom functions///******///
+/////////////////////******///
 
 //templating////
 
@@ -83,9 +83,9 @@ function hideModal(){
 
 jQuery( document ).ready(function() {
 
-$(window).scroll(function() {
+jQuery(window).scroll(function() {
 
-  var wScroll = $(this).scrollTop(),
+  var wScroll = jQuery(this).scrollTop(),
       wHeight = nav.height();
 
     wScroll >= wHeight ? nav.addClass('is-fixed') : nav.removeClass('is-fixed');
@@ -100,7 +100,7 @@ $(window).scroll(function() {
 
 nav.on('click', '.toggle-menu', function(){
 
-  var target     = $(this),
+  var target     = jQuery(this),
       navigation = target.parent().parent().find('.navigation'),
       submenu    = navigation.find('.submenu'),
       statusNav  = navigation.hasClass('is-open'),
@@ -120,8 +120,8 @@ nav.on('click', '.toggle-menu', function(){
 
 nav.on('click', '.dropdown', function() {
 
-  var wWidth = $(window).width() < 700;
-      target = $(this);
+  var wWidth = jQuery(window).width() < 700;
+      target = jQuery(this);
 
     if (wWidth) {
       target.find('.ch-down').toggleClass('is-hidden')
@@ -132,15 +132,15 @@ nav.on('click', '.dropdown', function() {
 
 ///templating - modals
 
-$('.lectors').on('click', '.lector', function(){
-  var target = $(this);
+jQuery('.lectors').on('click', '.lector', function(){
+  var target = jQuery(this);
   var dir    =  getDir('.lector-caption', 'name', target, dirLectors);
     modalTemplating(dir, "lectorTemplate", "#modal-lector");
 });
 
 //uni for all modals
 
-$('.modal').on('click', '.close', function(){
+jQuery('.modal').on('click', '.close', function(){
   hideModal();
 });
 
@@ -149,13 +149,13 @@ $('.modal').on('click', '.close', function(){
 ////////////////// //https://css-tricks.com/snippets/jquery/smooth-scrolling/
 
 /*
-$(function() {
-  $('a[href*="#"]:not([href="#"])').click(function() {
+jQuery(function() {
+  jQuery('a[href*="#"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
+      var target = jQuery(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
       if (target.length) {
-        $('html, body').animate({
+        jQuery('html, body').animate({
           scrollTop: target.offset().top
         }, 1000);
         return false;

@@ -1,0 +1,30 @@
+{
+	"starobyle": [{
+		"family": "Avestánština",
+		"data": "avestancina"
+	}, {
+		"family": "Latina",
+		"data": "latina"
+	}, {
+		"family": "Egyptština",
+		"data": "egypstina"
+	}, {
+		"family": "Sanskrit",
+		"data": "uralske"
+	}, {
+		"family": "Starořečtina",
+		"data": "altajske"
+	}, {
+		"family": "Starořečtina",
+		"data": "starorectina"
+	}, {
+		"family": "Staroslovanština",
+		"data": "staroslovanstina"
+	}, {
+		"family": "Staroruština",
+		"data": "starorustina"
+	}, {
+		"family": "Staroarménština",
+		"data": "staroarmenstina"
+	}]
+}

@@ -1,0 +1,21 @@
+{
+	"zive": [{
+		"family": "Indoevropské jazyky",
+		"data": "ie"
+	}, {
+		"family": "Afroasijské jazyky",
+		"data": "afroasijske"
+	}, {
+		"family": "Kartvelské jazyky",
+		"data": "kartvelske"
+	}, {
+		"family": "Uralské jazyky",
+		"data": "uralske"
+	}, {
+		"family": "Altajské jazyky",
+		"data": "altajske"
+	}, {
+		"family": "Tibeto-čínské jazyky",
+		"data": "tibetocinske"
+	}]
+}
