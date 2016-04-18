@@ -12,14 +12,10 @@ h1.flex
   align-items: center     // refactor !
 
 .logo-container
-  @media (max-width: 630px)
+  //@media (max-width: 630px)
     border-bottom: 1px solid $basicColor
   @media (max-width: 400px)
     padding: 0.5em 0
-
-.flex-header
-  @media (max-width: $headerBreak)
-    border-bottom: 1px solid $basicColor
 
 .logo, .nav-logo
   font-family: serif   //!!!!
@@ -43,19 +39,21 @@ h1.flex
     //argin-left: 0
     margin-right: 0
 
+
+
 .flex-header
   display: flex
   //overflow: hidden
   flex-wrap: wrap
   justify-content: space-between
   align-items: center
-  @media (max-width: 620px)
+  @media (max-width: 700px)
     justify-content: center
 
 
 
 //languaes flags
-.switch-language
+//.switch-language
   font-weight: 300
   @media (max-width: 650px)
     display: flex
@@ -66,7 +64,7 @@ h1.flex
       display: none
 
 
-.flag
+//.flag
   background:
     size: contain
     position: 50%
@@ -92,5 +90,5 @@ h1.flex
    background:
     image: url('../svg/gb.svg')
 
-.opacity
+//.opacity
   opacity: 1
