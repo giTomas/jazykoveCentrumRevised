@@ -1,1 +1,1 @@
-$(document).ready(function(){jsonLoadOnPage(dirNewsNotices,"noticesTemplate","#news"),$("#news").on("click",".notice",function(){var e=$(this),n=getDir(".notice-content","date",e,dirNews);console.log(n),modalTemplating(n,"newTemplate","#modal-new")})});
+$(document).ready(function(){jsonLoadOnPage(dirNewsNotices,"noticesTemplate","#news"),$("#news").on("click",".notice",function(){var e=$(this),n=getDir(".notice-content","date",e,dirNews);modalTemplating(n,"newTemplate","#modal-new")})});

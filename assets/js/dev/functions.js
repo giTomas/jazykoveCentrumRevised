@@ -2,13 +2,15 @@
 //global vars//
 //////////////
 
-var nav            = $('nav'),
-    logo           = $('.nav-logo'),
-    modalOverlay   = $('.modal-overlay'),
-    modalContainer = $('.modal-container'),
-    body           = $('body'),
+//jQuery.noConflict();
+
+var nav            = jQuery('nav'),
+    logo           = jQuery('.nav-logo'),
+    modalOverlay   = jQuery('.modal-overlay'),
+    modalContainer = jQuery('.modal-container'),
+    body           = jQuery('body'),
     dirLectors     = "../assets/json/lectors/",
-    dirNews        = "../assets/json/news/cz/";
+    dirNews        = "../assets/json/news/cz/",
     dirNewsNotices = "../assets/json/news/notices.json";
 
 ///////////////////////*
@@ -21,7 +23,7 @@ function handlebarsTemplating(data, tmp, idToAdd) {
   var context  = data,
       template = Handlebars.templates[tmp],
       html     = template(context);
-    $(idToAdd).html(html);
+    jQuery(idToAdd).html(html);
 };
 
 function getDir(el, dataName, target, partDir ) {
@@ -31,7 +33,7 @@ function getDir(el, dataName, target, partDir ) {
 };
 
 function jsonLoadOnPage(dir, tmp, idToAdd) {
-  $.getJSON(
+  jQuery.getJSON(
   dir)
   .done(function(data) {
     handlebarsTemplating(data, tmp, idToAdd);
@@ -39,7 +41,7 @@ function jsonLoadOnPage(dir, tmp, idToAdd) {
 };
 
 function modalTemplating(urlJSON, tmp, idToAdd){
-  $.getJSON(
+  jQuery.getJSON(
     urlJSON)
     .done(function(data) {
       handlebarsTemplating(data[0], tmp, idToAdd);
@@ -79,7 +81,7 @@ function hideModal(){
 ///menu////
 //////////
 
-$( document ).ready(function() {
+jQuery( document ).ready(function() {
 
 $(window).scroll(function() {
 

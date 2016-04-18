@@ -6,6 +6,7 @@ var cp          = require('child_process');
 var jade        = require('jade');
 var gulpJade    = require('gulp-jade');
 var uglify      = require('gulp-uglify');
+//var gulpIf      = require('gulpIf');
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -26,6 +27,14 @@ gulp.task('jekyll-build', function (done) {
 gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
     browserSync.reload();
 });
+
+/*gulp.task('useref', function(){
+  return gulp.src('app/*.html')
+    .pipe(useref())
+    // Minifies only if it's a JavaScript file
+    .pipe(gulpIf('*.js', uglify()))
+    .pipe(gulp.dest('dist'))
+});*/
 
 gulp.task('compress', function() {
   return gulp.src('assets/js/dev/*.js')

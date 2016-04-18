@@ -9,7 +9,6 @@ jsonLoadOnPage(dirNewsNotices, "noticesTemplate", "#news");
 $("#news").on("click", ".notice", function(){
   var target = $(this);
   var dir = getDir(".notice-content", "date", target, dirNews);
-  console.log(dir);
   modalTemplating(dir, "newTemplate", "#modal-new");
 });
 

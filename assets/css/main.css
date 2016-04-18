@@ -58,6 +58,14 @@
   src: local("Roboto Medium"), local("Roboto-Medium"), url(https://fonts.gstatic.com/s/roboto/v15/RxZJdnzeo3R5zSexge8UUVtXRa8TVwTICgirnJhmVJw.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
 
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Roboto Bold"), local("Roboto-Bold"), url(https://fonts.gstatic.com/s/roboto/v15/97uahxiqZRoncBaCEI3aWxJtnKITppOI_IvcXXDNrsc.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF; }
+
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -184,6 +192,10 @@ img {
   @media (max-width: 400px) {
     .text-padding {
       padding: 0; } }
+
+.text-highlight {
+  font-weight: bold;
+  color: #242e30; }
 
 .flex {
   display: -webkit-box;
@@ -322,6 +334,7 @@ img {
 
 .prices-content,
 .course-content,
+.aboutus-content,
 .job-content {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -550,8 +563,8 @@ nav {
 
 .notice {
   width: 100%;
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.5;
   padding: 0 0.238em;
   -webkit-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out;
@@ -781,7 +794,8 @@ nav {
   overflow: auto; }
   .modal-overlay p {
     font-size: 1.333em;
-    line-height: 1.2;
+    line-height: 1.2; }
+  .modal-overlay p:first-of-type {
     padding-top: 1em; }
   .modal-overlay h3 {
     font-size: 1em;
@@ -879,18 +893,6 @@ nav {
   .modal-btn:hover {
     background-color: #3A4A4D;
     color: #F9FBFB; }
-
-.site {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-height: 100vh;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
 
 .table-cell {
   font-size: 1.33em;
