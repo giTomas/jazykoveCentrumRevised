@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 //load news
 
-jsonLoadOnPage("../assets/json/news/notices.json", "noticesTemplate", "#news");
+jsonLoadOnPage(dirNewsNotices, "noticesTemplate", "#news");
 
 //2.load details after click on notice
 

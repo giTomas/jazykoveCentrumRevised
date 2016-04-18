@@ -21,9 +21,6 @@ gulp.task('jekyll-build', function (done) {
         .on('close', done);
 });
 
-
-
-
 /**
  * Rebuild Jekyll & do page reload
  */
@@ -35,7 +32,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 gulp.task('compress', function() {
   return gulp.src('assets/js/dev/*.js')
     .pipe(uglify())
-    .pipe(gulp.dest('assets/js/'));
+    .pipe(gulp.dest('assets/js'));
 });
 
 /**
@@ -94,16 +91,13 @@ gulp.task('jade', function () {
  */
 gulp.task('watch', function () {
     gulp.watch('assets/css/**', ['sass']);
-    gulp.watch('assets/js/*.js', ['compress']);
+    gulp.watch('assets/js/dev/*.js', ['compress']);
     gulp.watch('assets/js/*.js', ['jekyll-rebuild']);
     gulp.watch('assets/js/templates/*.handlebars', ['jekyll-rebuild']);
     gulp.watch(['index.html', '_layouts/*.html', '_includes/*', 'en/*', 'ru/*'], ['jekyll-rebuild']);
     gulp.watch(['assets/json/**'], ['jekyll-rebuild']);
     gulp.watch('_jadefiles/*.jade', ['jade']);
 });
-
-
-
 
 /**
  * Default task, running just `gulp` will compile the sass,

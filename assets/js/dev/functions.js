@@ -8,7 +8,8 @@ var nav            = $('nav'),
     modalContainer = $('.modal-container'),
     body           = $('body'),
     dirLectors     = "../assets/json/lectors/",
-    dirNews        = "../assets/json/news/";
+    dirNews        = "../assets/json/news/cz/";
+    dirNewsNotices = "../assets/json/news/notices.json";
 
 ///////////////////////*
 ///custom functions///*
@@ -21,7 +22,7 @@ function handlebarsTemplating(data, tmp, idToAdd) {
       template = Handlebars.templates[tmp],
       html     = template(context);
     $(idToAdd).html(html);
-}
+};
 
 function getDir(el, dataName, target, partDir ) {
   var data = target.find(el).data(dataName),
@@ -51,7 +52,7 @@ function modalTemplating(urlJSON, tmp, idToAdd){
 //////////////
 
 function showModal() {
-  //body.addClass("o-hidden");
+  /*body.addClass("o-hidden");*/
   modalOverlay.addClass('is-displaying');
     setTimeout(function(){
       modalOverlay.addClass('is-visible');
