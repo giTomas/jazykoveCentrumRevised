@@ -21,13 +21,11 @@ gulp.task('jekyll-build', function (done) {
         .on('close', done);
 });
 
-/**
- * Rebuild Jekyll & do page reload
- */
+ // Rebuild Jekyll & do page reload
+
 gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
     browserSync.reload();
 });
-
 
 gulp.task('compress', function() {
   return gulp.src('assets/js/dev/*.js')
@@ -48,7 +46,6 @@ gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
     });
 });
 
-
 /**
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
@@ -64,17 +61,6 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('assets/css'));
 });
 
-/*
-* Travis is trying to Gulp stuff
-*/
-
-/*gulp.task('jade', function(){
-  return gulp.src('_jadefiles/*.jade')
-  .pipe(jade())
-  .pipe(gulp.dest('_includes'));
-});*/
-
-
 gulp.task('jade', function () {
   return gulp.src('_jadefiles/*.jade')
     .pipe(gulpJade({
@@ -83,7 +69,6 @@ gulp.task('jade', function () {
     }))
     .pipe(gulp.dest('_includes'))
 });
-
 
 /**
  * Watch scss files for changes & recompile
@@ -94,7 +79,7 @@ gulp.task('watch', function () {
     gulp.watch('assets/js/dev/*.js', ['compress']);
     gulp.watch('assets/js/*.js', ['jekyll-rebuild']);
     gulp.watch('assets/js/templates/*.handlebars', ['jekyll-rebuild']);
-    gulp.watch(['index.html', '_layouts/*.html', '_includes/*', 'en/*', 'ru/*'], ['jekyll-rebuild']);
+    gulp.watch(['index.html', '_layouts/*.html', '_includes/*'], ['jekyll-rebuild']);
     gulp.watch(['assets/json/**'], ['jekyll-rebuild']);
     gulp.watch('_jadefiles/*.jade', ['jade']);
 });

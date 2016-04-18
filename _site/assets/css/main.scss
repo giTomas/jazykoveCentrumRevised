@@ -1,8 +1,8 @@
-@import "0-tools/font_cz";
+// @import "0-tools/font_cz";
+@import "0-tools/fonts";
 //@import "0-tools/normalize";
 @import "0-tools/reset";
 @import "0-tools/box-sizing";
-//@import "0-tools/skeleton";
 @import "1-base/base";
 @import "2-layout/layout";
 @import "3-module/header";
@@ -16,7 +16,6 @@
 @import "3-module/modal";
 @import "3-module/course";
 @import "3-module/pricing-table";
-@import "3-module/language";
 @import "3-module/contact";
 @import "3-module/jobs";
 @import "4-state/state";
