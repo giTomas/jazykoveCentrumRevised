@@ -135,6 +135,9 @@ html {
   background-color: lightgrey;
   font-family: "Roboto", sans-serif; }
 
+.red {
+  border: 1px dotted darkred; }
+
 a {
   color: #3A4A4D;
   text-decoration: none; }
@@ -153,7 +156,7 @@ img {
 
 .headline2, .headline-first, .title, .m-top-title {
   font-size: 3.157rem;
-  color: #1f2729;
+  color: #242e30;
   letter-spacing: 0.05em; }
   @media all and (max-width: 500px) {
     .headline2, .headline-first, .title, .m-top-title {
@@ -170,13 +173,16 @@ img {
 
 .title {
   margin: 1.777em 0 1.333em; }
+  @media (max-width: 750px) {
+    .title {
+      margin: 1em 0 0.75em; } }
 
 .subtitle, .m-top-subtitle {
   font-size: 1.777rem; }
 
 .text + .subtitle {
   margin-top: 1.333em;
-  color: #1f2729; }
+  color: #242e30; }
 
 .m-top-subtitle {
   margin-top: 0.422em; }
@@ -196,7 +202,7 @@ img {
 
 .text-highlight {
   font-weight: bold;
-  color: #1f2729; }
+  color: #242e30; }
 
 .flex {
   display: -webkit-box;
@@ -508,7 +514,7 @@ nav {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; }
   .toggle-menu:hover {
-    color: #1f2729; }
+    color: #242e30; }
   @media (max-width: 750px) {
     .toggle-menu {
       display: -webkit-box;
@@ -558,8 +564,8 @@ nav {
   .news i {
     padding-right: 0.2em; }
   .news:hover {
-    -webkit-box-shadow: 0 0 0.3em #192021;
-            box-shadow: 0 0 0.3em #192021; }
+    -webkit-box-shadow: 0 0 0.3em #c9d4d6;
+            box-shadow: 0 0 0.3em #c9d4d6; }
 
 .notice {
   width: 100%;
@@ -651,20 +657,20 @@ nav {
           border-radius: 0 0 .25em .25em; }
 
 .language-item {
-  min-width: 300px;
-  -webkit-box-shadow: 0 0 0.2em #1f2729;
-          box-shadow: 0 0 0.2em #1f2729;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  margin: 1em 0.5em; }
+  -webkit-box-shadow: 0 0 0.1em #242e30;
+          box-shadow: 0 0 0.1em #242e30;
+  -webkit-transition: -webkit-box-shadow 0.2s ease-in-out;
+  transition: -webkit-box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+  margin: 1em 1.333em;
+  cursor: pointer;
+  padding: 0.563em 0.75em; }
   .language-item:hover {
-    background-color: #809ba0; }
+    background-color: #c9d4d6; }
   .language-item h3 {
-    -webkit-box-flex: 2;
-    -webkit-flex: 2;
-        -ms-flex: 2;
-            flex: 2;
-    font-size: 1.77rem; }
+    font-size: 1.77rem;
+    text-shadow: 0 0.01em 0.01em #668287; }
 
 .footer {
   width: 100%;
@@ -736,8 +742,8 @@ nav {
   margin: 1em;
   position: relative;
   overflow: hidden;
-  -webkit-box-shadow: -0.1em 0.1em 0.25em #1f2729;
-          box-shadow: -0.1em 0.1em 0.25em #1f2729;
+  -webkit-box-shadow: -0.1em 0.1em 0.25em #242e30;
+          box-shadow: -0.1em 0.1em 0.25em #242e30;
   cursor: pointer; }
   .lector:hover .lector-caption {
     right: 0; }
@@ -788,7 +794,7 @@ nav {
 
 .m-title {
   font-size: 3.157em;
-  color: #1f2729; }
+  color: #242e30; }
   @media (max-width: 750px) {
     .m-title {
       font-size: 2.369em; } }
@@ -820,8 +826,8 @@ nav {
   left: -150%;
   padding: 1.5625rem;
   margin: 1.5625rem;
-  -webkit-box-shadow: -0.4em 0.2em 1.5em #1f2729;
-          box-shadow: -0.4em 0.2em 1.5em #1f2729;
+  -webkit-box-shadow: -0.4em 0.2em 1.5em #242e30;
+          box-shadow: -0.4em 0.2em 1.5em #242e30;
   opacity: 0;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out; }
@@ -921,8 +927,7 @@ nav {
       display: inline; } }
 
 .contact-content {
-  margin-bottom: 10em;
-  margin-top: 7.478em; }
+  margin-bottom: 10em; }
 
 .contact-container {
   width: 100%;
@@ -935,7 +940,7 @@ nav {
   display: flex;
   background-color: #e6ebec; }
   .contact-container h3 {
-    color: #1f2729;
+    color: #242e30;
     -webkit-box-flex: 1;
     -webkit-flex: 1;
         -ms-flex: 1;
@@ -948,9 +953,30 @@ nav {
       -ms-flex: 2;
           flex: 2; }
 
+.container_contact {
+  width: 60%;
+  margin: 0 auto; }
+  @media (max-width: 1200px) {
+    .container_contact {
+      width: 80%; } }
+  @media (max-width: 600px) {
+    .container_contact {
+      width: 95%; } }
+
+.container_50_contact {
+  width: 50%;
+  margin: 0 auto; }
+  @media (max-width: 750px) {
+    .container_50_contact {
+      width: 100%; } }
+
 iframe {
   width: 100%;
-  height: 450px; }
+  height: 370px;
+  padding-left: 0.5em; }
+  @media (max-width: 750px) {
+    iframe {
+      padding-left: 0; } }
 
 .job-offer {
   width: 100%;
@@ -1020,3 +1046,9 @@ iframe {
 
 .submenu-is-open {
   display: block; }
+
+.is-picked {
+  color: #F9FBFB;
+  background: #3A4A4D; }
+  .is-picked:hover {
+    background-color: #3A4A4D; }

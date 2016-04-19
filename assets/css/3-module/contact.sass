@@ -2,7 +2,7 @@
 
 .contact-content
   margin-bottom: 10em
-  margin-top: 7.478em
+  //margin-top: 7.478em
 
 
 .contact-container
@@ -21,7 +21,23 @@
   margin-left: 1em
   flex: 2
 
+.container_contact
+  width: 60%
+  margin: 0 auto
+  @media(max-width: 1200px)
+    width: 80%
+  @media(max-width: 600px)
+    width: 95%
+
+.container_50_contact  //inak
+  width: 50%
+  margin: 0 auto
+  @media(max-width: $mobile-menu)
+    width: 100%
+
 iframe
   width: 100%
-  height: 450px
-  //margin: 0 auto
+  height: 370px
+  padding-left: 0.5em
+  @media(max-width: $mobile-menu)
+    padding-left: 0

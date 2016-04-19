@@ -8,17 +8,21 @@
   //box-shadow: 0 0 0.25em $shadow
 
 .language-item
-  min-width: 300px
+  //min-width: 300px
   //border-radius: 0 0.25rem 0.25rem 0
-  box-shadow: 0 0 0.2em $shadow
-  transition: all 0.2s ease-in-out
-  margin: 1em 0.5em
+  box-shadow: 0 0 0.1em $shadow
+  transition: box-shadow 0.2s ease-in-out
+  margin: 1em 1.333em
+  cursor: pointer
+  padding: 0.563em 0.75em
   &:hover
-    background-color: lighten( $basicColor, 30%)
-    // box-shadow: none
+    background-color: $hoverColor 
+    //background-color: $basicColor
+    //color: $secondTextColor
   h3
-    flex: 2
+    //flex: 2
     font-size: 1.77rem
+    text-shadow: 0 0.01em 0.01em lighten($basicTextColor, 20%)
     //padding: 0 0.5em
 
 //.flag-big

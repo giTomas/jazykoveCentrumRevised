@@ -5,7 +5,7 @@
   justify-content: flex-start
   .navigation li:hover
      .submenu
-      box-shadow: 0 0.25em 0.3em darken($basicColor, 20%) 
+      box-shadow: 0 0.25em 0.3em darken($basicColor, 20%)
       @media (max-width: $mobile-menu)
         box-shadow: none
 
@@ -42,3 +42,9 @@
 
 .submenu-is-open
   display: block
+
+.is-picked
+  color: $secondTextColor
+  background: $basicColor
+  &:hover
+    background-color: $basicColor

@@ -11,7 +11,8 @@ var nav            = jQuery('nav'),
     body           = jQuery('body'),
     dirLectors     = "../assets/json/lectors/",
     dirNews        = "../assets/json/news/cz/",
-    dirNewsNotices = "../assets/json/news/notices.json";
+    dirNewsNotices = "../assets/json/news/notices.json",
+    dirLang        = "../assets/json/languages/";
 
 ///////////////////////******///
 ///custom functions///******///
@@ -32,12 +33,21 @@ function getDir(el, dataName, target, partDir ) {
     return dir;
 };
 
+function getDirSimple(target, dataName,  partDir ) {
+  var data = target.data(dataName),
+      dir  = partDir + data + ".json";
+    return dir;
+};
+
 function jsonLoadOnPage(dir, tmp, idToAdd) {
   jQuery.getJSON(
   dir)
   .done(function(data) {
     handlebarsTemplating(data, tmp, idToAdd);
-    });
+    })
+  .fail(function(){
+      alert('Request failed')
+    })
 };
 
 function modalTemplating(urlJSON, tmp, idToAdd){
@@ -46,7 +56,10 @@ function modalTemplating(urlJSON, tmp, idToAdd){
     .done(function(data) {
       handlebarsTemplating(data[0], tmp, idToAdd);
       showModal();
-    });
+    })
+    .fail(function(){
+      alert('request failed')
+    })
 };
 
 ////////////////
@@ -90,7 +103,7 @@ jQuery(window).scroll(function() {
 
     wScroll >= wHeight ? nav.addClass('is-fixed') : nav.removeClass('is-fixed');
 
-    wScroll >= wHeight + 200 ? logo.addClass('logo-is-in-position') : logo.removeClass('logo-is-in-position')
+    wScroll >= wHeight + 150 ? logo.addClass('logo-is-in-position') : logo.removeClass('logo-is-in-position')
 
 }); // end of scroll
 

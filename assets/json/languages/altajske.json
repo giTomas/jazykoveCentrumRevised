@@ -1,4 +1,5 @@
 {
+	"languages": "Altajské jazyky",
 	"items": [{
 		"language": "Ázerbájdžánština",
 		"data": "azerbajdzanstina"
@@ -10,7 +11,7 @@
 		"data": "kazastina"
 	}, {
 		"language": "Kyrgyzština",
-		"data": "kyrgiztina"
+		"data": "kyrgizstina"
 	}, {
 		"language": "Turečtina",
 		"data": "turectina"
@@ -19,7 +20,7 @@
 		"data": "tatarstina"
 	}, {
 		"language": "Turkmenština",
-		"data": "turkenstina"
+		"data": "turkmenstina"
 	}, {
 		"language": "Uzbečtina",
 		"data": "uzbectina"

@@ -19,7 +19,8 @@ $background: lightgrey
 //$background: #F9FBFB
 
 $accentColor: #FF4431
-$shadow: darken($basicColor, 12.5%)
+$hoverColor: lighten( $basicColor, 55%)
+$shadow: darken($basicColor, 10%)
 $elBackground: lighten($basicColor, 65%)
 $gold: #daa520
 
@@ -35,6 +36,8 @@ $fontStack: 'Roboto', sans-serif
   background-color: $background
   font-family: $fontStack
 
+.red
+  border: 1px dotted darkred
 
 a
   color: $basicTextColor
@@ -81,6 +84,8 @@ img
 
 .title
   margin: 1.777em 0 1.333em
+  @media (max-width: $mobile-menu)
+    margin: 1em 0 0.75em
 
 .subtitle, .m-top-subtitle
   font-size: 1.777rem

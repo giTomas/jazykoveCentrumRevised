@@ -3,6 +3,10 @@ mixin language-item(language)
   .language-item.flex.v-centered.v-start
     //- .flag-big&attributes(attributes)
     h3.t-center= language
+    
+mixin language-item-top(language, data)
+  .language-item
+     h3.t-center(data-category=data)= language
         
 mixin course-item(name, href, price, ...items )
   .info-tab.flex
@@ -22,18 +26,17 @@ section
     .grid.flex.h-centered.content-box
       .languages
         h2.headline-first.t-center Jazyky, ktoré vyučujeme 
-        .container_100.flex.h-centered
-          +language-item('Český jazyk', 'ceskyjazyk.html')(class="cz")
-          +language-item('Ruský jazyk', 'ruskyjazyk.html')(class="ru")
-          +language-item('Anglický jazyk', 'anglickyjazyk.html')(class="en")
-          +language-item('Ruský jazyk', 'anglickyjazyk.html')(class="ru")
-          +language-item('Český jazyk', 'anglickyjazyk.html')(class="cz")
-          +language-item('Anglický jazyk', 'anglickyjazyk.html')(class="en")          
+        .container_100.flex.h-centered#1st
+          +language-item-top('Živé jazyky', 'zive')         
+          +language-item-top('Starobylé jazyky', 'starobyle')
+        .container_100.flex.h-centered#2nd.red
+         | HERE I'M 
+        .container_100.flex.h-centered#3nd.red
+         | HERE I'M
     .grid-3.flex.h-centered.content-box
       .news
         h2 Novinky
         ul.flex#news
-  .container_80.flex.h-centered
 
 section.courses
   .container_80  
