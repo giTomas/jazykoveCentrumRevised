@@ -21,20 +21,21 @@ var nav            = jQuery('nav'),
 //templating////
 
 function handlebarsTemplating(data, tmp, idToAdd) {
+  console.log('hi');
   var context  = data,
       template = Handlebars.templates[tmp],
       html     = template(context);
     jQuery(idToAdd).html(html);
 };
 
-function getDir(el, dataName, target, partDir ) {
-  var data = target.find(el).data(dataName),
+function getDir(el, dataName, trgt, partDir ) {
+  var data = trgt.find(el).data(dataName),
       dir  = partDir + data + ".json";
     return dir;
 };
 
-function getDirSimple(target, dataName,  partDir ) {
-  var data = target.data(dataName),
+function getDirSimple(trgt, dataName,  partDir ) {
+  var data = trgt.data(dataName),
       dir  = partDir + data + ".json";
     return dir;
 };
@@ -46,19 +47,31 @@ function jsonLoadOnPage(dir, tmp, idToAdd) {
     handlebarsTemplating(data, tmp, idToAdd);
     })
   .fail(function(){
-      alert('Request failed')
+      alert('Nepodarilo sa nacitat data')
     })
 };
 
-function modalTemplating(urlJSON, tmp, idToAdd){
+function modalTemplating(dir, tmp, idToAdd){
   jQuery.getJSON(
-    urlJSON)
+    dir)
     .done(function(data) {
       handlebarsTemplating(data[0], tmp, idToAdd);
       showModal();
     })
     .fail(function(){
-      alert('request failed')
+      alert('HTTP request failed')
+    })
+};
+
+function languagesTemplating(dir, tmp, idToAdd){
+  jQuery.getJSON(
+    dir)
+    .done(function(data) {
+      console.log('hello');
+      handlebarsTemplating(data, tmp, idToAdd);
+    })
+    .fail(function(){
+      alert('HTTP request failed')
     })
 };
 
@@ -113,13 +126,13 @@ jQuery(window).scroll(function() {
 
 nav.on('click', '.toggle-menu', function(){
 
-  var target     = jQuery(this),
-      navigation = target.parent().parent().find('.navigation'),
+  var trgt       = jQuery(this),
+      navigation = trgt.parent().parent().find('.navigation'),
       submenu    = navigation.find('.submenu'),
       statusNav  = navigation.hasClass('is-open'),
       statusSub  = submenu.hasClass('submenu-is-open');
 
-    target.find('svg').toggleClass('is-hidden');
+    trgt.find('svg').toggleClass('is-hidden');
 
     /*if ( statusNav && statusSub ) {
       submenu.removeClass('submenu-is-open');
@@ -134,10 +147,10 @@ nav.on('click', '.toggle-menu', function(){
 nav.on('click', '.dropdown', function() {
 
   var wWidth = jQuery(window).width() < 700;
-      target = jQuery(this);
+      trgt = jQuery(this);
 
     if (wWidth) {
-      target.find('.ch-down').toggleClass('is-hidden')
+      trgt.find('.ch-down').toggleClass('is-hidden')
       .end().find('.ch-up').toggleClass('is-hidden')
       .end().find('.submenu').toggleClass('submenu-is-open');
     };
@@ -146,8 +159,8 @@ nav.on('click', '.dropdown', function() {
 ///templating - modals
 
 jQuery('.lectors').on('click', '.lector', function(){
-  var target = jQuery(this);
-  var dir    =  getDir('.lector-caption', 'name', target, dirLectors);
+  var trgt = jQuery(this);
+  var dir    =  getDir('.lector-caption', 'name', trgt, dirLectors);
     modalTemplating(dir, "lectorTemplate", "#modal-lector");
 });
 

@@ -9,7 +9,7 @@ nav
   font-size: 1.33rem
   justify-content: center
   position: relative
-  font-weight: 300
+  //font-weight: 300
   z-index: 10
   flex: 2
   //order: 0
@@ -18,9 +18,11 @@ nav
     color: $secondTextColor
     display: block
     padding: 0.81em 0.25em 0.81em
-    //position: relative
+    position: relative
     &:hover
       background-color: darken($basicColor, 15%)
+      background-color: $secondTextColor
+      color: $basicTextColor
   @media (max-width: $mobile-menu)
     display: none
     flex-basis: 100%

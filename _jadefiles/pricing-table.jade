@@ -8,73 +8,67 @@ mixin table-cell-product(href, product)
     a(href= href)
      h3= product
 
-mixin table-cell-features(feature, additional)
+//- mixin table-cell-features(feature, additional)
+  //- .table-cell.cell-basic&attributes(attributes)
+    //- p= feature
+      //- span.showable= additional
+      
+mixin table-cell-features(feature)
   .table-cell.cell-basic&attributes(attributes)
     p= feature
-      span.showable= additional
+
     
-mixin table-cell-features2(feature)
-  .table-cell.cell-basic.hidable
-    p= feature 
+//- mixin table-cell-features2(feature)
+  //- .table-cell.cell-basic.hidable
+    //- p= feature 
     
 
 section
-  .container_80
+  .container_main
     h2.headline2.t-center Ceník jazykových kurzů
-  .container_80.flex.h-centered
+  .container_main.flex.h-centered
     +table-cell-top('Název kurzu')
-    +table-cell-top('Počet vyučovacich hodin - celkově')
-    +table-cell-top('Počet vyučovacich hodin - týdenne')
+    +table-cell-top('Délka (hodin)')
     +table-cell-top('Cena')
     
     +table-cell-product('/courses/express-1-cz/', 'Express I')
-    +table-cell-features('16', ' hod.')
-    +table-cell-features('2', ' vyuč. hod. / týd.')
-    +table-cell-features('2900 kč')
+    +table-cell-features('16  (2 vyuč. hod. / týd., 8 týdnů)')
+    +table-cell-features('2900 Kč')
     
     +table-cell-product('/courses/express_2_cz/','Express II')
-    +table-cell-features('16', ' hod.')
-    +table-cell-features('2', ' vyuč. hod. / týd.')
-    +table-cell-features('2900 kč')
+    +table-cell-features('16 (2 vyuč. hod. / týd., 8 týdnů)')
+    +table-cell-features('2900 Kč')
     
     +table-cell-product('/courses/standard_1_cz','Standard  I')
-    +table-cell-features('24', ' hod.')
-    +table-cell-features('2', ' vyuč. hod. / týd.')
-    +table-cell-features('3900 kč')
+    +table-cell-features('24 (2 vyuč. hod. / týd., 12 týdnů)')
+    +table-cell-features('3900 Kč')
     
     +table-cell-product('/courses/standard_2_cz','Standard II')
-    +table-cell-features('36', ' hod.')
-    +table-cell-features('2', ' vyuč. hod. / týd.')
-    +table-cell-features('5400 kč')
+    +table-cell-features('36 (2 vyuč. hod. / týd., 18 týdnů)')
+    +table-cell-features('5400 Kč')
     
     +table-cell-product('/courses/standard_3_cz','Standard III')
-    +table-cell-features('-', ' hod.')
-    +table-cell-features('-', ' vyuč. hod. / týd.')
+    +table-cell-features('-')
     +table-cell-features('-')
     
     +table-cell-product('/courses/intensive_cz','Intensive')
-    +table-cell-features('16', ' hod.')
-    +table-cell-features('4', ' vyuč. hod. / týd.')
-    +table-cell-features('2900 kč')
+    +table-cell-features('16 (4 vyuč. hod. / týd., 4 týdnů)')
+    +table-cell-features('2900 Kč')
     
-    +table-cell-product('/courses/pripravny_cz','Připravný kurz na medzinárodní zkoušku')
-    +table-cell-features('24', ' hod.')
-    +table-cell-features('2', ' vyuč. hod. / týd.')
-    +table-cell-features('3500 kč')
+    +table-cell-product('/courses/pripravny_cz','Přípravný kurz na mezinárodní zkoušku')
+    +table-cell-features('24 (2 vyuč. hod. / týd., 12 týdnů)')
+    +table-cell-features('3500 Kč')
     
-    +table-cell-product('/courses/individual_cz','Individuální výuka I')
-    +table-cell-features('do 8', ' hod.')
-    +table-cell-features2('-')(class="hidable")
-    +table-cell-features('350 kč / hod.')
+    +table-cell-product('/courses/individual_cz','Individuální výuka')
+    +table-cell-features('Do 8 hodin')
+    +table-cell-features('350 Kč / hod.')
     
-    +table-cell-product('/courses/individual_cz','Individuální výuka II')
-    +table-cell-features('8-15', ' hod.')
-    +table-cell-features2('-')
-    +table-cell-features('330 kč / hod.')
+    +table-cell-product('/courses/individual_cz','Individuální výuka')
+    +table-cell-features('8-15 hodin')
+    +table-cell-features('330 Kč / hod.')
     
-    +table-cell-product('/courses/individual_cz','Individuální výuka III')
-    +table-cell-features('víc než 15', ' hod.')
-    +table-cell-features2('-')
+    +table-cell-product('/courses/individual_cz','Individuální výuka')
+    +table-cell-features('Víc než 15 hodin')
     +table-cell-features('320 kč / hod.')
     
   

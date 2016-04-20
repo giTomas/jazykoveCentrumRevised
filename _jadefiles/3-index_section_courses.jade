@@ -21,32 +21,31 @@ mixin course-item(name, href, price, ...items )
       .btn.info-cta 
         a(href=href) Víc
                 
-section
-  .container_80.flex.h-centered   
-    .grid.flex.h-centered.content-box
-      .languages
-        h2.headline-first.t-center Jazyky, ktoré vyučujeme 
-        .container_100.flex.h-centered#1st
-          +language-item-top('Živé jazyky', 'zive')         
-          +language-item-top('Starobylé jazyky', 'starobyle')
-        .container_100.flex.h-centered#2nd.red
-         | HERE I'M 
-        .container_100.flex.h-centered#3nd.red
-         | HERE I'M
+section 
+  .container_main.flex.h-centered   
+    .grid.content-box#languages
+      h2.headline-first.t-center Jazyky, ktoré vyučujeme 
+      .container_100.flex.h-centered#1st
+        +language-item-top('Živé jazyky', 'zive')         
+        +language-item-top('Starobylé jazyky', 'starobyle')
+      .container_100.h-centered#2nd.languages.hidden.red
+       | HERE I'M 
+      .container_100.h-centered#3rd.languages.hidden.red
+       | HERE I'M
     .grid-3.flex.h-centered.content-box
       .news
         h2 Novinky
         ul.flex#news
 
 section.courses
-  .container_80  
+  .container_main  
     h2.headline2.t-center Jazykove kurzy
   .container_80.flex.h-centered
-    +course-item('Express I', '../courses/express-1-cz/', '2900 kč', 'Kurz pro začátečníky', '16 vyuč. hod.', '2 hod. / týd.')
-    +course-item('Express II', '../courses/express-2-cz/', '2900 kč', 'Kurz pre začiatočníkov', '16 vyuč. hod.', '2 hod. / týd.')
-    +course-item('Standard I', '../courses/standard-1-cz', '3900 kč', 'Kurz pre začiatočníkov', '24 vyuč. hod.', '2 hod. / týd.')
-    +course-item('Standard II', '../courses/standard-2-cz', '5400 kč', 'Kurz pre začiatočníkov', '36 vyuč. hod. ', '2 hod. / týd.')
+    +course-item('Express I', '../courses/express-1-cz/', '2900 Kč', 'Pro začátečníky', '16 vyuč. hod.', '2 vyuč. hod. / týd.')
+    +course-item('Express II', '../courses/express-2-cz/', '2900 Kč', 'Pro středně pokročilí', '16 vyuč. hod.', '2 vyuč. hod. / týd.')
+    +course-item('Standard I', '../courses/standard-1-cz', '3900 Kč', '24 vyuč. hod.', '2 vyuč. hod. / týd.')
+    +course-item('Standard II', '../courses/standard-2-cz', '5400 Kč', '36 vyuč. hod. ', '2 vyuč. hod. / týd.')
     +course-item('Standard III', '../courses/standard-3-cz', '-', '-', '-', '-')
-    +course-item('Intensive', '../courses/intensive-cz', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
-    +course-item('Intensive', 'standard.html', '2900 kč', 'Kurz pre začiatočníkov', '16 vyučovacích hodín', '2hod/týždenne')
-    +course-item('Intensivejj Intensivejj', 'standard.html', '2900 kč', 'Kurz pre začiatočníkov', '2hod/týždenne')
+    +course-item('Intensive', '../courses/intensive-cz', '2900 Kč', '16 vyuč. hod.', '4 vyuč. hod. / týd.')
+    +course-item('Přípravný kurz na mezinárodní zkoušku', '../courses/pripravny-cz', '3500 Kč', '24 vyuč. hod.', '2 vyuč. hod. / týd.')
+    +course-item('Individuální výuka', '../courses/individual-cz', '320-350 Kč / hod.', '-')

@@ -1,24 +1,24 @@
 .table-cell
   font-size: 1.33em
-  width: calc((100% / 3) - 0.356rem)
-  margin: 0.178rem
+  width: calc(25% - 0.4rem)
+  margin: 0.2rem
   background-color: $elBackground
-  //font-weight: 300
-  padding: 0.422em 0.75em
+  font-weight: 300
+  padding: 0.5em 0.8em
   overflow: hidden
-  @media (max-width: $tableBreak)
+  //text-align: center
+  @media all and (max-width: 500px)
     width: 100%
     display: block
 
 .cell-product
-  font-weight: bold
+  font-weight: 500
   transition: all 0.1s ease-in-out
   &:hover
     background-color: $basicColor
     a
       color: $secondTextColor
-  @media all and(max-width: $tableBreak)
-    margin-top: 0.563em
+  @media all and(max-width: 500px)
     background-color: $basicColor
     a
       color: $secondTextColor
@@ -31,10 +31,10 @@
   background-color: $basicColor
 
 .hidable
-  @media all and(max-width: $tableBreak)
+  @media all and(max-width: 500px)
     display: none
 
 .showable
   display: none
-  @media all and(max-width: $tableBreak)
+  @media all and(max-width: 500px)
     display: inline

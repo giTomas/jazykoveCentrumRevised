@@ -18,8 +18,8 @@
   margin-right: auto
 
 .content-box
-  padding: 1.4rem
-  @media (max-width: 500px)
+  padding: 1em
+  //@media (max-width: 500px)
     padding: 1em 0
 
 .underline:hover
@@ -41,13 +41,21 @@
   width: 90%
   margin: 0 auto
 
-.container_80
+.container_main
   width: 90%
   margin: 0 auto
-  @media(max-width: 1000px)
+  //@media(max-width: 1000px)
     width: 90%
   @media(max-width: 800px)
-    width: 100%
+    width: 95%
+
+.container_80
+  width: 80%
+  margin: 0 auto
+  @media(max-width: 1000px)
+    width: 85%
+  @media(max-width: 800px)
+    width: 95%
     //padding: 1em
 
 .container_60
@@ -95,12 +103,13 @@
   flex: 2
 
 .languages
-  margin-left: 0.5em solid $basicColor
+  //border-left: 0.5em solid $basicColor
 
 .index-content,
 .prices-content,
 .course-content,
 .lectors-content,
+.jobs-content
   margin-bottom: 7.53em
 
 //sticky footer
@@ -114,5 +123,5 @@
 .prices-content,
 .course-content,
 .aboutus-content,
-.job-content
+.jobs-content
   flex: 1
