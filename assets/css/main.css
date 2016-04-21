@@ -101,9 +101,7 @@ html {
   font-family: "Roboto", sans-serif; }
 
 .red {
-  border: 1px dotted white;
-  background-color: darkred;
-  color: white;
+  background-color: mistyrose;
   padding: 4em;
   margin-top: 0.5em; }
 
@@ -628,6 +626,9 @@ nav {
   .info-cta:hover a {
     color: white; }
 
+.languages {
+  position: relative; }
+
 .language-item {
   -webkit-box-shadow: 0 0 0.1em #242e30;
           box-shadow: 0 0 0.1em #242e30;
@@ -842,7 +843,7 @@ nav {
   transition: all 0.3s ease-in-out;
   cursor: pointer; }
   .close:hover {
-    background-color: #F9FBFB; }
+    background-color: transparent; }
     .close:hover svg {
       fill: #3A4A4D; }
 

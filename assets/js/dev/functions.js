@@ -21,7 +21,6 @@ var nav            = jQuery('nav'),
 //templating////
 
 function handlebarsTemplating(data, tmp, idToAdd) {
-  console.log('hi');
   var context  = data,
       template = Handlebars.templates[tmp],
       html     = template(context);
@@ -59,7 +58,7 @@ function modalTemplating(dir, tmp, idToAdd){
       showModal();
     })
     .fail(function(){
-      alert('HTTP request failed')
+      alert('HTTP request failed');
     })
 };
 
@@ -67,11 +66,10 @@ function languagesTemplating(dir, tmp, idToAdd){
   jQuery.getJSON(
     dir)
     .done(function(data) {
-      console.log('hello');
       handlebarsTemplating(data, tmp, idToAdd);
     })
     .fail(function(){
-      alert('HTTP request failed')
+      alert('HTTP request failed');
     })
 };
 
