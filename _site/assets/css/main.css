@@ -135,7 +135,7 @@ img {
   margin-bottom: 1em; }
 
 .headline2 {
-  margin: 1em 0; }
+  margin: 2em 0; }
 
 .title {
   margin: 1.777em 0 1.333em; }
@@ -144,11 +144,11 @@ img {
       margin: 1em 0 0.75em; } }
 
 .subtitle, .m-top-subtitle {
-  font-size: 1.777rem; }
+  font-size: 1.777rem;
+  color: #242e30; }
 
 .text + .subtitle {
-  margin-top: 1.333em;
-  color: #242e30; }
+  margin-top: 1.333em; }
 
 .m-top-subtitle {
   margin-top: 0.422em; }
@@ -217,9 +217,6 @@ img {
 
 .content-box {
   padding: 1em; }
-
-.underline:hover {
-  text-decoration: underline; }
 
 .t-center {
   text-align: center; }
@@ -626,10 +623,30 @@ nav {
   .info-cta:hover a {
     color: white; }
 
+.languages, .languages-choice {
+  position: relative;
+  padding: 2.369em 0.75em;
+  margin-top: 1em; }
+
 .languages {
-  position: relative; }
+  background-color: #F9FBFB;
+  display: none; }
+
+.languages-choice {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 .language-item {
+  font-size: 1.33rem;
   -webkit-box-shadow: 0 0 0.1em #242e30;
           box-shadow: 0 0 0.1em #242e30;
   -webkit-transition: -webkit-box-shadow 0.2s ease-in-out;
@@ -637,12 +654,14 @@ nav {
   transition: box-shadow 0.2s ease-in-out;
   transition: box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
   margin: 1em 1.333em;
-  cursor: pointer;
-  padding: 0.563em 0.75em; }
-  .language-item:hover {
+  padding: 0.563em 0.75em;
+  text-align: center; }
+
+.languages-hover .language-item {
+  cursor: pointer; }
+  .languages-hover .language-item:hover {
     background-color: #c9d4d6; }
-  .language-item h3 {
-    font-size: 1.77rem;
+  .languages-hover .language-item h3 {
     text-shadow: 0 0.01em 0.01em #668287; }
 
 .footer {
@@ -1015,7 +1034,11 @@ iframe {
   display: flex;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
-          flex-wrap: wrap; }
+          flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 .is-visible {
   opacity: 1; }
@@ -1043,4 +1066,4 @@ iframe {
   color: #F9FBFB;
   background: #3A4A4D; }
   .is-picked:hover {
-    background-color: #3A4A4D; }
+    background-color: #3A4A4D !important; }

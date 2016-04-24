@@ -12,7 +12,11 @@ var nav            = jQuery('nav'),
     dirLectors     = "../assets/json/lectors/",
     dirNews        = "../assets/json/news/cz/",
     dirNewsNotices = "../assets/json/news/notices.json",
-    dirLang        = "../assets/json/languages/";
+    dirLang        = "../assets/json/languages/",
+    lang1          = $('#1st'),
+    lang2          = $('#2nd'),
+    lang3          = $('#3rd');
+
 
 ///////////////////////******///
 ///custom functions///******///
