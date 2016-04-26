@@ -4,6 +4,8 @@ nav
   background-color: $basicColor
   justify-content: center
   z-index: 10
+  @media (max-width: $mobile-menu)
+    position: absolute
 
 .navigation
   font-size: 1.33rem
@@ -20,7 +22,7 @@ nav
     padding: 0.81em 0.25em 0.81em
     position: relative
     &:hover
-      background-color: darken($basicColor, 15%)
+      //background-color: darken($basicColor, 15%)
       background-color: $secondTextColor
       color: $basicTextColor
   @media (max-width: $mobile-menu)

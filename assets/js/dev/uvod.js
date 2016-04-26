@@ -1,107 +1,118 @@
 $(document).ready(function() {
 
+"use strict";
+
 //load news
 
 jsonLoadOnPage(dirNewsNotices, "noticesTemplate", "#news");
 
-//2.load details after click on a notice
+//load details after click on a notice
 
-jQuery("#news").on("click", ".notice", function(){
-  var trgt = $(this);
-  var dir = getDir(".notice-content", "date", trgt, dirNews);
+const newsClickHandler = function(){
+  var $this = $(this);
+  var dir = getDir(".notice-content", "date", $this, dirNews);
   modalTemplating(dir, "newTemplate", "#modal-new");
-});
+}
+
+$("#news").on("click", ".notice", newsClickHandler);
+
 
 
 //languages displaying
 
-function addRemoveHiglight( el1, el2, trgt, class) {
+const addRemoveHiglight = function ( el1, el2, trgt, class) {
   trgt.parent(el1).find(el2)       //addremove class is-picked
   .removeClass(class)
   .end().end().addClass(class);
 }
 
-function addRemove( id, el, class) {
-  $(id).find('.languages').removeClass(class);
+const addRemove = function( id, el, class) {
+  $(id).find('.languages').removeClass(class);    // removes only class not content of the container
   $(el).addClass(class);
-};
-
+}
 //1st click
 
-lang1.on("click", ".language-item", function(){
-  var trgt = $(this),
-      dir  = getDir( "h3", "category", trgt, dirLang );
+const firstChoiceHandler = function(){
+  var $this = $(this),
+      dir  = getDir( "h3", "category", $this, dirLang );
 
-  addRemoveHiglight(lang1, '.language-item', trgt, 'is-picked');
+  addRemoveHiglight(lang1, '.language-item', $this, 'is-picked');
 
   $.getJSON(dir)
     .done(function(data) {
-      //handlebarsTemplating(data, languageTemplate, "#2nd");
-      var context  = data,
-      // var source = $('#languageTemplate').html();
-          template = Handlebars.templates.languageTemplate,
-      // var template = Handlebars.compile(source)
-          html     = template(context),
-          whichDir =  dir === "../assets/json/languages/starobyle.json";
+      var html = handlebarsTemplating(data, "languageTemplate"),
+          dirAncient = "../assets/json/languages/starobyle.json",
+          whichDir =  dir === dirAncient;
     // put elements in the right container
-    if (whichDir) {
-      lang3.html(html);
-      addRemove( '#languages', lang3, 'is-flex');
-    } else {
-      lang2.html(html);
-      addRemove( '#languages', lang2, 'is-flex');
-    };
+      if (whichDir) {
+        displayTmp(html, lang3);
+        addRemove( '#languages', lang3, 'is-flex');
+      } else {
+        displayTmp(html, lang2);
+        addRemove( '#languages', lang2, 'is-flex');
+        }
     })
     .fail(function(){
-      alert('HTTP request failed')
-    })
-});
+      alert('HTTP request failed');
+    });
+}
+
+//trigger click event
+
+lang1.on("click", ".language-item", firstChoiceHandler);
 
 
-//2nd click
+//2nd click handler
 
-lang2.on("click", ".language-item", function(){
+const secondChoiceHandler = function(){
   var trgt = $(this),
       dir  = getDir( "h3", "category", trgt, dirLang );
   addRemoveHiglight('#2nd', '.language-item', trgt, 'is-picked');
 
   $.getJSON(dir)
     .done(function(data) {
-      var context  = data,
+      var html = handlebarsTemplating(data, "languageTemplate");
+      /*var context  = data,
       // var source = $('#languageTemplate').html();
           template = Handlebars.templates.languageTemplate,
       // var template = Handlebars.compile(source)
-          html     = template(context);
+          html     = template(context);*/
       lang3.html(html)
            .addClass('is-flex');
     })
     .fail(function(){
       alert('HTTP request failed')
-    })
+    });
+}
 
-});
+//trigger click event
 
-//3rd click
-
-/*lang3.on("click", ".language-item", function(){
-  var trgt = jQuery(this),
-      dir  = getDir( "h3", "category", trgt, dirLang );
-
-  //addRemoveHiglight(lang3, '.language-item', trgt, 'is-picked')
-});*/
+lang2.on("click", ".language-item", secondChoiceHandler)
 
 //closing languages windows
 
-lang2.on("click", ".close", function(){
+const firstCloseHandler = function(){
   var el = $('.languages');
   el.removeClass('is-flex');
   lang1.find('.language-item').removeClass('is-picked');
-});
+}
 
-lang3.on("click", ".close", function(){
-  var el = $(this).parent();   //#3rd
+const secondCloseHandler = function(){
+  var el          = $(this).parent(),
+      langStatus  = lang2.hasClass('is-flex');
+
   el.removeClass('is-flex');
-  lang2.find('.language-item').removeClass('is-picked');
-});
+
+  if (langStatus) {
+    lang2.find('.language-item').removeClass('is-picked');
+  } else {
+    lang1.find('.language-item').removeClass('is-picked');
+ }
+}
+
+lang2.on("click", ".close", firstCloseHandler);
+
+lang3.on("click", ".close", secondCloseHandler);
+
 
 });

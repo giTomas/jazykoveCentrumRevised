@@ -136,6 +136,10 @@ img {
 
 .headline2 {
   margin: 2em 0; }
+  @media (max-width: 750px) {
+    .headline2 {
+      margin-top: -webkit-calc(2em + 3.03125rem);
+      margin-top: calc(2em + 3.03125rem); } }
 
 .title {
   margin: 1.777em 0 1.333em; }
@@ -405,6 +409,9 @@ nav {
       -ms-flex-pack: center;
           justify-content: center;
   z-index: 10; }
+  @media (max-width: 750px) {
+    nav {
+      position: absolute; } }
 
 .navigation {
   font-size: 1.33rem;
@@ -426,7 +433,6 @@ nav {
     padding: 0.81em 0.25em 0.81em;
     position: relative; }
     .navigation a:hover {
-      background-color: #192021;
       background-color: #F9FBFB;
       color: #3A4A4D; }
   @media (max-width: 750px) {

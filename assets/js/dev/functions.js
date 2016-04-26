@@ -4,11 +4,13 @@
 
 //jQuery.noConflict();
 
-var nav            = jQuery('nav'),
-    logo           = jQuery('.nav-logo'),
-    modalOverlay   = jQuery('.modal-overlay'),
-    modalContainer = jQuery('.modal-container'),
-    body           = jQuery('body'),
+"use strict";
+
+var nav            = $('nav'),
+    logo           = $('.nav-logo'),
+    modalOverlay   = $('.modal-overlay'),
+    modalContainer = $('.modal-container'),
+    body           = $('body'),
     dirLectors     = "../assets/json/lectors/",
     dirNews        = "../assets/json/news/cz/",
     dirNewsNotices = "../assets/json/news/notices.json",
@@ -22,50 +24,61 @@ var nav            = jQuery('nav'),
 ///custom functions///******///
 /////////////////////******///
 
+
+//display logic
+
+const displayTmp = function (html, idToAdd){
+  $(idToAdd).html(html);
+}
+
 //templating////
 
-function handlebarsTemplating(data, tmp, idToAdd) {
+function handlebarsTemplating(data, tmp) {
   var context  = data,
       template = Handlebars.templates[tmp],
       html     = template(context);
-    jQuery(idToAdd).html(html);
-};
+    return html
+    //$(idToAdd).html(html);
+}
+
+//get json directory
 
 function getDir(el, dataName, trgt, partDir ) {
   var data = trgt.find(el).data(dataName),
       dir  = partDir + data + ".json";
     return dir;
-};
-
+}
+/*
 function getDirSimple(trgt, dataName,  partDir ) {
   var data = trgt.data(dataName),
       dir  = partDir + data + ".json";
     return dir;
-};
+};*/
 
 function jsonLoadOnPage(dir, tmp, idToAdd) {
-  jQuery.getJSON(
-  dir)
+  $.getJSON(dir)
   .done(function(data) {
-    handlebarsTemplating(data, tmp, idToAdd);
+    var html = handlebarsTemplating(data, tmp);
+    displayTmp(html, idToAdd);
+    //handlebarsTemplating(data, tmp, idToAdd);
     })
   .fail(function(){
       alert('Nepodarilo sa nacitat data')
-    })
-};
+    });
+}
 
 function modalTemplating(dir, tmp, idToAdd){
-  jQuery.getJSON(
-    dir)
+  jQuery.getJSON(dir)
     .done(function(data) {
-      handlebarsTemplating(data[0], tmp, idToAdd);
+      var html = handlebarsTemplating(data[0], tmp);
+      displayTmp(html, idToAdd);
       showModal();
     })
     .fail(function(){
       alert('HTTP request failed');
-    })
-};
-
+    });
+}
+/*
 function languagesTemplating(dir, tmp, idToAdd){
   jQuery.getJSON(
     dir)
@@ -75,102 +88,120 @@ function languagesTemplating(dir, tmp, idToAdd){
     .fail(function(){
       alert('HTTP request failed');
     })
-};
+}*/
 
 ////////////////
 //modal////////
 //////////////
 
-function showModal() {
+var showModal = function() {
   /*body.addClass("o-hidden");*/
-  modalOverlay.addClass('is-displaying');
+  modalOverlay.addClass('is-displaying')
+
     setTimeout(function(){
       modalOverlay.addClass('is-visible');
     }, 150);
+
     setTimeout(function(){
       modalContainer.addClass('is-in-position');
-    }, 550);
-};
+    }, 500);
 
-function hideModal(){
+}
+
+const hideModal = function() {
   modalContainer.removeClass('is-in-position');
-    setTimeout(function(){
-      modalOverlay.removeClass('is-visible')
+
+  setTimeout(function(){
+    modalOverlay.removeClass('is-visible')
     }, 450 );
-    setTimeout(function(){
-      modalOverlay.removeClass('is-displaying');
+
+  setTimeout(function(){
+    modalOverlay.removeClass('is-displaying');
     }, 800 );
   /*setTimeout(function(){
     body.removeClass("o-hidden");
   }, 1000 );*/
-};
+}
 
 ////////////
 ///menu////
 //////////
 
-jQuery( document ).ready(function() {
+$(document).ready(function() {
 
-jQuery(window).scroll(function() {
 
-  var wScroll = jQuery(this).scrollTop(),
+$(window).scroll(function() {
+
+  var wScroll = $(this).scrollTop(),
       wHeight = nav.height();
 
-    wScroll >= wHeight ? nav.addClass('is-fixed') : nav.removeClass('is-fixed');
+    wScroll >= wHeight ? nav.addClass('is-fixed') : nav.removeClass('is-fixed')
 
     wScroll >= wHeight + 150 ? logo.addClass('logo-is-in-position') : logo.removeClass('logo-is-in-position')
 
-}); // end of scroll
+}) // end of scroll
 
 ////////////////////
 //responsive menu//
 //////////////////
 
-nav.on('click', '.toggle-menu', function(){
 
-  var trgt       = jQuery(this),
-      navigation = trgt.parent().parent().find('.navigation'),
+//experimental
+
+const navToggleHandler = function(){
+  var $this      = $(this),
+      navigation = $this.parent().parent().find('.navigation'),
       submenu    = navigation.find('.submenu'),
       statusNav  = navigation.hasClass('is-open'),
       statusSub  = submenu.hasClass('submenu-is-open');
 
-    trgt.find('svg').toggleClass('is-hidden');
+    $this.find('svg').toggleClass('is-hidden');
+    //navigation.slideToggle();
 
-    /*if ( statusNav && statusSub ) {
+    if (statusNav && statusSub) {
       submenu.removeClass('submenu-is-open');
-    };*/
+    }
 
-    statusNav && statusSub ? submenu.removeClass('submenu-is-open') : null;
+    //statusNav && statusSub ? submenu.removeClass('submenu-is-open') : null;
 
-    statusNav ? navigation.removeClass('is-open') : navigation.addClass('is-open');
+    statusNav ? navigation.removeClass('is-open') : navigation.addClass('is-open')
+}
 
-});
+nav.on('click', '.toggle-menu', navToggleHandler);
 
-nav.on('click', '.dropdown', function() {
 
-  var wWidth = jQuery(window).width() < 700;
-      trgt = jQuery(this);
+
+//experimental!!!  maybe change it to var
+
+const navDropDownHandler = function(){
+  var wWidth = $(window).width() < 700,
+      $this = $(this);
 
     if (wWidth) {
-      trgt.find('.ch-down').toggleClass('is-hidden')
-      .end().find('.ch-up').toggleClass('is-hidden')
-      .end().find('.submenu').toggleClass('submenu-is-open');
-    };
-});
+      $this.find('.ch-down').toggleClass('is-hidden')
+           .end().find('.ch-up').toggleClass('is-hidden')
+           .end().find('.submenu').toggleClass('submenu-is-open');
+    }
+}
+
+nav.on('click', '.dropdown', navDropDownHandler);
+
 
 ///templating - modals
 
-jQuery('.lectors').on('click', '.lector', function(){
-  var trgt = jQuery(this);
-  var dir    =  getDir('.lector-caption', 'name', trgt, dirLectors);
+const lectorsHandler = function(){
+  var $this = $(this);
+  var dir    =  getDir('.lector-caption', 'name', $this, dirLectors);
     modalTemplating(dir, "lectorTemplate", "#modal-lector");
-});
+}
 
-//uni for all modals
+$('.lectors').on('click', '.lector', lectorsHandler);
 
-jQuery('.modal').on('click', '.close', function(){
-  hideModal();
-});
+//uni for all modals in document
+
+$('.modal').on('click', '.close', hideModal);
+
+
 
 ///////////////////
 //smooth scrolling:
