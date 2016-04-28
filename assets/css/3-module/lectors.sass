@@ -11,25 +11,63 @@
   box-shadow: -0.1em 0.1em 0.25em $shadow
   cursor: pointer
   &:hover
-    .lector-caption
+    .lector-slide
       right: 0
+  &:hover
+    .lector__name
+      right: 0
+    .lector__lectorOf
+      left: 0
 
-.lector-caption
+.lector__caption
   width: calc(100% - 0.5em)
-  //align-items: center
   position: absolute
   bottom: 0
-  right: -100%
   margin: 0.25em
   padding: 0.25em 0.5em
-  //opacity: 0
-  font-size: 1.777rem
   text-align: center
-  background-color: $secondTextColor
   transition: all 0.2s ease-in-out
+
+
+.lector-slide
+  background-color: $secondTextColor
+  font-size: 1.777rem
+  right: -100%
   &:hover
     background-color: $basicTextColor
     color: $secondTextColor
+
+.lector-container
+  background-color: transparent
+  &:hover
+    .lector__name, .lector__lectorOf
+      background-color: $basicTextColor
+      color: $secondTextColor
+
+.lector__name, .lector__lectorOf
+  background-color: $secondTextColor
+  position: relative
+  padding: 0.25em 0.5em 0
+  transition: background-color 0.2s ease-in-out
+  transition: color 0.2s ease-in-out
+
+.lector__name
+  right: -150%
+  font-size: 1.777rem
+  transition: right 0.2s ease-in-out
+  letter-spacing: 0.1em
+
+.lector__lectorOf
+  left: -150%
+  font-size: 1.333rem
+  padding-bottom: 0.25em
+  transition: left 0.2s ease-in-out 0.3s
+
+
+
+.lector__img
+  width: 300px
+  //object-fit: contain
 
 //.lector-name
   width: calc(100% - 0.5em)

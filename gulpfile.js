@@ -5,7 +5,7 @@ var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
 var jade        = require('jade');
 var gulpJade    = require('gulp-jade');
-var uglify      = require('gulp-uglify');
+//var uglify      = require('gulp-uglify');
 //var gulpIf      = require('gulpIf');
 
 var messages = {
@@ -36,11 +36,12 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
     .pipe(gulp.dest('dist'))
 });*/
 
+/*
 gulp.task('compress', function() {
   return gulp.src('assets/js/dev/*.js')
     .pipe(uglify())
     .pipe(gulp.dest('assets/js'));
-});
+});*/
 
 /**
  * Wait for jekyll-build, then launch the Server
@@ -85,7 +86,7 @@ gulp.task('jade', function () {
  */
 gulp.task('watch', function () {
     gulp.watch('assets/css/**', ['sass']);
-    gulp.watch('assets/js/dev/*.js', ['compress']);
+    //gulp.watch('assets/js/dev/*.js', ['compress']);
     gulp.watch('assets/js/*.js', ['jekyll-rebuild']);
     gulp.watch('assets/js/templates/*.handlebars', ['jekyll-rebuild']);
     gulp.watch(['index.html', '_layouts/*.html', '_includes/*'], ['jekyll-rebuild']);

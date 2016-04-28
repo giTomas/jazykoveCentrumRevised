@@ -1,1 +1,229 @@
-"use strict";function handlebarsTemplating(n,s){var o=n,a=Handlebars.templates[s],i=a(o);return i}function getDir(n,s,o,a){var i=o.find(n).data(s),e=a+i+".json";return e}function jsonLoadOnPage(n,s,o){$.getJSON(n).done(function(n){var a=handlebarsTemplating(n,s);displayTmp(a,o)}).fail(function(){alert("Nepodarilo sa nacitat data")})}function modalTemplating(n,s,o){jQuery.getJSON(n).done(function(n){var a=handlebarsTemplating(n[0],s);displayTmp(a,o),showModal()}).fail(function(){alert("HTTP request failed")})}var nav=$("nav"),logo=$(".nav-logo"),modalOverlay=$(".modal-overlay"),modalContainer=$(".modal-container"),body=$("body"),dirLectors="../assets/json/lectors/",dirNews="../assets/json/news/cz/",dirNewsNotices="../assets/json/news/notices.json",dirLang="../assets/json/languages/",lang1=$("#1st"),lang2=$("#2nd"),lang3=$("#3rd");const displayTmp=function(n,s){$(s).html(n)};var showModal=function(){modalOverlay.addClass("is-displaying"),setTimeout(function(){modalOverlay.addClass("is-visible")},150),setTimeout(function(){modalContainer.addClass("is-in-position")},500)};const hideModal=function(){modalContainer.removeClass("is-in-position"),setTimeout(function(){modalOverlay.removeClass("is-visible")},450),setTimeout(function(){modalOverlay.removeClass("is-displaying")},800)};$(document).ready(function(){$(window).scroll(function(){var n=$(this).scrollTop(),s=nav.height();n>=s?nav.addClass("is-fixed"):nav.removeClass("is-fixed"),n>=s+150?logo.addClass("logo-is-in-position"):logo.removeClass("logo-is-in-position")});const n=function(){var n=$(this),s=n.parent().parent().find(".navigation"),o=s.find(".submenu"),a=s.hasClass("is-open"),i=o.hasClass("submenu-is-open");n.find("svg").toggleClass("is-hidden"),a&&i&&o.removeClass("submenu-is-open"),a?s.removeClass("is-open"):s.addClass("is-open")};nav.on("click",".toggle-menu",n);const s=function(){var n=$(window).width()<700,s=$(this);n&&s.find(".ch-down").toggleClass("is-hidden").end().find(".ch-up").toggleClass("is-hidden").end().find(".submenu").toggleClass("submenu-is-open")};nav.on("click",".dropdown",s);const o=function(){var n=$(this),s=getDir(".lector-caption","name",n,dirLectors);modalTemplating(s,"lectorTemplate","#modal-lector")};$(".lectors").on("click",".lector",o),$(".modal").on("click",".close",hideModal)});
+////////////////
+//global vars//
+//////////////
+
+//jQuery.noConflict();
+
+"use strict";
+
+var nav            = $('nav'),
+    logo           = $('.nav-logo'),
+    modalOverlay   = $('.modal-overlay'),
+    modalContainer = $('.modal-container'),
+    body           = $('body'),
+    dirLectors     = "../assets/json/lectors/",
+    dirNews        = "../assets/json/news/cz/",
+    dirNewsNotices = "../assets/json/news/notices.json",
+    dirLang        = "../assets/json/languages/",
+    lang1          = $('#1st'),
+    lang2          = $('#2nd'),
+    lang3          = $('#3rd');
+
+
+///////////////////////******///
+///custom functions///******///
+/////////////////////******///
+
+
+//display logic
+
+const displayTmp = function (html, idToAdd){
+  $(idToAdd).html(html);
+}
+
+//templating////
+
+const handlebarsTemplating = function(data, tmp) {
+  var context  = data,
+      template = Handlebars.templates[tmp],
+      html     = template(context);
+    return html
+    //$(idToAdd).html(html);
+}
+
+//get json directory
+
+const getDir = function(el, dataName, trgt, partDir ) {
+  var data = trgt.find(el).data(dataName),
+      dir  = partDir + data + ".json";
+    return dir;
+}
+/*
+function getDirSimple(trgt, dataName,  partDir ) {
+  var data = trgt.data(dataName),
+      dir  = partDir + data + ".json";
+    return dir;
+};*/
+
+function jsonLoadOnPage(dir, tmp, idToAdd) {
+  $.getJSON(dir)
+  .done(function(data) {
+    var html = handlebarsTemplating(data, tmp);
+    displayTmp(html, idToAdd);
+    //handlebarsTemplating(data, tmp, idToAdd);
+    })
+  .fail(function(){
+      alert('Nepodarilo sa nacitat data')
+    });
+}
+
+function modalTemplating(dir, tmp, idToAdd){
+  $.getJSON(dir)
+    .done(function(data) {
+      var html = handlebarsTemplating(data[0], tmp);
+      displayTmp(html, idToAdd);
+      showModal();
+    })
+    .fail(function(){
+      alert('HTTP request failed');
+    });
+}
+/*
+function languagesTemplating(dir, tmp, idToAdd){
+  jQuery.getJSON(
+    dir)
+    .done(function(data) {
+      handlebarsTemplating(data, tmp, idToAdd);
+    })
+    .fail(function(){
+      alert('HTTP request failed');
+    })
+}*/
+
+////////////////
+//modal////////
+//////////////
+
+const showModal = function() {
+  /*body.addClass("o-hidden");*/
+  modalOverlay.addClass('is-displaying')
+
+    setTimeout(function(){
+      modalOverlay.addClass('is-visible');
+    }, 150);
+
+    setTimeout(function(){
+      modalContainer.addClass('is-in-position');
+    }, 500);
+
+}
+
+const hideModal = function() {
+  modalContainer.removeClass('is-in-position');
+
+  setTimeout(function(){
+    modalOverlay.removeClass('is-visible')
+    }, 450 );
+
+  setTimeout(function(){
+    modalOverlay.removeClass('is-displaying');
+    }, 800 );
+  /*setTimeout(function(){
+    body.removeClass("o-hidden");
+  }, 1000 );*/
+}
+
+////////////
+///menu////
+//////////
+
+$(document).ready(function() {
+
+
+$(window).scroll(function() {
+
+  var wScroll = $(this).scrollTop(),
+      wHeight = nav.height();
+
+    wScroll >= wHeight ? nav.addClass('is-fixed') : nav.removeClass('is-fixed')
+
+    wScroll >= wHeight + 150 ? logo.addClass('logo-is-in-position') : logo.removeClass('logo-is-in-position')
+
+}) // end of scroll
+
+////////////////////
+//responsive menu//
+//////////////////
+
+
+//experimental
+
+const navToggleHandler = function(){
+  var $this      = $(this),
+      navigation = $this.parent().parent().find('.navigation'),
+      submenu    = navigation.find('.submenu'),
+      statusSub  = submenu.hasClass('submenu-is-open');
+      //statusNav  = navigation.hasClass('is-open');
+
+    $this.find('svg').toggleClass('is-hidden');
+    //navigation.slideToggle();
+
+    if (statusSub) {
+      submenu.removeClass('submenu-is-open');
+    }
+
+    //statusNav && statusSub ? submenu.removeClass('submenu-is-open') : null;
+
+    //statusNav ? navigation.removeClass('is-open') : navigation.addClass('is-open')
+    navigation.toggleClass("is-open");
+
+}
+
+nav.on('click', '.toggle-menu', navToggleHandler);
+
+
+
+//experimental!!!  maybe change it to var
+
+const navDropDownHandler = function(){
+  var wWidth = $(window).width() < 700,
+      $this = $(this);
+
+    if (wWidth) {
+      $this.find('.ch-down').toggleClass('is-hidden')
+           .end().find('.ch-up').toggleClass('is-hidden')
+           .end().find('.submenu').toggleClass('submenu-is-open');
+    }
+}
+
+nav.on('click', '.dropdown', navDropDownHandler);
+
+
+///templating - modals
+
+const lectorsHandler = function(){
+  var $this = $(this);
+  var dir    =  getDir('.lector__caption', 'name', $this, dirLectors);
+    modalTemplating(dir, "lectorTemplate", "#modal-lector");
+}
+
+$('.lectors').on('click', '.lector', lectorsHandler);
+
+//uni for all modals in document
+
+$('.modal').on('click', '.close', hideModal);
+
+
+
+///////////////////
+//smooth scrolling:
+////////////////// //https://css-tricks.com/snippets/jquery/smooth-scrolling/
+
+/*
+jQuery(function() {
+  jQuery('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = jQuery(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        jQuery('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+*/
+
+}); //end of dcmt ready

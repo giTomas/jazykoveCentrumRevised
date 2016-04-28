@@ -6,6 +6,7 @@
 
 "use strict";
 
+
 var nav            = $('nav'),
     logo           = $('.nav-logo'),
     modalOverlay   = $('.modal-overlay'),
@@ -27,13 +28,13 @@ var nav            = $('nav'),
 
 //display logic
 
-const displayTmp = function (html, idToAdd){
+const displayTmp = function(html, idToAdd){
   $(idToAdd).html(html);
 }
 
 //templating////
 
-function handlebarsTemplating(data, tmp) {
+const handlebarsTemplating = function(data, tmp) {
   var context  = data,
       template = Handlebars.templates[tmp],
       html     = template(context);
@@ -43,7 +44,7 @@ function handlebarsTemplating(data, tmp) {
 
 //get json directory
 
-function getDir(el, dataName, trgt, partDir ) {
+const getDir = function(el, dataName, trgt, partDir ) {
   var data = trgt.find(el).data(dataName),
       dir  = partDir + data + ".json";
     return dir;
@@ -63,12 +64,13 @@ function jsonLoadOnPage(dir, tmp, idToAdd) {
     //handlebarsTemplating(data, tmp, idToAdd);
     })
   .fail(function(){
-      alert('Nepodarilo sa nacitat data')
+      alert('HTTP request failed')
     });
 }
 
+/*
 function modalTemplating(dir, tmp, idToAdd){
-  jQuery.getJSON(dir)
+  $.getJSON(dir)
     .done(function(data) {
       var html = handlebarsTemplating(data[0], tmp);
       displayTmp(html, idToAdd);
@@ -78,6 +80,22 @@ function modalTemplating(dir, tmp, idToAdd){
       alert('HTTP request failed');
     });
 }
+
+/*
+function modalTemplating(dir, tmp, idToAdd){
+  $.getJSON(dir)
+    .then(function(data) {
+      var html = handlebarsTemplating(data[0], tmp);
+      return html;
+    })
+    .then(function(html) {
+      displayTmp(html, idToAdd);
+    })
+    .then(function() {
+      showModal();
+    })
+}*/
+
 /*
 function languagesTemplating(dir, tmp, idToAdd){
   jQuery.getJSON(
@@ -94,7 +112,7 @@ function languagesTemplating(dir, tmp, idToAdd){
 //modal////////
 //////////////
 
-var showModal = function() {
+const showModal = function() {
   /*body.addClass("o-hidden");*/
   modalOverlay.addClass('is-displaying')
 
@@ -109,12 +127,10 @@ var showModal = function() {
 }
 
 const hideModal = function() {
-  modalContainer.removeClass('is-in-position');
-
+  modalContainer.removeClass('is-in-position')
   setTimeout(function(){
     modalOverlay.removeClass('is-visible')
     }, 450 );
-
   setTimeout(function(){
     modalOverlay.removeClass('is-displaying');
     }, 800 );
@@ -122,7 +138,6 @@ const hideModal = function() {
     body.removeClass("o-hidden");
   }, 1000 );*/
 }
-
 ////////////
 ///menu////
 //////////
@@ -133,13 +148,16 @@ $(document).ready(function() {
 $(window).scroll(function() {
 
   var wScroll = $(this).scrollTop(),
-      wHeight = nav.height();
+      wHeight = nav.height(),
+      wStatus  = wScroll >= wHeight,
+      wStatus2 = wScroll >= wHeight + 150;
 
-    wScroll >= wHeight ? nav.addClass('is-fixed') : nav.removeClass('is-fixed')
+    wStatus ? nav.addClass('is-fixed') : nav.removeClass('is-fixed')
 
-    wScroll >= wHeight + 150 ? logo.addClass('logo-is-in-position') : logo.removeClass('logo-is-in-position')
+    wStatus2 ? logo.addClass('logo-is-in-position') : logo.removeClass('logo-is-in-position')
 
-}) // end of scroll
+}); // end of scroll
+}
 
 ////////////////////
 //responsive menu//
@@ -152,19 +170,25 @@ const navToggleHandler = function(){
   var $this      = $(this),
       navigation = $this.parent().parent().find('.navigation'),
       submenu    = navigation.find('.submenu'),
-      statusNav  = navigation.hasClass('is-open'),
       statusSub  = submenu.hasClass('submenu-is-open');
+      //statusNav  = navigation.hasClass('is-open');  // good for animation
 
     $this.find('svg').toggleClass('is-hidden');
     //navigation.slideToggle();
 
-    if (statusNav && statusSub) {
+    /*if (statusNav && statusSub) {
+      submenu.removeClass('submenu-is-open');
+    }*/
+
+    if (statusSub) {
       submenu.removeClass('submenu-is-open');
     }
 
+   navigation.toggleClass("is-open");
+            //.toggleClass("some-animation-class")
     //statusNav && statusSub ? submenu.removeClass('submenu-is-open') : null;
 
-    statusNav ? navigation.removeClass('is-open') : navigation.addClass('is-open')
+  //statusNav ? navigation.removeClass('is-open') : navigation.addClass('is-open')
 }
 
 nav.on('click', '.toggle-menu', navToggleHandler);
@@ -181,21 +205,23 @@ const navDropDownHandler = function(){
       $this.find('.ch-down').toggleClass('is-hidden')
            .end().find('.ch-up').toggleClass('is-hidden')
            .end().find('.submenu').toggleClass('submenu-is-open');
+                                //  .toggleClass("animation")
     }
 }
 
 nav.on('click', '.dropdown', navDropDownHandler);
 
-
 ///templating - modals
 
 const lectorsHandler = function(){
   var $this = $(this);
-  var dir    =  getDir('.lector-caption', 'name', $this, dirLectors);
+  var dir    =  getDir('.lector__caption', 'name', $this, dirLectors);
     modalTemplating(dir, "lectorTemplate", "#modal-lector");
 }
 
+
 $('.lectors').on('click', '.lector', lectorsHandler);
+
 
 //uni for all modals in document
 

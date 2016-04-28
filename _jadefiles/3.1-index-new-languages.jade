@@ -1,0 +1,26 @@
+//- mixin language-item(language)
+  //- a(href=href)
+  //- .language-item.flex.v-centered.v-start
+    //- .flag-big&attributes(attributes)
+    //- h3.t-center= language
+    
+mixin language-item-top(language, data)
+  .language-item
+     h3(data-category=data)= language
+        
+                
+section 
+  .container_main.flex.h-centered   
+    .grid.content-box#languages
+      h2.headline-first.t-center Jazyky, ktoré vyučujeme 
+      .container_100.languages-choice.languages-hover#1st
+        +language-item-top('Živé jazyky', 'zive')         
+        +language-item-top('Starobylé jazyky', 'starobyle')
+      .container_100#2nd.languages.languages-hover
+
+      .container_100#3rd.languages
+       
+    .grid-3.flex.h-centered.content-box
+      .news
+        h2 Novinky
+        ul.flex#news

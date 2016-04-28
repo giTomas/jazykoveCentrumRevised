@@ -1,9 +1,12 @@
 
-<div class="modal-item-100 flex">
-  <h2 class="m-title-small">{%raw %}{{headline}}{%endraw%}</h2>
-  <h3>{%raw %}{{date}}{%endraw%}</h3>
-  <p>{%raw%}{{content}}{%endraw%}</p>
-  <a href="{%raw %}{{link}}{%endraw%}" class="modal-btn">{%raw%}{{linkInfo}}{%endraw%} <i class="fa fa-angle-right"></i></a>
+<div class="modal-item-40">
+  <figure><img src="{{image}}"/></figure>
+</div>
+<div class="modal-item-60">
+  <h2 class="m-title">{{name}}</h2>
+  <p><span class="text-higlight">"Vyučuje: </span>{{lectorOf}}</p>
+  <p>{{about}}</p>
+  <p><span class="text-higlight">Vzdělání: </span>{{education}}</p>
 </div>
 <div class="close">
   <svg fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">

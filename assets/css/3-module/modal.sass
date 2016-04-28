@@ -7,6 +7,7 @@
   width: 100%
   min-height: 100%
   display: none
+  justify-content: center
   z-index: 10
   background-color: rgba(59, 74, 77, 0.95)
   background-color: rgba($basicColor, 0.95)
@@ -16,40 +17,59 @@
   transition: opacity 0.3s ease-in-out
   font-size: 1rem
   overflow: auto
-  p
-    font-size: 1.333em
-    line-height: 1.2
-  p:first-of-type
-    padding-top: 1em
-  h3
-    font-size: 1em
-    margin-top: 0.317em
-    line-height: 1.5
 
-.m-title
+
+.modal__title
   font-size: 3.157em
   color: $shadow
   @media (max-width: $mobile-menu)
     font-size: 2.369em
 
-.m-title-small
+.modal_title-small
   font-size: 2.369em
   width: 100%
+
+.modal__subtitle
+  font-size: 1.777em
+  //font-weight: bold
+  padding-top: 0.563em
+  color: $shadow
+
+.modal__date
+  font-size: 1em
+  padding-top: 0.317em
+  line-height: 1.5
+
+.modal__content
+  font-size: 1.333em
+  line-height: 1.2
+  padding-top: 0.563em
+
+//.modal__content:first-of-type
+  padding-top: 0.563em
+
 
 .modal
   height: 100%
   background: rgba(0,0,0,0)
+
+  display: flex
+  justify-content: center
+  align-items: center
+
   @media (max-width: 600px)
       //justify-content: flex-start
       align-items: flex-start
 
 .modal-850
-  width: 850px
+  max-width: 950px
 
 .modal-650
   width: 650px
 
 .modal-container
+  display: flex
+  flex-wrap: wrap
   background-color: $secondTextColor
   position: relative
   left: -150%

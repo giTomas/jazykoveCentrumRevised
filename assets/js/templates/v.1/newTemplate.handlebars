@@ -1,8 +1,12 @@
 
 <div class="modal-item-100 flex">
-  <h2 class="m-title-small">{{headline}}</h2>
-  <h3>{{date}}</h3>
-  <p>{{content}}</p><a href="{{link}}" class="modal-btn">{{linkInfo}} <i class="fa fa-angle-right"></i></a>
+  <h2 class="modal_title-small">{{headline}}</h2>
+  <h3 class="modal__date">{{date}}</h3>
+  <p class="modal__content">{{content}}</p>
+  {{#if link}}
+  <a href="{{link}}" class="modal-btn">
+    {{linkInfo}} <i class="fa fa-angle-right"></i></a>
+  {{/if}}
 </div>
 <div class="close">
   <svg fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">

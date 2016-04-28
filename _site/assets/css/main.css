@@ -743,25 +743,63 @@ nav {
   -webkit-box-shadow: -0.1em 0.1em 0.25em #242e30;
           box-shadow: -0.1em 0.1em 0.25em #242e30;
   cursor: pointer; }
-  .lector:hover .lector-caption {
+  .lector:hover .lector-slide {
     right: 0; }
+  .lector:hover .lector__name {
+    right: 0; }
+  .lector:hover .lector__lectorOf {
+    left: 0; }
 
-.lector-caption {
+.lector__caption {
   width: -webkit-calc(100% - 0.5em);
   width: calc(100% - 0.5em);
   position: absolute;
   bottom: 0;
-  right: -100%;
   margin: 0.25em;
   padding: 0.25em 0.5em;
-  font-size: 1.777rem;
   text-align: center;
-  background-color: #F9FBFB;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; }
-  .lector-caption:hover {
+
+.lector-slide {
+  background-color: #F9FBFB;
+  font-size: 1.777rem;
+  right: -100%; }
+  .lector-slide:hover {
     background-color: #3A4A4D;
     color: #F9FBFB; }
+
+.lector-container {
+  background-color: transparent; }
+  .lector-container:hover .lector__name, .lector-container:hover .lector__lectorOf {
+    background-color: #3A4A4D;
+    color: #F9FBFB; }
+
+.lector__name, .lector__lectorOf {
+  background-color: #F9FBFB;
+  position: relative;
+  padding: 0.25em 0.5em 0;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out; }
+
+.lector__name {
+  right: -150%;
+  font-size: 1.777rem;
+  -webkit-transition: right 0.2s ease-in-out;
+  transition: right 0.2s ease-in-out;
+  letter-spacing: 0.1em; }
+
+.lector__lectorOf {
+  left: -150%;
+  font-size: 1.333rem;
+  padding-bottom: 0.25em;
+  -webkit-transition: left 0.2s ease-in-out 0.3s;
+  transition: left 0.2s ease-in-out 0.3s; }
+
+.lector__img {
+  width: 300px; }
 
 .modal-overlay {
   position: fixed;
@@ -772,6 +810,10 @@ nav {
   width: 100%;
   min-height: 100%;
   display: none;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: 10;
   background-color: rgba(59, 74, 77, 0.95);
   background-color: rgba(58, 74, 77, 0.95);
@@ -780,30 +822,48 @@ nav {
   transition: opacity 0.3s ease-in-out;
   font-size: 1rem;
   overflow: auto; }
-  .modal-overlay p {
-    font-size: 1.333em;
-    line-height: 1.2; }
-  .modal-overlay p:first-of-type {
-    padding-top: 1em; }
-  .modal-overlay h3 {
-    font-size: 1em;
-    margin-top: 0.317em;
-    line-height: 1.5; }
 
-.m-title {
+.modal__title {
   font-size: 3.157em;
   color: #242e30; }
   @media (max-width: 750px) {
-    .m-title {
+    .modal__title {
       font-size: 2.369em; } }
 
-.m-title-small {
+.modal_title-small {
   font-size: 2.369em;
   width: 100%; }
 
+.modal__subtitle {
+  font-size: 1.777em;
+  padding-top: 0.563em;
+  color: #242e30; }
+
+.modal__date {
+  font-size: 1em;
+  padding-top: 0.317em;
+  line-height: 1.5; }
+
+.modal__content {
+  font-size: 1.333em;
+  line-height: 1.2;
+  padding-top: 0.563em; }
+
 .modal {
   height: 100%;
-  background: transparent; }
+  background: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
   @media (max-width: 600px) {
     .modal {
       -webkit-box-align: start;
@@ -813,12 +873,19 @@ nav {
               align-items: flex-start; } }
 
 .modal-850 {
-  width: 850px; }
+  max-width: 950px; }
 
 .modal-650 {
   width: 650px; }
 
 .modal-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   background-color: #F9FBFB;
   position: relative;
   left: -150%;
