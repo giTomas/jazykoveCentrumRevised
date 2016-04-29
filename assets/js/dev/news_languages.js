@@ -1,25 +1,3 @@
-$(document).ready(function() {
-
-"use strict";
-
-//load news
-
-jsonLoadOnPage(dirNewsNotices, "noticesTemplate", "#news");
-
-//load details after click on a notice
-
-const newsClickHandler = function(){
-  var $this = $(this);
-  var dir = getDir(".notice-content", "date", $this, dirNews);
-  modalTemplating(dir, "newTemplate", "#modal-new");
-}
-
-$("#news").on("click", ".notice", newsClickHandler);
-
-
-
-//languages displaying
-
 const addRemoveHiglight = function ( el1, el2, trgt, class) {
   trgt.parent(el1).find(el2)       //addremove class is-picked
   .removeClass(class)
@@ -65,8 +43,13 @@ const firstChoiceHandler = function(){
   $.getJSON(dir)
     .then(function(data) {
       //var html = handlebarsTemplating(data, "languageTemplate");
-      //return html;
-      return handlebarsTemplating(data, "languageTemplate");
+      var context = data;
+      var source = $('#languageTemplate').html();
+      var template = Handlebars.compile(source);
+      var html = template(context);
+      return html;
+    
+      //return handlebarsTemplating(data, "languageTemplate");
     })
     .then(function(html){
       var dirAncient = "../assets/json/languages/starobyle.json",
@@ -117,11 +100,17 @@ const secondChoiceHandler = function(){
   addRemoveHiglight('#2nd', '.language-item', trgt, 'is-picked');
 
 
+
   $.getJSON(dir)
     .then(function(data) {
       //var html = handlebarsTemplating(data, "languageTemplate");
       //return(html)
-      return handlebarsTemplating(data, "languageTemplate");
+      var context = data;
+      var source = $('#languageTemplate').html();
+      var template = Handlebars.compile(source);
+      var html = template(context);
+      return html;
+      // return handlebarsTemplating(data, "languageTemplate");
     })
     .then(function(html) {
       lang3.html(html)
@@ -158,6 +147,3 @@ const secondCloseHandler = function(){
 lang2.on("click", ".close", firstCloseHandler);
 
 lang3.on("click", ".close", secondCloseHandler);
-
-
-});

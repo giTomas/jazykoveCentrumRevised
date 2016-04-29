@@ -1,12 +1,22 @@
 
-<script id="languageTemplate" type="text/x-handlebars-template">{%raw%}{{#each items}}{%endraw%} 
-  <div class="language-item state-1">
-    <h3 data-category="{%raw%}{{data}}{%endraw%}" class="t-center">{%raw%}{{language}}{%endraw%} </h3>
-  </div>{%raw%}{{/each}}{%endraw%} 
-  <div class="close"> 
-    <svg fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
-      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
-      <path d="M0 0h24v24H0z" fill="none"></path>
-    </svg>
+<script id="languageTemplate" type="text/x-handlebars-template">
+
+  <div class="languageContainer">
+    <header class="languageContainer__header">
+      <h3 class="languageContainer__title">{%raw%}{{languages}}{%endraw%}</h3>
+      <div class="close languageTemplate__close">
+        <svg fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+          <path d="M0 0h24v24H0z" fill="none"></path>
+        </svg>
+      </div>
+    </header>
+
+    {%raw%}{{#each items}}{%endraw%}
+    <div class="language-item state-1">
+      <h3 data-category="{%raw%}{{data}}{%endraw%}" class="t-center">
+        {%raw%}{{language}}{%endraw%} </h3>
+    </div>{%raw%}{{/each}}{%endraw%}
+
   </div>
 </script>

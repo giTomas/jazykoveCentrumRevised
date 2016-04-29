@@ -5,18 +5,47 @@
   left: 0
   bottom: 0
   width: 100%
-  min-height: 100%
+  //min-height: 100%
+  height: 100%
   display: none
   justify-content: center
+  align-items: flex-start
   z-index: 10
   background-color: rgba(59, 74, 77, 0.95)
   background-color: rgba($basicColor, 0.95)
-  //background-color: rgba(38, 36, 52, 0.85)
-  //background-color: rgba(37, 55, 67, 0.85)
   opacity: 0
-  transition: opacity 0.3s ease-in-out
+  transition: opacity 0.2s ease-in-out
   font-size: 1rem
   overflow: auto
+
+.modal
+  min-height: 100%
+  background: rgba(0,0,0,0)
+  display: flex
+  justify-content: center
+  align-items: center
+
+.modal-850
+  max-width: 950px
+
+.modal-650
+  width: 650px
+
+
+.modal-container
+  display: flex
+  flex-wrap: wrap
+  background-color: $secondTextColor
+  position: relative
+  left: -180%
+  padding: 1.5625rem
+  margin: 1.5625rem
+  box-shadow: -0.4em 0.2em 1.5em $shadow
+  opacity: 0.5
+  transition: all 0.4s ease-in-out
+  @media(max-width: $headerBreak)
+    margin: 0.5em
+    padding: 0
 
 
 .modal__title
@@ -49,39 +78,6 @@
   padding-top: 0.563em
 
 
-.modal
-  height: 100%
-  background: rgba(0,0,0,0)
-
-  display: flex
-  justify-content: center
-  align-items: center
-
-  @media (max-width: 600px)
-      //justify-content: flex-start
-      align-items: flex-start
-
-.modal-850
-  max-width: 950px
-
-.modal-650
-  width: 650px
-
-.modal-container
-  display: flex
-  flex-wrap: wrap
-  background-color: $secondTextColor
-  position: relative
-  left: -150%
-  padding: 1.5625rem
-  margin: 1.5625rem
-  box-shadow: -0.4em 0.2em 1.5em $shadow
-  opacity: 0
-  transition: all 0.5s ease-in-out
-  @media(max-width: $headerBreak)
-    margin: 0.5em
-    padding: 0
-
 .modal-item-40
   width: calc(40% - 1.5625rem)
   padding-right: 1.5625rem
@@ -99,6 +95,16 @@
   width: calc(100% - 2em)
   padding: 1em 1em 0
 
+
+.modal__newsContainer
+  width: calc(100% - 2em)
+  padding: 1em 1em 0
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
+  //> *
+    width: 100%
+
 .close
   position: absolute
   top: 0
@@ -106,10 +112,10 @@
   //padding: 0 0.2em 0.1em 0.25em
   background-color: $basicColor
   color: $secondTextColor
-  transition: all 0.3s ease-in-out
+  transition: all 0.1s linear
   cursor: pointer
   &:hover
-    background-color: transparent
+    background-color: $secondTextColor
     svg
       fill: $basicColor
 

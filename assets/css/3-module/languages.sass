@@ -1,22 +1,37 @@
 .languages, .languages-choice
   //width:
   position: relative
-  padding: 2.369em 0.75em
-  margin-top: 1em
+
+  //padding: 2.369em 0.75em
+  //margin-top: 1em
+
+.languages, .languages-choice
+  border-right: 0.5em solid $basicColor
+  //border-left: 0.5em solid $basicColor
+
+//.languages:last-child
+  border-bottom: 0.5em solid $basicColor
 
 .languages
-  background-color: $secondTextColor
+  background-color: $grey
   display: none
+
+  //transform-origin: top
+  //transition: transform 0.3s ease-in-out
 
 .languages-choice
   display: flex
+  padding-bottom: 2.333em
   flex-wrap: wrap
   justify-content: center
 
 .language-item
   font-size: 1.33rem
-  box-shadow: 0 0 0.1em $shadow
-  transition: box-shadow 0.2s ease-in-out
+  // box-shadow: 0.05em 0.05em 0.15em $shadow
+  //box-shadow: 0 0 0.15em $shadow
+  border: 0.1em solid $basicColor
+  background-color: $secondTextColor
+  transition: text-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out
   margin: 1em 1.333em
   padding: 0.563em 0.75em
   text-align: center

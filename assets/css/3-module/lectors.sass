@@ -11,23 +11,27 @@
   box-shadow: -0.1em 0.1em 0.25em $shadow
   cursor: pointer
   &:hover
-    .lector-slide
+    .lector-slide, .lector-lectorOf
       right: 0
-  &:hover
     .lector__name
       right: 0
     .lector__lectorOf
       left: 0
 
 .lector__caption
-  width: calc(100% - 0.5em)
+  // width: calc(100% - 0.634em)
+  width: calc(100% - 0.844em)
   position: absolute
   bottom: 0
-  margin: 0.25em
-  padding: 0.25em 0.5em
+  // margin: 0.317em
+  margin: 0.422em
+  //padding: 0.25em 0.5em
   text-align: center
   transition: all 0.2s ease-in-out
-
+  &:hover
+    .lector__name, .lector__lectorOf
+      background-color: $basicTextColor
+      color: $secondTextColor
 
 .lector-slide
   background-color: $secondTextColor
@@ -37,8 +41,8 @@
     background-color: $basicTextColor
     color: $secondTextColor
 
-.lector-container
-  background-color: transparent
+//.lector-container
+  //background-color: transparent
   &:hover
     .lector__name, .lector__lectorOf
       background-color: $basicTextColor
@@ -47,27 +51,37 @@
 .lector__name, .lector__lectorOf
   background-color: $secondTextColor
   position: relative
-  padding: 0.25em 0.5em 0
+  //padding-top: 0.25em
+  padding: 0.238em 0.238em 0
   transition: background-color 0.2s ease-in-out
   transition: color 0.2s ease-in-out
 
 .lector__name
   right: -150%
   font-size: 1.777rem
-  transition: right 0.2s ease-in-out
+  transition: right 0.3s ease-in-out
+  // transition: right 0.2s ease-in-out 0.3s
   letter-spacing: 0.1em
 
 .lector__lectorOf
   left: -150%
+  padding-bottom: 0.238em
   font-size: 1.333rem
-  padding-bottom: 0.25em
-  transition: left 0.2s ease-in-out 0.3s
+  transition: left 0.3s ease-in-out
+  // transition: left 0.2s ease-in-out 0.3s
 
-
+.lector-lectorOf
+  background-color: $secondTextColor
+  font-size: 1.333rem
+  padding: 0.238em 0
+  right: -100%
+  &:hover
+    background-color: $basicTextColor
+    color: $secondTextColor
 
 .lector__img
   width: 300px
-  //object-fit: contain
+  object-fit: contain
 
 //.lector-name
   width: calc(100% - 0.5em)

@@ -1,12 +1,17 @@
 mixin lector-item(name, src, data)
   figure.lector
-    img.lector__img( src= src)
+    img.lector__img(src=src)
     figcaption.lector__caption.lector-slide(data-name= data)= name
+    
+mixin lector-itemLec(lectorOf, src, data)
+  figure.lector
+    img.lector__img(src=src)
+    figcaption.lector__caption.lector-lectorOf(data-name= data)= lectorOf
 
 mixin lector-itemExt(name, src, data, lectorOf)
   figure.lector
     img.lector__img(src=src)
-    figcaption.lector__caption.lector-container(data-name= data)
+    figcaption.lector__caption(data-name= data)
       h3.lector__name= name
       h4.lector__lectorOf= lectorOf
     
@@ -14,11 +19,23 @@ section
   .container_80
     h2.headline2.t-center Lektoři
   .container_80.flex.h-centered.lectors
+    +lector-itemLec('Lektorka ruského, církevněslovanského a staroruského jazyka','../assets/img/ksenia.jpg', 'ksenia'); 
     +lector-item('Ksenia','../assets/img/ksenia.jpg', 'ksenia'); 
-    +lector-itemExt('Ksenia','../assets/img/ksenia.jpg', 'ksenia', 'Lektorka ruského jazyka'); 
+    +lector-itemExt('Ksenia','../assets/img/ksenia.jpg', 'ksenia', 'Lektorka ruského, církevněslovanského a staroruského jazyka'); 
+    
     +lector-item('Martin','../assets/img/martin.jpg', 'martin'); 
-    +lector-item('Lera','../assets/img/lera.jpg', 'lera'); 
-    +lector-item('Jan','../assets/img/jan.jpg', 'jan'); 
-    +lector-item('Maria','../assets/img/maria.jpg', 'maria'); 
-    +lector-item('Adam','../assets/img/adam.jpg', 'adam'); 
+    +lector-itemLec('Lektor německého jazyka','../assets/img/martin.jpg', 'martin'); 
+    +lector-itemExt('Martin','../assets/img/martin.jpg', 'martin', 'Lektor německého jazyka');     
+  
+    +lector-itemLec('Lektorka ruského jazyka','../assets/img/lera.jpg', 'lera'); 
+    +lector-itemExt( 'Lera','../assets/img/lera.jpg', 'lera', 'Lektorka ruského jazyka');   
+    
+    +lector-itemLec('Lektor anglického, českého, japonského, korejského jazyka','../assets/img/jan.jpg', 'jan'); 
+    +lector-itemExt('Jan', '../assets/img/jan.jpg', 'jan', 'Lektor anglického, českého, japonského, korejského jazyka'); 
+  
+    +lector-itemLec('Lektorka anglického, francouzského, egyptského jazyka','../assets/img/maria.jpg', 'maria'); 
+    +lector-itemExt('Maria','../assets/img/maria.jpg', 'maria', 'Lektorka anglického, francouzského, egyptského jazyka'); 
+    
+    +lector-itemLec('Lektor arabského jazyka','../assets/img/adam.jpg', 'adam'); 
+    +lector-itemExt('Adam', '../assets/img/adam.jpg', 'adam', 'Lektor arabského jazyka'); 
      
