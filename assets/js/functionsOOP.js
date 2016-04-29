@@ -1,1 +1,0 @@
-var NavObj={nav:$("nav"),logo:$(".nav-logo"),winScroll:function(){$(window).scroll(function(){var o=$(window).scrollTop(),a=NavObj.nav.height(),i=o>=a,l=o>=a+150;i?NavObj.nav.addClass("is-fixed"):NavObj.nav.removeClass("is-fixed"),l?NavObj.logo.addClass("logo-is-in-position"):NavObj.logo.removeClass("logo-is-in-position")})}};NavObj.winScroll();

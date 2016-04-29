@@ -8,20 +8,26 @@
     repeat: no-repeat
     attachment: fixed
 
-h1.flex
-  align-items: center     // refactor !
+.logo-center
+  display: flex
+  //align-items: center     // refactor !
+  align-items: baseline     // refactor !
+  padding: 0.238em
+  @media (max-width: 400px)
+    padding: 0.422em 0
 
-.logo-container
+//.logo-container   //out
   //@media (max-width: 630px)
     border-bottom: 1px solid $basicColor
   @media (max-width: 400px)
     padding: 0.5em 0
 
-.logo, .nav-logo
+.logo
   font-family: serif   //!!!!
-  font-size: 3.157rem
+  font-size: 4.209rem
   font-weight: bold
-  color: $basicTextColor
+  //color: $basicTextColor
+  color: $basicColor
   // padding: 0.15em 0.4em 0.15em 0
   @media (max-width: $headerBreak)
     font-size: 2.369rem
@@ -29,9 +35,9 @@ h1.flex
 .description
   margin-left: 0.3em
   font-family: $fontStack
-  color: $basicTextColor
-  font-weight: 100
-  font-size: 2.369rem
+  color: $basicColor
+  //font-weight: 100
+  font-size: 3.157rem
   padding-right: 0.3em
   @media (max-width: $headerBreak)
     font-size: 1.777rem
@@ -42,10 +48,8 @@ h1.flex
 
 .flex-header
   display: flex
-  //overflow: hidden
-  flex-wrap: wrap
-  justify-content: space-between
   align-items: center
+  //justify-content: center
   @media (max-width: 700px)
     justify-content: center
 

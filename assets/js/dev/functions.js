@@ -31,17 +31,24 @@ const displayTmp = function (html, idToAdd){
   $(idToAdd).html(html);
 }
 
-//templating////
+// crate chunk of html
 
 const handlebarsTemplating = function(data, tmp) {
   var context  = data,
       template = Handlebars.templates[tmp],
       html     = template(context);
     return html
-    //$(idToAdd).html(html);
 }
 
-//get json directory
+const templateRaw = function (data, idTmp ){
+  var context        = data,
+      template       = $(idTmp).html(),
+      templateScript = Handlebars.compile(template),
+      html           = templateScript(context);
+  return html;
+};
+
+//get directory from html data attr
 
 const getDir = function(el, dataName, trgt, partDir ) {
   var data = trgt.find(el).data(dataName),
@@ -49,7 +56,7 @@ const getDir = function(el, dataName, trgt, partDir ) {
     return dir;
 }
 
-function getDirSimple(trgt, dataName,  partDir ) {
+const getDirSimple = function(trgt, dataName,  partDir ) {
   var data = trgt.data(dataName),
       dir  = partDir + data + ".json";
     return dir;

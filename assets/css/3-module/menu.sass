@@ -23,7 +23,7 @@ nav
     position: relative
     &:hover
       //background-color: darken($basicColor, 15%)
-      background-color: $secondTextColor
+      background-color: $elBackground
       color: $basicTextColor
   @media (max-width: $mobile-menu)
     display: none
@@ -53,12 +53,20 @@ nav
       width: 100%
 
 .nav-logo
+  font-size: 3.157rem
   padding: 0.05em 0.1em 0.05em 0
+  color: $basicColor
+  font-family: serif
+  font-weight: bold
   background:
     //image: linear-gradient(to right, $basicColor 50%, $secondTextColor 50%)
     image: linear-gradient(to right, $basicColor 50%, $background 50%)
     size: 200%
   transition: all 0.2s
+    color: $basicColor
+    // padding: 0.15em 0.4em 0.15em 0
+  @media (max-width: $headerBreak)
+    font-size: 2.369rem
   @media (max-width: 400px)
     padding: 0.14em 0.2em 0.14em 0
 
