@@ -22,24 +22,24 @@ $(document).ready(function(){
           headline.removeClass("headline-inPosition");
         }
   })
-
+/*
   const navToggleHandler = function(){
     var $this      = $(this),
         navigation = $this.parent().parent().find('.navigation'),
         submenu    = navigation.find('.submenu'),
         statusSub  = submenu.hasClass('submenu-is-open');
         //statusNav  = navigation.hasClass('is-open');  // good for animation
-
-      $this.find('svg').toggleClass('is-hidden');
+        console.log('hi');
+        navigation.toggleClass("is-open");
+        $this.find('svg').toggleClass("is-hidden");
       if (statusSub) {
         submenu.removeClass('submenu-is-open');
       }
 
-     navigation.toggleClass("is-open");
-  }
+  }*/
 
-  nav.on('click', '.toggle-menu', navToggleHandler);
-
+  //nav.on('click', '.toggle-menu', navToggleHandler);
+/*
   const navDropDownHandler = function(){
     var wWidth = $(window).width() < 700,
         $this = $(this);
@@ -53,7 +53,7 @@ $(document).ready(function(){
   }
 
   nav.on('click', '.dropdown', navDropDownHandler);
-
+*/
 
   headline.on("click", function(){
     $.getJSON(dirNewsNotices)

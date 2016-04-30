@@ -1,3 +1,5 @@
+
+
 const addRemoveHiglight = function ( el1, el2, trgt, class) {
   trgt.closest(el1).find(el2)       //addremove class is-picked
   .removeClass(class)
@@ -17,14 +19,8 @@ const firstChoiceHandler = function(){
   addRemoveHiglight(lang1, '.language-item', $this, 'is-picked');
   $.getJSON(dir)
     .then(function(data) {
-      //var html = handlebarsTemplating(data, "languageTemplate");
-      var context = data;
-      var source = $('#languageTemplate').html();
-      var template = Handlebars.compile(source);
-      var html = template(context);
+      var html = templateRaw( data, "#languageTemplate");
       return html;
-
-      //return handlebarsTemplating(data, "languageTemplate");
     })
     .then(function(html){
       var dirAncient = "../assets/json/languages/starobyle.json",
@@ -46,33 +42,25 @@ const firstChoiceHandler = function(){
 lang1.on("click", ".language-item", firstChoiceHandler);
 
 const secondChoiceHandler = function(){
-  var trgt = $(this),
-      dir  = getDir( "h3", "category", trgt, dirLang );
-  addRemoveHiglight('#2nd', '.language-item', trgt, 'is-picked');
-
-
-
+  var $this = $(this),
+      dir  = getDir( "h4", "category", $this, dirLang );
+  addRemoveHiglight('#2nd', '.language-item', $this, 'is-picked');
   $.getJSON(dir)
     .then(function(data) {
-      //var html = handlebarsTemplating(data, "languageTemplate");
-      //return(html)
-      var context = data;
-      var source = $('#languageTemplate').html();
-      var template = Handlebars.compile(source);
-      var html = template(context);
+      var html = templateRaw(data, '#languageTemplate');
+
       return html;
-      // return handlebarsTemplating(data, "languageTemplate");
     })
     .then(function(html) {
       lang3.html(html)
            .addClass('is-flex');
     });
-
 }
 
 //trigger click event
 
 lang2.on("click", ".language-item", secondChoiceHandler)
+
 
 //closing languages windows
 
@@ -95,6 +83,6 @@ const secondCloseHandler = function(){
  }
 }
 
-lang2.on("click", ".close", firstCloseHandler);
+lang2.on("click", ".languageTemplate__close", firstCloseHandler);
 
-lang3.on("click", ".close", secondCloseHandler);
+lang3.on("click", ".languageTemplate__close", secondCloseHandler);

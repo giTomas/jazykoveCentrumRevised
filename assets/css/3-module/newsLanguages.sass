@@ -24,24 +24,26 @@
   //text-shadow: 0 0 2px lighten($accentColor, 10%), 0 0 1px $accentColor
   background-color: $accentColor
   cursor: pointer
+.languages__wrapper
+  background-color: $grey
 
 
 .newsLanguages__headlineNews
+  display: inline-block
   position: absolute
   top: 0
   left: -15%
-  display: inline-block
+  background-color: lighten($accentColor, 5%)
+  //background-color: $accentColor
+  color: $secondTextColor
   margin-top: 1.777em
   letter-spacing: 0.2em
   font-size: 3.157rem
   font-weight: bold
-  color: $secondTextColor
   padding: 0.238em 0.422em
   text-transform: uppercase
-  //text-shadow: 0 0 2px lighten($accentColor, 10%), 0 0 1px $accentColor
-  background-color: lighten($accentColor, 15%)
+
   cursor: pointer
-  // transform: rotate(90deg)
   transform: translate(1.45em, 0) rotate(90deg)
   transform-origin: left top
   transition: left 0.22s ease-in-out, background-color 0.3s ease-in-out
@@ -57,8 +59,8 @@
   display: flex
   flex-wrap: wrap
   justify-content: center
-  position: relative
-  padding: 0.563em
+  //position: relative
+  //padding: 0.563em
 
 .languageContainer__header
   width: 100%
@@ -66,10 +68,29 @@
 
 .languageContainer__title
   width: 100%
-  padding: 0 0 2em 0
-  font-size: 1.777em
+  padding: 3.157rem 0
+  font-size: 1.777rem
   font-weight: bold
   text-align: center
   color: $shadow
 
+.languageContainer__subtitle
+
+
 .languageTemplate__close
+    margin-top: 2.2678rem
+    position: absolute
+    top: 0
+    right: 0
+    //padding: 0 0.2em 0.1em 0.25em
+    background-color: transparent
+    //color: $basicColor
+    transition: all 0.1s linear
+    cursor: pointer
+    svg
+      fill: $basicColor
+    &:hover
+      background-color: $basicColor
+      //background-color: transparent
+      svg
+        fill: $secondTextColor
