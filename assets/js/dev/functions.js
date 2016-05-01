@@ -40,13 +40,7 @@ const handlebarsTemplating = function(data, tmp) {
     return html
 }
 
-const templateRaw = function (data, idTmp ){
-  var context        = data,
-      template       = $(idTmp).html(),
-      templateScript = Handlebars.compile(template),
-      html           = templateScript(context);
-  return html;
-};
+
 
 //get directory from html data attr
 

@@ -31,6 +31,7 @@
   &:hover
     .lector__name, .lector__lectorOf
       background-color: $hoverColor
+      background-color: $basicColor
       color: $secondTextColor
 
 .lector-slide
@@ -39,6 +40,7 @@
   right: -100%
   &:hover
     background-color: $hoverColor
+    background-color: $basicColor
     color: $secondTextColor
 
 //.lector-container
@@ -53,11 +55,11 @@
   position: relative
   //padding-top: 0.25em
   padding: 0.238em 0.238em 0
-  transition: background-color 0.2s ease-in-out
-  transition: color 0.2s ease-in-out
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out
 
 .lector__name
   right: -150%
+  // font-size: 1.777rem
   font-size: 1.777rem
   transition: right 0.3s ease-in-out
   // transition: right 0.2s ease-in-out 0.3s
@@ -72,7 +74,7 @@
 
 .lector-lectorOf
   background-color: $secondTextColor
-  font-size: 1.333rem
+  font-size: 1.777rem
   padding: 0.238em 0
   right: -100%
   &:hover
@@ -82,6 +84,9 @@
 .lector__img
   width: 300px
   object-fit: contain
+
+.text-higlight
+  font-weight: bold
 
 //.lector-name
   width: calc(100% - 0.5em)

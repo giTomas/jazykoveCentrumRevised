@@ -1,4 +1,10 @@
-
+const templateRaw = function (data, idTmp ){
+  var context        = data,
+      template       = $(idTmp).html(),
+      templateScript = Handlebars.compile(template),
+      html           = templateScript(context);
+  return html;
+};
 
 const addRemoveHiglight = function ( el1, el2, trgt, class) {
   trgt.closest(el1).find(el2)       //addremove class is-picked

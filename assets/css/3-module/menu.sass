@@ -2,6 +2,8 @@ nav
   width: 100%
   position: relative
   background-color: $basicColor
+  //background-image: linear-gradient(to right, $basicColor 60%, $hoverColor)
+
   justify-content: center
   z-index: 10
   @media (max-width: $mobile-menu)
@@ -11,20 +13,18 @@ nav
   font-size: 1.33rem
   justify-content: center
   position: relative
-  //font-weight: 300
   z-index: 10
   flex: 2
   //order: 0
   a
-    transition: all 0.1s ease-in-out
     color: $secondTextColor
     display: block
     padding: 0.81em 0.25em 0.81em
     position: relative
+    transition: all 0.1s ease-in-out
     &:hover
-      //background-color: darken($basicColor, 15%)
-      background-color: $elBackground
-      color: $basicTextColor
+      background-color: $hoverColor
+      //color: $basicTextColor
   @media (max-width: $mobile-menu)
     display: none
     flex-basis: 100%
@@ -42,7 +42,7 @@ nav
   z-index: 1
   background-color: $basicColor
   font-size: 1.33rem
-  transition: all 0.2s ease-in-out
+  transition: all 0.1s ease-in-out
   a
     padding: 0.5em 0.5em 0.5em 1.05em
   @media (max-width: $mobile-menu)
@@ -57,18 +57,14 @@ nav
   padding: 0.05em 0.1em 0.05em 0
   color: $basicColor
   font-family: serif
+  font-family: Georgia, serif
   font-weight: bold
   background:
-    //image: linear-gradient(to right, $basicColor 50%, $secondTextColor 50%)
     image: linear-gradient(to right, $basicColor 50%, $background 50%)
     size: 200%
   transition: all 0.2s
-    color: $basicColor
-    // padding: 0.15em 0.4em 0.15em 0
-  //@media (max-width: $headerBreak)
-    font-size: 2.369rem
-  //@media (max-width: 400px)
-    padding: 0.14em 0.2em 0.14em 0
+    //color: $basicColor
+
 
 li:hover
   @media (min-width: $mobile-menu)
@@ -80,9 +76,11 @@ li:hover
   margin-left: auto
   display: none
   cursor: pointer
-  transition: all 0.2s ease-in-out
+  transition: all 0.1s ease-in-out
   &:hover
-    color: $shadow
+    svg
+      fill: $hoverColor
+
   @media (max-width: $mobile-menu)
     display: flex
     align-items: center

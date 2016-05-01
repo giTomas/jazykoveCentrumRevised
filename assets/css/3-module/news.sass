@@ -5,7 +5,7 @@
   border-radius: 0.25em
   border: 1px solid $basicColor
   h2
-    font-size: 1.777rem
+    font-size: 2.369em
     //font-weight: 300
     background: $basicColor
     color: $secondTextColor
@@ -19,18 +19,20 @@
     padding-right: 0.2em
     //font-weight: bold
 
-  &:hover
+  //&:hover
     box-shadow: 0 0 0.3em $hoverColor
 
 .notice
   width: 100%
-  font-size: 1rem
+  font-size: 1.2rem
   line-height: 1.5
   padding: 0 0.238em
-  transition: all 0.15s ease-in-out
+  transition: all 0.1s ease-in-out
   cursor: pointer
   &:hover
-    background-color: lighten( $basicColor, 30%)
+    background-color: $hoverColor
+    //background-color: $basicColor
+    color: $secondTextColor
   @media(max-width: 900px)
     width: 50%
   @media(max-width: $mobile-menu)

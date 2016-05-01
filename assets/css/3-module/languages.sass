@@ -1,3 +1,27 @@
+.languagesNews__outerContainer
+    width: 90%
+    margin: 0 auto
+    display: flex
+    flex-wrap: wrap
+    //background-color: $grey
+    @media(max-width: 800px)
+      width: 95%
+
+.languagesNews__innerLanguages
+  width: 70%
+  min-height: 100vh
+  padding: 3.157em 0 9.969em
+  background-color: $grey
+  position: relative
+
+.news__inner
+
+.languages__title
+  font-size: 3.157rem
+  color: $shadow
+  text-align: center
+  padding-bottom: 1em
+
 .languages, .languages-choice
   //width:
   position: relative
@@ -29,6 +53,7 @@
   font-size: 1.33rem
   border: 0.1em solid $hoverColor
   background-color: $secondTextColor
+  //color: $hoverColor
   transition: text-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out
   margin: 1em 1.333em
   padding: 0.563em 0.75em
@@ -43,3 +68,7 @@
       // border: 0.1em solid $basicColor
     //h3
       text-shadow: 0 0.01em 0.01em lighten($basicTextColor, 20%)
+
+.container_main.flex.h-centered.newsLanguages  //!!
+  min-height: 100vh
+  padding-bottom: 10em

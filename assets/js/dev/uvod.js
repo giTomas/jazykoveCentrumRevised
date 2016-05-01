@@ -19,9 +19,15 @@ $("#news").on("click", ".notice", newsClickHandler);
 
 
 //languages displaying
-
+/*
 const addRemoveHiglight = function ( el1, el2, trgt, class) {
   trgt.parent(el1).find(el2)       //addremove class is-picked
+  .removeClass(class)
+  .end().end().addClass(class);
+}
+*/
+const addRemoveHiglight = function ( el1, el2, trgt, class) {
+  trgt.closest(el1).find(el2)       //addremove class is-picked
   .removeClass(class)
   .end().end().addClass(class);
 }
@@ -66,7 +72,8 @@ const firstChoiceHandler = function(){
     .then(function(data) {
       //var html = handlebarsTemplating(data, "languageTemplate");
       //return html;
-      return handlebarsTemplating(data, "languageTemplate");
+      var html = handlebarsTemplating(data, "languageTemplate");
+      return html;
     })
     .then(function(html){
       var dirAncient = "../assets/json/languages/starobyle.json",
@@ -110,7 +117,7 @@ const secondChoiceHandler = function(){
       alert('HTTP request failed')
     });
 }*/
-
+/*
 const secondChoiceHandler = function(){
   var trgt = $(this),
       dir  = getDir( "h3", "category", trgt, dirLang );
@@ -122,6 +129,26 @@ const secondChoiceHandler = function(){
       //var html = handlebarsTemplating(data, "languageTemplate");
       //return(html)
       return handlebarsTemplating(data, "languageTemplate");
+    })
+    .then(function(html) {
+      lang3.html(html)
+           .addClass('is-flex');
+    });
+
+}*/
+
+const secondChoiceHandler = function(){
+  var $this = $(this),
+      dir  = getDir( "h4", "category", $this, dirLang );
+  addRemoveHiglight('#2nd', '.language-item', $this, 'is-picked');
+
+  $.getJSON(dir)
+    .then(function(data) {
+      //var html = handlebarsTemplating(data, "languageTemplate");
+      //return(html)
+      console.log('cau');
+      var html = handlebarsTemplating(data, "languageTemplate");
+      return html;
     })
     .then(function(html) {
       lang3.html(html)
@@ -143,10 +170,10 @@ const firstCloseHandler = function(){
 }
 
 const secondCloseHandler = function(){
-  var el          = $(this).parent(),
-      langStatus  = lang2.hasClass('is-flex');
-
-  el.removeClass('is-flex');
+  //var el          = $(this).parent(),
+  var  langStatus  = lang2.hasClass('is-flex');
+  lang3.removeClass('is-flex');
+  //el.removeClass('is-flex');
 
   if (langStatus) {
     lang2.find('.language-item').removeClass('is-picked');
@@ -155,9 +182,9 @@ const secondCloseHandler = function(){
  }
 }
 
-lang2.on("click", ".close", firstCloseHandler);
+lang2.on("click", ".languageTemplate__close", firstCloseHandler);
 
-lang3.on("click", ".close", secondCloseHandler);
+lang3.on("click", ".languageTemplate__close", secondCloseHandler);
 
 
 });
