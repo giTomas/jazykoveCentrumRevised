@@ -1,20 +1,31 @@
 .languagesNews__outerContainer
     width: 90%
+    min-height: 100vh
     margin: 0 auto
     display: flex
     flex-wrap: wrap
+    //padding-bottom: 9.969em
     //background-color: $grey
-    @media(max-width: 800px)
+    @media(max-width: 1200px)
       width: 95%
+    @media(max-width: 1100px)
+      width: 100%
 
-.languagesNews__innerLanguages
+.languagesNews__languages
   width: 70%
-  min-height: 100vh
   padding: 3.157em 0 9.969em
   background-color: $grey
   position: relative
+  //box-shadow: 0 0 2px 2px darken($grey, 25%)
+  margin: 1em 0
+  @media (max-width: $languagesNewsBreak)
+    width: 100%
+    padding-bottom: 3.157em
 
-.news__inner
+.languages__innerContainer
+  width: 100%
+  padding: 0 2em
+  position: relative
 
 .languages__title
   font-size: 3.157rem
@@ -22,32 +33,26 @@
   text-align: center
   padding-bottom: 1em
 
-.languages, .languages-choice
-  //width:
+//.languages, .languages-choice
   position: relative
 
-  //padding: 2.369em 0.75em
-  //margin-top: 1em
-  // border-right: 0.5em solid $basicColor
-  //border-left: 0.5em solid $basicColor
 
 
-.languages
-  background-color: $grey
+.languages, .languages-hidden    //channge in index-news
   display: none
-
-.languages_mod
-  padding: 2.333em 0
-  margin-top: 2em
-  //border-right: 0.5em solid $basicColor
-  //transform-origin: top
-  //transition: transform 0.3s ease-in-out
 
 .languages-choice
   display: flex
   padding-bottom: 2.333em
   flex-wrap: wrap
   justify-content: center
+
+.languages-hover
+  .language-item
+    cursor: pointer
+    &:hover
+      background-color: $hoverColor
+      color: $secondTextColor
 
 .language-item
   font-size: 1.33rem
@@ -59,16 +64,20 @@
   padding: 0.563em 0.75em
   text-align: center
 
-.languages-hover
-  .language-item
-    cursor: pointer
-    &:hover
-      background-color: $hoverColor
-      color: $secondTextColor
-      // border: 0.1em solid $basicColor
-    //h3
-      text-shadow: 0 0.01em 0.01em lighten($basicTextColor, 20%)
+.languageTemplate__close
+    margin-top: 2.2678rem
+    position: absolute
+    top: 0
+    right: 0
+    //padding: 0 0.2em 0.1em 0.25em
+    background-color: transparent
+    //color: $basicColor
 
-.container_main.flex.h-centered.newsLanguages  //!!
-  min-height: 100vh
-  padding-bottom: 10em
+    transition: all 0.1s linear
+    cursor: pointer
+    svg
+      fill: $shadow
+    &:hover
+      background-color: $basicColor
+      svg
+        fill: $secondTextColor

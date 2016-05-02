@@ -15,9 +15,10 @@ var nav            = $('nav'),
     dirNews        = "../assets/json/news/cz/",
     dirNewsNotices = "../assets/json/news/notices.json",
     dirLang        = "../assets/json/languages/",
-    lang1          = $('#1st'),
-    lang2          = $('#2nd'),
-    lang3          = $('#3rd');
+    lang           = $(".languagesNews__languages"),
+    lang1          = $("#1st"),
+    lang2          = $("#2nd"),
+    lang3          = $("#3rd");
 
 
 ///////////////////////******///
@@ -32,6 +33,13 @@ const displayTmp = function (html, idToAdd){
 }
 
 // crate chunk of html
+/*
+const handlebarsTemplating = function(data, tmp) {
+  var context  = data,
+      template = Handlebars.templates[tmp],
+      html     = template(context);
+    return html
+}*/
 
 const handlebarsTemplating = function(data, tmp) {
   var context  = data,
@@ -72,9 +80,12 @@ function jsonLoadOnPage(dir, tmp, idToAdd) {
 
   $.getJSON(dir)
   .then(function(data) {
-    //var html = handlebarsTemplating(data, tmp);
-    //return(html);
-    return handlebarsTemplating(data, tmp);
+    var html = handlebarsTemplating(data, tmp);
+    return(html);
+
+    //return handlebarsTemplating(data, tmp);
+    //return handlebarsTemplating(data, tmp);
+
     //handlebarsTemplating(data, tmp, idToAdd);
     })
   .then(function(html) {
@@ -100,7 +111,7 @@ function modalTemplating(dir, tmp, idToAdd){
     .then(function(data) {
       //var html = handlebarsTemplating(data[0], tmp);
       //return html;
-      return handlebarsTemplating(data[0], tmp);
+      return handlebarsTemplating(data, tmp);
     })
     .then(function(html) {
       displayTmp(html, idToAdd);

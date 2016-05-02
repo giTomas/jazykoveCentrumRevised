@@ -33,7 +33,7 @@ const addRemoveHiglight = function ( el1, el2, trgt, class) {
 }
 
 const addRemove = function(id, el, class) {
-  $(id).find('.languages').removeClass(class);
+  $(id).find('.languages-hidden').removeClass(class);
   $(el).addClass(class);
 }
 //1st click
@@ -81,10 +81,10 @@ const firstChoiceHandler = function(){
 
       if (whichDir) {
         displayTmp(html, lang3);
-        addRemove( '#languages', lang3, 'is-flex');
+        addRemove(lang, lang3, 'is-flex');
       } else {
         displayTmp(html, lang2);
-        addRemove( '#languages', lang2, 'is-flex');
+        addRemove(lang, lang2, 'is-flex');
         }
     });
 }
@@ -146,7 +146,7 @@ const secondChoiceHandler = function(){
     .then(function(data) {
       //var html = handlebarsTemplating(data, "languageTemplate");
       //return(html)
-      console.log('cau');
+
       var html = handlebarsTemplating(data, "languageTemplate");
       return html;
     })
@@ -164,7 +164,7 @@ lang2.on("click", ".language-item", secondChoiceHandler)
 //closing languages windows
 
 const firstCloseHandler = function(){
-  var el = $('.languages');
+  var el = $('.languages-hidden');
   el.removeClass('is-flex');
   lang1.find('.language-item').removeClass('is-picked');
 }
@@ -187,4 +187,4 @@ lang2.on("click", ".languageTemplate__close", firstCloseHandler);
 lang3.on("click", ".languageTemplate__close", secondCloseHandler);
 
 
-});
+});//end ready func

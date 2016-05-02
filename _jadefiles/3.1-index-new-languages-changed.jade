@@ -1,9 +1,4 @@
-//- mixin language-item(language)
-  //- a(href=href)
-  //- .language-item.flex.v-centered.v-start
-    //- .flag-big&attributes(attributes)
-    //- h3.t-center= language
-    
+
 mixin language-item-top(language, data)
   .language-item
      h3(data-category=data)= language
@@ -11,16 +6,15 @@ mixin language-item-top(language, data)
                 
 section 
   .languagesNews__outerContainer.newsLanguages
-    #languages.languagesNews__innerLanguages
+    .languagesNews__languages
       h2.languages__title Jazyky, ktoré vyučujeme 
-      .container_100.languages-choice.languages-hover#1st
+      #1st.languages__innerContainer.languages-choice.languages-hover
         +language-item-top('Živé jazyky', 'zive')         
         +language-item-top('Starobylé jazyky', 'starobyle')
-      .container_100#2nd.languages.languages_mod.languages-hover
+      #2nd.languages__innerContainer.languages-hidden.languages-hover
 
-      .container_100#3rd.languages.languages_mod
+      #3rd.languages__innerContainer.languages-hidden
        
-    .grid-3.flex.h-centered
-      .news
-        h2 Novinky
-        ul.flex#news
+    .languagesNews__news
+      h2.news__title Novinky
+      ul.news__list#news
