@@ -1,19 +1,25 @@
+
+
 .languagesNews__news
   margin: calc(3.157em - 10.514px) 0 0 2.369em
   width: calc(30% - 2.369em)
   align-self: flex-start
-  background-color: $grey
+  position: relative
+  background-color: $secondTextColor
+  //box-shadow: $boxShadow
   //display: flex
   //flex-wrap: wrap
   //justify-content: center
   //border: 1px solid $basicColor
-  border-radius: 0.25em 0.25em 0 0
+  box-shadow: $boxShadow
+  border-radius: 0.25rem
   transition: all 0.2s ease-in-out
   @media (max-width: $languagesNewsBreak)
     width: 100%
     margin: 0
     padding-bottom: 9.969em
-    border: none
+    border-radius: none
+    box-shadow: none
   i
     //color: $basicColor
     padding-right: 0.2em
@@ -23,7 +29,11 @@
     box-shadow: 0 0 0.3em $hoverColor
 
 .news__list
-  margin: 0.563em auto
+  margin: 4rem auto 0   //shadow
+  //width: calc(100% - 2px)
+
+  //box-shadow: $boxShadow
+  //box-shadow: inset 0 0 5px darken($grey, 25%)
   @media (max-width: $languagesNewsBreak)
     margin: 1.333em
     display: flex
@@ -36,15 +46,21 @@
 .news__title
   //font-size: 3.157rem
   width: 100%
+  width: calc(100% + 0.16rem)
+  position: absolute
   font-size: 2.369rem
   padding: 0.317em 0
+  margin: 0 -0.08rem
   background: $basicColor
   color: $secondTextColor
+  border-radius: 0.25rem 0.25rem 0 0
+  //box-shadow: $boxShadow
+  //color: $shadow
   text-align: center
 
 .notice
   font-size: 1.25rem
-  padding: 0.238em 0.422em
+  padding: 0.238em 0.75em
   color: $shadow
   line-height: 1.1
   transition: all 0.1s ease-in-out
