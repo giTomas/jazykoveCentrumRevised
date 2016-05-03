@@ -12,13 +12,8 @@
 //.logo-is-static
   position: fixed
 
-
-
 .logo-is-in-position
-  background-position: -100%
-  //text-shadow:  0px 1px 0px darken($basicColor, 10% )
-  //&:hover
-    text-shadow:  0px 0px 0px lighten($basicColor, 10% )
+  left: 0
 
 //modal
 
@@ -55,7 +50,9 @@
 
 .is-picked
   color: $secondTextColor
-  background: $hoverColor
+  background:
+    color: $hoverColor
+    image: $blueGradient
   //border: 0.1em solid $basicColor
   //&:hover
     background-color: $basicColor !important

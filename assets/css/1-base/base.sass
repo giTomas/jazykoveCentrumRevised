@@ -19,26 +19,33 @@ $basicColor: darken(#002D56, 5%)
 //$background: lightgrey
 //$background: #F9FBFB
 $background: $secondTextColor
-$grey: lighten(#AFAFAF, 25%)
+$grey: lighten(#AFAFAF, 24%)
 //$basicTextColor: $basicColor
 
 $accentColor: #750207
+$accentColor: #BD1C1C
 $hoverColor: lighten( $basicColor, 55%)
+$hoverCololrLight: lighten($hoverColor, 25%)
 $shadow: darken($basicColor, 10%)
-$elBackground: lighten($basicColor, 70%)
-$elBackground: $grey
+// $elBackground: lighten($basicColor, 70%)
+$elBackground: lighten(#AFAFAF, 22%)
 $gold: #daa520
+$blueGradient: linear-gradient( to bottom, lighten($basicColor, 20%), $basicColor)
 
 $mobile-menu: 750px
 $headerBreak: 400px
 $tableBreak: 500px
 $languagesNewsBreak: 1000px
 
-$fontStack: 'Roboto', sans-serif
-$fontStack: "Lucida Sans Unicode", "Lucida Grande", sans-serif
-$fontStack: Verdana, Geneva, sans-serif
+// $fontStack: 'Roboto', sans-serif
+// $fontStack: "Lucida Sans Unicode", "Lucida Grande", sans-serif
+// $fontStack: Verdana, Geneva, sans-serif
 $fontStack: Arial, Helvetica, sans-serif
-$boxShadow: 0 0 2px 2px darken($grey, 25%)
+$boxShadow: 0 0 3px 2px darken($grey, 20%)
+$boxShadow: none
+$inset: inset 0 0 2px 2px $basicColor
+$borderRadius: 0.25rem
+$border: 1px solid $basicColor
 
 :root
   font-size: 14px

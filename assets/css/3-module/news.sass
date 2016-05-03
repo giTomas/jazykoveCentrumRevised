@@ -4,16 +4,7 @@
   margin: calc(3.157em - 10.514px) 0 0 2.369em
   width: calc(30% - 2.369em)
   align-self: flex-start
-  position: relative
   background-color: $secondTextColor
-  //box-shadow: $boxShadow
-  //display: flex
-  //flex-wrap: wrap
-  //justify-content: center
-  //border: 1px solid $basicColor
-  box-shadow: $boxShadow
-  border-radius: 0.25rem
-  transition: all 0.2s ease-in-out
   @media (max-width: $languagesNewsBreak)
     width: 100%
     margin: 0
@@ -21,53 +12,47 @@
     border-radius: none
     box-shadow: none
   i
-    //color: $basicColor
-    padding-right: 0.2em
-    //font-weight: bold
-
-  //&:hover
-    box-shadow: 0 0 0.3em $hoverColor
+    color: $accentColor
+    font-weight: bold
+    padding-right: 0.422em
 
 .news__list
-  margin: 4rem auto 0   //shadow
-  //width: calc(100% - 2px)
-
-  //box-shadow: $boxShadow
-  //box-shadow: inset 0 0 5px darken($grey, 25%)
+  margin: 0 auto
   @media (max-width: $languagesNewsBreak)
     margin: 1.333em
     display: flex
     flex-wrap: wrap
-    justify-content: center
-    //flex-direction: column
-    //align-items: center
 
 
 .news__title
-  //font-size: 3.157rem
   width: 100%
-  width: calc(100% + 0.16rem)
-  position: absolute
   font-size: 2.369rem
   padding: 0.317em 0
-  margin: 0 -0.08rem
-  background: $basicColor
-  color: $secondTextColor
+  //padding: 0.422em 0
   border-radius: 0.25rem 0.25rem 0 0
-  //box-shadow: $boxShadow
-  //color: $shadow
+  background:
+    color: $basicColor
+    image: $blueGradient
+  color: $secondTextColor
   text-align: center
+  @media (max-width: $languagesNewsBreak)
+    border-radius: none
 
 .notice
-  font-size: 1.25rem
-  padding: 0.238em 0.75em
+  font-size: 1.15rem
+  padding: 0.422em 0.238em
   color: $shadow
   line-height: 1.1
   transition: all 0.1s ease-in-out
+  font-weight: bold
   cursor: pointer
+  border-bottom: 1px solid $basicColor
+  //margin-top: 0.25em
   @media (max-width: $languagesNewsBreak)
-    width: 51%
-    font-size: 1.333rem
+    width: calc(50% - 0.5em)
+    margin-left: 0.5em
+    padding: 0.317em 0.75em
+    //font-size: 1.333rem
     //margin-right: auto
   @media (max-width: $mobile-menu)
     width: 100%

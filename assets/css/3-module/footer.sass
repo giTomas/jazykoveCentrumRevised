@@ -1,49 +1,41 @@
 .footer
   width: 100%
   font-size: 1rem
-  background: $basicColor
+  background:
+    image: $blueGradient
+    color: $basicColor
   color: $secondTextColor
   padding: 1.777em 0 0.563em
-
+  box-shadow: $boxShadow
   a, p
     font-size: 1.33em
     line-height: 1.1
     white-space: nowrap
-    //font-weight: 300
 
   a
     color: $secondTextColor
     transition: all 0.2s ease-in-out
-    &:hover                              ///?????
-      color: $accentColor
+    &:hover
+      color: $hoverCololrLight
 
   h2
     font-size: 1.33em
-    //color: lighten($basicTextColor, 60%)
     color: $secondTextColor
     letter-spacing: 0.15em
     padding-bottom: 0.1em
     font-weight: bold
 
-
-  //hr
-    margin-top: 0
-    background-color: $secondTextColor
-
 .address, .phone, .mail, .copyright
-  border: 1px solid lighten($basicColor, 5%)
+  border: 1px solid lighten($basicColor, 4.5%)
   border-radius: 0.25em
 
 .address, .phone, .mail,
   margin: 1.8em
 
-.copyright
+//.copyright
   padding: 0.317em 0.563em
 
-.address
-  padding: 1em
-
-.phone, .mail
+.phone, .mail, .address
   padding: 1em
 
 .content

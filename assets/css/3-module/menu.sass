@@ -4,9 +4,9 @@
 nav
   width: 100%
   position: relative
-  background-color: $basicColor
-  //background-image: linear-gradient(to right, $basicColor 60%, $hoverColor)
-
+  background:
+    color: $basicColor
+    image: linear-gradient( to bottom, lighten($basicColor, 20%), $basicColor)
   justify-content: center
   z-index: 10
   @media (max-width: $mobile-menu)
@@ -18,22 +18,23 @@ nav
   position: relative
   z-index: 10
   flex: 2
-  //order: 0
   a
     color: $secondTextColor
     display: block
     padding: 0.81em 0.25em
     position: relative
     transition: all 0.05s ease-in-out
+    //border-bottom: 0.2em solid transparent
+    //border-top: 0.2em solid transparent
     &:hover
       background-color: $secondTextColor
       color: $basicTextColor
+      box-shadow: $inset
   @media (max-width: $mobile-menu)
     display: none
     flex-basis: 100%
     order: 1
     border-top: 2px solid $secondTextColor
-    border-bottom: 2px solid $secondTextColor
     li
       flex-basis: 100%
     a
@@ -45,28 +46,30 @@ nav
   z-index: 1
   background-color: $basicColor
   font-size: 1.33rem
-  transition: all 0.1s ease-in-out
+  transition: all 0.1s ease
   a
     padding: 0.5em 0.5em 0.5em 1.05em
   @media (max-width: $mobile-menu)
     position: relative
-    border-top: 1px solid $secondTextColor
-    border-bottom: 1px solid $secondTextColor
-    li
-      width: 100%
+    background-color: $hoverColor
+    a:hover
+      box-shadow: inset 0 0 2px 2px $hoverColor
+
 
 .nav-logo
   font-size: 3.157rem
   padding: 0.05em 0.1em 0.05em 0
+  background-color: $secondTextColor
+  position: relative
+  left: -100%
   color: $basicColor
   font-family: serif
   font-family: Georgia, serif
   font-weight: bold
-  background:
+  //background:
     image: linear-gradient(to right, $basicColor 50%, $background 50%)
     size: 200%
   transition: all 0.2s
-    //color: $basicColor
 
 
 li:hover
@@ -82,7 +85,7 @@ li:hover
   transition: all 0.1s ease-in-out
   &:hover
     svg
-      fill: $hoverColor
+      fill: lighten($hoverColor, 25%)
 
   @media (max-width: $mobile-menu)
     display: flex

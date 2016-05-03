@@ -175,11 +175,23 @@ $(document).ready(function() {
 $(window).scroll(function() {
 
   var wScroll = $(this).scrollTop(),
-      wHeight = nav.height();
+      wHeight = nav.height(),
+      header = $("#header"),
+      wStatus = wScroll >= wHeight,
+      wStatus2 = wScroll >= wHeight + 150;
 
-    wScroll >= wHeight ? nav.addClass('is-fixed') : nav.removeClass('is-fixed')
+    wStatus ? nav.addClass('is-fixed') : nav.removeClass('is-fixed')
 
-    wScroll >= wHeight + 150 ? logo.addClass('logo-is-in-position') : logo.removeClass('logo-is-in-position')
+
+    /*if (wStatus) {
+      header.removeClass("header__have-shadow");
+      nav.addClass('is-fixed');
+    } else {
+      header.addClass("header__have-shadow");
+      nav.removeClass('is-fixed');
+    }*/
+
+    wStatus2 ? logo.addClass('logo-is-in-position') : logo.removeClass('logo-is-in-position')
 
 }) // end of scroll
 

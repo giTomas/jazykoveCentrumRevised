@@ -3,28 +3,35 @@
 
 .languagesNews__outerContainer
     width: 90%
-    min-height: 100vh
+    min-height: 80vh
     margin: 0 auto
     display: flex
     flex-wrap: wrap
-    //padding-bottom: 9.969em
-    //background-color: $grey
+    padding-bottom: 9.969em
     @media(max-width: 1200px)
       width: 95%
     @media(max-width: 1100px)
       width: 100%
+    @media (max-width: $languagesNewsBreak)
+      padding-bottom: 0
 
 .languagesNews__languages
   width: 70%
-  padding: 3.157em 0 9.969em
-  // background-color: $grey
+  margin-top: 2.369em
+  padding: 1.777em 0 3.157em
+  //border-radius: $borderRadius
+  //border: $border
   position: relative
   background-color: $secondTextColor
-  box-shadow: $boxShadow
+  //box-shadow: $boxShadow
   // margin: 1em 0
   @media (max-width: $languagesNewsBreak)
     width: 100%
-    padding-bottom: 3.157em
+    margin-top: 0
+    padding: 3.157em 0
+    border: none
+    box-shadow: none
+
 
 .languages__innerContainer
   width: 100%
@@ -36,6 +43,7 @@
   color: $shadow
   text-align: center
   padding-bottom: 1em
+  //font-weight: bold
 
 //.languages, .languages-choice
   position: relative
@@ -56,11 +64,13 @@
     cursor: pointer
     &:hover
       background-color: $hoverColor
+      background-color: $basicColor
       color: $secondTextColor
 
 .language-item
   font-size: 1.33rem
   border: 0.1em solid $hoverColor
+  border: 0.1em solid $basicColor
   background-color: $secondTextColor
   //color: $hoverColor
   transition: text-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out
