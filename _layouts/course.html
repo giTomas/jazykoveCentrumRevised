@@ -3,16 +3,18 @@ layout: default_course
 title: course
 ---
 
+<div class="wrapper">
 {% include header-courses.html%}
 
 <main class="course-content">
 <section class="course-overview">
 
-  <div class="container_50 text-padding">
-    <h2 class="headline2 t-center">{{page.title}}</h2>
+  <div class="course__container">
+    <h2 class="course__title">{{page.title}}</h2>
     {{page.content}}
   </div>
 </section>
 </main>
 
 {% include 4-index-footer.html %}
+</div>

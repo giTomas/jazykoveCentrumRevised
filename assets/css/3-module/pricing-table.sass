@@ -1,34 +1,34 @@
 .table-cell
   font-size: 1.33em
   width: calc(33.3% - 0.356rem)
-  //width: calc(33.3% - 0.6rem)
   margin: 0.178rem
-  //margin: 0.3rem
   background-color: $elBackground
-  //font-weight: 300
   padding: 0.422em 0.75em
   overflow: hidden
-  //box-shadow : 0 0 1px $shadow
   @media (max-width: $tableBreak)
     width: 100%
     display: block
 
 .cell-product
   font-weight: bold
-  transition: all 0.1s ease-in-out
+  transition: all 0.1s ease
   &:hover
     background-color: $basicColor
     a
       color: $secondTextColor
   @media all and(max-width: $tableBreak)
     margin-top: 0.563em
-    background-color: $basicColor
+    background:
+      image: $blueGradient
+      color: $basicColor
     a
       color: $secondTextColor
 
 .cell-top
   color: $secondTextColor
-  background-color: $basicColor
+  background:
+    image: $blueGradient
+    color: $basicColor
 
 .hidable
   @media all and(max-width: $tableBreak)

@@ -10,7 +10,6 @@ var nav            = $('nav'),
     logo           = $('.nav-logo'),
     modalOverlay   = $('.modal-overlay'),
     modalContainer = $('.modal-container'),
-  //  body           = $('body'),
     dirLectors     = "../assets/json/lectors/",
     dirNews        = "../assets/json/news/cz/",
     dirNewsNotices = "../assets/json/news/notices.json",
@@ -32,14 +31,7 @@ const displayTmp = function (html, idToAdd){
   $(idToAdd).html(html);
 }
 
-// crate chunk of html
-/*
-const handlebarsTemplating = function(data, tmp) {
-  var context  = data,
-      template = Handlebars.templates[tmp],
-      html     = template(context);
-    return html
-}*/
+// template
 
 const handlebarsTemplating = function(data, tmp) {
   var context  = data,
@@ -47,8 +39,6 @@ const handlebarsTemplating = function(data, tmp) {
       html     = template(context);
     return html
 }
-
-
 
 //get directory from html data attr
 
@@ -63,55 +53,23 @@ const getDirSimple = function(trgt, dataName,  partDir ) {
       dir  = partDir + data + ".json";
     return dir;
 };
-/*
-function jsonLoadOnPage(dir, tmp, idToAdd) {
-  $.getJSON(dir)
-  .done(function(data) {
-    var html = handlebarsTemplating(data, tmp);
-    displayTmp(html, idToAdd);
-    //handlebarsTemplating(data, tmp, idToAdd);
-    })
-  .fail(function(){
-      alert('Nepodarilo sa nacitat data')
-    });
-}*/
 
 function jsonLoadOnPage(dir, tmp, idToAdd) {
-
   $.getJSON(dir)
   .then(function(data) {
     var html = handlebarsTemplating(data, tmp);
-    return(html);
-
-    //return handlebarsTemplating(data, tmp);
-    //return handlebarsTemplating(data, tmp);
-
-    //handlebarsTemplating(data, tmp, idToAdd);
+    return html;
     })
   .then(function(html) {
     displayTmp(html, idToAdd);
-    //handlebarsTemplating(data, tmp, idToAdd);
   });
 }
-/*
-function modalTemplating(dir, tmp, idToAdd){
-  $.getJSON(dir)
-    .done(function(data) {
-      var html = handlebarsTemplating(data[0], tmp);
-      displayTmp(html, idToAdd);
-      showModal();
-    })
-    .fail(function(){
-      alert('HTTP request failed');
-    });
-}*/
 
 function modalTemplating(dir, tmp, idToAdd){
   $.getJSON(dir)
     .then(function(data) {
-      //var html = handlebarsTemplating(data[0], tmp);
-      //return html;
-      return handlebarsTemplating(data, tmp);
+      var html = handlebarsTemplating(data, tmp);
+      return html;
     })
     .then(function(html) {
       displayTmp(html, idToAdd);
@@ -120,17 +78,6 @@ function modalTemplating(dir, tmp, idToAdd){
       showModal();
     })
 }
-/*
-function languagesTemplating(dir, tmp, idToAdd){
-  jQuery.getJSON(
-    dir)
-    .done(function(data) {
-      handlebarsTemplating(data, tmp, idToAdd);
-    })
-    .fail(function(){
-      alert('HTTP request failed');
-    })
-}*/
 
 ////////////////
 //modal////////
@@ -139,27 +86,22 @@ function languagesTemplating(dir, tmp, idToAdd){
 const showModal = function() {
   /*body.addClass("o-hidden");*/
   modalOverlay.addClass('is-displaying')
-
     setTimeout(function(){
       modalOverlay.addClass('is-visible');
     }, 50);
-
     setTimeout(function(){
       modalContainer.addClass('is-in-position');
-    }, 250);
-
+    }, 200);
 }
 
 const hideModal = function() {
   modalContainer.removeClass('is-in-position');
-
   setTimeout(function(){
     modalOverlay.removeClass('is-visible')
-  }, 450 );
-
+  }, 400 );
   setTimeout(function(){
     modalOverlay.removeClass('is-displaying');
-  },  650);
+  },  600);
   /*setTimeout(function(){
     body.removeClass("o-hidden");
   }, 1000 );*/
@@ -181,16 +123,6 @@ $(window).scroll(function() {
       wStatus2 = wScroll >= wHeight + 150;
 
     wStatus ? nav.addClass('is-fixed') : nav.removeClass('is-fixed')
-
-
-    /*if (wStatus) {
-      header.removeClass("header__have-shadow");
-      nav.addClass('is-fixed');
-    } else {
-      header.addClass("header__have-shadow");
-      nav.removeClass('is-fixed');
-    }*/
-
     wStatus2 ? logo.addClass('logo-is-in-position') : logo.removeClass('logo-is-in-position')
 
 }) // end of scroll
@@ -198,9 +130,6 @@ $(window).scroll(function() {
 ////////////////////
 //responsive menu//
 //////////////////
-
-
-//experimental
 
 const navToggleHandler = function(){
   var $this      = $(this),
@@ -225,9 +154,7 @@ const navToggleHandler = function(){
 
 nav.on('click', '.toggle-menu', navToggleHandler);
 
-
-
-//experimental!!!  maybe change it to var
+//experimental!!!
 
 const navDropDownHandler = function(){
   var wWidth = $(window).width() < 700,
@@ -242,42 +169,18 @@ const navDropDownHandler = function(){
 
 nav.on('click', '.dropdown', navDropDownHandler);
 
-
 ///templating - modals
 
 const lectorsHandler = function(){
   var $this = $(this);
   var dir   =  getDir('.lector__caption', 'name', $this, dirLectors);
-    modalTemplating(dir, "lectorTemplate", "#modal-lector");
+  modalTemplating(dir, "lectorTemplate", "#modal-lector");
 }
 
 $('.lectors').on('click', '.lector', lectorsHandler);
 
-//uni for all modals in document
 
 $('.modal').on('click', '.close', hideModal);
 
-
-
-///////////////////
-//smooth scrolling:
-////////////////// //https://css-tricks.com/snippets/jquery/smooth-scrolling/
-
-/*
-jQuery(function() {
-  jQuery('a[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = jQuery(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        jQuery('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
-      }
-    }
-  });
-});
-*/
 
 }); //end of dcmt ready

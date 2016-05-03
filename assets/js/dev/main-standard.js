@@ -28,7 +28,7 @@ $(document).ready(function(){
         submenu.removeClass('submenu-is-open');
       }
 
-     navigation.toggleClass("is-open");
+      navigation.toggleClass("is-open");
   }
 
   nav.on('click', '.toggle-menu', navToggleHandler);
