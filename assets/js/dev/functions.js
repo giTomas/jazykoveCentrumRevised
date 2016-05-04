@@ -25,15 +25,15 @@ var nav            = $('nav'),
 /////////////////////******///
 
 
-//display logic
+//display logic  - main
 
-const displayTmp = function (html, idToAdd){
+function displayTmp(html, idToAdd){
   $(idToAdd).html(html);
 }
 
-// template
+// template main
 
-const handlebarsTemplating = function(data, tmp) {
+function handlebarsTemplating(data, tmp) {
   var context  = data,
       template = Handlebars.templates[tmp],
       html     = template(context);
@@ -42,17 +42,22 @@ const handlebarsTemplating = function(data, tmp) {
 
 //get directory from html data attr
 
-const getDir = function(el, dataName, trgt, partDir ) {
+function getDir(el, dataName, trgt, partDir ) {
   var data = trgt.find(el).data(dataName),
       dir  = partDir + data + ".json";
     return dir;
 }
 
-const getDirSimple = function(trgt, dataName,  partDir ) {
+
+// for index_news probably !!!!
+
+function getDirSimple(trgt, dataName,  partDir ) {
   var data = trgt.data(dataName),
       dir  = partDir + data + ".json";
     return dir;
 };
+
+// for index
 
 function jsonLoadOnPage(dir, tmp, idToAdd) {
   $.getJSON(dir)
@@ -64,6 +69,8 @@ function jsonLoadOnPage(dir, tmp, idToAdd) {
     displayTmp(html, idToAdd);
   });
 }
+
+//for or lectors index
 
 function modalTemplating(dir, tmp, idToAdd){
   $.getJSON(dir)
@@ -83,7 +90,7 @@ function modalTemplating(dir, tmp, idToAdd){
 //modal////////
 //////////////
 
-const showModal = function() {
+function showModal() {
   /*body.addClass("o-hidden");*/
   modalOverlay.addClass('is-displaying')
     setTimeout(function(){
@@ -135,10 +142,11 @@ const navToggleHandler = function(){
   var $this      = $(this),
       navigation = $this.parent().parent().find('.navigation'),
       submenu    = navigation.find('.submenu'),
-      statusSub  = submenu.hasClass('submenu-is-open');
+      statusSub  = submenu.hasClass('submenu-is-open'),
+      svg        = $this.find('svg');
       //statusNav  = navigation.hasClass('is-open');
 
-    $this.find('svg').toggleClass('is-hidden');
+    svg.toggleClass('is-hidden');
     //navigation.slideToggle();
 
     if (statusSub) {
@@ -150,7 +158,7 @@ const navToggleHandler = function(){
     //statusNav ? navigation.removeClass('is-open') : navigation.addClass('is-open')
     navigation.toggleClass("is-open");
 
-}
+};
 
 nav.on('click', '.toggle-menu', navToggleHandler);
 
@@ -165,17 +173,17 @@ const navDropDownHandler = function(){
            .end().find('.ch-up').toggleClass('is-hidden')
            .end().find('.submenu').toggleClass('submenu-is-open');
     }
-}
+};
 
 nav.on('click', '.dropdown', navDropDownHandler);
 
-///templating - modals
+///templating - lectors!!!
 
 const lectorsHandler = function(){
   var $this = $(this);
   var dir   =  getDir('.lector__caption', 'name', $this, dirLectors);
   modalTemplating(dir, "lectorTemplate", "#modal-lector");
-}
+};
 
 $('.lectors').on('click', '.lector', lectorsHandler);
 

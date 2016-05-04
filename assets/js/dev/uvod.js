@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 //load news
 
-jsonLoadOnPage(dirNewsNotices, "noticesTemplate", "#news");
+jsonLoadOnPage("../assets/json/news/notices.json", "noticesTemplate", "#news");
 
 //load details after click on a notice
 
@@ -12,25 +12,25 @@ const newsClickHandler = function(){
   var $this = $(this);
   var dir = getDir(".notice-content", "date", $this, dirNews);
   modalTemplating(dir, "newTemplate", "#modal-new");
-}
+};
 
 $("#news").on("click", ".notice", newsClickHandler);
 
-const addRemoveHiglight = function ( el1, el2, trgt, class) {
+function addRemoveHiglight( el1, el2, trgt, class) {
   trgt.closest(el1).find(el2)       //addremove class is-picked
   .removeClass(class)
   .end().end().addClass(class);
 }
 
-const addRemove = function(id, el, class) {
+function addRemove(id, el, class) {
   $(id).find('.languages-hidden').removeClass(class);
   $(el).addClass(class);
-}
+};
 //1st click
 
 const firstChoiceHandler = function(){
   var $this = $(this),
-      dir  = getDir( "h3", "category", $this, dirLang );
+      dir  = getDir( "h3", "category", $this, "../assets/json/languages/");
 
   addRemoveHiglight(lang1, '.language-item', $this, 'is-picked');
   $.getJSON(dir)
@@ -53,7 +53,6 @@ const firstChoiceHandler = function(){
         }
     });
 }
-
 
 //trigger click event
 
@@ -78,7 +77,7 @@ const secondChoiceHandler = function(){
            .addClass('is-flex');
     });
 
-}
+};
 
 //trigger click event
 

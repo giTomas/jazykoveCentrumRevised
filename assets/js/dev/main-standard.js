@@ -1,50 +1,48 @@
+"use strict";
+
 $(document).ready(function(){
-  "use strict";
 
-  var nav            = $('nav'),
-      logo           = $('.nav-logo');
+var nav            = $('nav'),
+    logo           = $('.nav-logo');
 
-  $(window).scroll(function() {
+$(window).scroll(function() {
 
-    var wScroll = $(this).scrollTop(),
-        wHeight = nav.height(),
-        wStatus  = wScroll >= wHeight,
-        wStatus2 = wScroll >= wHeight + 150;
+  var wScroll = $(this).scrollTop(),
+      wHeight = nav.height(),
+      wStatus  = wScroll >= wHeight,
+      wStatus2 = wScroll >= wHeight + 150;
 
-      wStatus ? nav.addClass('is-fixed') : nav.removeClass('is-fixed')
+    wStatus ? nav.addClass('is-fixed') : nav.removeClass('is-fixed')
 
-      wStatus2 ? logo.addClass('logo-is-in-position') : logo.removeClass('logo-is-in-position')
-  })
+    wStatus2 ? logo.addClass('logo-is-in-position') : logo.removeClass('logo-is-in-position')
+});
 
-  const navToggleHandler = function(){
-    var $this      = $(this),
-        navigation = $this.parent().parent().find('.navigation'),
-        submenu    = navigation.find('.submenu'),
-        statusSub  = submenu.hasClass('submenu-is-open');
-        //statusNav  = navigation.hasClass('is-open');  // good for animation
+var navToggleHandler = function(){
+  var $this      = $(this),
+      navigation = $this.parent().parent().find('.navigation'),
+      submenu    = navigation.find('.submenu'),
+      statusSub  = submenu.hasClass('submenu-is-open');
 
-      $this.find('svg').toggleClass('is-hidden');
-      if (statusSub) {
-        submenu.removeClass('submenu-is-open');
-      }
+    $this.find('svg').toggleClass('is-hidden');
+    if (statusSub) {
+      submenu.removeClass('submenu-is-open');
+    }
+    navigation.toggleClass("is-open");
+};
 
-      navigation.toggleClass("is-open");
-  }
+var navDropDownHandler = function(){
+  var wWidth = $(window).width() < 700,
+      $this = $(this);
 
-  nav.on('click', '.toggle-menu', navToggleHandler);
+    if (wWidth) {
+      $this.find('.ch-down').toggleClass('is-hidden')
+           .end().find('.ch-up').toggleClass('is-hidden')
+           .end().find('.submenu').toggleClass('submenu-is-open');
+    }
+};
 
-  const navDropDownHandler = function(){
-    var wWidth = $(window).width() < 700,
-        $this = $(this);
+nav.on('click', '.toggle-menu', navToggleHandler);
 
-      if (wWidth) {
-        $this.find('.ch-down').toggleClass('is-hidden')
-             .end().find('.ch-up').toggleClass('is-hidden')
-             .end().find('.submenu').toggleClass('submenu-is-open');
-                                  //  .toggleClass("animation")
-      }
-  }
-
-  nav.on('click', '.dropdown', navDropDownHandler);
+nav.on('click', '.dropdown', navDropDownHandler);
 
 });

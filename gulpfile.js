@@ -75,7 +75,7 @@ gulp.task('jade', function () {
   return gulp.src('_jadefiles/*.jade')
     .pipe(gulpJade({
       jade: jade,
-      pretty: true
+      pretty: false
     }))
     .pipe(gulp.dest('_includes'))
 });
