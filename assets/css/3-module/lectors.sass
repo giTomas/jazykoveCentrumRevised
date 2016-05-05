@@ -1,14 +1,17 @@
 .lectors
-  margin-top: 2.813rem
-  margin-bottom: 20rem
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
+  @media (max-width: $mobile-menu)
+    margin-top: 3.474rem
 
 .lector
   width: 300px
   margin: 1em
   position: relative
   overflow: hidden
-  //transition: all 0.3s ease-in-out
   box-shadow: -0.1em 0.1em 0.25em $shadow
+  border-radius: $borderRadius
   cursor: pointer
   &:hover
     .lector-slide, .lector-lectorOf
@@ -19,14 +22,13 @@
       left: 0
 
 .lector__caption
-  // width: calc(100% - 0.634em)
-  width: calc(100% - 0.844em)
+  width: calc(100% - 1.5em)
   position: absolute
   bottom: 0
-  // margin: 0.317em
-  margin: 0.422em
-  //padding: 0.25em 0.5em
+  margin: 0 0.75em 0.75em
+  font-weight: bold
   text-align: center
+  color: $shadow
   transition: all 0.2s ease-in-out
   &:hover
     .lector__name, .lector__lectorOf
@@ -38,66 +40,44 @@
   background-color: $secondTextColor
   font-size: 1.777rem
   right: -100%
+  padding: 0.563rem 0.422rem
   &:hover
     background-color: $hoverColor
     background-color: $basicColor
     color: $secondTextColor
 
-//.lector-container
-  //background-color: transparent
-  &:hover
-    .lector__name, .lector__lectorOf
-      background-color: $basicTextColor
-      color: $secondTextColor
-
 .lector__name, .lector__lectorOf
   background-color: $secondTextColor
   position: relative
-  //padding-top: 0.25em
-  padding: 0.238em 0.238em 0
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out
 
 .lector__name
   right: -150%
   // font-size: 1.777rem
   font-size: 1.777rem
+  padding: 0.563rem 0.422rem 0.1415rem
   transition: right 0.3s ease-in-out
-  // transition: right 0.2s ease-in-out 0.3s
+  //border-radius: 0.5rem 0.5rem 0 0
   letter-spacing: 0.1em
 
 .lector__lectorOf
   left: -150%
-  padding-bottom: 0.238em
+  padding: 0.1415rem 0.422rem 0.563rem
   font-size: 1.333rem
   transition: left 0.3s ease-in-out
-  // transition: left 0.2s ease-in-out 0.3s
+  //border-radius: 0 0 0.5rem 0.5rem
 
 .lector-lectorOf
   background-color: $secondTextColor
   font-size: 1.777rem
-  padding: 0.238em 0
+  padding: 0.563rem 0.422rem
   right: -100%
   &:hover
     background-color: $hoverColor
     color: $secondTextColor
 
 .lector__img
-  width: 300px
+  //width: 300px
   object-fit: contain
 
 .text-higlight
   font-weight: bold
-
-//.lector-name
-  width: calc(100% - 0.5em)
-
-  margin: 0.25em
-  padding: 0.5em
-  //opacity: 0
-  font-size: 1.875rem
-  text-align: center
-  background-color: $secondTextColor
-  transition: all 0.5s ease-in-out
-  &:hover
-    background-color: $basicTextColor
-    color: $secondTextColor

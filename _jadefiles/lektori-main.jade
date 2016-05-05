@@ -15,10 +15,9 @@ mixin lector-itemExt(name, src, data, lectorOf, alt)
       h3.lector__name= name
       h4.lector__lectorOf= lectorOf
     
-section
-  .container_80
-    h2.headline2.t-center Lektoři
-  .container_80.flex.h-centered.lectors
+section  
+  .container_80.lectors
+    h2.headline2 Lektoři
     +lector-itemLec('Lektorka ruského, církevněslovanského a staroruského jazyka','../assets/img/ksenia_400.jpg', 'ksenia'); 
     +lector-item('Ksenia','../assets/img/ksenia_400.jpg', 'ksenia'); 
     +lector-itemExt('Ksenia','../assets/img/ksenia_400.jpg', 'ksenia', 'Lektorka ruského, církevněslovanského a staroruského jazyka', 'Lektorka Ksenia'); 

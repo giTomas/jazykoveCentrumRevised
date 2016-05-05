@@ -1,4 +1,16 @@
-.table-cell
+.table__container
+  width: 90%
+  margin: 0 auto
+  display: flex
+  jistify-content: center
+  flex-wrap: wrap
+  padding-bottom: 9.969em
+  @media(max-width: 800px)
+    width: 95%
+  @media (max-width: $mobile-menu)
+    margin-top: 3.474rem
+
+.table__cell
   font-size: 1.33em
   width: calc(33.3% - 0.356rem)
   margin: 0.178rem
@@ -18,6 +30,7 @@
       color: $secondTextColor
   @media all and(max-width: $tableBreak)
     margin-top: 0.563em
+    border-radius: 0.25rem 0.25rem 0 0
     background:
       image: $blueGradient
       color: $basicColor
@@ -29,6 +42,10 @@
   background:
     image: $blueGradient
     color: $basicColor
+  &:nth-of-type(1)
+    border-radius: 0.25rem 0 0 0
+  &:nth-of-type(3)
+    border-radius: 0 0.25rem 0 0
 
 .hidable
   @media all and(max-width: $tableBreak)

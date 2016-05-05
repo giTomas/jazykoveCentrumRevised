@@ -13,9 +13,10 @@
 
 .logo-center
   display: flex
-  align-items: baseline     // refactor !
+  align-items: baseline
   padding: 0.238em
   color: $basicColor
+  color: $shadow
 
 .logo
   font-family: Georgia, serif
@@ -26,9 +27,10 @@
 
 .description
   margin-left: 0.3em
-  font-family: $fontStack
+  //font-family: $fontStack
   //color: $basicColor
   //font-weight: 100
+  //font-weight: 500
   font-size: 3.157rem
   padding-right: 0.3em
   @media (max-width: 500px)
@@ -38,11 +40,10 @@
     // margin-left: 0
     //margin-right: 0
 
-
-
 .flex-header
   display: flex
   align-items: center
+  //justify-content: center
   background-color: $secondTextColor
-  @media (max-width: $mobile-menu)
+  @media (max-width: 900px)
     justify-content: center

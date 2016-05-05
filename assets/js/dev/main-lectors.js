@@ -3,7 +3,6 @@
 $(document).ready(function(){
 
 var nav            = $('nav'),
-    logo           = $('.nav-logo'),
     modalOverlay   = $('.modal-overlay'),
     modalContainer = $('.modal-container');
     //dirLectors     = "../assets/json/lectors/";
@@ -16,7 +15,7 @@ function handlebarsTemplating(data, tmp) {
   var context  = data,
       template = Handlebars.templates[tmp],
       html     = template(context);
-    return html
+    return html;
  }
 
 function getDir(el, dataName, trgt, partDir ) {
@@ -28,8 +27,9 @@ function getDir(el, dataName, trgt, partDir ) {
  function modalTemplating(dir, tmp, idToAdd){
    $.getJSON(dir)
      .then(function(data) {
-       var html = handlebarsTemplating(data, tmp);
-       return html;
+       //var html = handlebarsTemplating(data, tmp);
+       //return html;
+       return handlebarsTemplating(data, tmp);
      })
      .then(function(html) {
        displayTmp(html, idToAdd);
@@ -51,13 +51,13 @@ function showModal() {
 }
 
 var hideModal = function() {
- modalContainer.removeClass('is-in-position');
- setTimeout(function(){
-   modalOverlay.removeClass('is-visible')
- }, 400 );
- setTimeout(function(){
-   modalOverlay.removeClass('is-block');
- },  600);
+   modalContainer.removeClass('is-in-position');
+   setTimeout(function(){
+     modalOverlay.removeClass('is-visible')
+   }, 400 );
+   setTimeout(function(){
+     modalOverlay.removeClass('is-block');
+   },  600);
  /*setTimeout(function(){
    body.removeClass("o-hidden");
  }, 1000 );*/
@@ -67,7 +67,7 @@ $(window).scroll(function() {
 
   var wScroll = $(this).scrollTop(),
       wHeight = nav.height(),
-      header = $("#header"),
+      logo    = $('.nav-logo'),
       wStatus = wScroll >= wHeight,
       wStatus2 = wScroll >= wHeight + 150;
 
@@ -122,4 +122,4 @@ $('.lectors').on('click', '.lector', lectorsHandler);
 
 $('.modal').on('click', '.close', hideModal);
 
-});//end ready fn
+});//end of scope

@@ -18,11 +18,12 @@
   background-color: $secondTextColor
   @media (max-width: $languagesNewsBreak)
     width: 100%
-    margin-top: 0
-    padding: 3.157em 0
+    //margin-top: 0
+    //padding: 3.157em 0
     border: none
     box-shadow: none
-
+  @media (max-width: $mobile-menu)
+    margin-top: 3.474rem
 
 .languages__innerContainer
   width: 100%
@@ -33,18 +34,20 @@
   font-size: 3.157rem
   color: $shadow
   text-align: center
-  padding-bottom: 1em
-  @media (max-width: $headerBreak)
+  padding-bottom: 1.333em
+  font-weight: bold
+  //@media (max-width: $headerBreak)
     //margin-top: calc(2em + 3.03125rem)
-    font-size: 2.369rem
-    margin-top: 2em
+    //font-size: 2.369rem
+    //padding-top: 1.777rem
+    //margin-top: 2em
 
 .languages, .languages-hidden    //channge in index-news
   display: none
 
 .languages-choice
   display: flex
-  padding-bottom: 2.333em
+  //padding-bottom: 2.333em
   flex-wrap: wrap
   justify-content: center
 
@@ -52,16 +55,15 @@
   .language-item
     cursor: pointer
     &:hover
-      background-color: $hoverColor
       background-color: $basicColor
       color: $secondTextColor
 
 .language-item
   font-size: 1.33rem
-  border: 0.1em solid $hoverColor
+  font-weight: bold
   border: 0.1em solid $basicColor
   background-color: $secondTextColor
-  //color: $hoverColor
+  border-radius: $borderRadius
   transition: text-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out
   margin: 1em 1.333em
   padding: 0.563em 0.75em
@@ -73,11 +75,16 @@
     top: 0
     right: 0
     background-color: transparent
+    border-radius: $borderRadius
     transition: all 0.1s linear
     cursor: pointer
     svg
       fill: $shadow
+      width: 2.6em
+      height: 2.6em
     &:hover
-      background-color: $basicColor
+      background:
+        color: $basicColor
+        image: $blueGradient
       svg
         fill: $secondTextColor

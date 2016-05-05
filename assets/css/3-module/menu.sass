@@ -3,7 +3,7 @@
 
 nav
   width: 100%
-  position: relative
+  //position: absolute
   background:
     color: $basicColor
     image: linear-gradient( to bottom, lighten($basicColor, 20%), $basicColor)
@@ -15,17 +15,17 @@ nav
 .navigation
   font-size: 1.33rem
   justify-content: center
-  position: relative
   z-index: 10
   flex: 2
   a
-    color: $secondTextColor
     display: block
     padding: 0.81em 0.25em
     position: relative
-    transition: all 0.05s ease-in-out
-    //border-bottom: 0.2em solid transparent
-    //border-top: 0.2em solid transparent
+    font-variant: small-caps
+    color: $secondTextColor
+    font-weight: bold
+    border-radius: $borderRadius
+    transition: all 0.05s linear
     &:hover
       background-color: $secondTextColor
       color: $basicTextColor
@@ -41,20 +41,28 @@ nav
       text-align: center
 
 .submenu
-  display: none
+  //display: none
+  transform-origin: top
   position: absolute
   z-index: 1
   background-color: $basicColor
   font-size: 1.33rem
-  transition: all 0.1s ease
+  transition: all 0.2s ease-in-out
+  transform: scaleY(0)
   a
     padding: 0.5em 0.5em 0.5em 1.05em
   @media (max-width: $mobile-menu)
+    display: none
     position: relative
+    transform: none
     background-color: darken($basicColor, 1%)
     a:hover
       box-shadow: inset 0 0 2px 2px darken($basicColor, 10%)
 
+li:hover
+  @media (min-width: $mobile-menu)
+    .submenu
+      transform: scaleY(1)
 
 .nav-logo
   font-size: 3.157rem
@@ -72,10 +80,7 @@ nav
   transition: all 0.2s
 
 
-li:hover
-  @media (min-width: $mobile-menu)
-    .submenu
-      display: block
+
 
 .toggle-menu
   //color: $secondTextColor

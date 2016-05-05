@@ -3,10 +3,8 @@
 $(document).ready(function(){
 
 var nav            = $('nav'),
-    logo           = $('.nav-logo'),
     modalOverlay   = $('.modal-overlay'),
     modalContainer = $('.modal-container'),
-    //dirNews        = "../assets/json/news/cz/",
     dirLang        = "../assets/json/languages/",
     lang           = $(".languagesNews__languages"),
     lang1          = $("#1st"),
@@ -21,7 +19,7 @@ function handlebarsTemplating(data, tmp) {
   var context  = data,
       template = Handlebars.templates[tmp],
       html     = template(context);
-    return html
+    return html;
  }
 
 function getDir(el, dataName, trgt, partDir ) {
@@ -33,8 +31,9 @@ function getDir(el, dataName, trgt, partDir ) {
  function jsonLoadOnPage(dir, tmp, idToAdd) {
    $.getJSON(dir)
    .then(function(data) {
-     var html = handlebarsTemplating(data, tmp);
-     return html;
+     //var html = handlebarsTemplating(data, tmp);
+     //return html;
+     return handlebarsTemplating(data, tmp);
      })
    .then(function(html) {
      displayTmp(html, idToAdd);
@@ -81,10 +80,10 @@ var hideModal = function() {
 
 $(window).scroll(function() {
 
-  var wScroll = $(this).scrollTop(),
-      wHeight = nav.height(),
-      header = $("#header"),
-      wStatus = wScroll >= wHeight,
+  var wScroll  = $(this).scrollTop(),
+      logo     = $('.nav-logo'),
+      wHeight  = nav.height(),
+      wStatus  = wScroll >= wHeight,
       wStatus2 = wScroll >= wHeight + 150;
 
   wStatus ? nav.addClass('is-fixed') : nav.removeClass('is-fixed')
@@ -221,4 +220,4 @@ lang3.on("click", ".languageTemplate__close", secondCloseHandler);
 
 $('.modal').on('click', '.close', hideModal);
 
-});//end ready fn
+});//end of scope

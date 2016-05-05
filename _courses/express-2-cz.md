@@ -1,6 +1,7 @@
 ---
 layout: course
-title: Express II
+title: Express II - Jazykové centrum KK
+headline: Express II
 ---
 
 <h3 class="subtitle">Pre koho je kurz urceny?</h3>

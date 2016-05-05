@@ -2,14 +2,15 @@
 
 $(document).ready(function(){
 
-var nav            = $('nav'),
-    logo           = $('.nav-logo');
+var nav = $('nav');
+
 
 $(window).scroll(function() {
 
-  var wScroll = $(this).scrollTop(),
-      wHeight = nav.height(),
+  var wScroll  = $(this).scrollTop(),
+      wHeight  = nav.height(),
       wStatus  = wScroll >= wHeight,
+      logo     = $('.nav-logo');
       wStatus2 = wScroll >= wHeight + 150;
 
     wStatus ? nav.addClass('is-fixed') : nav.removeClass('is-fixed')
@@ -45,4 +46,4 @@ nav.on('click', '.toggle-menu', navToggleHandler);
 
 nav.on('click', '.dropdown', navDropDownHandler);
 
-});
+}); //end of scope

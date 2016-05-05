@@ -4,25 +4,22 @@
   background:
     image: $blueGradient
     color: $basicColor
-  color: $secondTextColor
-  padding: 1.777em 0 0.563em
-  box-shadow: $boxShadow
+  padding: 3.157em 5.61em
+  //box-shadow: $boxShadow
+  a, p, h2
+    color: $secondTextColor
   a, p
-    font-size: 1.33em
+    font-size: 1.333em
     line-height: 1.1
     white-space: nowrap
-
   a
-    color: $secondTextColor
     transition: all 0.2s ease-in-out
     &:hover
       color: $hoverCololrLight
-
   h2
-    font-size: 1.33em
-    color: $secondTextColor
+    font-size: 1.333em
     letter-spacing: 0.15em
-    padding-bottom: 0.1em
+    padding-bottom: 0.178em
     font-weight: bold
 
 .address, .phone, .mail, .copyright
@@ -38,13 +35,15 @@
 .phone, .mail, .address
   padding: 1em
 
-.content
+.footer__content
   padding-top: 0.335em
   padding-top: 0.5em
 
-.container
+
+.footer__container
   width: 100%
   display: flex
   justify-content: space-around
+  text-align: center
   align-items:  center
   flex-wrap: wrap
