@@ -1,7 +1,8 @@
 {
 	"shortNotices": [{
 			"notice": "Zápis na kurzy od 10.4.2016",
-			"date": "5_4_2016_1"
+			"date": "5_4_2016_1",
+			"link": "../courses/express-1-cz"
 		}, {
 			"notice": "Otvorenie Jazykového centra 16.4.2016",
 			"date": "5_4_2016_2"
@@ -28,7 +29,8 @@
 			"date": "13_4_2016_4"
 		}, {
 			"notice": "Consec adipisicing elit dolor",
-			"date": "14_4_2016_2"
+			"date": "14_4_2016_2",
+			"link": "../courses/express-1-cz"
 		},
 		{
 			"notice": "Consec adipisicing elit dolor... consec adipisicing elit dolor...",

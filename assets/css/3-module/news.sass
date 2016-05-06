@@ -11,10 +11,22 @@
     padding-bottom: 9.969em
     border-radius: none
     box-shadow: none
-  i
+  //i
     color: $accentColor
     font-weight: bold
     padding-right: 0.422em
+
+.notice-modal, .notice-link
+  font-weight: bold
+  padding-right: 0.422em
+
+
+.notice-modal
+  color: $accentColor
+
+
+.notice-link
+  color: $basicTextColor
 
 .news__list
   margin: 0 auto
@@ -22,7 +34,6 @@
     margin: 1.333em
     display: flex
     flex-wrap: wrap
-
 
 .news__title
   width: 100%
@@ -39,29 +50,66 @@
     border-radius: 0
 
 .notice
-  font-size: 1.15rem
-  padding: 0.422em 0.238em
-  color: $shadow
-  line-height: 1.1
+  // font-size: 1.15rem
+  // padding: 0.422em 0.238em
+  // color: $shadow
+  // line-height: 1.1
   transition: all 0.1s ease-in-out
-  font-weight: bold
+  // font-weight: bold
   cursor: pointer
   border-bottom: 1px solid $basicColor
   //margin-top: 0.25em
   @media (max-width: $languagesNewsBreak)
     width: calc(50% - 0.5em)
     margin-left: 0.5em
-    padding: 0.317em 0.75em
+    //padding: 0.317em 0.75em
     //font-size: 1.333rem
     //margin-right: auto
   @media (max-width: $mobile-menu)
     width: 100%
   &:hover
+    background-color: $basicColor
+    color: $secondTextColor
+    .notice-link
+      color: $secondTextColor
+
+
+
+.notice-flex
+  // font-size: 1.15rem
+  // padding: 0.422em 0.238em
+  // color: $shadow
+  // line-height: 1.1
+  display: flex
+  align-items: baseline
+  border-bottom: 1px solid $basicColor
+  transition: all 0.1s ease-in-out
+  // font-weight: bold
+  cursor: pointer
+  //margin-top: 0.25em
+  @media (max-width: $languagesNewsBreak)
+    width: calc(50% - 0.5em)
+    margin-left: 0.5em
+    //padding: 0.317em 0.75em
+    //font-size: 1.333rem
+    //margin-right: auto
+  @media (max-width: $mobile-menu)
+    width: 100%
+  &:hover
+    background-color: $basicColor
+    color: $secondTextColor
+    .notice-link
+      color: $secondTextColor
+
+
+.notice-content
+  font-size: 1.15rem
+  padding: 0.422em 0.238em
+  color: $shadow
+  line-height: 1.1
+  transition: all 0.1s ease-in-out
+  font-weight: bold
+  &:hover
     //background-color: $hoverColor
     background-color: $basicColor
     color: $secondTextColor
-
-
-//.notice-content
-    padding: 0.238em
-    //margin-bottom: 0.5em

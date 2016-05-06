@@ -128,9 +128,14 @@ nav.on('click', '.toggle-menu', navToggleHandler);
 nav.on('click', '.dropdown', navDropDownHandler);
 
 var newsClickHandler = function(){
-  var $this = $(this);
-  var dir = getDir(".notice-content", "date", $this, "../assets/json/news/cz/");
-  modalTemplating(dir, "newTemplate", "#modal-new");
+  var $this   = $(this);
+  var hasClass = $this.find('i').hasClass('notice-modal');
+  console.log(hasClass);
+
+  // if (hasClass) {
+    var dir = getDir(".notice-content", "date", $this, "../assets/json/news/cz/");
+    modalTemplating(dir, "newTemplate", "#modal-new");
+  // }
 };
 
 function addRemoveHiglight( el1, el2, trgt, class) {
