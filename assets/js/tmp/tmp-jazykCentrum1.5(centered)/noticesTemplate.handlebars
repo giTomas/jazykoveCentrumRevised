@@ -1,0 +1,8 @@
+{{#each shortNotices}}
+<li class="notice-flex">
+	{{#if link}}
+	<i class="fa fa-angle-right notice-link"></i><a class="notice__link" href="{{link}}"> <p class="notice-content">{{notice}}</p></a>
+	{{else}}
+	<i class="fa fa-angle-right notice-modal"></i><p data-date="{{date}}" class="notice-content"></i>{{notice}}</p></a>
+	{{/if}}
+</li>{{/each}}

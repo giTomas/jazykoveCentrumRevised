@@ -1,6 +1,7 @@
 .languagesNews__outerContainer
   width: 90%
   min-height: 80vh
+  //padding-top: 3.157em   //second version
   margin: 0 auto
   display: flex
   flex-wrap: wrap
@@ -12,36 +13,46 @@
     padding-bottom: 0
 
 .languagesNews__languages
-  width: 70%
+  width: 66.66%
   padding: 3.157em 0 9.969em
+  //padding: 0 0 9.969em secondversion
   position: relative
   background-color: $secondTextColor
   @media (max-width: $languagesNewsBreak)
     width: 100%
     //margin-top: 0
     //padding: 3.157em 0
-    border: none
-    box-shadow: none
+    //border: none
+    //box-shadow: none
   //@media (max-width: $mobile-menu)
   @media (max-width: $headerBreak)
     margin-top: 3.474rem
+    padding-bottom: 0
 
 .languages__innerContainer
   width: 100%
-  padding: 0 2em
+  padding: 0 2.369em 4.2rem
   position: relative
 
 .languages__title
   font-size: 3.157rem
   color: $shadow
   text-align: center
+  padding-bottom: 0.422em
   padding-bottom: 1.333em
   font-weight: bold
-  //@media (max-width: $headerBreak)
+  @media (max-width: $headerBreak)
     //margin-top: calc(2em + 3.03125rem)
-    //font-size: 2.369rem
+    font-size: 2.369rem
     //padding-top: 1.777rem
     //margin-top: 2em
+
+.languages__subtitle
+  font-size: 1.777rem
+  padding-bottom: 4.2rem
+  text-align: center
+  @media (max-width: $headerBreak)
+    font-size: 1.333rem
 
 .languages, .languages-hidden    //channge in index-news
   display: none
@@ -71,9 +82,9 @@
   text-align: center
 
 .languageTemplate__close
-    margin-top: 2.2678rem
+    ///margin-top: 2.2678rem
     position: absolute
-    top: 0
+    top: -6px
     right: 0
     background-color: transparent
     border-radius: $borderRadius
@@ -89,3 +100,12 @@
         image: $blueGradient
       svg
         fill: $secondTextColor
+
+.languageContainer__title
+  width: 100%
+  //padding: 3.157rem 0
+  font-size: 1.777rem
+  padding-bottom: 4.2rem
+  font-weight: bold
+  text-align: center
+  color: $shadow

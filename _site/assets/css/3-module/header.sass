@@ -2,20 +2,45 @@
   height: 300px
   height: 50vh
   display: flex
+  justify-content: flex-end
   background:
     image: url('../img/praha4_crop.jpg')
     size: cover
+    position: 30% 0
     repeat: no-repeat
     attachment: fixed
   @media (max-width: $headerBreak)
     display: none
     background-image: none
 
+.banner__container
+  font-size: 1rem
+  width: 65%
+  height: 100%
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+  justify-content: center
+  color: $secondTextColor
+  //color: black
+  //align-items: center
+  > *
+    //width: 100%
+    //margin-left: 0.333rem
+
+.banner__title
+  font-size: 3.157em
+  //padding-bottom: 0.422em
+
+.banner__subtitle
+  font-size: 1.777em
+  padding-top: 0.563em
+
 .logo-center
   display: flex
   align-items: baseline
   padding: 0.238em
-  color: $basicColor
+  //color: $basicColor
   color: $shadow
 
 .logo

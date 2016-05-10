@@ -1,13 +1,13 @@
-mixin lector-item(name, src, data)
-  figure.lector
-    img.lector__img(src=src)
-    figcaption.lector__caption.lector-slide(data-name= data)= name
+//- mixin lector-item(name, src, data)
+  //- figure.lector
+    //- img.lector__img(src=src)
+    //- figcaption.lector__caption.lector-slide(data-name= data)= name  
     
-mixin lector-itemLec(lectorOf, src, data)
-  figure.lector
-    img.lector__img(src=src)
-    figcaption.lector__caption.lector-lectorOf(data-name= data)= lectorOf
-
+//- mixin lector-itemLec(lectorOf, src, data)
+  //- figure.lector
+    //- img.lector__img(src=src)
+    //- figcaption.lector__caption.lector-lectorOf(data-name= data)= lectorOf
+    
 mixin lector-itemExt(name, src, data, lectorOf, alt)
   figure.lector
     img.lector__img(src=src, alt=alt)
@@ -18,23 +18,23 @@ mixin lector-itemExt(name, src, data, lectorOf, alt)
 section  
   .container_80.lectors
     h2.headline2 Lektoři
-    +lector-itemLec('Lektorka ruského, církevněslovanského a staroruského jazyka','../assets/img/ksenia_400.jpg', 'ksenia'); 
-    +lector-item('Ksenia','../assets/img/ksenia_400.jpg', 'ksenia'); 
-    +lector-itemExt('Ksenia','../assets/img/ksenia_400.jpg', 'ksenia', 'Lektorka ruského, církevněslovanského a staroruského jazyka', 'Lektorka Ksenia'); 
+    //- +lector-itemLec('Lektorka ruského, církevněslovanského a staroruského jazyka', '../assets/img/ksenia_400.jpg', 'ksenia' ); 
+    //- +lector-item('Ksenia','../assets/img/ksenia_400.jpg', 'ksenia'); 
+    +lector-itemExt('Ksenia','../assets/img/ksenia_400.jpg', 'ksenia', 'Lektorka ruského, církevněslovanského a staroruského jazyka', 'Lektorka Ksenia' ); 
     
-    +lector-item('Martin','../assets/img/martin_400.jpg', 'martin'); 
-    +lector-itemLec('Lektor německého jazyka','../assets/img/martin_400.jpg', 'martin'); 
+    //- +lector-item('Martin','../assets/img/martin_400.jpg', 'martin'); 
+    //- +lector-itemLec('Lektor německého jazyka','../assets/img/martin_400.jpg', 'martin'); 
     +lector-itemExt('Martin','../assets/img/martin_400.jpg', 'martin', 'Lektor německého jazyka', 'Lektor Martin');     
   
-    +lector-itemLec('Lektorka ruského jazyka','../assets/img/lera_400.jpg', 'lera'); 
+    //- +lector-itemLec('Lektorka ruského jazyka','../assets/img/lera_400.jpg', 'lera'); 
     +lector-itemExt( 'Lera','../assets/img/lera_400.jpg', 'lera', 'Lektorka ruského jazyka', 'Lektorka Lera');   
     
-    +lector-itemLec('Lektor anglického, českého, japonského, korejského jazyka','../assets/img/jan_400.jpg', 'jan'); 
+    //- +lector-itemLec('Lektor anglického, českého, japonského, korejského jazyka','../assets/img/jan_400.jpg', 'jan'); 
     +lector-itemExt('Jan', '../assets/img/jan_400a.jpg', 'jan', 'Lektor anglického, českého, japonského, korejského jazyka', 'Lektorka Jan'); 
   
-    +lector-itemLec('Lektorka anglického, francouzského, egyptského jazyka','../assets/img/maria_400.jpg', 'maria'); 
+    //- +lector-itemLec('Lektorka anglického, francouzského, egyptského jazyka','../assets/img/maria_400.jpg', 'maria'); 
     +lector-itemExt('Maria','../assets/img/maria_400.jpg', 'maria', 'Lektorka anglického, francouzského, egyptského jazyka', 'Lektorka Maria'); 
     
-    +lector-itemLec('Lektor arabského jazyka','../assets/img/adam.jpg', 'adam'); 
+    //- +lector-itemLec('Lektor arabského jazyka','../assets/img/adam.jpg', 'adam'); 
     +lector-itemExt('Adam', '../assets/img/adam_400.jpg', 'adam', 'Lektor arabského jazyka', 'Lektor Adam'); 
      

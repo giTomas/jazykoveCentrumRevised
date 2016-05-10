@@ -10,6 +10,7 @@ var nav            = $('nav'),
     lang1          = $("#1st"),
     lang2          = $("#2nd"),
     lang3          = $("#3rd");
+    //container     = $(".languagesNews__outerContainer");
 
 function displayTmp(html, idToAdd){
   $(idToAdd).html(html);
@@ -43,8 +44,8 @@ function getDir(el, dataName, trgt, partDir ) {
  function modalTemplating(dir, tmp, idToAdd){
    $.getJSON(dir)
      .then(function(data) {
-       var html = handlebarsTemplating(data, tmp);
-       return html;
+       //var html = handlebarsTemplating(data, tmp);
+       return handlebarsTemplating(data, tmp);
      })
      .then(function(html) {
        displayTmp(html, idToAdd);
@@ -130,12 +131,11 @@ nav.on('click', '.dropdown', navDropDownHandler);
 var newsClickHandler = function(){
   var $this   = $(this);
   var hasClass = $this.find('i').hasClass('notice-modal');
-  console.log(hasClass);
 
-  // if (hasClass) {
+  if (hasClass) {
     var dir = getDir(".notice-content", "date", $this, "../assets/json/news/cz/");
     modalTemplating(dir, "newTemplate", "#modal-new");
-  // }
+  }
 };
 
 function addRemoveHiglight( el1, el2, trgt, class) {
@@ -162,9 +162,9 @@ var firstChoiceHandler = function(){
     })
     .then(function(html){
       var dirAncient = "../assets/json/languages/starobyle.json",
-            whichDir =  dir === dirAncient;
+            ancientDir =  dir === dirAncient;
 
-      if (whichDir) {
+      if (ancientDir) {
         displayTmp(html, lang3);
         addRemove(lang, lang3, 'is-flex');
       } else {
@@ -213,7 +213,7 @@ var secondCloseHandler = function(){
 
 jsonLoadOnPage("../assets/json/news/notices.json", "noticesTemplate", "#news");
 
-$("#news").on("click", ".notice", newsClickHandler);
+$("#news").on("click", ".notice-flex", newsClickHandler);
 
 lang1.on("click", ".language-item", firstChoiceHandler);
 

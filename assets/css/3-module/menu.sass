@@ -6,7 +6,7 @@ nav
   //position: absolute
   background:
     color: $basicColor
-    image: linear-gradient( to bottom, lighten($basicColor, 20%), $basicColor)
+    image: $blueGradient
   justify-content: center
   z-index: 10
   @media (max-width: $mobile-menu)
@@ -24,17 +24,26 @@ nav
     font-variant: small-caps
     color: $secondTextColor
     font-weight: bold
-    border-radius: $borderRadius
+    //border-radius: $borderRadius
     transition: all 0.05s linear
+    //border-bottom: 2px solid transparent
+    //border-top: 2px solid transparent
+    //box-shadow: inset 0 0 0 2px $basicColor
+    //border: 2px solid transparent
     &:hover
       background-color: $secondTextColor
       color: $basicTextColor
-      box-shadow: $inset
+      //border-top: 2px solid $basicColor
+      //border-bottom: 2px solid $basicColor
+      //border: 2px solid $basicColor
+      box-shadow: inset 0 0 0 2px $basicColor
+      //box-shadow: $inset
+
   @media (max-width: $mobile-menu)
     display: none
     flex-basis: 100%
     order: 1
-    border-top: 2px solid $secondTextColor
+    //border-top: 2px solid $secondTextColor
     li
       flex-basis: 100%
     a
@@ -51,13 +60,17 @@ nav
   transform: scaleY(0)
   a
     padding: 0.5em 0.5em 0.5em 1.05em
+    //border: 1px solid transparent
+    //border-top: none
   @media (max-width: $mobile-menu)
-    display: none
     position: relative
     transform: none
+    display: none
     background-color: darken($basicColor, 1%)
     a:hover
-      box-shadow: inset 0 0 2px 2px darken($basicColor, 10%)
+      border-top: 0
+      //box-shadow: inset 0 0 2px 2px darken($basicColor, 10%)
+      //border: 1px solid $basicColor
 
 li:hover
   @media (min-width: $mobile-menu)
@@ -70,7 +83,7 @@ li:hover
   background-color: $secondTextColor
   position: relative
   left: -100%
-  color: $basicColor
+  color: $basicTextColor
   font-family: serif
   font-family: Georgia, serif
   font-weight: bold

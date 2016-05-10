@@ -1,8 +1,16 @@
-
+.languagesNews__newsContainer
+  width: 33.33%
+  padding: 3.157em 0
+  display: flex
+  justify-content: center
+  @media (max-width: $languagesNewsBreak)
+    width: 100%
+    padding:  0 0
 
 .languagesNews__news
-  margin: 3.157em 0 0 2.369em  //not ideal
-  width: calc(30% - 2.369em)
+  //margin-top: 3.157em   //second version
+  width: 90%
+  ///width: calc(30% - 2.369em)
   align-self: flex-start
   background-color: $secondTextColor
   @media (max-width: $languagesNewsBreak)
@@ -11,19 +19,22 @@
     padding-bottom: 9.969em
     border-radius: none
     box-shadow: none
-  //i
-    color: $accentColor
-    font-weight: bold
-    padding-right: 0.422em
+
 
 .notice-modal, .notice-link
   font-weight: bold
-  padding-right: 0.422em
+  padding-left: 0.422em
+  @media (max-width: $languagesNewsBreak)
+    padding-left: 0
 
+//svg.notice-modal, svg.notice-link
+  //margin-top: 0.2em
+  padding-top: 0.2em
+  width: 1.2rem
+  height: 1.2rem
 
 .notice-modal
   color: $accentColor
-
 
 .notice-link
   color: $basicTextColor
@@ -50,56 +61,33 @@
     border-radius: 0
 
 .notice
-  // font-size: 1.15rem
-  // padding: 0.422em 0.238em
-  // color: $shadow
-  // line-height: 1.1
   transition: all 0.1s ease-in-out
-  // font-weight: bold
   cursor: pointer
   border-bottom: 1px solid $basicColor
-  //margin-top: 0.25em
   @media (max-width: $languagesNewsBreak)
     width: calc(50% - 0.5em)
     margin-left: 0.5em
-    //padding: 0.317em 0.75em
-    //font-size: 1.333rem
-    //margin-right: auto
   @media (max-width: $mobile-menu)
     width: 100%
-  &:hover
-    background-color: $basicColor
-    color: $secondTextColor
-    .notice-link
-      color: $secondTextColor
-
-
 
 .notice-flex
-  // font-size: 1.15rem
-  // padding: 0.422em 0.238em
-  // color: $shadow
-  // line-height: 1.1
   display: flex
   align-items: baseline
   border-bottom: 1px solid $basicColor
-  transition: all 0.1s ease-in-out
-  // font-weight: bold
+  transition: all 0.2s ease-in-out
   cursor: pointer
-  //margin-top: 0.25em
   @media (max-width: $languagesNewsBreak)
     width: calc(50% - 0.5em)
     margin-left: 0.5em
-    //padding: 0.317em 0.75em
-    //font-size: 1.333rem
-    //margin-right: auto
   @media (max-width: $mobile-menu)
     width: 100%
   &:hover
-    background-color: $basicColor
-    color: $secondTextColor
-    .notice-link
-      color: $secondTextColor
+    //background-color: $basicColor
+    //color: $secondTextColor
+    .notice-link, .notice-content
+      color: $accentColor
+    //.notice-modal
+      color: $basicColor
 
 
 .notice-content
@@ -109,7 +97,3 @@
   line-height: 1.1
   transition: all 0.1s ease-in-out
   font-weight: bold
-  &:hover
-    //background-color: $hoverColor
-    background-color: $basicColor
-    color: $secondTextColor
