@@ -1,9 +1,15 @@
 .footer__container
-  width: 100%
   display: flex
+  flex-wrap: wrap
   justify-content: space-around
   text-align: center
-  //align-items:  center
+  align-items:  center
+  width: 80%
+  margin: 0 auto
+  @media(max-width: 1000px)
+    width: 85%
+  @media(max-width: 800px)
+    width: 95%
 
 .footer
   width: 100%
@@ -45,7 +51,3 @@
 .footer__content
   padding-top: 0.335em
   padding-top: 0.5em
-
-
-
-  flex-wrap: wrap

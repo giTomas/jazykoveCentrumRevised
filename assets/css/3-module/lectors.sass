@@ -1,13 +1,37 @@
-.lectors
+//.lectors
+  padding-bottom: 9.969em
   display: flex
   justify-content: center
   flex-wrap: wrap
-  padding-bottom: 9.969em
   @media (max-width: $mobile-menu)
     margin-top: 3.474rem
 
-.lector
-  width: 300px
+.lectors__container
+  width: 80%
+  margin: 0 auto
+  padding-bottom: 9.969em
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
+  @media(max-width: 1000px)
+    width: 85%
+  @media(max-width: 800px)
+    width: 95%
+  @media (max-width: $mobile-menu)
+    margin-top: 3.474rem
+
+.lectors__title
+  width: 100%
+  font-size: 3.157rem
+  padding: 1.777em 0 1.333em
+  text-align: center
+  font-weight: bold
+  color: $shadow
+  @media all and(max-width: 500px)
+    font-size: 2.369rem
+
+.lector__container
+  //width: 300px
   width: 250px
   margin: 1em
   position: relative
@@ -17,12 +41,6 @@
   cursor: pointer
   &:hover
     .lector__caption
-      left: 0
-    //.lector-slide, .lector-lectorOf
-      right: 0
-    //.lector__name
-      right: 0
-    //.lector__lectorOf
       left: 0
 
 .lector__caption
@@ -39,19 +57,8 @@
   transition: all 0.2s ease-in-out
   &:hover
     .lector__name, .lector__lectorOf
-      background-color: $hoverColor
       background-color: $basicColor
       color: $secondTextColor
-
-//.lector-slide
-  background-color: $secondTextColor
-  font-size: 1.777rem
-  right: -100%
-  padding: 0.563rem 0.422rem
-  &:hover
-    background-color: $hoverColor
-    background-color: $basicColor
-    color: $secondTextColor
 
 .lector__name, .lector__lectorOf
   background-color: $secondTextColor
@@ -87,6 +94,3 @@
 .lector__img
   //width: 300px
   object-fit: cover
-
-.text-higlight
-  font-weight: bold

@@ -1,10 +1,21 @@
 //contact module
+.contact__container
+  width: 60%
+  margin: 0 auto
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
+  @media(max-width: 1200px)
+    width: 80%
+  @media(max-width: 950px)
+    width: 95%
+  @media (max-width: $mobile-menu)
+    margin-top: 3.474rem
 
-.contact-content
-  margin-bottom: 10em
-  //margin-top: 7.478em
+.contact
+  margin-bottom: 9.969em
 
-.contact-container
+.contact__content
   width: 100%
   // width: 350px
   margin: 0em 0 0.3em
@@ -19,30 +30,19 @@
     display: block
     text-align: center
     h3
-      margin-bottom: 0.238em
+      margin-bottom: 0.75em
 
-.contact-data
+.contact__data
   margin-left: 1em
   flex: 2
+  font-weight: bold
   @media(max-width: 525px)
     margin-left: 0
   p:nth-child(1), p:nth-child(2)
     padding-bottom: 0.375em
 
-.contact__container
-  width: 60%
-  margin: 0 auto
-  display: flex
-  justify-content: center
-  flex-wrap: wrap
-  @media(max-width: 1200px)
-    width: 80%
-  @media(max-width: 950px)
-    width: 95%
-  @media (max-width: $mobile-menu)
-    margin-top: 3.474rem
 
-.container_50_contact
+.contact__50
   width: 50%
   margin: 0 auto
   //background-color: $secondTextColor

@@ -45,7 +45,8 @@
   background:
     image: $blueGradient
     color: $basicColor
-    //color: $accentColor
+  @media all and(max-width: $tableBreak)
+    display: none
   &:nth-of-type(1)
     border-radius: 0.25rem 0 0 0
   &:nth-of-type(3)

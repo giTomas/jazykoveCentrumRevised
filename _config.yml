@@ -3,6 +3,6 @@ markdown: redcarpet
 highlighter: pygments # or rouge or null
 exclude: ["node_modules", "gulpfile.js", "package.json"]
 permalink: pretty
-collections:
-  courses:
-    output: true
+# collections:
+  # courses:
+    # output: true

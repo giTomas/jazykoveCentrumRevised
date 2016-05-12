@@ -18,8 +18,8 @@ function handlebarsTemplating(data, tmp) {
     return html;
  }
 
-function getDir(el, dataName, trgt, partDir ) {
-  var data = trgt.find(el).data(dataName),
+function getDir(el, dataName, $this, partDir ) {
+  var data = $this.find(el).data(dataName),
       dir  = partDir + data + ".json";
     return dir;
  }
@@ -118,7 +118,7 @@ var lectorsHandler = function(){
   modalTemplating(dir, "lectorTemplate", "#modal-lector");
 };
 
-$('.lectors').on('click', '.lector', lectorsHandler);
+$('.lectors__container').on('click', '.lector__container', lectorsHandler);
 
 $('.modal').on('click', '.close', hideModal);
 
