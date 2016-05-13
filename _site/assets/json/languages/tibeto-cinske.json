@@ -1,0 +1,13 @@
+{
+	"languages": "Tibeto-čínske",
+	"items": [{
+		"language": "Čínština",
+		"data": "cinstina"
+	}, {
+		"language": "Tibetština",
+		"data": "tibetstina"
+	}, {
+		"language": "Thajština",
+		"data": "kazastina"
+	}]
+}

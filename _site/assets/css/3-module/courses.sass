@@ -1,0 +1,82 @@
+.info-tab
+	margin: 1em 1.5em 1.77em
+	width: 250px
+	font-size: 1rem
+	border: 1px solid $basicColor
+	border-radius: 5px
+	//box-shadow: 0 0 0.2em $shadow
+	//flex-wrap: wrap
+	align-self: flex-start
+	//align-self: center  //centering,
+	> *
+		flex: 1 1 100%
+
+
+
+// .info-tab:hover
+  .info-name,
+  .info-price,
+    background-color: $accentColor
+  .info-container,
+  .info-description,
+  .info-cta
+    //border: 1px solid $accentColor
+  a
+    color: $accentColor
+    &:hover
+      color: $secondTextColor
+
+
+// .info-tab:last-child
+  margin-right: auto
+
+
+.info-name
+  font-size: 1.77em
+  padding: 0.62em 0.381em
+  //border-radius: .25em .25em 0 0
+  background: $basicColor
+  color: white
+  letter-spacing: 0.2em
+  font-weight: bold
+
+.info-price, .info-description
+	padding: 1em
+
+.info-price
+	background: $basicColor
+	color: white
+	letter-spacing: 0.2em
+	p
+		font-size: 1.33em
+		font-weight: bold
+
+.info-description
+	flex: 2 1 100%
+
+.info-description
+  font-size: 1.2em
+  line-height: 1.5
+
+  //border: 1px solid $basicColor
+
+.info-cta
+	margin: 1em auto
+	align-self: center
+	font-size: 1.33em
+	border: 1px solid $basicColor
+	padding: 0.3em 0.75em
+	// border-radius: 0.25em
+
+.info-cta a
+  color: $basicColor
+
+
+.info-cta:hover
+  background-color: $basicColor
+  a
+    color: white
+
+//.info-container
+	//border: 1px solid $basicColor
+	//border-radius: 0 0 .25em .25em

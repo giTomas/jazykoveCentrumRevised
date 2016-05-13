@@ -1,0 +1,99 @@
+.languagesNews__newsContainer
+  width: 33.33%
+  padding: 3.157em 0
+  display: flex
+  justify-content: center
+  @media (max-width: $languagesNewsBreak)
+    width: 100%
+    padding:  0 0
+
+.languagesNews__news
+  //margin-top: 3.157em   //second version
+  width: 90%
+  ///width: calc(30% - 2.369em)
+  align-self: flex-start
+  background-color: $secondTextColor
+  @media (max-width: $languagesNewsBreak)
+    width: 100%
+    margin: 0
+    padding-bottom: 9.969em
+    border-radius: none
+    box-shadow: none
+
+
+.notice-modal, .notice-link
+  font-weight: bold
+  padding-left: 0.422em
+  @media (max-width: $languagesNewsBreak)
+    padding-left: 0
+
+//svg.notice-modal, svg.notice-link
+  //margin-top: 0.2em
+  padding-top: 0.2em
+  width: 1.2rem
+  height: 1.2rem
+
+.notice-modal
+  color: $accentColor
+
+.notice-link
+  color: $basicTextColor
+
+.news__list
+  margin: 0 auto
+  @media (max-width: $languagesNewsBreak)
+    margin: 1.333em
+    display: flex
+    flex-wrap: wrap
+
+.news__title
+  width: 100%
+  font-size: 2.369rem
+  padding: 0.317em 0
+  //padding: 0.422em 0
+  border-radius: 0.25rem 0.25rem 0 0
+  background:
+    color: $basicColor
+    image: $blueGradient
+  color: $secondTextColor
+  text-align: center
+  @media (max-width: $languagesNewsBreak)
+    border-radius: 0
+
+.notice
+  transition: all 0.1s ease-in-out
+  cursor: pointer
+  border-bottom: 1px solid $basicColor
+  @media (max-width: $languagesNewsBreak)
+    width: calc(50% - 0.5em)
+    margin-left: 0.5em
+  @media (max-width: $mobile-menu)
+    width: 100%
+
+.notice-flex
+  display: flex
+  align-items: baseline
+  border-bottom: 1px solid $basicColor
+  transition: all 0.2s ease-in-out
+  cursor: pointer
+  @media (max-width: $languagesNewsBreak)
+    width: calc(50% - 0.5em)
+    margin-left: 0.5em
+  @media (max-width: $mobile-menu)
+    width: 100%
+  &:hover
+    //background-color: $basicColor
+    //color: $secondTextColor
+    .notice-link, .notice-content
+      color: $accentColor
+    //.notice-modal
+      color: $basicColor
+
+
+.notice-content
+  font-size: 1.15rem
+  padding: 0.422em 0.238em
+  color: $shadow
+  line-height: 1.1
+  transition: all 0.1s ease-in-out
+  font-weight: bold

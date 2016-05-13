@@ -1,0 +1,67 @@
+.newsLanguages
+  position: relative
+
+
+.container_main-news
+  width: 70%
+  margin: 0 auto
+  @media(max-width: $mobile-menu)
+    width: 100%
+
+//.newsLanguages__headlineNews
+  position: absolute
+  left: 0
+  margin-top: 1em
+  width: 1.476em
+  font-size: 3.157rem
+  font-weight: bold
+  //color: rgba($secondTextColor, 0.85)
+  color: $secondTextColor
+  padding: 0.238em 0.422em
+  letter-spacing: 20px
+  word-wrap: break-word
+  text-transform: uppercase
+  //text-shadow: 0 0 2px lighten($accentColor, 10%), 0 0 1px $accentColor
+  background-color: $accentColor
+  cursor: pointer
+//.languages__wrapper
+  background-color: $grey
+
+
+.newsLanguages__headlineNews
+  display: inline-block
+  position: absolute
+  top: 0
+  left: -15%
+  background-color: lighten($accentColor, 5%)
+  //background-color: $accentColor
+  color: $secondTextColor
+  margin-top: 1.777em
+  letter-spacing: 0.2em
+  font-size: 3.157rem
+  font-weight: bold
+  padding: 0.238em 0.422em
+  text-transform: uppercase
+  box-shadow: 0 0 0.05em $grey
+  cursor: pointer
+  transform: translate(1.45em, 0) rotate(90deg)
+  transform-origin: left top
+  transition: left 0.22s ease-in-out, background-color 0.3s ease-in-out
+  z-index: 1
+  &:hover
+    background-color: lighten($accentColor, 25%)
+  @media (max-width: 550px)
+    font-size: 1.777rem
+
+.languageContainer
+  font-size: 1rem
+  width: 100%
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  //position: relative
+  //padding: 0.563em
+
+.languageContainer__header
+  width: 100%
+  display: flex

@@ -1,0 +1,53 @@
+.footer__container
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-around
+  text-align: center
+  align-items:  center
+  width: 80%
+  margin: 0 auto
+  @media(max-width: 1000px)
+    width: 85%
+  @media(max-width: 800px)
+    width: 95%
+
+.footer
+  width: 100%
+  font-size: 1rem
+  background:
+    image: $blueGradient
+    color: $basicColor
+  padding: 3.157em 5.61em
+  //box-shadow: $boxShadow
+  a, p, h2
+    color: $secondTextColor
+  a, p
+    font-size: 1.333em
+    line-height: 1.1
+    white-space: nowrap
+  a
+    transition: all 0.2s ease-in-out
+    &:hover
+      color: $hoverCololrLight
+  h2
+    font-size: 1.333em
+    letter-spacing: 0.15em
+    padding-bottom: 0.178em
+    font-weight: bold
+
+.address, .phone, .mail, .copyright
+  //border: 1px solid $background
+  border-radius: 0.25em
+
+.address, .phone, .mail,
+  margin: 1.8em
+
+//.copyright
+  padding: 0.317em 0.563em
+
+.phone, .mail, .address
+  padding: 1em
+
+.footer__content
+  padding-top: 0.335em
+  padding-top: 0.5em

@@ -1,0 +1,25 @@
+{
+	"languages": "Živé jazyky (jazykové rodiny)",
+	"items": [{
+		"language": "Afroasijské jazyky",
+		"data": "afroasijske"
+	}, {
+		"language": "Altajské jazyky",
+		"data": "altajske"
+	}, {
+		"language": "Indoevropské jazyky",
+		"data": "ie"
+	}, {
+		"language": "Kartvelské jazyky",
+		"data": "kartvelske"
+	}, {
+		"language": "Tibeto-čínské jazyky",
+		"data": "tibeto-cinske"
+	}, {
+		"language": "Uralské jazyky",
+		"data": "uralske"
+	}, {
+		"language": "Osamocené evropské jazyky",
+		"data": "osamocene"
+	}]
+}

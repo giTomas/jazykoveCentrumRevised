@@ -1,0 +1,96 @@
+//.lectors
+  padding-bottom: 9.969em
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
+  @media (max-width: $mobile-menu)
+    margin-top: 3.474rem
+
+.lectors__container
+  width: 80%
+  margin: 0 auto
+  padding-bottom: 9.969em
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
+  @media(max-width: 1000px)
+    width: 85%
+  @media(max-width: 800px)
+    width: 95%
+  @media (max-width: $mobile-menu)
+    margin-top: 3.474rem
+
+.lectors__title
+  width: 100%
+  font-size: 3.157rem
+  padding: 1.777em 0 1.333em
+  text-align: center
+  font-weight: bold
+  color: $shadow
+  @media all and(max-width: 500px)
+    font-size: 2.369rem
+
+.lector__container
+  //width: 300px
+  width: 250px
+  margin: 1em
+  position: relative
+  overflow: hidden
+  box-shadow: -0.1em 0.1em 0.25em $shadow
+  border-radius: $borderRadius
+  cursor: pointer
+  &:hover
+    .lector__caption
+      left: 0
+
+.lector__caption
+  //width: calc(100% - 1.5em)
+  width: 100%
+  position: absolute
+  left: 0
+  bottom: 0
+  left: -100%
+  padding: 0 0.75em 0.75em
+  font-weight: bold
+  text-align: center
+  color: $shadow
+  transition: all 0.2s ease-in-out
+  &:hover
+    .lector__name, .lector__lectorOf
+      background-color: $basicColor
+      color: $secondTextColor
+
+.lector__name, .lector__lectorOf
+  background-color: $secondTextColor
+  //position: relative
+
+.lector__name
+  //right: -150%
+  // font-size: 1.777rem
+  font-size: 1.777rem
+  padding: 0.563rem 0.422rem 0.1415rem
+  transition: right 0.3s ease-in-out
+  //border-radius: 0.5rem 0.5rem 0 0
+  letter-spacing: 0.1em
+  border-radius: 0.25em 0.25em 0 0
+
+.lector__lectorOf
+  //left: -150%
+  padding: 0.1415rem 0.422rem 0.563rem
+  font-size: 1.333rem
+  border-radius: 0 0 0.25em 0.25em
+  transition: left 0.3s ease-in-out
+  //border-radius: 0 0 0.5rem 0.5rem
+
+//.lector-lectorOf
+  background-color: $secondTextColor
+  font-size: 1.333rem
+  padding: 0.563rem 0.422rem
+  right: -100%
+  &:hover
+    background-color: $hoverColor
+    color: $secondTextColor
+
+.lector__img
+  //width: 300px
+  object-fit: cover

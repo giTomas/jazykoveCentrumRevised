@@ -1,0 +1,62 @@
+.table__container
+  width: 90%
+  margin: 0 auto
+  display: flex
+  jistify-content: center
+  flex-wrap: wrap
+  padding-bottom: 9.969em
+  @media(max-width: 800px)
+    width: 95%
+  @media (max-width: $mobile-menu)
+    margin-top: 3.474rem
+
+.table__cell
+  font-size: 1.33em
+  width: 32.5%
+  width: calc(33.33% - 0.356rem)
+  margin: 0.178rem
+  background-color: $elBackground
+  padding: 0.422em 0.75em
+  overflow: hidden
+  @media (max-width: $tableBreak)
+    width: 100%
+    display: block
+
+.cell-product
+  font-weight: bold
+  transition: all 0.1s ease
+  &:hover
+    // color: $accentColor
+    //background-color: $basicColor
+    //background-color: $accentColor
+    a
+      color: $accentColor
+  @media all and(max-width: $tableBreak)
+    margin-top: 0.563em
+    border-radius: 0.25rem 0.25rem 0 0
+    background:
+      image: $blueGradient
+      color: $basicColor
+    a
+      color: $secondTextColor
+
+.cell-top
+  color: $secondTextColor
+  background:
+    image: $blueGradient
+    color: $basicColor
+  @media all and(max-width: $tableBreak)
+    display: none
+  &:nth-of-type(1)
+    border-radius: 0.25rem 0 0 0
+  &:nth-of-type(3)
+    border-radius: 0 0.25rem 0 0
+
+.hidable
+  @media all and(max-width: $tableBreak)
+    display: none
+
+//.showable
+  display: none
+  @media all and(max-width: $tableBreak)
+    display: inline

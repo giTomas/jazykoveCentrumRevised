@@ -1,0 +1,112 @@
+.languagesNews__outerContainer
+  width: 90%
+  min-height: 80vh
+  //padding-top: 3.157em   //second version
+  margin: 0 auto
+  display: flex
+  flex-wrap: wrap
+  @media(max-width: 1200px)
+    width: 95%
+  @media(max-width: 1100px)
+    width: 100%
+  @media (max-width: $languagesNewsBreak)
+    padding-bottom: 0
+
+.languagesNews__languages
+  width: 66.66%
+  padding: 3.157em 0 9.969em
+  //padding: 0 0 9.969em secondversion
+  position: relative
+  //background-color: $secondTextColor
+
+  @media (max-width: $languagesNewsBreak)
+    width: 100%
+    //margin-top: 0
+    //padding: 3.157em 0
+    //border: none
+    //box-shadow: none
+  //@media (max-width: $mobile-menu)
+  @media (max-width: $headerBreak)
+    margin-top: 3.474rem
+    padding-bottom: 0
+
+.languages__innerContainer
+  width: 100%
+  padding: 0 2.369em 4.2rem
+  position: relative
+
+.languages__title
+  font-size: 3.157rem
+  color: $shadow
+  text-align: center
+  padding-bottom: 0.422em
+  padding-bottom: 1.333em
+  font-weight: bold
+  @media (max-width: $headerBreak)
+    //margin-top: calc(2em + 3.03125rem)
+    font-size: 2.369rem
+    //padding-top: 1.777rem
+    //margin-top: 2em
+
+.languages__subtitle
+  font-size: 1.777rem
+  padding-bottom: 4.2rem
+  text-align: center
+  @media (max-width: $headerBreak)
+    font-size: 1.333rem
+
+.languages, .languages-hidden    //channge in index-news
+  display: none
+
+.languages-choice
+  display: flex
+  //padding-bottom: 2.333em
+  flex-wrap: wrap
+  justify-content: center
+
+.languages-hover
+  .language-item
+    cursor: pointer
+    &:hover
+      background-color: $basicColor
+      color: $secondTextColor
+
+.language-item
+  font-size: 1.33rem
+  font-weight: bold
+  border: 0.1em solid $basicColor
+  background-color: $secondTextColor
+  border-radius: $borderRadius
+  transition: text-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out
+  margin: 1em 1.333em
+  padding: 0.563em 0.75em
+  text-align: center
+
+.languageTemplate__close
+    ///margin-top: 2.2678rem
+    position: absolute
+    top: -6px
+    right: 0
+    background-color: transparent
+    border-radius: $borderRadius
+    transition: all 0.1s linear
+    cursor: pointer
+    svg
+      fill: $shadow
+      width: 2.6em
+      height: 2.6em
+    &:hover
+      background:
+        color: $basicColor
+        image: $blueGradient
+      svg
+        fill: $secondTextColor
+
+.languageContainer__title
+  width: 100%
+  //padding: 3.157rem 0
+  font-size: 1.777rem
+  padding-bottom: 4.2rem
+  font-weight: bold
+  text-align: center
+  color: $shadow

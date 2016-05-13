@@ -1,0 +1,28 @@
+{
+	"languages": "Starobylé jazyky",
+	"items": [{
+		"language": "Avestánština",
+		"data": "avestancina"
+	}, {
+		"language": "Egyptština",
+		"data": "egypstina"
+	}, {
+		"language": "Latina",
+		"data": "latina"
+	}, {
+		"language": "Sanskrit",
+		"data": "sanskrit"
+	}, {
+		"language": "Staroarménština",
+		"data": "staroarmenstina"
+	}, {
+		"language": "Staroruština",
+		"data": "starorustina"
+	}, {
+		"language": "Starořečtina",
+		"data": "starorectina"
+	}, {
+		"language": "Staroslovanština",
+		"data": "staroslovanstina"
+	}]
+}
