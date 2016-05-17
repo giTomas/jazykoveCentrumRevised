@@ -228,6 +228,8 @@ img {
   padding-top: 0.563em; }
 
 .logo__container {
+  padding: 0.238em;
+  color: #333;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -235,27 +237,25 @@ img {
   -webkit-box-align: baseline;
   -webkit-align-items: baseline;
       -ms-flex-align: baseline;
-          align-items: baseline;
-  padding: 0.238em;
-  color: #333; }
+          align-items: baseline; }
 
 .logo__title {
   font-size: 4.209rem;
   font-weight: bold;
   text-transform: uppercase; }
-  @media (max-width: 500px) {
+  @media (max-width: 550px) {
     .logo__title {
       font-size: 3.157rem; } }
 
-.description {
+.logo__description {
   margin-left: 0.3em;
   font-size: 3.157rem;
   padding-right: 0.3em; }
-  @media (max-width: 500px) {
-    .description {
+  @media (max-width: 550px) {
+    .logo__description {
       font-size: 2.369rem; } }
   @media (max-width: 360px) {
-    .description {
+    .logo__description {
       font-size: 1.777rem; } }
 
 .logo__header {
@@ -267,6 +267,10 @@ img {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: #F9FBFB;
   background-color: #e8eaf6; }
   @media (max-width: 900px) {
