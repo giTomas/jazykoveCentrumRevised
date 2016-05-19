@@ -10,11 +10,14 @@
   justify-content: center
   align-items: flex-start
   z-index: 10
-  background-color: rgba($basicColor, 0.95)
+  background:
+    image: linear-gradient( to right bottom, lighten(rgba($basicColor, 0.95), 25%), rgba($basicColor, 0.95))
+    //color: rgba($basicColor, 0.95)
   opacity: 0
   transition: opacity 0.2s ease-in-out
   font-size: 1rem
   overflow: auto
+
 
 .modal
   min-height: 100%
@@ -49,6 +52,7 @@
   //margin: 1.5625rem
   margin: 1.777em
   box-shadow: -0.4em 0.2em 1.5em $shadow
+  box-shadow: .5em .5em 1em lighten($shadow, 25%)
   opacity: 0.1
   transition: all 0.4s ease-in-out
   border-radius: 0.25rem

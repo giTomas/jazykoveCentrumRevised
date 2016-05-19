@@ -4,14 +4,30 @@ mixin language-item-top(language, data)
         
 section 
   .languagesNews__outerContainer
+    .languagesNews__advertismentContainer
+      h2.advertisment__title JAZYKOVÁ ŠKOLA MITHRIDATES 
+      ul.advertisment__list
+       li.advertisment__listItem Nabízíme libovolné jazykové kurzy: individuální, skupinové i firemní.
+       li.advertisment__listItem Je pro nás samozřejmostí vytvořit kurz přesně podle Vašich představ.
+       li.advertisment__listItem Vedle dlouhodobých kurzů pořádáme i jednorázové workshopy, úvodní setkání s jazyky a krátkodobé kurzy intenzivní. 
+      h3.advertisment__subtitle CENA JIŽ OD 250 Kč! 
+      ul.advertisment__list
+        li.advertisment__listItem Jako jediná jazyková škola v Praze se pyšníme výukou desítek "malých" jazyků.
+        li.advertisment__listItem Vyučujeme jazyky živé i mrtvé.
+        li.advertisment__listItem Jazyk vždy zasazujeme do kontextu reálií.
+      h4.advertisment__subtitle2 VYUČUJEME NEJEN JAZYKY SVĚTA, ALE I “MALÉ”.
+      ul.advertisment__list
+        li.advertisment__listItem Mladý lektorský tým tvoří absolventi jazykovědných VŠ oborů i rodilí mluvčí.
+        li.advertisment__listItem Kvalita výuky je garantována díky vazbě na Filozofickou Fakultu Univerzity Karlovy v Praze.
+
+    .languagesNews__newsContainer
+      .languagesNews__news
+        h2.news__title Novinky
+        ul.news__list#news
     .languagesNews__languages
-      h2.languages__title Jazyky, které vyučujeme
+      h2.languages__title JAZYKY, KTERÉ VYUČUJEME
       #1st.languages__innerContainer.languages-choice.languages-hover
         +language-item-top('Živé jazyky', 'zive')         
         +language-item-top('Starobylé jazyky', 'starobyle')
       #2nd.languages__innerContainer.languages-hidden.languages-hover
       #3rd.languages__innerContainer.languages-hidden  
-    .languagesNews__newsContainer
-      .languagesNews__news
-        h2.news__title Novinky
-        ul.news__list#news

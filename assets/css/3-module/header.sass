@@ -46,6 +46,16 @@
   font-size: 1.777em
   padding-top: 0.563em
 
+.logo__header
+  display: flex
+  align-items: center
+  justify-content: center
+  background-color: $secondTextColor
+  background-color: $background
+  @media (max-width: 900px)
+    justify-content: center
+
+
 .logo__container
   padding: 0.238em
   //color: $basicColor
@@ -81,15 +91,6 @@
     font-size: 1.777rem
     // margin-left: 0
     //margin-right: 0
-
-.logo__header
-  display: flex
-  align-items: center
-  justify-content: center
-  background-color: $secondTextColor
-  background-color: $background
-  @media (max-width: 900px)
-    justify-content: center
 
 .logo__hide
   @media(max-width: $headerTextBreak)
