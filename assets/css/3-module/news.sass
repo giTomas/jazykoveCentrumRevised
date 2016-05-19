@@ -13,6 +13,8 @@
   ///width: calc(30% - 2.369em)
   align-self: flex-start
   background-color: $secondTextColor
+  border-radius: 0.25rem 0.25rem 0 0
+  box-shadow: $boxShadowComponents
   @media (max-width: $languagesNewsBreak)
     width: 100%
     margin: 0
@@ -70,6 +72,7 @@
   @media (max-width: $mobile-menu)
     width: 100%
 
+
 .notice-flex
   display: flex
   align-items: baseline
@@ -81,13 +84,11 @@
     margin-left: 0.5em
   @media (max-width: $mobile-menu)
     width: 100%
+  &:nth-last-child
+    border-bottom: none
   &:hover
-    //background-color: $basicColor
-    //color: $secondTextColor
     .notice-link, .notice-content
       color: $accentColor
-    //.notice-modal
-      color: $basicColor
 
 
 .notice-content

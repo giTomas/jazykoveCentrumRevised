@@ -1,14 +1,13 @@
 .is-fixed
   position: fixed
   top: 0
-  box-shadow: 0 0.1em 0.4em darken($basicColor, 20%)
+  box-shadow: 0 3px 4px lighten($shadow, 10%)
   justify-content: flex-start
-  .navigation li:hover
+  //.navigation li:hover
      .submenu
-      box-shadow: 0 0.25em 0.3em darken($basicColor, 20%)
+      box-shadow: 0 0.25em 0.3em lighten($shadow, 10%)
       @media (max-width: $mobile-menu)
         box-shadow: none
-
 
 .logo-is-in-position
   left: 0
@@ -42,13 +41,12 @@
 .submenu-is-open
   display: block
 
-
-
 .is-picked
   color: $secondTextColor
   background:
     color: $basicColor
     image: $blueGradient
+  box-shadow: none
 
 .headline-inPosition  //!!!!
   left: 0

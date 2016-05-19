@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,700&subset=latin,latin-ext)
+//@import url(https://fonts.googleapis.com/css?family=Raleway:400,700&subset=latin,latin-ext)
 
 
 $basicTextColor: #3A4A4D
@@ -23,16 +23,20 @@ $hoverCololrLight: lighten($hoverColor, 25%)
 $shadow: #333
 $elBackground: $secondTextColor
 $gold: #daa520
-$blueGradient: linear-gradient( to bottom, lighten($basicColor, 10%), $basicColor)
+$blueGradient: linear-gradient( to left bottom, lighten($basicColor, 12%), $basicColor)
+//$blueGradient: $basicColor
 //$blueGradient: #daa520
 
 $mobile-menu: 750px
+$headerTextBreak: 700px
 $headerBreak: 400px
 $tableBreak: 500px
 $languagesNewsBreak: 1000px
 
 $fontStack: 'Raleway', sans-serif
-$boxShadow: 0 0 3px 2px darken($grey, 20%)
+//$boxShadow: 0 0 3px 2px darken($grey, 20%)
+$boxShadowComponents: -1px 1px 2px lighten($shadow, 30%)
+$boxShadowComponents2: 0 1px 3px lighten($shadow, 20%)
 $inset: inset 0 0 1px 2px $basicColor
 $borderRadius: 0.25em
 $border: 1px solid $basicColor
