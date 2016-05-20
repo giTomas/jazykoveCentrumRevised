@@ -15,24 +15,19 @@
 
 .languagesNews__advertismentContainer
   width: 66.66%
-  padding-top: 3.157em
+  padding: 3.157em 2.369em
   //padding: 0 0 9.969em //secondversion
   //background-color: $secondTextColor
   @media (max-width: $languagesNewsBreak)
     width: 100%
-    //margin-top: 0
-    //padding: 3.157em 0
-    //border: none
-    //box-shadow: none
-  //@media (max-width: $mobile-menu)
-  //@media (max-width: $headerBreak)
-    //margin-top: 3.474rem
-    padding-bottom: 0
+  @media (max-width: $headerBreak)
+    padding: 3.157em 1.333em
+    //padding-bottom: 0
 
 .languagesNews__languages
     width: 66.66%
     //width: 100%
-    padding: 3.157em 0 9.969em
+    padding-bottom: 9.969em
     //padding: 0 0 9.969em //secondversion
     position: relative
     //background-color: $secondTextColor
@@ -56,6 +51,7 @@
 .advertisment__title,
 .advertisment__subtitle
   font-size: 3.157rem
+  line-height: 1.2
   color: $shadow
   text-align: center
   //padding-bottom: 0.422em
@@ -74,18 +70,28 @@
   padding: 1.333em 0
 
 .advertisment__subtitle2
-  font-size: 2rem
+  font-size: 2.369em
   font-weight: bold
   text-align: center
   color: $shadow
+  @media (max-width: $headerBreak)
+    font-size: 1.777rem
 
 .advertisment__list
   font-size: 1.777rem
   line-height: 1.777
   text-align: center
   color: $shadow
+  @media (max-width: $headerBreak)
+    font-size: 1.333rem
 //.advertisment__title
   text-transform: uppercase
+
+.advertisment__listItem
+  padding-bottom: 0.422em
+
+.advertisment-padding
+  padding-top: 1.333em
 
 .languages__subtitle
   font-size: 1.777rem

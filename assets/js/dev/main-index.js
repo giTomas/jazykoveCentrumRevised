@@ -82,13 +82,15 @@ var hideModal = function() {
 $(window).scroll(function() {
 
   var wScroll  = $(this).scrollTop(),
-      logo     = $('.nav-logo'),
+      //logo     = $('.nav-logo'),
       wHeight  = nav.height(),
-      wStatus  = wScroll >= wHeight,
-      wStatus2 = wScroll >= wHeight + 150;
+      wStatus  = wScroll >= wHeight;
+      //wStatus2 = wScroll >= wHeight + 150;   //logo
 
   wStatus ? nav.addClass('is-fixed') : nav.removeClass('is-fixed')
-  wStatus2 ? logo.addClass('logo-is-in-position') : logo.removeClass('logo-is-in-position')
+
+  //logo
+  //wStatus2 ? logo.addClass('logo-is-in-position') : logo.removeClass('logo-is-in-position')
 
 }) // end of scroll
 
@@ -99,20 +101,21 @@ $(window).scroll(function() {
 var navToggleHandler = function(){
   var $this      = $(this),
       navigation = $this.parent().parent().find('.navigation'),
-      submenu    = navigation.find('.submenu'),
-      statusSub  = submenu.hasClass('submenu-is-open'),
+      //submenu    = navigation.find('.submenu'),
+      //statusSub  = submenu.hasClass('submenu-is-open'),
       svg        = $this.find('svg');
 
     svg.toggleClass('is-hidden');
-
-    if (statusSub) {
+  // for submenu
+    /*if (statusSub) {
       submenu.removeClass('submenu-is-open');
-    }
+    }*/
 
     navigation.toggleClass("is-open");
 
 };
-
+// submenu
+/*
 var navDropDownHandler = function(){
   var wWidth = $(window).width() < 750,
       $this = $(this);
@@ -122,11 +125,12 @@ var navDropDownHandler = function(){
            .end().find('.ch-up').toggleClass('is-hidden')
            .end().find('.submenu').toggleClass('submenu-is-open');
     }
-};
+};*/
 
 nav.on('click', '.toggle-menu', navToggleHandler);
 
-nav.on('click', '.dropdown', navDropDownHandler);
+//submenu
+//nav.on('click', '.dropdown', navDropDownHandler);
 
 var newsClickHandler = function(){
   var $this   = $(this);

@@ -89,8 +89,8 @@ gulp.task('watch', function () {
     gulp.watch('assets/js/dev/*.js', ['compress']);
     gulp.watch('assets/js/*.js', ['jekyll-rebuild']);
     //gulp.watch('assets/js/templates/*.handlebars', ['jekyll-rebuild']);
-    gulp.watch(['index.html', '_layouts/*.html', '_includes/*'], ['jekyll-rebuild']);
-    gulp.watch('assets/json/*/*', ['jekyll-rebuild']);
+    gulp.watch(['index.html', '_layouts/*.html', '_includes/*.html'], ['jekyll-rebuild']);
+    gulp.watch('assets/json/*/*/*', ['jekyll-rebuild']);
     gulp.watch('_jadefiles/*.jade', ['jade']);
 });
 

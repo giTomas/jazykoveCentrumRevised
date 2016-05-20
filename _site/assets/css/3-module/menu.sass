@@ -6,6 +6,8 @@ nav
   background:
     color: $basicColor
     image: $blueGradient
+  display: flex
+  flex-wrap: wrap
   justify-content: center
   z-index: 10
   @media (max-width: $mobile-menu)
@@ -13,6 +15,8 @@ nav
 
 .navigation
   font-size: 1.33rem
+  display: flex
+  flex-wrap: wrap
   justify-content: center
   z-index: 10
   flex: 2
@@ -27,18 +31,16 @@ nav
     &:hover
       background-color: $secondTextColor
       color: $basicTextColor
-      //box-shadow: inset 0 0 0 2px $basicColor
   @media (max-width: $mobile-menu)
     display: none
     flex-basis: 100%
     order: 1
-    //border-top: 2px solid $secondTextColor
     li
       flex-basis: 100%
     a
       text-align: center
 
-.submenu
+///.submenu
   //display: none
   transform-origin: top
   position: absolute
@@ -83,9 +85,6 @@ li:hover
     size: 200%
   transition: all 0.2s
 
-
-
-
 .toggle-menu
   //color: $secondTextColor
   margin-left: auto
@@ -95,19 +94,18 @@ li:hover
   &:hover
     svg
       fill: lighten($hoverColor, 25%)
-
   @media (max-width: $mobile-menu)
     display: flex
     align-items: center
 
-.ch-down, .ch-up
+//.ch-down, .ch-up
   display: none
   @media (max-width: $mobile-menu)
     display: inline
 
-.c-container
+//.c-container
   width: 92px
   margin-left: auto
 
-.dropdown
+//.dropdown
   cursor: pointer

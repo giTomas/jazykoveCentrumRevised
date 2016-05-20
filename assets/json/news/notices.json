@@ -1,41 +1,17 @@
 {
-	"shortNotices": [{
-			"notice": "Zápis na kurzy od 10.4.2016",
-			"date": "5_4_2016_1"
-		}, {
-			"notice": "Otvorenie Jazykového centra 16.4.2016",
-			"date": "5_4_2016_2"
-		}, {
-			"notice": "Lorem ipsum dolor sit amet, consec adipisicing. Consec adipisicing elit dolor",
-			"date": "8_4_2016_1"
-		}, {
-			"notice": "Začiatok výuky 17.4.2016",
-			"date": "11_4_2016_2"
-		}, {
-			"notice": "Nove workshopy",
-			"date": "12_4_2016_2"
-		}, {
-			"notice": "Consec adipisicing elit dolor",
-			"date": "13_4_2016_2"
-		}, {
-			"notice": "Nove workshopy",
-			"date": "12_4_2016_1"
-		}, {
-			"notice": "Consec adipisicing elit dolor",
-			"date": "13_4_2016_3"
-		}, {
-			"notice": "Consec adipisicing elit dolor",
-			"date": "13_4_2016_4"
-		}, {
-			"notice": "Consec adipisicing elit dolor",
-			"date": "14_4_2016_2"
-		},
+	"shortNotices": [
 		{
-			"notice": "Consec adipisicing elit dolor, consec adipisicing elit dolor...",
-			"date": "15_4_2016_1"
+			"notice": "Zahájení výuky a konzultaci již ted od 16. května!",
+			"date": "16_5_2016_1"
 		}, {
-			"notice": "Consec adipisicing elit dolor",
-			"date": "13_4_2016_3"
+			"notice": "Zahájení kurzu němčiny pro malé děti",
+			"date": "17_5_2016_1"
+		}, {
+			"notice": "Zahájení kurzu ruštiny všech typů každý týden! ",
+			"date": "18_4_2016_1"
+		}, {
+			"notice": "Tajemný svět starověkého Egypta",
+			"date": "20_4_2016_1"
 		}
 	]
 }

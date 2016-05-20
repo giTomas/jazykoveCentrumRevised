@@ -25,7 +25,7 @@
 
 .notice-modal, .notice-link
   font-weight: bold
-  padding-left: 0.422em
+  //padding-left: 0.422em
   @media (max-width: $languagesNewsBreak)
     padding-left: 0
 
@@ -43,6 +43,7 @@
 
 .news__list
   margin: 0 auto
+  padding: 0 0.422em
   @media (max-width: $languagesNewsBreak)
     margin: 1.333em
     display: flex
@@ -72,7 +73,6 @@
   @media (max-width: $mobile-menu)
     width: 100%
 
-
 .notice-flex
   display: flex
   align-items: baseline
@@ -84,8 +84,9 @@
     margin-left: 0.5em
   @media (max-width: $mobile-menu)
     width: 100%
-  &:nth-last-child
-    border-bottom: none
+  @media (min-width: $languagesNewsBreak)
+    &:last-child
+      border-bottom: none
   &:hover
     .notice-link, .notice-content
       color: $accentColor

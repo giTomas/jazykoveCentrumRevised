@@ -1,0 +1,1 @@
+"use strict";$(document).ready(function(){var i=$("nav");$(window).scroll(function(){var n=$(this).scrollTop(),s=i.height(),e=n>=s;e?i.addClass("is-fixed"):i.removeClass("is-fixed")});var n=function(){var i=$(this),n=i.parent().parent().find(".navigation"),s=i.find("svg");s.toggleClass("is-hidden"),n.toggleClass("is-open")};i.on("click",".toggle-menu",n)});
