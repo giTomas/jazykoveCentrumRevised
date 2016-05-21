@@ -9,17 +9,17 @@
     padding-bottom: 3.474rem
 
 .banner
-  height: 400px
-  height: 50vh
+  height: 350px
+  height: 45vh
   display: flex
   justify-content: flex-end
   background:
     image: url('../img/prahaBG2.jpg')
     size: cover
-    position: 30% 0
+    //position: 30% 0
     repeat: no-repeat
     // attachment: fixed
-    position: 50% 50%
+    //position: 50% 50%
   @media (max-width: $headerBreak)
     display: none
     background-image: none
@@ -36,13 +36,13 @@
   color: $shadow
   align-items: center
 
-.banner__title
+//.banner__title
   font-size: 3.157em
   font-weight: bold
   margin-bottom: 35%
   //padding-bottom: 0.422em
 
-.banner__subtitle
+//.banner__subtitle
   font-size: 1.777em
   padding-top: 0.563em
 
@@ -57,7 +57,7 @@
 
 
 .logo__container
-  padding: 0.238em
+  //padding: 0.422em
   //color: $basicColor
   color: $shadow
   display: flex
@@ -71,8 +71,11 @@
 .logo__title
   //font-family: Georgia, serif
   font-size: 4.209rem
+  line-height: 1.333
+  letter-spacing: 0.1333em
   font-weight: bold
   text-transform: uppercase
+  //text-shadow: 0 0 10px $secondTextColor
   //padding: 0.5em 0
   @media (max-width: 550px)
     font-size: 3.157rem
