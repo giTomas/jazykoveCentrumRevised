@@ -1,17 +1,21 @@
 {
 	"shortNotices": [
 		{
-			"notice": "Zahájení výuky a konzultaci již ted od 16. května!",
-			"date": "16_5_2016_1"
+			"notice": "Tajemný svět starověkého Egypta",
+			"date": "20_4_2016_1"
+		}, {
+			"notice": "Tajemný svět starověkého Egypta",
+			"date": "20_4_2016_1",
+			"link": "/"
+		},  {
+			"notice": "Zahájení kurzu ruštiny všech typů každý týden! ",
+			"date": "18_4_2016_1"
 		}, {
 			"notice": "Zahájení kurzu němčiny pro malé děti",
 			"date": "17_5_2016_1"
 		}, {
-			"notice": "Zahájení kurzu ruštiny všech typů každý týden! ",
-			"date": "18_4_2016_1"
-		}, {
-			"notice": "Tajemný svět starověkého Egypta",
-			"date": "20_4_2016_1"
+			"notice": "Zahájení výuky a konzultaci již ted od 16. května!",
+			"date": "16_5_2016_1"
 		}
 	]
 }

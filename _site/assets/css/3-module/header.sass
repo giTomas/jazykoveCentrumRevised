@@ -5,6 +5,7 @@
 
 .main-header
   box-shadow: $boxShadowComponents2
+  z-index: 9999
   @media (max-width: $mobile-menu)
     padding-bottom: 3.474rem
 
@@ -16,9 +17,7 @@
   background:
     image: url('../img/prahaBG2.jpg')
     size: cover
-    //position: 30% 0
     repeat: no-repeat
-    // attachment: fixed
     //position: 50% 50%
   @media (max-width: $headerBreak)
     display: none
@@ -35,16 +34,6 @@
   color: $secondTextColor
   color: $shadow
   align-items: center
-
-//.banner__title
-  font-size: 3.157em
-  font-weight: bold
-  margin-bottom: 35%
-  //padding-bottom: 0.422em
-
-//.banner__subtitle
-  font-size: 1.777em
-  padding-top: 0.563em
 
 .logo__header
   display: flex

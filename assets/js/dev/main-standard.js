@@ -11,7 +11,7 @@ $(window).scroll(function() {
       wHeight  = nav.height(),
       wStatus  = wScroll >= wHeight,
       //logo     = $('.nav-logo');
-      wStatus2 = wScroll >= wHeight + 150;
+      //wStatus2 = wScroll >= wHeight + 150;
 
     wStatus ? nav.addClass('is-fixed') : nav.removeClass('is-fixed')
 

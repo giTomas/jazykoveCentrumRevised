@@ -13,9 +13,6 @@
   //@media (max-width: $mobile-menu)
     margin-top: 3.474rem
 
-.contact
-  margin-bottom: 9.969em
-
 .contact__content, iframe
   border-radius: $borderRadius
   box-shadow: $boxShadowComponents
@@ -31,6 +28,7 @@
   h3
     color: $shadow
     flex: 1
+    line-height: 1.333
   @media(max-width: 525px)
     display: block
     text-align: center
@@ -41,18 +39,17 @@
   margin-left: 1em
   flex: 2
   font-weight: bold
+  line-height: 1.333
   transition: color 0.1s ease-in-out
   @media(max-width: 525px)
     margin-left: 0
-  p:nth-child(1), p:nth-child(2)
+  //p:nth-child(1), p:nth-child(2), p:nth-child(3)
     padding-bottom: 0.375em
 
 .contact-highlight a
   transition: color 0.1s ease-in-out
   &:hover
     color: $accentColor
-
-
 
 
 .contact__50

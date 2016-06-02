@@ -9,11 +9,12 @@
     //- figcaption.lector__caption.lector-lectorOf(data-name= data)= lectorOf
     
 mixin lector-itemExt(name, src, data, lectorOf, alt)
-  figure.lector__container
-    img.lector__img(src=src, alt=alt)
-    figcaption.lector__caption(data-name= data)
-      h3.lector__name= name
-      h4.lector__lectorOf= lectorOf
+  figure.lector_outerContainer
+    .lector__container
+      img.lector__img(src=src, alt=alt)
+      figcaption.lector__caption(data-name= data)
+        h3.lector__name= name
+        h4.lector__lectorOf= lectorOf
     
 section  
   .lectors__container
@@ -24,4 +25,5 @@ section
     +lector-itemExt('Jan', '../assets/img/jan_400a.jpg', 'jan', 'Lektor anglického, českého, japonského, korejského jazyka', 'Lektorka Jan'); 
     +lector-itemExt('Maria','../assets/img/maria3.jpg', '', 'Lektorka anglického, francouzského, egyptského jazyka', 'Lektorka Maria'); 
     +lector-itemExt('Filip', '../assets/img/filip.jpg', 'filip', 'Lektor tureckého jazyka', 'Lektor Filip'); 
+    //- +lector-itemExt('Adam', '../assets/img/filip.jpg', 'adam', 'Lektor tureckého jazyka', 'Lektor Filip'); 
      
